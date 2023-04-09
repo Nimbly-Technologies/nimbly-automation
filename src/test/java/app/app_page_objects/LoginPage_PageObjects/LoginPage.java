@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
@@ -21,16 +20,16 @@ import io.appium.java_client.HidesKeyboard;
 public class LoginPage {
 
 
-public AppiumDriver driver;
+public AppiumDriver appdriver;
 public Properties prop;
 public String driverType;
 public FileInputStream fis;
 public Properties locators;
 
 
-	public LoginPage (AppiumDriver driver, Properties prop) throws IOException
+	public LoginPage (AppiumDriver appdriver, Properties prop) throws IOException
 	{
-		this.driver = driver;	
+		this.appdriver = appdriver;	
 		this.prop = prop;
 		initLocators();
 	}
@@ -69,7 +68,9 @@ public  void enter_useremail() throws IOException, InterruptedException
 	Thread.sleep(1000);
 	String useremail_locator = locators.getProperty("useremail_locator");
 	String useremail = prop.getProperty("useremail");
-	driver.findElement(AppiumBy.className(useremail_locator)).sendKeys(useremail);
+	appdriver.findElement(AppiumBy.xpath(useremail_locator)).sendKeys(useremail);
+	
+	
 	
 }
 	
@@ -79,16 +80,16 @@ public  void enter_userpassword () throws IOException, InterruptedException
 		String userpassword_locator = locators.getProperty("userpassword_locator");
 		String userpassword = prop.getProperty("userpassword");
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.findElement(AppiumBy.xpath(userpassword_locator)).sendKeys(userpassword);
-		((HidesKeyboard) driver).hideKeyboard();
+		appdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		appdriver.findElement(AppiumBy.xpath(userpassword_locator)).sendKeys(userpassword);
+		((HidesKeyboard) appdriver).hideKeyboard();
 		}
 		
 public  void click_on_login () throws InterruptedException
 {	
 	Thread.sleep(1000);
 	String loginbutton_locator = locators.getProperty("loginbutton_locator");
-driver.findElement(AppiumBy.className(loginbutton_locator)).click();
+	appdriver.findElement(AppiumBy.className(loginbutton_locator)).click();
 Thread.sleep(3000);
 }
 
@@ -96,10 +97,10 @@ public void allow_location_permission () throws InterruptedException
 {
 	Thread.sleep(2000);
 	String allow_location_popup_yes_button_locator = locators.getProperty("allow_location_popup_yes_button_locator");
-	if(driver.findElement(AppiumBy.className(allow_location_popup_yes_button_locator)).isDisplayed())
+	if(appdriver.findElement(AppiumBy.className(allow_location_popup_yes_button_locator)).isDisplayed())
 	{
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.findElement(AppiumBy.className(allow_location_popup_yes_button_locator)).click();
+		appdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		appdriver.findElement(AppiumBy.className(allow_location_popup_yes_button_locator)).click();
 	}
 	Thread.sleep(5000);
 }
@@ -110,18 +111,19 @@ public void validate_useremail_box() throws InterruptedException
 	Thread.sleep(2000);
 	String useremail_locator = locators.getProperty("useremail_locator");
 	
-	Assert.assertEquals(true, driver.findElement(AppiumBy.className(useremail_locator)).isEnabled());
+	Assert.assertEquals(true, appdriver.findElement(AppiumBy.xpath(useremail_locator)).isEnabled());
+	
 }
 public void validate_userpassword_box() throws InterruptedException
 {
 	Thread.sleep(2000);
 	String userpassword_locator = locators.getProperty("userpassword_locator");
-	Assert.assertEquals(true, driver.findElement(AppiumBy.xpath(userpassword_locator)).isEnabled());
+	Assert.assertEquals(true, appdriver.findElement(AppiumBy.xpath(userpassword_locator)).isEnabled());
 }
 public void validate_login_box() throws InterruptedException
 {
 	Thread.sleep(2000);
 	String loginbutton_locator = locators.getProperty("loginbutton_locator");
-	Assert.assertEquals(true, driver.findElement(AppiumBy.className(loginbutton_locator)).isEnabled());
+	Assert.assertEquals(true, appdriver.findElement(AppiumBy.className(loginbutton_locator)).isEnabled());
 }
 }

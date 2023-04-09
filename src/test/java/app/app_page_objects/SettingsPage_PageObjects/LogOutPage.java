@@ -12,13 +12,13 @@ import io.appium.java_client.AppiumDriver;
 public class LogOutPage {
 
 
-public AppiumDriver driver;
+public AppiumDriver appdriver;
 public Properties prop;
 
 
-	public LogOutPage (AppiumDriver driver, Properties prop)
+	public LogOutPage (AppiumDriver appdriver, Properties prop)
 	{
-		this.driver = driver;	
+		this.appdriver = appdriver;	
 		this.prop = prop;
 	}
 			
@@ -29,17 +29,17 @@ By logoutpopupyesbuttonlocator = AppiumBy.id("android:id/button2");
 public void navigate_to_settingspage() throws InterruptedException
 {
 	Thread.sleep(2000);
-	driver.findElement(settingsmaintablocator).click();
+	appdriver.findElement(settingsmaintablocator).click();
 	Thread.sleep(2000);	
 }
 public void click_on_logout() throws InterruptedException
 {
-	driver.findElement(logoutbuttonlocator).click();
+	appdriver.findElement(logoutbuttonlocator).click();
 	Thread.sleep(2000);
 }
 public void accept_logout_popup() throws InterruptedException
 {
-	driver.findElement(logoutpopupyesbuttonlocator).click();
+	appdriver.findElement(logoutpopupyesbuttonlocator).click();
 	Thread.sleep(3000);
 }
 }

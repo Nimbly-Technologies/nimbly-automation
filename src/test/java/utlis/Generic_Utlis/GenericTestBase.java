@@ -3,7 +3,6 @@ package utlis.Generic_Utlis;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -26,27 +25,24 @@ public  class GenericTestBase {
 
 public Properties prop;
 public AppiumDriverLocalService service;
-public AppiumDriver driver;
+public AppiumDriver appdriver;
 public WebDriver webdriver;
 public UiAutomator2Options androidoptions;
 public XCUITestOptions iosoptions;
 
 
-
-
 public AppiumDriverLocalService StartAppiumService(String ipAddress,int port)
 {	
 	service = new AppiumServiceBuilder()
-				.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-				.withIPAddress(ipAddress).usingPort(port).build();
-	 service.start();
+			.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
+			.withIPAddress(ipAddress).usingPort(port).build();
+ service.start();
 	
 return service;
 }
 
 public Properties ConfigProperties() throws IOException
 {		
-	//FileInputStream fis = new FileInputStream("C:\\Users\\hello\\eclipse-workspace\\Nimbly_App\\src\\test\\resources\\config.properties");
 	FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+
 			"//src//test//resources//config.properties");
 	 prop =new Properties();
@@ -54,8 +50,9 @@ public Properties ConfigProperties() throws IOException
 	return prop;
 }
 
-public AppiumDriver ConfigureDriver() throws MalformedURLException
+public AppiumDriver ConfigureAppDriver() throws IOException
 {
+	ConfigProperties();
 	String driverType = prop.getProperty("driverType");
 
 	
@@ -78,10 +75,10 @@ public AppiumDriver ConfigureDriver() throws MalformedURLException
 		//options.setCapability("appium:dontStopAppOnReset",true);
 		//options.setCapability("appium:forceAppLaunch",false);
 
-		driver= new AndroidDriver(service.getUrl(), androidoptions);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		appdriver= new AndroidDriver(service.getUrl(), androidoptions);
+		appdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-			return driver;
+			return appdriver;
 	}
 	else if (driverType.equals("ios")) {
 		String ipAddress = prop.getProperty("ipAddress");
@@ -98,22 +95,29 @@ public AppiumDriver ConfigureDriver() throws MalformedURLException
 		//options.setApp(System.getProperty(iosAppBuildPath));
 		iosoptions.setPlatformVersion("16.4");
 		//options.setCapability("app", "https://drive.google.com/file/d/1Am0vJ8m1j9j-ADac5jqPsYj1XZfn4FuC/view?usp=sharing");
-		iosoptions.setWdaLaunchTimeout(Duration.ofSeconds(20));
+		iosoptions.setWdaLaunchTimeout(Duration.ofSeconds(30));
 		  
 		iosoptions.setCapability("appium:noReset", true); 
 		//options.setCapability("appium:autoAcceptAlerts", true);
 //			options.setCapability("appium:dontStopAppOnReset",true);
 		//options.setCapability("appium:forceAppLaunch",false);
 
-		driver= new IOSDriver(service.getUrl(), iosoptions);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		appdriver= new IOSDriver(service.getUrl(), iosoptions);
+		appdriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
 
-			return driver;
+			return appdriver;
 	}
+	return appdriver;
+}
 	
-	else if (driverType.equals("chrome")) {
+	public WebDriver ConfigureWebDriver() throws IOException
+	{
+		ConfigProperties();
+		String driverType = prop.getProperty("driverType");
+	
+if (driverType.equals("chrome")) {
 
 		WebDriverManager.chromedriver().forceDownload().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
@@ -127,11 +131,11 @@ public AppiumDriver ConfigureDriver() throws MalformedURLException
 		webdriver.manage().getCookies();
 		webdriver.manage().deleteAllCookies();
 		
-		return driver;
-	}
+		return webdriver;
 
-	return driver;
 }
+return webdriver;
+	}
 
 
 

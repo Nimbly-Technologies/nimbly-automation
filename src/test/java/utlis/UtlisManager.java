@@ -14,7 +14,7 @@ public class UtlisManager {
 //public Properties prop;
 //public UiAutomator2Options options;
 public App_PageObjectManager appPageobjectManager;
-public GenericTestBase genericutlis;
+public GenericTestBase genericTestBase;
 public Web_PageObjectManager webPageobjectManager;
 
 
@@ -22,9 +22,9 @@ public Web_PageObjectManager webPageobjectManager;
 
 public UtlisManager() throws IOException 
 {
-	genericutlis = new GenericTestBase();
-	appPageobjectManager = new App_PageObjectManager(genericutlis.ConfigureDriver(), genericutlis.ConfigProperties());
-	webPageobjectManager = new Web_PageObjectManager(genericutlis.ConfigureDriver(), genericutlis.ConfigProperties());
+	genericTestBase = new GenericTestBase();
+	appPageobjectManager = new App_PageObjectManager(genericTestBase.ConfigureAppDriver(), genericTestBase.ConfigProperties());
+	webPageobjectManager = new Web_PageObjectManager(genericTestBase.ConfigureWebDriver(), genericTestBase.ConfigProperties());
 	
 }
 }
