@@ -45,7 +45,7 @@
 //public void AddScreenShot(Scenario scenario) throws IOException {
 //	if(scenario.isFailed()) {
 //	
-//		File sourcepath = ((TakesScreenshot)utlisManager.genericTestBase.driver).getScreenshotAs(OutputType.FILE);
+//		File  = ((TakesScreenshot)utlisManager.genericTestBase.driver).getScreenshotAs(OutputType.FILE);
 //		byte[] filecontent =FileUtils.readFileToByteArray(sourcepath);
 //		scenario.attach(filecontent, "image/png", "image");
 //	}
