@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,12 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +92,101 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">17 methods,   17 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner" class="method navigator-link" hash-for-method="runScenario(&quot;Login to nimbly app&quot;, &quot;Login_to_Nimbly_App&quot;)">runScenario("Login to nimbly app", "Login_to_Nimbly_App")</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Create and Verify UI of Questionnaire Page&quot;, &quot;Validate single audit recurring schedule&quot;)">runScenario("Create and Verify UI of Questionnaire Page", "Validate single audit recurring schedule")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner" class="method navigator-link" hash-for-method="runScenario(&quot;LogOut of Nimbly App&quot;, &quot;Setting Page&quot;)">runScenario("LogOut of Nimbly App", "Setting Page")</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Create dynamic yopmail for Auditor&quot;, &quot;Verify the onboarding of new user&quot;)">runScenario("Create dynamic yopmail for Auditor", "Verify the onboarding of new user")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the onboarding of new user - Bulk Upload&quot;, &quot;Verify the onboarding of new user&quot;)">runScenario("Verify the onboarding of new user - Bulk Upload", "Verify the onboarding of new user")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Validate the functionality of bulk upload schedule&quot;, &quot;Verify Bulk Upload Schedule Of Sites&quot;)">runScenario("Validate the functionality of bulk upload schedule", "Verify Bulk Upload Schedule Of Sites")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionality of Create Site&quot;, &quot;Verify the functionality of Site&quot;)">runScenario("Verify the functionality of Create Site", "Verify the functionality of Site")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionality of Edit Site&quot;, &quot;Verify the functionality of Site&quot;)">runScenario("Verify the functionality of Edit Site", "Verify the functionality of Site")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionality of create Site&quot;, &quot;Validate single audit recurring schedule&quot;)">runScenario("Verify the functionality of create Site", "Validate single audit recurring schedule")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Create and Verify UI of Questionnaire Page&quot;, &quot;Verify Questionnaire Creation Via Bulk Upload&quot;)">runScenario("Create and Verify UI of Questionnaire Page", "Verify Questionnaire Creation Via Bulk Upload")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionality of create a Department&quot;, &quot;Validate single audit recurring schedule&quot;)">runScenario("Verify the functionality of create a Department", "Validate single audit recurring schedule")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the onboarding of new user - create add user&quot;, &quot;Verify the onboarding of new user&quot;)">runScenario("Verify the onboarding of new user - create add user", "Verify the onboarding of new user")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Create dynamic yopmail for Auditor - bulk upload user&quot;, &quot;Verify the onboarding of new user&quot;)">runScenario("Create dynamic yopmail for Auditor - bulk upload user", "Verify the onboarding of new user")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify UI of Questionnaire Page&quot;, &quot;Verify Questionnaire Page Details&quot;)">runScenario("Verify UI of Questionnaire Page", "Verify Questionnaire Page Details")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionalities of web auit&quot;, &quot;Verify the functionality of web audit&quot;)">runScenario("Verify the functionalities of web auit", "Verify the functionality of web audit")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Validate the functionality of bulk edit schedule&quot;, &quot;Verify Bulk Upload Schedule Of Sites&quot;)">runScenario("Validate the functionality of bulk edit schedule", "Verify Bulk Upload Schedule Of Sites")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Validate single audit recurring schedule flow&quot;, &quot;Validate single audit recurring schedule&quot;)">runScenario("Validate single audit recurring schedule flow", "Validate single audit recurring schedule")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;Verify the functionality of Activate account&quot;, &quot;Verify the onboarding of new user&quot;)">runScenario("Verify the functionality of Activate account", "Verify the onboarding of new user")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="cucumber_options.TestNG_testrunner_web" class="method navigator-link" hash-for-method="runScenario(&quot;bulk upload user - Verify the functionality of activate account&quot;, &quot;Verify the onboarding of new use...)">runScenario("bulk upload user - Verify the functionality of activate account", "Verify the onboarding of new use...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,90 +198,188 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">cucumber_options.TestNG_testrunner</span>
+              <img src="passed.png"/>
+              <span class="class-name">cucumber_options.TestNG_testrunner_web</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Login to nimbly app&quot;, &quot;Login_to_Nimbly_App&quot;)">
-                  </a> <!-- runScenario("Login to nimbly app", "Login_to_Nimbly_App") -->
+                  <a name="runScenario(&quot;Create and Verify UI of Questionnaire Page&quot;, &quot;Validate single audit recurring schedule&quot;)">
+                  </a> <!-- runScenario("Create and Verify UI of Questionnaire Page", "Validate single audit recurring schedule") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Login to nimbly app", "Login_to_Nimbly_App")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.3&apos;, java.version: &apos;19.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [e72f68fb-1fb1-482f-9a8d-e5c60fe10fa5, findElement {using=class name, value=&quot;android.widget.EditText&quot;}]
-Capabilities {appium:app: /Users/administrator/git/ni..., appium:appPackage: com.sustainnovationgroup.sh..., appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/administrator/git/ni..., automationName: UIAutomator2, noReset: true, platformName: android}, appium:deviceApiLevel: 31, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 12, appium:statBarHeight: 145, appium:takesScreenshot: true, appium:viewportRect: {height: 1927, left: 0, top: 145, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: e72f68fb-1fb1-482f-9a8d-e5c60fe10fa5
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.LoginPage_PageObjects.LoginPage.validate_useremail_box(LoginPage.java:113)
-	at app.app_stepdefinitions.LoginPage_StepDefinitions.LoginPage_StepDefinitions.validate_and_enter_the_useremail(LoginPage_StepDefinitions.java:33)
-	at ✽.validate and enter the useremail(file:///Users/administrator/eclipse-workspace/nimbly-automation/src/test/java/app/app_features/1.Login.feature:7)
-
-</div> <!-- stack-trace -->
+                  <span class="parameters">("Create and Verify UI of Questionnaire Page","Validate single audit recurring schedule")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;LogOut of Nimbly App&quot;, &quot;Setting Page&quot;)">
-                  </a> <!-- runScenario("LogOut of Nimbly App", "Setting Page") -->
+                  <a name="runScenario(&quot;Create dynamic yopmail for Auditor&quot;, &quot;Verify the onboarding of new user&quot;)">
+                  </a> <!-- runScenario("Create dynamic yopmail for Auditor", "Verify the onboarding of new user") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("LogOut of Nimbly App", "Setting Page")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.3&apos;, java.version: &apos;19.0.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [670acb4f-5849-4508-b450-7e0477b856aa, findElement {using=xpath, value=(//android.widget.TextView)[@text=&apos;Settings&apos;]}]
-Capabilities {appium:app: /Users/administrator/git/ni..., appium:appPackage: com.sustainnovationgroup.sh..., appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/administrator/git/ni..., automationName: UIAutomator2, noReset: true, platformName: android}, appium:deviceApiLevel: 31, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 12, appium:statBarHeight: 145, appium:takesScreenshot: true, appium:viewportRect: {height: 1927, left: 0, top: 145, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 670acb4f-5849-4508-b450-7e0477b856aa
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.SettingsPage_PageObjects.LogOutPage.navigate_to_settingspage(LogOutPage.java:32)
-	at app.app_stepdefinitions.SettingsPage_StepDefinitions.LogOutPage_StepDefinitions.navigate_to_settings_page(LogOutPage_StepDefinitions.java:24)
-	at ✽.navigate to settings page(file:///Users/administrator/eclipse-workspace/nimbly-automation/src/test/java/app/app_features/SettingsPage.feature:9)
-
-</div> <!-- stack-trace -->
+                  <span class="parameters">("Create dynamic yopmail for Auditor","Verify the onboarding of new user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the onboarding of new user - Bulk Upload&quot;, &quot;Verify the onboarding of new user&quot;)">
+                  </a> <!-- runScenario("Verify the onboarding of new user - Bulk Upload", "Verify the onboarding of new user") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the onboarding of new user - Bulk Upload","Verify the onboarding of new user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validate the functionality of bulk upload schedule&quot;, &quot;Verify Bulk Upload Schedule Of Sites&quot;)">
+                  </a> <!-- runScenario("Validate the functionality of bulk upload schedule", "Verify Bulk Upload Schedule Of Sites") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validate the functionality of bulk upload schedule","Verify Bulk Upload Schedule Of Sites")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionality of Create Site&quot;, &quot;Verify the functionality of Site&quot;)">
+                  </a> <!-- runScenario("Verify the functionality of Create Site", "Verify the functionality of Site") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionality of Create Site","Verify the functionality of Site")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionality of Edit Site&quot;, &quot;Verify the functionality of Site&quot;)">
+                  </a> <!-- runScenario("Verify the functionality of Edit Site", "Verify the functionality of Site") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionality of Edit Site","Verify the functionality of Site")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionality of create Site&quot;, &quot;Validate single audit recurring schedule&quot;)">
+                  </a> <!-- runScenario("Verify the functionality of create Site", "Validate single audit recurring schedule") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionality of create Site","Validate single audit recurring schedule")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Create and Verify UI of Questionnaire Page&quot;, &quot;Verify Questionnaire Creation Via Bulk Upload&quot;)">
+                  </a> <!-- runScenario("Create and Verify UI of Questionnaire Page", "Verify Questionnaire Creation Via Bulk Upload") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Create and Verify UI of Questionnaire Page","Verify Questionnaire Creation Via Bulk Upload")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionality of create a Department&quot;, &quot;Validate single audit recurring schedule&quot;)">
+                  </a> <!-- runScenario("Verify the functionality of create a Department", "Validate single audit recurring schedule") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionality of create a Department","Validate single audit recurring schedule")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the onboarding of new user - create add user&quot;, &quot;Verify the onboarding of new user&quot;)">
+                  </a> <!-- runScenario("Verify the onboarding of new user - create add user", "Verify the onboarding of new user") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the onboarding of new user - create add user","Verify the onboarding of new user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Create dynamic yopmail for Auditor - bulk upload user&quot;, &quot;Verify the onboarding of new user&quot;)">
+                  </a> <!-- runScenario("Create dynamic yopmail for Auditor - bulk upload user", "Verify the onboarding of new user") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Create dynamic yopmail for Auditor - bulk upload user","Verify the onboarding of new user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify UI of Questionnaire Page&quot;, &quot;Verify Questionnaire Page Details&quot;)">
+                  </a> <!-- runScenario("Verify UI of Questionnaire Page", "Verify Questionnaire Page Details") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify UI of Questionnaire Page","Verify Questionnaire Page Details")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionalities of web auit&quot;, &quot;Verify the functionality of web audit&quot;)">
+                  </a> <!-- runScenario("Verify the functionalities of web auit", "Verify the functionality of web audit") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionalities of web auit","Verify the functionality of web audit")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validate the functionality of bulk edit schedule&quot;, &quot;Verify Bulk Upload Schedule Of Sites&quot;)">
+                  </a> <!-- runScenario("Validate the functionality of bulk edit schedule", "Verify Bulk Upload Schedule Of Sites") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validate the functionality of bulk edit schedule","Verify Bulk Upload Schedule Of Sites")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Validate single audit recurring schedule flow&quot;, &quot;Validate single audit recurring schedule&quot;)">
+                  </a> <!-- runScenario("Validate single audit recurring schedule flow", "Validate single audit recurring schedule") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Validate single audit recurring schedule flow","Validate single audit recurring schedule")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify the functionality of Activate account&quot;, &quot;Verify the onboarding of new user&quot;)">
+                  </a> <!-- runScenario("Verify the functionality of Activate account", "Verify the onboarding of new user") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify the functionality of Activate account","Verify the onboarding of new user")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;bulk upload user - Verify the functionality of activate account&quot;, &quot;Verify the onboarding of new use...)">
+                  </a> <!-- runScenario("bulk upload user - Verify the functionality of activate account", "Verify the onboarding of new use...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("bulk upload user - Verify the functionality of activate account","Verify the onboarding of new user")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/v2/78k1v9v539x4ghmw_wj483pm0000gn/T/testng-eclipse--1474618445/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/ys/24g068550m168mncgpgpl_380000gn/T/testng-eclipse--704410332/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -216,7 +388,7 @@ Session ID: 670acb4f-5849-4508-b450-7e0477b856aa
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;cucumber_options.TestNG_testrunner&quot;/&gt;
+      &lt;class name=&quot;cucumber_options.TestNG_testrunner_web&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -264,20 +436,80 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(17);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
-data.setCell(0, 2, 'cucumber_options.TestNG_testrunner')
-data.setCell(0, 3, 21366);
+data.setCell(0, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(0, 3, 168698);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
-data.setCell(1, 2, 'cucumber_options.TestNG_testrunner')
-data.setCell(1, 3, 16941);
+data.setCell(1, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(1, 3, 100689);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(2, 3, 97571);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(3, 3, 84622);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(4, 3, 79572);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(5, 3, 73424);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'runScenario')
+data.setCell(6, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(6, 3, 71357);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'runScenario')
+data.setCell(7, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(7, 3, 66433);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'runScenario')
+data.setCell(8, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(8, 3, 64771);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'runScenario')
+data.setCell(9, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(9, 3, 58280);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'runScenario')
+data.setCell(10, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(10, 3, 57133);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'runScenario')
+data.setCell(11, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(11, 3, 54661);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'runScenario')
+data.setCell(12, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(12, 3, 38158);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'runScenario')
+data.setCell(13, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(13, 3, 37829);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'runScenario')
+data.setCell(14, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(14, 3, 37289);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'runScenario')
+data.setCell(15, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(15, 3, 18850);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'runScenario')
+data.setCell(16, 2, 'cucumber_options.TestNG_testrunner_web')
+data.setCell(16, 3, 18487);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 38 seconds</span>
+              <span class="suite-total-time">Total running time: 18 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -303,26 +535,82 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">cucumber_options.TestNG_testrunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">cucumber_options.TestNG_testrunner_web</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@537b3b2e)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@295ae92c)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">runScenario("Login to nimbly app", "Login_to_Nimbly_App")</span>
-                <span class="method-start">1726 ms</span>
+                <span class="method-name">runScenario("Verify the functionality of Create Site", "Verify the functionality of Site")</span>
+                <span class="method-start">1030 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">runScenario("LogOut of Nimbly App", "Setting Page")</span>
-                <span class="method-start">23101 ms</span>
+                <span class="method-name">runScenario("Verify the functionality of Edit Site", "Verify the functionality of Site")</span>
+                <span class="method-start">101739 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Create and Verify UI of Questionnaire Page", "Validate single audit recurring schedule")</span>
+                <span class="method-start">186375 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the functionality of create a Department", "Validate single audit recurring schedule")</span>
+                <span class="method-start">355101 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the functionality of create Site", "Validate single audit recurring schedule")</span>
+                <span class="method-start">426490 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Validate single audit recurring schedule flow", "Validate single audit recurring schedule")</span>
+                <span class="method-start">524084 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Validate the functionality of bulk upload schedule", "Verify Bulk Upload Schedule Of Sites")</span>
+                <span class="method-start">578772 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Validate the functionality of bulk edit schedule", "Verify Bulk Upload Schedule Of Sites")</span>
+                <span class="method-start">652240 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Create dynamic yopmail for Auditor", "Verify the onboarding of new user")</span>
+                <span class="method-start">717028 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the onboarding of new user - create add user", "Verify the onboarding of new user")</span>
+                <span class="method-start">735533 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the functionality of Activate account", "Verify the onboarding of new user")</span>
+                <span class="method-start">815121 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Create dynamic yopmail for Auditor - bulk upload user", "Verify the onboarding of new user")</span>
+                <span class="method-start">852420 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the onboarding of new user - Bulk Upload", "Verify the onboarding of new user")</span>
+                <span class="method-start">871384 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("bulk upload user - Verify the functionality of activate account", "Verify the onboarding of new use...)</span>
+                <span class="method-start">929676 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Create and Verify UI of Questionnaire Page", "Verify Questionnaire Creation Via Bulk Upload")</span>
+                <span class="method-start">967524 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify UI of Questionnaire Page", "Verify Questionnaire Page Details")</span>
+                <span class="method-start">1033970 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Verify the functionalities of web auit", "Verify the functionality of web audit")</span>
+                <span class="method-start">1091117 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">40049 ms</span>
+                <span class="method-start">1129296 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

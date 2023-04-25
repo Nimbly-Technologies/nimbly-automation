@@ -1,0 +1,244 @@
+PAGE,OBJECT_TYPE,ELEMENTNAME,XPATH
+Login,Text Box,UserName,//input[@name = "email"]
+Login,Text Box,Password,//input[@name = "password"]
+Login,Button,Login,//button[text()="Log in"]
+Home,Button,Logout,//a[@id="menu_logout"]
+Home,Button,AdminTabFromleftbar,//a[@id="menu_adm"]
+Home,Button,Manage,//div[@id="menu_adm_manage"]
+Home,Button,questionnaires,//a[@id="menu_questionnaires"]
+Home,Cookies Page,cookie_page_title,//h3[text()="Please Enable Cookies to Continue"]
+Home,button,cookies,//*[@class ="acceptCookies"]
+Questionnaire,drop down,add_questionnaire,//div[@class= "dropdown"]
+Questionnaire,options,txt_create_new,//span[text()="Create New"]
+Questionnaire,option,txt_upload_quetions,//span[text()="Upload Questions"]
+Questionnaire,text,txt_formula_library,//div[text()="Formula Library"]
+Questionnaire,text,txt_published,//span[text()="Published"]
+Questionnaire,text,txt_deleted,//span[text()="Deleted"]
+Questionnaire,Search,search_field,//input[@id="input_search_quest"]
+Questionnaire,pagination,pagination_container,//div[@class="pagination-container"]
+Create Questionnaire,Enter Text,Questionnaire,//input[@placeholder = "Questionnaire Title"]
+Create Questionnaire,Enter Text,first_question,//div[text()="01"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,First_Dropdown_Value,//div[text()="01"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,txt_green,//div[text()="Green/Yellow/Red Flag"]
+Create Questionnaire,Select Question Type,select_type,//div[@id="drpdwn_categ_quest"]
+Create Questionnaire,Enter Text,txt_question_type,//*[@id="react-select-3-option-0"]
+Create Questionnaire,Click,txt_add_question,//span[text()="Add Question"]
+Create Questionnaire,Enter Text,second_question,//div[text()="02"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Enter Text,value_yes_no,//div[text()="Yes/No"]
+Create Questionnaire,Select Dropdown,Second_Dropdown_Value,//div[text()="02"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,third_question,//div[text()="03"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Third_Dropdown_Value,//div[text()="03"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,value_score,//div[text()="Score"]
+Create Questionnaire,Enter Text,forth_question,//div[text()="04"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Forth_Dropdown_Value,//div[text()="04"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,value_open_ended,//div[text()="Open Ended"]
+Create Questionnaire,Enter Text,fifth_question,//div[text()="05"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Fifth_Dropdown_Value,//div[text()="05"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,value_number,//div[text()="Number"]
+Create Questionnaire,Enter Text,sixth_question,//div[text()="06"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Sixth_Dropdown_Value,//div[text()="06"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,seventh_question,//div[text()="07"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Seventh_Dropdown_Value,//div[text()="07"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,value_multiple,//div[text()="Multiple Choice"]
+Create Questionnaire,Enter Text,eight_question,//div[text()="08"]//parent::div//textarea[@placeholder="Enter the question"]
+Create Questionnaire,Select Dropdown,Eigth_Dropdown_Value,//div[text()="08"]//parent::div//div[@class="questionTypePicker"]
+Create Questionnaire,Enter Text,value_range_with_flags,//div[text()="Range with Flags"]
+Create Questionnaire,Enter Text,txt_publish,//div[@class="section button-container"]
+Create Questionnaire,Slider,slider,//div[@class="QuestionnaireQuestionsRangeFlagSliderHandle__Handle-ar5q1c-0 fvrbRI"]
+Home,Button,Departments,//a[@id="menu_dept"]
+Home,Button,txt_add_department,//button[@id="btn_add_dept"]
+Add Department,Enter text,txt_dept_name,//input[@placeholder="Enter the department name"]
+Add Department,Enter text,txt_description,//input[@id="input_desc_dept"]
+Add Department,Enter text,txt_email,//input[@id="input_email_dept"]
+Add Department,Enter text,txt_user_key,//input[@id="input_key_dept"]
+Add Department,Button,Check,//button[@id="link_check_key"]
+Add Department,Drop down,txt_drop_down,//div[@id="drpdwn_quest_dept"]
+Add Department,Drop down,select_questionnaire,//div[@id="drpdwn_quest_dept"]//input[@id="auditors"]
+Add Department,Button,txt_save,//button[text()="Save"]
+Add Department,Button,txt_department_option,//*[contains(@id$'react-select-3-option')]
+Add Department,Drop down,drop_down_add_user,//div[contains(@id$"drpdwn_user_escal")]
+Add Department,Enter Text,txt_drop_down_add_user,//div[contains(@id$"drpdwn_user_escal")]//input[@id="auditors"]
+Add Department,Select Option,drop_down_add_user_option,//div[contains(@id$"react-select")]
+Create Site,Button,Sites,//a[@id="menu_sites"]
+Create Site,Button,txt_add_site,//button[@id="btn_add_site"]
+Create Site,Enter Text,txt_site_name,//input[@id="input_name_site"]
+Create Site,Drop down,site_drop_down,//div[@id="drpdwn_assign_dept"]
+Create Site,Drop down,select_department,//div[@id="drpdwn_assign_dept"]//input[@id="department"]
+Create Site,Drop down,txt_site_department_option,//div[contains(@id$"react-select")]
+Create Site,Drop down,txt_site_address,//input[@id="input_address_site"]
+Create Site,Drop down,txt_site_address_option,//li[@class="geosuggest__item"]
+Create Site,Drop down,txt_timezone,//div[@id="drpdwn_time_zone"]
+Create Site,Drop down,txt_timezone_option,//div[contains(@id$"react-select")]
+Create Site,Drop down,txt_dropdown_timezone,//div[@id="drpdwn_time_zone"]//input[contains(@id$"react-select")]
+Create Site,Drop down,txt_supervisor_department,//div[@id="site-detail__department-supervisor-dropdown"]
+Create Site,Drop down,txt_supervisor_department_option,//div[contains(@id$"react-select")]
+Create Site,Drop down,txt_supervisor,//div[@id="site-detail__users-supervisor-dropdown"]
+Create Site,Drop down,txt_supervisor_option,//div[contains(@id$"react-select")]
+Create Site,Text,txt_supervisor_add_list,(//button[text()="Add to list"])[1]
+Create Site,Drop down,dropdown_auditor,//div[@id="site-detail__department-auditor-dropdown"]
+Create Site,Drop down,dropdown_option_auditor,//div[contains(@id$"react-select")]
+Create Site,Drop down,txt_auditor,//div[@id="site-detail__users-auditor-dropdown"]
+Create Site,Drop down,txt_auditor_option,//div[contains(@id$"react-select")]
+Create Site,Text,txt_auditor_add_list,(//button[text()="Add to list"])[2]
+Create Site,Button,txt_site_save,//button[@id="btn_save_site"]
+Create Site,Message,txt_create_site,//div[text()="Updates saved."]
+Create Site,Button,txt_report_schedule,//div[@id="tab_schedule_site"]
+Create Site,Title,txt_single_audit,//div[text()="Single Audit"]
+Create Site,Enter Text,txt_site_city_name,//input[@id="input_city_site"]
+Create Site,button,txt_site_toggle,//div[@id="slider_assign_user_on"]
+Report Schedule,Drop down,report_dropdown_questionnaire,//div[@id="drpdwn_quest_report"]
+Report Schedule,Drop down,report_dropdown_questionnaire_option,//div[contains(@id$"react-select")]
+Report Schedule,container,report_container,//div[@class="col-detail"]
+Report Schedule,button,txt_report_save,//button[@id="btn_save_schedule"]
+Site,button,site_txt_details,//div[@id="tab_details_site"]
+Questionnaire,Enter Text,questionnaire_list_search,//input[@id="input_search_quest"]
+Questionnaire,Edit Button,questionnaire_edit_button,//img[@id="btn_edit_quest"]
+Questionnaire,Edit question,txt_questionnaire_name,//input[contains(@class$"styles__QuestionnaireTitleInput")]
+Questionnaire,Edit question,txt_questions_list,//div[@class="sc-fznzOf jxQFAb"]
+Department,serach,department_search,//input[@id="input_search_dept"]
+Department,serach,txt_department_name,//td[@class="col-name"]
+Edit Site,Search,site_search_field,//input[@id="input_search_site"]
+Edit Site,link,txt_site_supervisior,//div[@class="multiple-cell col-supervisor"]
+Edit Site,button,txt_super_removeall,(//button[text()="Clear All"])[1]
+Edit Site,button,txt_auditor_removeall,(//button[text()="Clear All"])[2]
+Edit Site,button,txt_removeall,//button[text()="Remove All"]
+Edit Site,button,popup_txt_remove,//button[text()="Remove"]
+Edit Site,Enter Text,enter_supervisor_name,//div[@id="site-detail__users-supervisor-dropdown"]//input[@id="select-user"]
+Edit Site,Enter Text,enter_auditor_name,//div[@id="site-detail__users-auditor-dropdown"]//input[@id="select-user"]
+Auditors,button,Auditor,//a[@id="menu_auditors"]
+Audit Login,Enter Text,Audit_Username,//input[@placeholder="Email or phone number"]
+Audit Login,Enter Text,Audit_Password,//input[@placeholder="Password"]
+Audit Login,button,AuditLogin,//div[text()="Log In"]
+Audit Home,tab,Schedule,//span[text()="Schedule"]
+Audit Home,tab,Settings,//span[text()="Settings"]
+Audit Settings,button,AccountLogout,//div[text()="ACCOUNT LOGOUT"]
+Audit,Enter Text,txt_audit_site_search,//input[@placeholder="Search"]
+Audit,button,txt_site_card,//div[text()="PRIORITY"]
+Audit,button,txt_questionnaire_not_started,//div[text()="Not Started"]
+Auditor,button,txt_checkin,//div[text()="Check In"]
+Auditor,button,popup_checkin,//div[text()="Yes"]
+Auditor,catalog,audit_first_answer,(//div[@data-testid="button-green"])[1]
+Auditor,catalog,audit_third_answer,//div[@data-testid="score-input"]
+Auditor,catalog,audit_second_answer,(//div[@data-testid="button-green"])[2]
+Auditor,button,audit_btn_next,//div[text()="NEXT"]
+Auditor,enter text,audit_third_answer_comments,//textarea[@data-testid="score-comment"]
+Auditor,enter text,audit_fourth_answer,//textarea[@data-testid="open-input"]
+Auditor,enter text,audit_fifth_answer,//input[@data-testid="number-input"]
+Auditor,enter text,audit_sixth_answer,//div[@data-testid="button-green"]
+Auditor,click,audit_seventh_answer,//div[@data-testid="multiple-choice-choices-0"]
+Auditor,enter text,audit_eighth_answer,//input[@data-testid="range-flag-input"]
+Auditor,click,audit_review_report,//div[@data-testid="finish-btn"]
+Auditor,button,audit_check_out,//div[text()="CHECK-OUT"]
+Auditor,button,audit_checkout_yes,//div[text()="Yes"]
+Auditor,text,audit_review_complete,//div[text()="GOT IT!"]
+yopmail,Enter Text,enter_text_yopmail,//input[@id="login"]
+yopmail,Enter Text,yopmail_arrow,//i[@class="material-icons-outlined f36"]
+Add User,button,auditor_add_user,//button[@id="btn_add_user"]
+Add User,Page title,auditor_page_title,//div[contains(@class$"AuditorEditorForm__Title")]
+Add User,Enter Text,auditor_username_field,//input[@id="input_user_auditor"]
+Add User,Enter Text,auditor_mail,//input[@id="input_email_auditor"]
+Add User,Role Field,auditor_role,//div[@id="drpdwn_role_auditor"]
+Add User,drop down,auditor_department,//div[@id="dropdwn_dept_auditor"]
+Add User,drop down,auditor_enter_department,(//input[contains(@id$"react-select")])[2]
+Add User,drop down,auditor_department_value,//div[contains(@id$"react-select")]
+Add User,Phone Field,auditor_phone,//input[@id="input_phone_auditor"]
+Add User,button,auditor_btn_save,//button[@id="btn_save_auditor"]
+Add User,message,auditor_success_message,//div[contains(text()$"successfully added.")]
+yopmail,title,txt_yopmail_title,//a[text()="Domains"]
+yopmail,button,title_activate_account,//a[text()="Activate account"]
+Audit Page,title,audit_page_title,//h1[text()="Set Up Password"]
+Frame,text,txt_frame,//iframe[@id="ifmail"]
+Audit,Enter Password,audit_new_password,//input[@placeholder="New Password"]
+Audit,Enter Confirm Password,audit_confirm_password,//input[@placeholder="Confirm Password"]
+Audit,Button,audit_submit_button,//a[text()="Submit"]
+Audit,Success Message,audit_txt_message,//p[@data-testid="reset-message-success"]
+Auditor,button,auditor_bulk_upload,//button[@id="btn_bulk_upload_auditor"]
+Auditor,upload title,auditor_upload_title,//div[text()="Upload User in Bulk"]
+Auditor,upload file,auditor_upload_file,//input[@type="file"]
+Auditor,upload button,auditor_button_upload,//button[@id="btn_upload_auditor"]
+Auditor,button,auditor_button_cancel,//button[@id="btn_cancel_upload_auditor"]
+Auditor,bulk upload,auditor_bulk_upload_message,//div[text()="Successfully upload users bulk"]
+Auditor,bulk upload,auditor_download_template,//a[@id="link_dwnld_template"]
+Auditors,search field,auditors_search_field,//input[@id="input_search_auditor"]
+Auditors,user email,auditors_user_search_record,//tr[@data-testid="user-rows"]//td[@class="col-email"]
+Bulk Upload Questions,Page title,bulk_upload_questionnaire_page_title,//div[text()="Want to add in bulk?"]
+Bulk Upload Questions,Enter Text,bulk_upload_questionnaire_name,//input[@id="input_step1"]
+Bulk Upload Questions,Drop down,bulk_upload_dropdown,//div[@id="drpdwn_step2"]
+Bulk Upload Questions,Drop down,bulk_upload_questions_options,//div[text()="FMCG - Bed Bug Report (English)"]
+Bulk Upload Questions,Upload File,bulk_upload_questionnaire_select_file,//input[@type="file"]
+Bulk Upload Questions,Button,button_bulk_upload_questionnaire,//button[@id="btn_upload_quest"]
+Bulk Upload Questionnaire,message,bulk_upload_questionnaire_message,//div[text()="Success upload bulk questionnaire"]
+Sites,button,bulk_upload_sites,//button[@id="btn_bulk_upload_sites"]
+Sites,Dropdown Option,bulk_schedule_upload_sites,//div[@id="btn_schedule_upload"]
+Sites,Page Title,bulk_schedule_upload_sites_page_title,//div[text()="Upload Schedule in bulk"]
+Sites,button,bulk_schedule_upload_sites_download,//a[@id="link_dwnld_template"]
+Sites,Radio Button,bulk_schedule_upload_sites_radio_button,//div[@id="radiobtn_replace_yes"]
+Sites,upload,bulk_schedule_upload_sites_upload,//input[@type="file"]
+Sites,Success Message,bulk_schedule_upload_sites_Message,//div[text()="Successfully upload site schedule bulk"]
+Sites,Cancel Button,bulk_schedule_upload_sites_cancel,//button[@id="btn_sche_cancel_upload"]
+Sites,Upload Button,bulk_schedule_upload_sites_upload_button,//button[@id="btn_sche_upload"]
+Sites,bulk edit,bulk_edit_schedule_sites,//div[@id="btn_edit_schedule_upload"]
+Sites,page title,bulk_edit_schedule_title,//div[text()="Edit Schedule in bulk"]
+Sites,download template,bulk_edit_schedule_sites_download,//a[@id="link_dwnld_template"]
+Sites,upload file,bulk_edit_schedule_sites_upload_template,//input[@type="file"]
+Sites,upload button,bulk_edit_schedule_sites_upload_button,//button[@id="btn_sche_upload"]
+Sites,Success Message,bulk_edit_schedule_message,//div[text()="Successfully upload site schedule bulk"]
+Sites,cancle button,bulk_edit_schedule_sites_cancel,//button[@id="btn_sche_cancel_upload"]
+Audit,page title,audit_schedule_page_title,//div[text()="This Week"]
+Audit Page,serch bar,audit_schedule_search_bar,//input[@placeholder="Search"]
+Audit Page,site cards,audit_schedule_site_cards,//div[@class="css-1dbjc4n r-lxv9s0 r-xd6kpl r-m611by"]//div[@class="css-1dbjc4n"]
+Audit Page,site cards,audit_schedule_site_cards_status,//div[text()="IN PROGRESS"]
+Audit Page,Site Card,audit_schedule_site_card_status,//div[text()="PRIORITY"]
+Audit Page,Site Card,audit_schedule_site_card_name,//div[text()="Auto1wDzurXUgV"]
+Audit Page,Site Card,audit_got_it,//div[text()="GOT IT!"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

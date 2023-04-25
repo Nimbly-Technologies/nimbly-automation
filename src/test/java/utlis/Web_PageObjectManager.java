@@ -3,38 +3,64 @@
 //Also used to create objects for the defined methods in pageobject files
 package utlis;
 
-import java.io.IOException;
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
-
-import app.app_page_objects.LoginPage_PageObjects.LoginPage;
-import app.app_page_objects.SettingsPage_PageObjects.LogOutPage;
-import io.appium.java_client.android.AndroidDriver;
-import web.web_page_objects.Web_LoginPage;
-
+import web.web_page_objects.SingleAudit;
+import web.web_page_objects.WebAuditPage;
+import web.web_page_objects.Web_AuditorsPage;
+import web.web_page_objects.Web_Common_Steps;
+import web.web_page_objects.Web_QuestionnairePage;
+import web.web_page_objects.Web_SitesPage;
 
 public class Web_PageObjectManager {
 
-public  Web_LoginPage webLoginPage ;
+	public SingleAudit singleAudit;
+	public Web_Common_Steps webCommonSteps;
+	public Web_QuestionnairePage webQuestionnairePage;
+	public Web_SitesPage webSitesPage;
+	public Web_AuditorsPage webAuditorsPage;
+	public WebAuditPage webAuditPage;
 
-public Properties prop;
-public UtlisManager utlisManager;
+	public Properties prop;
+	public UtlisManager utlisManager;
 
-public WebDriver webdriver;
+	public WebDriver webdriver;
 
-public  Web_PageObjectManager (WebDriver webdriver, Properties prop) //constructor
-{
+	public Web_PageObjectManager(WebDriver webdriver, Properties prop) // constructor
+	{
 
-	this.webdriver = webdriver;
-	this.prop = prop;
+		this.webdriver = webdriver;
+		this.prop = prop;
+	}
+
+	public SingleAudit singleAuditWorkflow() {
+		singleAudit = new SingleAudit(webdriver, prop);
+		return singleAudit;
+	}
+
+	public Web_Common_Steps getCommonSteps() {
+		webCommonSteps = new Web_Common_Steps(webdriver, prop);
+		return webCommonSteps;
+	}
+
+	public Web_QuestionnairePage getQuestionnairePage() {
+		webQuestionnairePage = new Web_QuestionnairePage(webdriver, prop);
+		return webQuestionnairePage;
+	}
+
+	public Web_SitesPage getSitesPage() {
+		webSitesPage = new Web_SitesPage(webdriver, prop);
+		return webSitesPage;
+	}
+
+	public Web_AuditorsPage getAuditotsPage() {
+		webAuditorsPage = new Web_AuditorsPage(webdriver, prop);
+		return webAuditorsPage;
+	}
+
+	public WebAuditPage getWebAuditPage() {
+		webAuditPage = new WebAuditPage(webdriver, prop);
+		return webAuditPage;
+	}
+
 }
-
-public Web_LoginPage getloginpage() throws IOException  //creating the object for thus defined loginpage POM file to use them in app.app_stepdefinitions
-{
-	webLoginPage = new Web_LoginPage(webdriver, prop);
-	 return webLoginPage;
-}
-
-}
-

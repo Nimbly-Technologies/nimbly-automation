@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 				"json:target/cucumberjsontestruns/samplerun.json",
 				"junit:target/cucumberxmltestruns/samplerun.xml",
 //				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
-//				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 //				"eventListeners = {MyListener.class}"
 //				"rerun:target/failed_scenarios.txt"
 				}
