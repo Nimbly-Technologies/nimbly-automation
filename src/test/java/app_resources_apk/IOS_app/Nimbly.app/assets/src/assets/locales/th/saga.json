@@ -1,0 +1,64 @@
+{
+  "journey": {
+    "create": {
+      "error": "สร้างรายงานการเดินทางล้มเหลว"
+    },
+    "update": {
+      "error": "อัปเดตรายงานการเดินทางล้มเหลว"
+    }
+  },
+  "company": {
+    "fetch": {
+      "error": "เรียกบริษัทล้มเหลว"
+    },
+    "create": {
+      "error": "สร้างบริษัทล้มเหลว"
+    },
+    "fetchProduct": {
+      "error": "เรียกสินค้าล้มเหลว"
+    },
+    "fetchProductCategories": {
+      "error": "เรียกหมวดสินค้าล้มเหลว"
+    },
+    "fetchTargetMarket": {
+      "error": "เรียกตลาดเป้าหมายสินค้าล้มเหลว"
+    },
+    "createCategory": {
+      "error": "สร้างหมวดสินค้าล้มเหลว"
+    },
+    "createTargetMarket": {
+      "error": "สร้างตลาดเป้าหมายล้มเหลว"
+    },
+    "createPromotion": {
+      "error": "สร้างโปรโมชันล้มเหลว"
+    },
+    "createProduct": {
+      "error": "สร้างสินค้าล้มเหลว"
+    }
+  },
+  "issue": {
+    "fetchIssueCategory": {
+      "error": "จัดการ - ดึงหมวดคำถามล้มเหลว"
+    },
+    "readAllIssue": {
+      "error": "การอ่านปัญหาทั้งหมดล้มเหลว",
+      "success": "การอ่านปัญหาทั้งหมดสำเร็จ"
+    }
+  },
+  "sales": {
+    "error": "ดึงยอดขายล้มเหลว"
+  },
+  "reportCache": {
+    "noConnection": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต กรุณาลองอีกครั้งในภายหลัง",
+    "systemError": "ข้อผิดพลาดเซิร์ฟเวอร์ภายใน กรุณาลองใหม่อีกครั้ง",
+    "noKeyReport": "ไม่พบรหัสรายงานขณะถอนรายงาน",
+    "multipleCheckIn": "พบการเช็คอินหลายครั้ง"
+  },
+  "document": {
+    "documentDoesntExist": "ไม่มีเอกสารนี้",
+    "documentFailtoUpload": "อัปโหลดเอกสารล้มเหลว"
+  },
+  "submitApiReport": {
+    "error": "อัปโหลดรายงานล้มเหลว"
+  }
+}

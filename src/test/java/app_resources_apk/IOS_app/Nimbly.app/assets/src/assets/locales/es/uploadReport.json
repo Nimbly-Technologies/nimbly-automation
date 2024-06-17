@@ -1,0 +1,42 @@
+{
+  "error": {
+    "connection": "Vaya, se perdió la conexión a Internet. Vuelva a intentarlo más tarde.",
+    "timeout": "ERROR: El tiempo de espera de la solicitud de conexión ha expirado , inténtelo de nuevo",
+    "fileName": "Nombre de archivo no encontrado",
+    "offline": "Actualmente esta desconectado (a).\nVuelva a intentarlo más tarde",
+    "upload": "ERROR: Error de carga, inténtelo de nuevo!"
+  },
+  "prompt": {
+    "backPress": "El informe aún se está cargando.\nEstá seguro de que desea salir de esta página?",
+    "warningCapital": "ADVERTENCIA",
+    "warning": "Advertencia"
+  },
+  "container": {
+    "loading": "Cargando ...",
+    "failUpload": "FALLO AL CARGAR",
+    "uploadingCapital": "SUBIENDO...",
+    "reportSaved": "INFORME GUARDADO!",
+    "reportSavedDesc": "Su informe se ha guardado. Puede cargar su informe desde el lobby del sitio una vez que se vuelva a conectar a Internet.",
+    "uploadFailed": "FALLO AL SUBIR",
+    "inProgress": "En progreso",
+    "oops": "Uh-oh!",
+    "failUploading": "Error al subir el informe. Presione el botón de abajo para volver a intentar cargarlo!",
+    "hooray": "Hurra!",
+    "hitButton": "Pulse el botón de abajo para enviar el informe!",
+    "offline": "DESCONECTADO",
+    "uploadLater": "Puede intentar subir más tarde.",
+    "retryUpload": "REINTENTAR SUBIDA",
+    "uploading": "SUBIENDO...",
+    "uploadReport": "SUBIR INFORME",
+    "uploadLaterCapital": "SUBIR MÁS TARDE",
+    "online": "EN LÍNEA",
+    "backToHome": "De vuelta a casa"
+  },
+  "failedModal": {
+    "general": {
+      "title": "Uh oh! Su archivo adjunto no se cargó",
+      "text": "Se produjo un error y no podemos cargar sus archivos adjuntos. Vuelva a cargar sus archivos adjuntos.",
+      "button": "Volver al cuestionario"
+    }
+  }
+}

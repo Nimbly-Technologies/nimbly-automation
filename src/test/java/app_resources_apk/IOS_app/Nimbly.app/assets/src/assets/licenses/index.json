@@ -1,0 +1,118 @@
+{
+  "licenses": [
+    {
+      "title": "Bluebird",
+      "url": "https://github.com/petkaantonov/bluebird",
+      "licenseUrl": "https://github.com/petkaantonov/bluebird/blob/master/LICENSE",
+      "license": "Copyright (c) 2013-2017 Petka Antonov"
+    },
+    {
+      "title": "Immutability Helper",
+      "url": "https://github.com/kolodny/immutability-helper",
+      "licenseUrl": "https://github.com/kolodny/immutability-helper/blob/master/LICENSE",
+      "license": "Copyright (c) 2017 Moshe Kolodny"
+    },
+    {
+      "title": "Lodash",
+      "url": "https://lodash.com/",
+      "licenseUrl": "https://github.com/lodash/lodash/blob/master/LICENSE",
+      "license": "Copyright JS Foundation and other contributors"
+    },
+    {
+      "title": "Moment",
+      "url": "http://momentjs.com/",
+      "licenseUrl": "https://github.com/moment/moment/blob/develop/LICENSE",
+      "license": "Copyright (c) JS Foundation and other contributors"
+    },
+    {
+      "title": "React",
+      "url": "https://reactjs.org/",
+      "licenseUrl": "https://github.com/facebook/react/blob/master/LICENSE",
+      "license": "Copyright (c) Facebook, Inc. and its affiliates."
+    },
+    {
+      "title": "React Native",
+      "url": "https://github.com/facebook/react-native",
+      "licenseUrl": "https://github.com/facebook/react-native/blob/master/LICENSE",
+      "license": "Copyright (c) Facebook, Inc. and its affiliates."
+    },
+    {
+      "title": "CodePush",
+      "url": "https://microsoft.github.io/code-push/",
+      "licenseUrl": "https://github.com/Microsoft/react-native-code-push/blob/master/LICENSE.md",
+      "license": "Copyright (c) Microsoft Corporation"
+    },
+    {
+      "title": "React Native FS",
+      "url": "https://github.com/itinance/react-native-fs",
+      "licenseUrl": "https://github.com/itinance/react-native-fs/blob/master/LICENSE",
+      "license": "Copyright (c) 2015 Johannes Lumpe"
+    },
+    {
+      "title": "React Native Image Crop Picker",
+      "url": "https://github.com/ivpusic/react-native-image-crop-picker",
+      "licenseUrl": "https://github.com/ivpusic/react-native-image-crop-picker/blob/master/LICENSE",
+      "license": "Copyright (c) 2017 Ivan Pusic"
+    },
+    {
+      "title": "Vector Icons",
+      "url": "https://github.com/oblador/react-native-vector-icons",
+      "licenseUrl": "https://github.com/oblador/react-native-vector-icons/blob/master/LICENSE",
+      "license": "Copyright (c) 2015 Joel Arvidsson"
+    },
+    {
+      "title": "React Native Firebase",
+      "url": "https://github.com/invertase/react-native-firebase",
+      "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+      "license": "Copyright (c) 2018 Invertase Limited"
+    },
+    {
+      "title": "React Native Geolocation Service",
+      "url": "https://github.com/Agontuk/react-native-geolocation-service",
+      "licenseUrl": "https://github.com/Agontuk/react-native-geolocation-service/blob/master/LICENSE",
+      "license": "Copyright (c) 2018 Iftekhar Rifat"
+    },
+    {
+      "title": "React Native Swiper",
+      "url": "https://github.com/leecade/react-native-swiper",
+      "licenseUrl": "https://github.com/leecade/react-native-swiper/blob/master/LICENSE",
+      "license": "Copyright (c) 2015 斯人"
+    },
+    {
+      "title": "React Navigation",
+      "url": "https://github.com/react-navigation/react-navigation",
+      "licenseUrl": "https://github.com/react-navigation/react-navigation/blob/master/LICENSE",
+      "license": "Copyright (c) 2016-present, React Navigation Contributors"
+    },
+    {
+      "title": "React Redux",
+      "url": "https://github.com/reduxjs/react-redux",
+      "licenseUrl": "https://github.com/reduxjs/react-redux/blob/master/LICENSE.md",
+      "license": "Copyright (c) 2015-present Dan Abramov"
+    },
+    {
+      "title": "React Redux Firebase",
+      "url": "http://react-redux-firebase.com/",
+      "licenseUrl": "https://github.com/prescottprue/react-redux-firebase/blob/master/LICENSE.md",
+      "license": "Copyright (c) 2016-present Prescott Prue"
+    },
+    {
+      "title": "Redux",
+      "url": "https://redux.js.org/",
+      "licenseUrl": "https://github.com/reduxjs/redux/blob/master/LICENSE.md",
+      "license": "Copyright (c) 2015-present Dan Abramov"
+    },
+    {
+      "title": "Redux Thunk",
+      "url": "https://github.com/reduxjs/redux-thunk",
+      "licenseUrl": "https://github.com/reduxjs/redux-thunk/blob/master/LICENSE.md",
+      "license": "Copyright (c) 2015-present Dan Abramov"
+    },
+    {
+      "title": "Typesafe Actions",
+      "url": "https://github.com/piotrwitek/typesafe-actions",
+      "licenseUrl": "https://github.com/piotrwitek/typesafe-actions/blob/master/LICENSE",
+      "license": "Copyright (c) 2017 Piotr Witek"
+    }
+  ]
+}

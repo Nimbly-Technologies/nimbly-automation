@@ -1,0 +1,21 @@
+{
+    "startJourney": "Start Journey",
+    "finishJourney": "Finish Journey",
+    "finished": "Finished",
+    "totalTime": "Journey time total",
+    "visitedSites": "Sites Visited",
+    "loadingJourneyInfo": "Loading journey info...",
+    "toast": {
+        "errorOcurred": "An error has ocurred, please try again later."
+    },
+    "alert": {
+        "noSchedule": "No schedule for this journey for today",
+        "onGoingJourney": "Another journey is ongoing\nYou can not start this journey",
+        "confirmStartJourney" : "Are you sure to start this journey?",
+        "confirmFinishJourney": "Are you sure to finish the journey?",
+        "missedSites": "There will be missed sites",
+        "alreadyFinishSite": "You have already finished this site",
+        "alreadyFinishJourney": "You have already finished this journey",
+        "startJourneyFirst": "You have to start the journey first"
+    }
+}

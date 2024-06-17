@@ -1,0 +1,235 @@
+{
+  "prompt": {
+    "editPhoto": "Ubah Foto",
+    "photo": "Apa yang ingin Anda lakukan dengan foto ini?",
+    "draw": "Gambar",
+    "change": "Ubah",
+    "addPhoto": "Tambahkan Foto",
+    "accessCamera": "Akses Kamera",
+    "close": "Tutup",
+    "aiVerification": "Verifikasi AI",
+    "editFile": "Ubah File",
+    "file": "Apakah anda ingin menghapus file ini?",
+    "warningNewFile": "Pilih file baru",
+    "warningCancel": "Kembali",
+    "cannotAttach": "Tidak dapat menyematkan",
+    "limitFile": "Besar ukuran file melebihi limitasi kami sebesar 7mb."
+  },
+  "modal": {
+    "warningMissing": "PERHATIAN: Laporan ini telah dimulai pada perangkat lain. {{invalidPhotoCount}} foto akan dihapus jika dilanjutkan.\n\nAnda yakin?",
+    "photoMissing": "Foto Hilang",
+    "proceed": "Lanjutkan",
+    "attachmentMissing": "Attachment Missing"
+  },
+  "permission": {
+    "check": "Nimbly membutuhkan akses kamera dan galeri untuk mengambil gambar.\nHarap berikan akses di pengaturan perangkat anda."
+  },
+  "takePhoto": "Ambil Foto",
+  "recordVideo": "Rekam Video",
+  "sourceCamera": "Dari Camera",
+  "sourceGallery": "Dari Galeri",
+  "takeFile": "Tambah pdf, xlsx, or doc file",
+  "error": {
+    "noPerson": "Error: Tidak ada orang yang terdeteksi di foto. Silakan coba lagi.",
+    "detectFailed": "Ada yang salah dengan AI. Silakan isi jawaban Anda secara manual.",
+    "noTemperature": "Error: Tidak ada angka temperature yang terdeteksi di foto. Silakan coba lagi.",
+    "missingData": {
+      "title": "Data Tidak Ditemukan",
+      "description": "Beberapa data tidak ditemukan di laporan ini. Mohon hapus laporan dan ulangi kembali."
+    }
+  },
+  "toast": {
+    "detectSuccess": "AI berhasil. Harap periksa sebelum melanjutkan."
+  },
+  "container": {
+    "loadingQuestionnaire": "Memuat Kuesioner...",
+    "nextQuestion": "PERTANYAAN SELANJUTNYA"
+  },
+  "tutorial": {
+    "clickReport": "Klik di sini untuk mengulas laporan",
+    "questionnaireProgress": "Progress bar akan berubah ketika mengisi jawaban",
+    "loadingCapital": "MEMUAT...",
+    "finishSection": "SELESAIKAN LAPORAN",
+    "reviewReport": "ULAS LAPORAN",
+    "clickIcon": "Klik ikon ini untuk menambahkan gambar",
+    "notRequired": "Pilihan ini akan muncul jika jawaban tidak diperlukan"
+  },
+  "uploadCVModal": {
+    "loadingAI": "Memuat AI ..."
+  },
+  "questionnaireSwiper": {
+    "followUp": "Jawab {{index}}/{{total}} pertanyaan lanjutan",
+    "backToTop": "{{index}}/{{total}} - Kembali ke atas",
+    "questionNumber": "Pertanyaan {{index}} dari {{length}}",
+    "done": "[SELESAI]",
+    "conditionalNumber": "Pertanyaan {{index}} dari {{length}}",
+    "followUpConditional": "Pertanyaan Lanjutan {{index}} dari {{length}}:",
+    "scrollError": {
+      "title": "Terjadi kesalahan",
+      "description": "Maaf, terjadi kesalahan. Mohon gulir secara manual."
+    }
+  },
+  "recommendation": {
+    "title": "Rekomendasi",
+    "choseRecommendation": "Anda bisa pilih lebih dari 1",
+    "placeholder": "Ketik jawaban khusus Anda",
+    "set": "AN",
+    "tap": "+ Ketuk untuk menambahkan rekomendasi"
+  },
+  "swiperMedia": {
+    "selectMedia": "Tambahkan media pada jawaban anda",
+    "minimumPhoto": "Min foto",
+    "minimumVideo": "Min video",
+    "minimumDocuments": "Minimum Dokumen"
+  },
+  "addPhoto": "Tambah Gambar",
+  "addVideo": "Tambah Video",
+  "question": {
+    "binary": {
+      "firstYes": "Baik",
+      "no": "Kurang",
+      "redFlag": "Buruk",
+      "comments": "Komentar",
+      "optional": " (opsional)"
+    },
+    "multipleChoice": {
+      "comments": "Komentar",
+      "optional": " (opsional)"
+    },
+    "checkList": {
+      "comments": "Komentar",
+      "optional": " (opsional)"
+    },
+    "number": {
+      "typeAnswer": "Ketik jawaban Anda disini",
+      "comments": "Komentar",
+      "optional": " (opsional)"
+    },
+    "score": {
+      "weight": "Bobot",
+      "note": "Catatan: Sebuah isu akan dibuat mengenai pertanyaan ini.",
+      "comments": "Komentar",
+      "optional": " (opsional)",
+      "title": "Skor",
+      "answer": "Geser untuk menilai"
+    },
+    "rangeFlag": {
+      "typeAnswer": "Ketik jawaban Anda disini",
+      "comments": "Komentar",
+      "optional": " (opsional)",
+      "answerWithin": "Jawaban ada di rentang",
+      "redFlag": "Bendera Merah",
+      "yellowFlag": "Bendera Kuning",
+      "greenFlag": "Bendera Hijau"
+    },
+    "inventory": {
+      "previous": "Sebelum",
+      "onHand": "Tersedia",
+      "comments": "Komentar",
+      "optional": " (opsional)"
+    },
+    "newInventory": {
+      "searchSKU": "Cari SKU",
+      "SKUNotFound": "SKU tidak ditemukan.",
+      "contactAdmin": "Silahkan hubungi Administrator Anda.",
+      "previous": "Sebelum",
+      "onHand": "Tersedia",
+      "comments": "Komentar",
+      "optional": " (opsional)",
+      "currentStock": "Berapa stok saat ini?",
+      "comment": "Komen",
+      "takePhoto": "Ambil Gambar"
+    },
+    "open": {
+      "typeAnswer": "Ketik jawaban Anda disini"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "Pilih Perusahaan",
+      "addNewCompany": "Tambah Perusahaan Baru",
+      "categoryEmpty": "Kategori Tidak Boleh Kosong",
+      "targetMarketEmpty": "Sasaran Pasar Tidak Boleh Kosong",
+      "promotion": {
+        "title": "Judul Promosi",
+        "name": "Masukkan nama promosi",
+        "product": "Produk",
+        "selectProduct": "Pilih Produk",
+        "choosePromotionType": "Pilih Tipe Promosi",
+        "promotionType": "Tipe Promosi",
+        "promotionImage": "Gambar Promosi",
+        "takePicture": "Ambil Gambar",
+        "fromGallery": "Dari Galeri",
+        "displayLocation": "Lokasi Promosi",
+        "enterLocation": "Masukkan lokasi promosi",
+        "detailPromotion": "Detail Promosi",
+        "enterDetail": "Deskripsikan detil promosi",
+        "promotionPeriod": "Periode Promosi",
+        "startDate": "Tanggal Awal",
+        "endDate": "Tanggal Akhir",
+        "to": "hingga"
+      },
+      "product": {
+        "name": "Nama Produk",
+        "enterName": "Masukkan nama produk",
+        "category": "Kategori Produk",
+        "selectCategory": "Pilih Kategori",
+        "addNewCategory": "Tambah Kategori",
+        "productImage": "Gambar Produk",
+        "takePicture": "Ambil Gambar",
+        "fromGallery": "Dari Galeri",
+        "productPrice": "Kisaran Harga Produk",
+        "add": "Tambah",
+        "description": "Deskripsi",
+        "enterDescription": "Deskripsikan detil produk",
+        "targetMarket": "Sasaran Pasar",
+        "selectTargetMarket": "Pilih Sasaran Pasar",
+        "addNewTargetMarket": "Tambah Sasaran Pasar",
+        "variantOf": "Produk adalah varian dari ...",
+        "selectProduct": "Pilih Produk",
+        "store": "Toko",
+        "selectStore": "Pilih Toko"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[AI] Masker terdeteksi pada staff.",
+        "incorrectly_wear": "[AI] Masker terdeteksi tapi tidak digunakan dengan seharusnya.",
+        "without_mask": "[AI] Masker tidak terdeteksi pada staff."
+      },
+      "temperature": {
+        "with_temperature": "[AI] Temperatur terdeteksi di foto.",
+        "without_temperature": "[AI] Temperatur tidak terdeteksi di foto."
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "Mohon masukkan komentar",
+    "commentTooLong": "Komentar terlalu panjang",
+    "insertNumber": "Mohon masukkan nomor",
+    "outRange": "Angka di luar batas",
+    "negative": "Angka negatif",
+    "outNumber": "Angka negatif"
+  },
+  "drawer": {
+    "noQuestions": "Pertanyaan dengan '{{query}}' tidak ditemukan",
+    "searchQuestions": "Cari Pertanyaan",
+    "score": "Skor"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - Izin Kamera",
+    "cameraText": "Ambil foto / video isu dan lampirkan ke laporan Anda",
+    "audioPermission": "Nimbly - Izin Rekaman Audio",
+    "auditText": "Rekam video tentang isu dan lampirkan ke laporan Anda",
+    "onMountError": "Kesalahan saat memasang kamera",
+    "clearCache": "Harap bersihkan cache dan pastikan akses kamera telah diberikan",
+    "failCapture": "Gagal mengambil foto",
+    "tryAgain": "Mohon coba kembali atau hubungi admin",
+    "takeSixtySecond": "Rekam video 60 detik",
+    "failVideoCapture": "Gagal merekam video"
+  },
+  "priorityModal": {
+    "title": "Prioritas diatur ke ",
+    "description1": "Jawaban menghasilkan",
+    "description2": "prioritas masalah",
+    "changePriority": "Ubah Prioritas"
+  }
+}

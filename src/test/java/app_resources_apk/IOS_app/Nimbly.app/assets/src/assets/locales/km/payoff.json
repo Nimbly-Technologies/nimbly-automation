@@ -1,0 +1,19 @@
+{
+  "reportComplete": "របាយការណ៍បានបញ្ចប់ !",
+  "generateReport": "ឥឡូវនេះ យើងកំពុងតែបង្កើតរបាយការណ៍របស់អ្នក ,\nនវានឹងត្រូវបានគេផ្ញើចេញទៅប៉ុន្មាននាទីទៀត ។",
+  "dateOfVisit": "កាលបរិច្ឆេទនៃការចូលមើល",
+  "timeOfVisit": "ពេលវេលានៃការចូលមើល",
+  "duration": "រយៈពេល",
+  "totalScore": "ពិន្ទុសរុប",
+  "gotIt": "ទទួលបានហើយ !",
+  "backToJourneyPlan": "ត្រឡប់ទៅកាន់ផែនការធ្វើដំណើរវិញ",
+  "score": "ពិន្ទុ",
+  "redFlags": "Red Flags",
+  "yellowFlags": "Yellow Flags",
+  "greenFlags": "Green Flags",
+  "grade": "Grade",
+  "notification": {
+    "body": "ប៉ះនៅទីនេះដើម្បីបញ្ចប់របាយការណ៍របស់អ្នក។",
+    "title": "របាយការណ៍ @"
+  }
+}

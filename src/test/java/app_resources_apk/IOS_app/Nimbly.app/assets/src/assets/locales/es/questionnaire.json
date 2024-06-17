@@ -1,0 +1,248 @@
+{
+  "prompt": {
+    "editPhoto": "Editar Foto",
+    "photo": "Qué te gustaría hacer con esta foto?",
+    "draw": "Dibujar",
+    "change": "Cambia",
+    "addPhoto": "Agregar Foto",
+    "accessCamera": "Acceder a la Cámara",
+    "close": "Cerrar",
+    "aiVerification": "Verificación de IA",
+    "editFile": "Edit File",
+    "file": "Would you to delete with this file?",
+    "warningNewFile": "Select a new file",
+    "warningCancel": "Cancel",
+    "cannotAttach": "Cannot attach",
+    "limitFile": "The file size you selected exceeds our 7mb limit."
+  },
+  "modal": {
+    "warningMissing": "ADVERTENCIA: Este informe se inició en un dispositivo diferente. {{invalidPhotoCount}} photo(s) se eliminarán si continúa.\n\nEstás seguro?",
+    "photoMissing": "Faltan Fotos",
+    "proceed": "Continuar",
+    "attachmentMissing": "Attachment Missing"
+  },
+  "permission": {
+    "check": "Nimbly necesita acceso a su cámara y galería para tomar fotos.\nHabilítelo en la configuración de su dispositivo."
+  },
+  "takePhoto": "Tomar Foto",
+  "recordVideo": "Grabar un vídeo",
+  "sourceCamera": "From Cámara",
+  "sourceGallery": "From Galería",
+  "takeFile": "Add pdf, xlsx, or doc files",
+  "error": {
+    "noPerson": "Error: No se detectó a ninguna persona en la foto. Vuelve a intentarlo.",
+    "detectFailed": "Algo salió mal con la IA. Por favor, complete su respuesta manualmente.",
+    "noTemperature": "Error: No temperature number detected in photo. Vuelve a intentarlo.",
+    "missingData": {
+      "title": "Missing Data",
+      "description": "Some data are missing from this report. Please reset the report and try again."
+    }
+  },
+  "toast": {
+    "detectSuccess": "La IA generó una respuesta correctamente. Compruébalo antes de continuar."
+  },
+  "container": {
+    "loadingQuestionnaire": "Cargando Cuestionario...",
+    "nextQuestion": "SIGUIENTE PREGUNTA"
+  },
+  "tutorial": {
+    "clickReport": "Haga clic aquí para revisar el informe",
+    "questionnaireProgress": "La barra de progreso cambiará al completar las respuestas",
+    "loadingCapital": "CARGANDO...",
+    "finishSection": "FINALIZAR SECCIÓN",
+    "reviewReport": "REVISAR INFORME",
+    "clickIcon": "Haga clic en el icono para agregar una foto",
+    "notRequired": "Esta opción aparecerá si no se requiere respuesta"
+  },
+  "uploadCVModal": {
+    "loadingAI": "Cargando IA ..."
+  },
+  "questionnaireSwiper": {
+    "followUp": "Ir {{index}}/{{total}} Pregunta de seguimiento",
+    "backToTop": "{{index}}/{{total}} - Volver Al Principio",
+    "questionNumber": "Pregunta {{index}} de {{length}}",
+    "done": "[HECHO]",
+    "conditionalNumber": "Pregunta {{index}} de {{length}}",
+    "followUpConditional": "Pregunta de seguimiento {{index}} de {{length}}:",
+    "scrollError": {
+      "title": "Error",
+      "description": "Lo siento, hay un error. Por favor, desplácese manualmente."
+    }
+  },
+  "recommendation": {
+    "title": "Recommendation",
+    "choseRecommendation": "Puede elegir más de 1",
+    "placeholder": "Escriba aquí su respuesta personalizada",
+    "set": "LISTO",
+    "tap": "+ Toque para agregar una recomendación"
+  },
+  "swiperMedia": {
+    "selectMedia": "Seleccione los medios para agregar a su respuesta",
+    "minimumPhoto": "Mínimo de fotos",
+    "minimumVideo": "Mínimo de vídeo",
+    "minimumDocuments": "Document Minimum"
+  },
+  "addPhoto": "Agregar Foto",
+  "addVideo": "Agregar Video",
+  "question": {
+    "binary": {
+      "firstYes": "Sí",
+      "no": "No",
+      "redFlag": "Señalización Roja (el problema es grave)",
+      "comments": "Comentarios",
+      "optional": " (opcional)"
+    },
+    "multipleChoice": {
+      "comments": "Comentarios",
+      "optional": " (opcional)"
+    },
+    "checkList": {
+      "comments": "Comentarios",
+      "optional": " (opcional)"
+    },
+    "number": {
+      "typeAnswer": "Escriba su respuesta aquí",
+      "comments": "Comentarios",
+      "optional": " (opcional)"
+    },
+    "score": {
+      "weight": "Peso",
+      "note": "Nota: Se creará un problema para esta pregunta.",
+      "comments": "Comentarios",
+      "optional": " (opcional)",
+      "title": "Puntuación",
+      "answer": "Desliza para establecer la puntuación"
+    },
+    "rangeFlag": {
+      "typeAnswer": "Escriba su respuesta aquí",
+      "comments": "Comentarios",
+      "optional": " (opcional)",
+      "answerWithin": "Responde en el contexto",
+      "redFlag": "Señalización Roja",
+      "yellowFlag": "Señalización Amarilla",
+      "greenFlag": "Señalización Verde"
+    },
+    "inventory": {
+      "previous": "Anterior",
+      "onHand": "Disponible",
+      "comments": "Comentarios",
+      "optional": " (opcional)"
+    },
+    "newInventory": {
+      "searchSKU": "Busque un SKU",
+      "SKUNotFound": "SKU no encontrado.",
+      "contactAdmin": "Póngase en contacto con Su Administrador",
+      "previous": "Anterior",
+      "onHand": "Disponible",
+      "comments": "Comentarios",
+      "optional": " (opcional)",
+      "currentStock": "Cuál es el inventario actual?",
+      "comment": "Comentarios",
+      "takePhoto": "Tome una Foto"
+    },
+    "open": {
+      "typeAnswer": "Escriba su respuesta aquí"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "Seleccionar Empresa",
+      "addNewCompany": "Agregar Nueva Empresa",
+      "categoryEmpty": "La categoría No puede estar vacía",
+      "targetMarketEmpty": "El Mercado Objetivo no puede estar vacío",
+      "promotion": {
+        "title": "Título de la promoción",
+        "name": "Ingresa el nombre de la promoción",
+        "product": "Producto",
+        "selectProduct": "Seleccionar producto",
+        "choosePromotionType": "Seleccione el tipo de promoción",
+        "promotionType": "Tipo de promoción",
+        "promotionImage": "Imágenes de promoción",
+        "takePicture": "Tomar Foto",
+        "fromGallery": "Desde la galería",
+        "displayLocation": "Mostrar Ubicación",
+        "enterLocation": "Introduzca la ubicación de visualización de la promoción",
+        "detailPromotion": "Detalle de la promoción",
+        "enterDetail": "Describa los detalles de la promoción",
+        "promotionPeriod": "Periodo de Promoción",
+        "startDate": "Fecha de Inicio",
+        "to": "to",
+        "endDate": "Fecha de Finalización"
+      },
+      "product": {
+        "name": "Nombre del producto",
+        "enterName": "Ingrese el nombre del producto",
+        "category": "Categoría de producto",
+        "selectCategory": "Seleccionar categoría",
+        "addNewCategory": "Agregar nueva categoría",
+        "productImage": "Imágenes del producto",
+        "takePicture": "Tomar foto",
+        "fromGallery": "Desde la galería",
+        "productPrice": "Rango de precios del producto",
+        "add": "Agregar",
+        "description": "Descripción",
+        "enterDescription": "Describe el detalle del producto",
+        "targetMarket": "Mercado objetivo",
+        "selectTargetMarket": "Seleccionar mercado objetivo",
+        "addNewTargetMarket": "Agregar nuevo mercado objetivo",
+        "variantOf": "El producto es una variante de...",
+        "selectProduct": "Seleccionar producto",
+        "store": "Tienda",
+        "selectStore": "Seleccionar tienda"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[AI] Face mask detected on staff member.",
+        "incorrectly_wear": "[AI] Face mask detected but not worn properly.",
+        "without_mask": "[AI] Face mask not detected on staff member."
+      },
+      "temperature": {
+        "with_temperature": "[AI] Temperature detected on the photo.",
+        "without_temperature": "[AI] Temperature not detected on the photo."
+      }
+    },
+    "takePhoto": "Tomar foto",
+    "sourceCamera": "De la cámara",
+    "sourceGallery": "De la galería",
+    "takeFile": "Agregar archivos pdf, xlsx o, doc",
+    "error": {
+      "noPerson": "Error: No se detectó ninguna persona en la foto. Inténtalo de nuevo.",
+      "detectFailed": "Algo salió mal con la IA. Por favor complete su respuesta manualmente.",
+      "noTemperature": "Error: No se detectó el número de temperatura en la foto. Inténtalo de nuevo.",
+      "missingData": {
+        "title": "Datos perdidos",
+        "description": "Faltan algunos datos en este informe. Restablece el informe e inténtalo de nuevo."
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "Escriba un comentario",
+    "commentTooLong": "Comentario demasiado largo",
+    "insertNumber": "Introduzca un número",
+    "outRange": "El número está fuera de rango",
+    "negative": "El número es negativo",
+    "outNumber": "El número de salida es negativo"
+  },
+  "drawer": {
+    "noQuestions": "No se encontraron preguntas con '{{query}}'",
+    "searchQuestions": "Preguntas de búsqueda",
+    "score": "Puntuación"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - Permisos de cámara",
+    "cameraText": "Tome fotos/videos de problemas y adjúntelos a su informe",
+    "audioPermission": "Nimbly - Permisos de grabación de audio",
+    "auditText": "Grabe videos de problemas y adjúntelos a su informe",
+    "failCapture": "No se pudo capturar la foto",
+    "onMountError": "Error al montar la cámara",
+    "clearCache": "Borre el caché y asegúrese de permitir los permisos de la cámara",
+    "tryAgain": "Inténtelo de nuevo o póngase en contacto con un administrador",
+    "takeSixtySecond": "Grabe un video de 60 segundos",
+    "failVideoCapture": "No se pudo capturar el video"
+  },
+  "priorityModal": {
+    "title": "Prioridad establecida en",
+    "description1": "La respuesta generó un",
+    "description2": "asunto prioritario",
+    "changePriority": "Cambiar Prioridad"
+  }
+}

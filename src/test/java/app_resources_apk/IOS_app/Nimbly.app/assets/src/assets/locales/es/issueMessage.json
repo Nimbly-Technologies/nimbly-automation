@@ -1,0 +1,32 @@
+{
+  "assignedDepartment": {
+    "update": "changed the assigned department to {{payload}}",
+    "remove": "removed the assigned department"
+  },
+  "assignedTo": {
+    "update": "changed the assigned auditor to {{payload}}",
+    "default": "You have been assigned to be the auditor of this issue"
+  },
+  "dueDate": {
+    "update": "changed the due date to {{payload}}"
+  },
+  "severity": {
+    "update": "changed the flag of the issue to {{payload}}"
+  },
+  "priority": {
+    "update": "changed the priority to {{payload}}"
+  },
+  "status": {
+    "update": "changed issue status from {{prevStatus}} to {{currentStatus}}"
+  },
+  "comment": {
+    "add": "{{payload}} commented on the issue"
+  },
+  "members": {
+    "add": "added {{payload}} to the issue members",
+    "remove": "remove {{payload}} from the issue members"
+  },
+  "escalation": {
+    "default": "This issue has been escalated to {{payload}}"
+  }
+}

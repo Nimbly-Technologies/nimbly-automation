@@ -1,0 +1,21 @@
+{
+  "startJourney": "Mulai Perjalanan",
+  "finishJourney": "Selesaikan Perjalanan",
+  "finished": "Selesai",
+  "totalTime": "Total waktu perjalanan",
+  "visitedSites": "Lokasi yang dikunjungi",
+  "loadingJourneyInfo": "Memuat info perjalanan...",
+  "toast": {
+    "errorOcurred": "Terjadi kesalahan, silahkan coba lagi kembali\n"
+  },
+  "alert": {
+    "noSchedule": "Tidak ada jadwal journey ini untuk hari ini",
+    "onGoingJourney": "Journey lain sedang berjalan\nTidak bisa menjalankan journey ini",
+    "confirmStartJourney": "Anda yakin untuk memulai journey ini?",
+    "confirmFinishJourney": "Anda yakin untuk mengakhiri journey?",
+    "missedSites": "Akan ada lokasi yang terlewat",
+    "alreadyFinishSite": "Site ini sudah selesai",
+    "alreadyFinishJourney": "Perjalanan sudah selesai",
+    "startJourneyFirst": "Mulai journey terlebih dahulu"
+  }
+}

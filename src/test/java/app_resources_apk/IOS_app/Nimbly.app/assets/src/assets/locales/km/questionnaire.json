@@ -1,0 +1,249 @@
+{
+  "prompt": {
+    "editPhoto": "កែរូបថត",
+    "photo": "តើអ្នកចង់ធ្វើអ្វីជាមួយនឹងរូបថតនេះ?",
+    "draw": "គូរ",
+    "change": "ផ្លាស់ប្តូរ",
+    "addPhoto": "បន្ថែមរូបថត",
+    "accessCamera": "ចូលទៅប្រើកាមេរ៉ា",
+    "close": "បិទ",
+    "aiVerification": "ការបញ្ជាក់ AI",
+    "cannotAttach": "មិនអាចភ្ជាប់បានទេ",
+    "editFile": "កែហ្វាល",
+    "file": "តើអ្នកចង់លុបជាមួយហ្វាលនេះទេ?",
+    "limitFile": "ទំហំហ្វាលអ្នកបានជ្រើសរើសលើកម្រិត 7mb របស់យើង។",
+    "warningCancel": "លុបចោល",
+    "warningNewFile": "ជ្រើសរើសហ្វាលថ្មី"
+  },
+  "modal": {
+    "warningMissing": "ការព្រមាន : របាយការណ៍នេះត្រូវបានចាប់ផ្តើមនៅលើឧបករណ៍ផ្សេង។ {{invalidPhotoCount}} រូបថតនឹងត្រូវគេលប់ចេញ ប្រសិនបើអ្នកបន្ត ។ \nនតើអ្នកប្រាកដទេ ?",
+    "photoMissing": "បាត់រូបថត",
+    "proceed": "បន្ត ",
+    "attachmentMissing": "Attachment Missing"
+  },
+  "permission": {
+    "check": "Nimbly ត្រូវការចូលទៅប្រើកាមេរ៉ា និងវិចិត្រសាល របស់អ្នកដើម្បីថតរូប ។ \nនសូមបើកឲ្យដំណើរការនៅក្រោមការកំណត់ឧបករណ៍របស់អ្នក ។"
+  },
+  "takePhoto": "ថតរូប",
+  "recordVideo": "ថតវីដេអូ",
+  "error": {
+    "noPerson": "កំហុស : គ្មាននរណាម្នាក់ត្រូវបានរកឃើញនៅក្នុងរូបថតនោះទេ ។ សូមព្យាយាមម្តងទៀត",
+    "detectFailed": "មានអ្វីមួយខុសប្រក្រតីជាមួយនឹង AI។ សូមបំពេញចម្លើយរបស់អ្នកដោយដៃផ្ទាល់ ។",
+    "noTemperature": "កំហុស : មិនមានលេខសីតុណ្ហភាពត្រូវបានរកឃើញនៅក្នុងរូបថតទេ ។ សូមព្យាយាមម្តងទៀត ។",
+    "missingData": {
+      "title": "Missing Data",
+      "description": "Some data are missing from this report. Please reset the report and try again."
+    }
+  },
+  "toast": {
+    "detectSuccess": "AI បានបង្កើតចម្លើយបានជោគជ័យ ។ សូមត្រួតពិនិត្យមើលមុនបន្ត ។"
+  },
+  "container": {
+    "loadingQuestionnaire": "កំពុងបញ្ចូលកម្រងសំណួរ ...",
+    "nextQuestion": "សំណួរបន្ទាប់"
+  },
+  "tutorial": {
+    "clickReport": "សូមចុចនៅទីនេះដើម្បី ត្រួតពិនិត្យមើលរបាយការណ៍",
+    "questionnaireProgress": "របាវឌ្ឍនភាពនឹងផ្លាស់ប្តូរនៅពេលបំពេញចម្លើយ",
+    "loadingCapital": "កំពុងបញ្ចូល ...",
+    "finishSection": "បញ្ចប់ផ្នែក",
+    "reviewReport": "ត្រួតពិនិត្យមើលរបាយការណ៍",
+    "clickIcon": "សូមចុចរូបតំណាងដើម្បីបន្ថែមរូបថត",
+    "notRequired": "ជម្រើសនេះនឹងលេចឡើងប្រសិនបើចម្លើយមិនត្រូវបានគេតម្រូវឲ្យមាន"
+  },
+  "uploadCVModal": {
+    "loadingAI": "កំពុងតែបញ្ចូល AI ..."
+  },
+  "questionnaireSwiper": {
+    "followUp": "សូមទៅកាន់ {{index}}/{{total}} សំំណួរបន្តបន្ទាប់",
+    "backToTop": "{{index}}/{total}} - ត្រឡប់ទៅខាងលើវិញ",
+    "questionNumber": "សំណួរ {{index}} នៃ {{length}}",
+    "done": "[រួចរាល់]",
+    "conditionalNumber": "សំណួរ {{index}} នៃ {{length}}",
+    "followUpConditional": "សំណួរបន្តបន្ទាប់ {{index}} នៃ {{length}}:",
+    "scrollError": {
+      "title": "កំហុស",
+      "description": "សូមអភ័យទោស មានកំហុស។ សូមរមូរដោយដៃ"
+    }
+  },
+  "recommendation": {
+    "title": "អនុសាសន៍",
+    "choseRecommendation": "អ្នកអាចជ្រើសរើសច្រើនជាងមួយ",
+    "placeholder": "សូមសរសេរចម្លើយ ផ្ទាល់ខ្លួនរបស់អ្នកនៅទីនេះ",
+    "set": "កំណត់",
+    "tap": "+ ប៉ះដើម្បីបន្ថែមអនុសាសន៍"
+  },
+  "swiperMedia": {
+    "selectMedia": "សូមជ្រើសរើសមីឌៀដើម្បីបន្ថែមចំពោះចម្លើយរបស់អ្នក",
+    "minimumPhoto": "រូបភាពអប្បបរិមា",
+    "minimumDocuments": "ឯកសារអប្បបរមា",
+    "minimumVideo": "វីដេអូអប្បបរមា"
+  },
+  "addPhoto": "បន្ថែមរូបថត ",
+  "addVideo": "បន្ថែមវីដេអូ ",
+  "question": {
+    "binary": {
+      "firstYes": "យល់ព្រម",
+      "no": "ទេ",
+      "redFlag": "ទង់ក្រហម  (បញ្ហាគឺធ្ងន់ធ្ងរ)",
+      "comments": "មតិយោបល់ ",
+      "optional": " (តាមជម្រើស)"
+    },
+    "multipleChoice": {
+      "comments": "មតិយោបល់ ",
+      "optional": " (តាមជម្រើស)"
+    },
+    "checkList": {
+      "comments": "មតិយោបល់",
+      "optional": " (តាមជម្រើស)"
+    },
+    "number": {
+      "typeAnswer": "សូមសរសេរចម្លើយរបស់អ្នកនៅទីនេះ",
+      "comments": "មតិយោបល់",
+      "optional": " (តាមជម្រើស)"
+    },
+    "score": {
+      "weight": "ទំងន់",
+      "note": "កំណត់សំគាល់: បញ្ហានឹងត្រូវបានបង្កើតឡើងសម្រាប់សំណួរនេះ ។",
+      "comments": "មតិយោបល់",
+      "optional": " (តាមជម្រើស)",
+      "title": "ពិន្ទុ",
+      "answer": "រុញដើម្បីបង្កើតពិន្ទុ"
+    },
+    "rangeFlag": {
+      "typeAnswer": "សូមសរសេរចម្លើយរបស់អ្នកនៅទីនេះ",
+      "comments": "មតិយោបល់ ",
+      "optional": " (តាមជម្រើស)",
+      "answerWithin": "ចម្លើយនៅខាងក្នុង",
+      "redFlag": "ទង់ក្រហម",
+      "yellowFlag": "ទង់លឿង",
+      "greenFlag": "ទង់បៃតង"
+    },
+    "inventory": {
+      "previous": "ពីមុន",
+      "onHand": "ក្នុងដៃ",
+      "comments": "មតិយោបល់",
+      "optional": " (តាមជម្រើស optional)"
+    },
+    "newInventory": {
+      "searchSKU": "ស្វែងរក  SKU",
+      "SKUNotFound": "SKU មិនត្រូវបានរកឃើញ ។",
+      "contactAdmin": "សូមទាក់ទងអ្នកគ្រប់គ្រងរបស់អ្នក",
+      "previous": "ពីមុន",
+      "onHand": "ក្នុងដៃ",
+      "comments": "មតិយោបល់",
+      "optional": " (តាមជម្រើស)",
+      "currentStock": "តើអ្វីគឺជាស្តុកបច្ចុប្បន្ន?",
+      "comment": "មតិយោបល់",
+      "takePhoto": "ថតរូប"
+    },
+    "open": {
+      "typeAnswer": "សូមសរសេរចម្លើយរបស់អ្នកនៅទីនេះ"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "ជ្រើសរើសក្រុមហ៊ុន",
+      "addNewCompany": "បន្ថែមក្រុមហ៊ុនថ្មី",
+      "categoryEmpty": "ប្រភេទមិនអាចទុកនៅទទេទេ",
+      "targetMarketEmpty": "ទីផ្សារគោលដៅមិនអាចទុកនៅទទេទេ",
+      "promotion": {
+        "title": "ឈ្មោះប្រូម៉ូសិន",
+        "name": "បញ្ចូលឈ្មោះប្រូម៉ូសិន",
+        "product": "ផលិតផល",
+        "selectProduct": "ជ្រើសរើសផលិតផល",
+        "choosePromotionType": "ជ្រើសរើសប្រភេទប្រូម៉ូសិន",
+        "promotionType": "ប្រភេទប្រូម៉ូសិន",
+        "promotionImage": "រូបភាពប្រូម៉ូសិន",
+        "takePicure": "ថតរូប",
+        "fromGallery": "ពីវិចិត្រសាល",
+        "displayLocation": "បង្ហាញទីតាំង",
+        "enterLocation": "បញ្ចូលការបង្ហាញទីតាំងរបស់ប្រូម៉ូសិន",
+        "detailPromotion": "ពិស្តារអំពីប្រូម៉ូសិន",
+        "enterDetail": "ពណ៌នាពិស្តារនៃប្រូម៉ូសិន",
+        "promotionPeriod": "រយៈពេលប្រូម៉ូសិន",
+        "startDate": "ថ្ងៃចាប់ផ្តើម",
+        "to": "ទៅដល់",
+        "endDate": "ថ្ងៃបញ្ចប់",
+        "takePicture": "ថតរូប"
+      },
+      "product": {
+        "name": "ឈ្មោះផលិតផល",
+        "enterName": "បញ្ចូលឈ្មោះផលិតផល",
+        "category": "ប្រភេទផលិតផល",
+        "selectCategory": "ជ្រើសរើសប្រភេទ",
+        "addNewCategory": "បន្ថែមប្រភេទថ្មី",
+        "productImage": "រូបភាពផលិតផល",
+        "takePicture": "ថតរូប",
+        "fromGallery": "ពីវិចិត្រសាល",
+        "productPrice": "កម្រិតតម្លៃផលិតផល",
+        "add": "បន្ថែម",
+        "description": "ពណ៌នា",
+        "enterDescription": "ពណ៌នាលម្អិតផលិតផល",
+        "targetMarket": "ទីផ្សារគោលដៅ",
+        "selectTargetMarket": "ជ្រើសរើសទីផ្សារគោលដៅ",
+        "addNewTargetMarket": "បន្ថែមទីផ្សារគោលដៅថ្មី",
+        "variantOf": "ផលិតផលគឺផ្សេងគ្នាពី...",
+        "selectProduct": "ជ្រើសរើសផលិតផល",
+        "store": "ហាង",
+        "selectStore": "ជ្រើសរើសហាង"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[AI] របាំងមុខត្រូវបានរកឃើញនៅលើសមាជិកបុគ្គលិក ។ ",
+        "incorrectly_wear": "[AI] របាំងមុខត្រូវបានរកឃើញ ប៉ុន្តែមិនបានពាក់ឲ្យបានត្រឹមត្រូវទេ ។ ",
+        "without_mask": "[AI] របាំងមុខមិនត្រូវបានរកឃើញនៅលើសមាជិកបុគ្គលិកទេ ។ "
+      },
+      "temperature": {
+        "with_temperature": "[AI] សីតុណ្ហភាពត្រូវបានរកឃើញនៅលើរូបថត ។",
+        "without_temperature": "[AI] សីតុណ្ហភាពមិនត្រូវបានរកឃើញនៅលើរូបថតទេ ។ "
+      }
+    },
+    "takePhoto": "ថតរូប",
+    "sourceCamera": "ពីកាមេរ៉ា",
+    "sourceGallery": "ពីវិចិត្រសាល",
+    "takeFile": "បន្ថែម pdf, xlsx, ឬឯកសារ doc",
+    "error": {
+      "noPerson": "កំហុស៖ គ្មាន​មនុស្ស​ត្រូវ​បាន​រក​ឃើញ​នៅ​ក្នុង​រូបថត​ទេ។ សូម​ព្យាយាម​ម្តង​ទៀត។",
+      "detectFailed": "កំហុស៖ មិនបានរកឃើញលេខសីតុណ្ហភាពក្នុងរូបថតទេ។ សូម​ព្យាយាម​ម្តង​ទៀត។",
+      "noTemperature": "",
+      "missingData": {
+        "title": "បាត់ទិន្នន័យ",
+        "description": "ទិន្នន័យមួយចំនួនត្រូវបានបាត់ពីរបាយការណ៍នេះ។ សូមកំណត់របាយការណ៍ឡើងវិញ ហើយព្យាយាមម្តងទៀត។"
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "សូមសរសេរមតិយោបល់",
+    "commentTooLong": "មតិយោបល់វេងពេក",
+    "insertNumber": "សូមសរសេរជាចំនួនលេខ",
+    "outRange": "ចំនួនមិននៅក្នុងដែន",
+    "negative": "ចំនួនវិជ្ជមាន",
+    "outNumber": "ចំនួនចេញគឺវិជ្ជមាន"
+  },
+  "drawer": {
+    "noQuestions": "គ្មានសំណួរត្រូវបានរកឃើញជាមួយ '{{query}}'",
+    "searchQuestions": "ស្វែងរកសំណួរ ",
+    "score": "ពិន្ទុ"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - ការអនុញ្ញាតកាមេរ៉ា",
+    "cameraText": "ថតរូប/វីដេអូនៃបញ្ហា ហើយភ្ជាប់ពួកវាជាមួយរបាយការណ៍របស់អ្នក",
+    "audioPermission": "Nimbly - ការអនុញ្ញាតការថតសម្លេង",
+    "auditText": "ថតវីដេអូបញ្ហា ហើយភ្ជាប់ពួកវាទៅនឹងរបាយការណ៍របស់អ្នក",
+    "failCapture": "ខកខានក្នុងការចាប់យករូបថត",
+    "onMountError": "កំហុសក្នុងការដំឡើងកាមេរ៉ា",
+    "clearCache": "សូមសម្អាតឃ្លាំងសម្ងាត់ ហើយត្រូវប្រាកដថាមានការអនុញ្ញាតពីកាមេរ៉ា",
+    "tryAgain": "សូមព្យាយាមម្តងទៀត ឬទាក់ទងអ្នកគ្រប់គ្រង",
+    "takeSixtySecond": "ថតវីដេអូ ៦០វិនាទី",
+    "failVideoCapture": "បរាជ័យក្នុងការថតវីដេអូ"
+  },
+  "sourceCamera": "ពីកាមេរ៉ា",
+  "sourceGallery": "ពីវិចិត្រសាល",
+  "takeFile": "បន្ថែមហ្វាល  pdf, xlsx, ឬ doc",
+  "priorityModal": {
+    "title": "អាទិភាពកំណត់ទៅ",
+    "description1": "ចម្លើយបានបង្កើត ក",
+    "description2": "បញ្ហាអាទិភាព",
+    "changePriority": "ផ្លាស់ប្តូរអាទិភាព"
+  }
+}

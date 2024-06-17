@@ -1,0 +1,42 @@
+{
+  "error": {
+    "connection": "Ups, sem ligação à Internet. Tente novamente mais tarde.",
+    "timeout": "ERRO: O pedido de ligação ultrapassou o tempo limite, tente novamente.",
+    "fileName": "Nome do ficheiro não encontrado",
+    "offline": "Está desligado.\nTente novamente mais tarde",
+    "upload": "ERRO: Falha no carregamento, tente novamente!"
+  },
+  "prompt": {
+    "backPress": "O relatório ainda está a ser carregado.\nTem a certeza que pretende sair desta página?",
+    "warningCapital": "AVISO",
+    "warning": "Aviso"
+  },
+  "container": {
+    "loading": "A carregar...",
+    "failUpload": "FALHA NO CARREGAMENTO",
+    "uploadingCapital": "A CARREGAR...",
+    "reportSaved": "RELATÓRIO SALVO!",
+    "reportSavedDesc": "O seu relatório foi guardado. Poderá carregar o seu relatório a partir do Hall de entrada do Site quando voltar a estar ligado à Internet.",
+    "uploadFailed": "FALHA NO CARREGAMENTO",
+    "inProgress": "Em andamento",
+    "oops": "Oh não!",
+    "failUploading": "Falha ao carregar o relatório. Prima o botão abaixo para tentar novamente!",
+    "hooray": "Viva!",
+    "hitButton": "Prima o botão abaixo para enviar o relatório!",
+    "offline": "DESLIGADO",
+    "uploadLater": "Pode tentar carregar mais tarde",
+    "retryUpload": "TENTAR NOVAMENTE CARREGAR",
+    "uploading": "A CARREGAR...",
+    "uploadReport": "CARREGAR RELATÓRIO",
+    "uploadLaterCapital": "CARREGAR MAIS TARDE",
+    "online": "LIGADO",
+    "backToHome": "Voltar à Página Inicial"
+  },
+  "failedModal": {
+    "general": {
+      "title": "Oh não! O seu ficheiro não foi carregado",
+      "text": "Ocorreu um erro e não foi possível carregar os seus ficheiros. Volte a carregar os seus ficheiros anexados.",
+      "button": "Voltar ao Questionário"
+    }
+  }
+}

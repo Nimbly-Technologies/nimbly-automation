@@ -1,0 +1,32 @@
+{
+  "assignedDepartment": {
+    "update": "Mengubah departemen yang ditugaskan ke  {{payload}}",
+    "remove": "menghapus departemen yang ditugaskan"
+  },
+  "assignedTo": {
+    "update": "Mengubah auditor yang ditugaskan ke {{payload}}",
+    "default": "Kamu telah ditugaskan menjadi auditor untuk isu ini."
+  },
+  "dueDate": {
+    "update": "mengubah batas waktu ke {{payload}}"
+  },
+  "severity": {
+    "update": "mengubah bendera isu ke {{payload}}"
+  },
+  "priority": {
+    "update": "mengubah prioritas ke {{payload}}"
+  },
+  "status": {
+    "update": "Changed issue status from {{prevStatus}} to {{currentStatus}}"
+  },
+  "comment": {
+    "add": "{{payload}} mengomentari isu ini"
+  },
+  "members": {
+    "add": "Menambahkan {{payload}} ke isu ini",
+    "remove": "Menghapus {{payload}} dari ise ini"
+  },
+  "escalation": {
+    "default": "Isu ini telah di ekskalasi ke {{payload}}"
+  }
+}

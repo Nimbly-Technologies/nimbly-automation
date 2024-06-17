@@ -1,0 +1,17 @@
+{
+  "thanks": "Thank you for helping us improve Nimbly for everyone!",
+  "open": {
+    "enterText": "Enter Text",
+    "maxCharacter": "Max 400 character"
+  },
+  "score": {
+    "notLikely": "Not likely",
+    "extremeLikely": "Extreme likely"
+  },
+  "error": {
+    "maxCharacterExceeded": "Maximum characters exceeded",
+    "answer": "Answer",
+    "noEmpty": "Answer could not be empty",
+    "chooseOne": "Choose at least one answer"
+  }
+}

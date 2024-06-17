@@ -1,0 +1,17 @@
+{
+  "title": "Akses Tidak Tersedia",
+  "subtitle": "Maaf, Anda tidak memiliki akses ke fitur ini.",
+  "body": "Silakan hubungi Admin Anda untuk mengakses fitur ini.",
+  "buttonTranslation": "OK",
+  "error": {
+    "title": "Oops!",
+    "subtitle": "Terjadi kendala saat mengambil akses fitur.",
+    "body": "Silahkan restart aplikasi."
+  },
+  "freezeBanner": {
+    "title": "Akun Anda telah dinonaktifkan. Hubungi Admin Anda untuk informasi lebih lanjut."
+  },
+  "saga": {
+    "fail": "Gagal Mengambil Akses Fitur"
+  }
+}

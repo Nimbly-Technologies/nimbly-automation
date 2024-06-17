@@ -1,0 +1,64 @@
+{
+  "journey": {
+    "create": {
+      "error": "No se pudo crear el informe de viaje"
+    },
+    "update": {
+      "error": "No se pudo actualizar el informe de viaje"
+    }
+  },
+  "company": {
+    "fetch": {
+      "error": "No se pudieron obtener las empresas"
+    },
+    "create": {
+      "error": "No se pudo crear la empresa"
+    },
+    "fetchProduct": {
+      "error": "No se pudo obtener el producto"
+    },
+    "fetchProductCategories": {
+      "error": "No se pudieron obtener las categorías de productos"
+    },
+    "fetchTargetMarket": {
+      "error": "No se pudo obtener el mercado objetivo del producto"
+    },
+    "createCategory": {
+      "error": "No se pudo crear la categoría de producto"
+    },
+    "createTargetMarket": {
+      "error": "No se pudo crear el mercado objetivo"
+    },
+    "createPromotion": {
+      "error": "No se pudo crear la promoción"
+    },
+    "createProduct": {
+      "error": "No se pudo crear el producto"
+    }
+  },
+  "issue": {
+    "fetchIssueCategory": {
+      "error": "ADMINISTRAR - FALLÓ LA BUSQUEDA DE CATEGORÍAS DE PREGUNTAS"
+    },
+    "readAllIssue": {
+      "error": "Error al leer todos los problemas",
+      "success": "Éxito al leer todo los problemas"
+    }
+  },
+  "sales": {
+    "error": "No se pudieron buscar las ventas"
+  },
+  "reportCache": {
+    "noConnection": "No hay conexión a Internet. Vuelva a intentarlo más tarde.",
+    "systemError": "Error interno del servidor. Vuelva a intentarlo más tarde",
+    "noKeyReport": "no se puede encontrar la clave de informe al eliminar el informe",
+    "multipleCheckIn": "registro múltiple detectado."
+  },
+  "document": {
+    "documentDoesntExist": "Document doesnt exist",
+    "documentFailtoUpload": "Fail to Upload Document"
+  },
+  "submitApiReport": {
+    "error": "No se pudo cargar el informe"
+  }
+}

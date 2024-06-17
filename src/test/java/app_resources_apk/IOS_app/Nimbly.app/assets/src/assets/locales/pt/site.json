@@ -1,0 +1,139 @@
+{
+  "outlet": {
+    "button": {
+      "setLocation": "Configurar Localização",
+      "enterLobby": "Entrar no Hall de entrada",
+      "startAdhoc": "Iniciar Relatório Pontual",
+      "uploadReport": "Carregar Relatório",
+      "resumeReporting": "Continuar Relatório",
+      "viewReport": "Ver Relatório",
+      "makeUpReport": "Criar Relatório",
+      "viewDetails": "Ver Detalhes"
+    },
+    "error": {
+      "noQuestionnaireFound": "Erro: Nenhum questionário encontrado. Entre em contacto com o administrador.",
+      "noScheduleFound": "Erro: Nenhuma programação encontrada. Entre em contacto com o suporte.",
+      "alreadySetLocation": "Alguém está já a configurar a localização desta página da Internet.",
+      "notAllowedSetLocation": "A sua organização não permite o ajuste da localização da página da Internet.",
+      "farFromLocation": "Está demasiado longe da localização. Aproxime-se e tente novamente.",
+      "failedCompilingData": "Falha ao compilar os seus dados. Tente novamente",
+      "failedParseMakeUpData": "Falha ao analisar a data de composição. Tente novamente."
+    },
+    "prompt": {
+      "deleteDraft": "Tem a certeza de que pretende eliminar todas as suas respostas?",
+      "teamReportNotStarted": "O Relatório Não Foi Iniciado",
+      "leaderCheckIn": "Assegure-se que o seu chefe de equipa efetuou o registo."
+    },
+    "placeholder": {
+      "noSchedule": "Nenhuma Programação",
+      "noScheduleTitle": "Não tem nenhuma tarefa para esta data."
+    },
+    "offlineInfo": "Está offline. Tente novamente mais tarde.",
+    "noReportDue": "Nenhum relatório pendente para este período.",
+    "overdueReport": "A hora de registo para reportar já passou.\n",
+    "alreadyCompletedReport": "Já completou um relatório hoje. Tente novamente amanhã.",
+    "ongoingDraftFound": "Já iniciou um relatório para {{title}}. Retome o seu relatório em curso.",
+    "finishThisPeriod": "Completou todos os relatórios para o período. Muito bem!",
+    "startAnytime": "Comece a qualquer momento",
+    "selectQuestionnaire": "Selecione um Questionário para o relatório de hoje",
+    "reportDoneToday": "Fim dos relatórios por hoje",
+    "seeMap": "Ver Mapa",
+    "openMap": "Abrir Mapa",
+    "questionnairesDownloaded": "Questionários Transferidos",
+    "downloadQuestionnaires": "Transferir Questionários",
+    "deleteButton": "Eliminar",
+    "searchQuestionnaires": "Procurar Questionários",
+    "outletListHeadline": "Selecione um questionário para iniciar a auditoria",
+    "outletListSubtitle": "Relatórios concluídos para",
+    "mapNotAvailableOffline": "O mapa não está disponível offline"
+  },
+  "calendar": {
+    "emptySchedules": " Nenhuma tarefa agendada",
+    "emptySchedulesSubtitle": "Não tem nenhuma tarefa para esta data.",
+    "viewPeriod": "A visualizar {{day}} período do dia"
+  },
+  "footer": {
+    "title": "Questionário para usar em relatório",
+    "selectType": "Selecione o tipo de relatório",
+    "multisiteTitle": "Iniciar Auditoria em Equipa",
+    "multisiteSubtitle": "Entre no hall de entrada do relatório para que a sua equipa possa aderir e selecionar um questionário."
+  },
+  "error": {
+    "failedRetrieveLocation": "Ocorreu um erro enquanto se recuperava a sua localização. Tente novamente.",
+    "enableLocationAccess": "Poderá ativar mais tarde o Acesso Local à Nimbly nas Definições da sua aplicação.",
+    "selectQuestionnaireFirst": "Selecione o questionário primeiro.",
+    "missingDraftReport": "Não foi possível encontrar o relatório ao tentar aceder ao rascunho do mesmo, tente novamente mais tarde."
+  },
+  "promotions": {
+    "empty_board": "Não tem promoções ativas de momento. Volte mais tarde."
+  },
+  "sales": {
+    "achieve": "Atingiu",
+    "thisMonth": "o Objetivo de Vendas desse mês.",
+    "toDate": "Para a data",
+    "toMonth": "Para o Mês",
+    "current": "Atual",
+    "target": "Objetivo"
+  },
+  "siteReports": {
+    "footer": {
+      "message": "Parece que chegou ao fim."
+    },
+    "time": {
+      "mtd": "Este mês",
+      "ytd": "Este ano",
+      "custom": "Personalizar",
+      "thisPeriod": "Este {{period}}",
+      "lastPeriod": "Último {{period}}",
+      "period": "Período",
+      "last-7": "Últimos 7 dias",
+      "last-28": "Últimos 28 dias",
+      "last-30": "Últimos 30 dias",
+      "last-60": "Últimos 60 dias",
+      "last-90": "Últimos 90 dias",
+      "last-6-m": "Últimos 6 meses",
+      "last-12-m": "Últimos 12 meses",
+      "last-year": "Último ano",
+      "day": "Dia",
+      "week": "Semana",
+      "month": "Mês",
+      "year": "Ano",
+      "daily": "Diariamente",
+      "everyday": "Todos os dias",
+      "weekly": "Semanalmente",
+      "monthly": "Mensalmente",
+      "today": "Hoje",
+      "filter": "Filtrar"
+    },
+    "empty_board_title": "Ainda não há relatórios",
+    "empty_board_subtitle": "Após o adequado preenchimento e carregamento do questionário, pode consultar o relatório aqui.",
+    "date": "Data",
+    "latestDate": "Data mais antiga",
+    "earliestDate": "Data mais recente",
+    "filter": "Filtrar e ordenar",
+    "byTime": "Por hora",
+    "byCustom": "Por data",
+    "sortBy": "Ordenar por",
+    "download": "Transferir"
+  },
+  "confirmCheckIn": "Tem certeza que quer iniciar um relatório neste site?",
+  "startAnytime": "Comece a qualquer momento",
+  "makeupReport": "Elaborar Relatório",
+  "overdue": "Atrasado",
+  "continueReport": "Continuar relatório",
+  "pendingReport": "Carregamento pendente",
+  "makeUpReport": "Elaborar Relatório",
+  "fillMakeupField": "Preencha o motivo do incumprimento do prazo",
+  "notAllowedMakeUpReport": "Conclua os relatórios de hoje antes de enviar um relatório conjunto",
+  "scheduleNotStartedYet": "Esta programação ainda não começou",
+  "leaderMustCheckIn": "Assegure-se que o seu chefe de equipa efetuou o registo.",
+  "reportHasNotStarted": "O Relatório Não Foi Iniciado",
+  "ok": "OK",
+  "loadingSite": "A carregar o site...",
+  "makeUpDate": "Data de composição",
+  "questionnaireNotDownloaded": "O questionário não foi transferido",
+  "startAuditCta": "Toque para iniciar a auditoria",
+  "resumeAuditCta": "Toque para retomar a auditoria",
+  "uploadAuditCta": "Toque para carregar",
+  "uploadedDisplay": "Relatório carregado"
+}

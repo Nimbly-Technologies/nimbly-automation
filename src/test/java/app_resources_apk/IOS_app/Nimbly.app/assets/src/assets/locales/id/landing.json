@@ -1,0 +1,19 @@
+{
+  "toast": {
+    "concurrent": "ERROR: Terjadi kesalahan pada koneksi jaringan. Coba masuk lagi."
+  },
+  "modal": {
+    "title": "Akun Terhubung",
+    "message": "Akun Anda sedang digunakan pada perangkat lain.\n\nJika Anda login pada perangkat ini, akun Anda pada perangkat lain akan terlogout secara otomatis dan foto-foto yang telah diambil akan terhapus.\n\nAnda yakin?",
+    "buttonOK": "Lanjutkan",
+    "buttonCancel": "Batal"
+  },
+  "generalError": "Ada yang tidak beres, coba daftar lagi.",
+  "roleError": {
+    "toast": {
+      "message": "ERROR: Role bermasalah - {{errorMessageRole}}. Silakan restart aplikasi."
+    }
+  },
+  "loading": "SEDANG MEMUAT",
+  "welcomeMessage": "Selamat datang di aplikasi Nimbly."
+}

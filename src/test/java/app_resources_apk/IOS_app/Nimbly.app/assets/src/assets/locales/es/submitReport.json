@@ -1,0 +1,83 @@
+{
+  "error": {
+    "internet": "Error de conexión. Por favor, inténtelo de nuevo más tarde",
+    "questionnaire": "No se encontraron datos del cuestionario. Comuníquese con el servicio de asistencia.",
+    "signature": "{{invalidCount}} firma(s) incompletas. Complete todos los campos y vuelva a intentarlo.",
+    "selfieSignature": "Firma de selfie incompleta. Toma una foto de selfie",
+    "location": "Se produjo un error al recuperar su ubicación. Vuelva a intentarlo.",
+    "distance": "Estás demasiado lejos de la ubicación. Acércate e inténtalo de nuevo.",
+    "submit": "Vaya! Se produjo un error. Intente enviar de nuevo!",
+    "checkout": {
+      "title": "Se ha producido un error al pagar",
+      "description": "No se puede mostrar el nivel de visualización. Inténtalo de nuevo"
+    }
+  },
+  "prompt": {
+    "checkout": "Está seguro de que desea salir de este sitio?",
+    "rejectTitle": "¿Desea rechazar la sección?",
+    "approveTitle": "¿Desea aprobar la sección?",
+    "reject": "¿Está seguro de que desea rechazar esta sección? Los auditores deberán volver a enviar este informe, por lo tanto, le recomendamos proporcionarles comentarios.",
+    "approve": "¿Está seguro de que desea aprobar esta sección?",
+    "addPhoto": "Agregar Foto",
+    "openMap": "Abrir Mapa",
+    "editSignature": "Editar firma",
+    "signature": "Qué le gustaría hacer con esta firma?"
+  },
+  "checkout": "CHECK-OUT",
+  "reject": "rechazar",
+  "approve": "aprobar",
+  "viewAll": "ver todo",
+  "selectSection": "seleccione una sección",
+  "searchSection": "buscar sección",
+  "takeSelfie": "Tomar una Selfie",
+  "change": "Cambia",
+  "editReport": "Pulse el botón Atrás si desea volver atrás y editar su informe.",
+  "reportStarted": "Informe Iniciado:",
+  "signatures": "Firmas",
+  "loadingCapital": "CARGANDO...",
+  "loading": "Cargando...",
+  "overview": {
+    "decsGrade": "The Audit Grade is :",
+    "summary": "Resumen del Informe",
+    "questionsAnswers": "Preguntas y respuestas:",
+    "topIssues": "Problemas Principales:",
+    "comment": "comentario",
+    "redFlag": "Señalización Roja:",
+    "yellowFlag": "Señalización Amarilla:",
+    "greenFlag": "Señalización Verde:",
+    "score": "Puntuación:",
+    "error": {
+      "failed": "No se puede mostrar el nivel",
+      "offline": "No se puede mostrar el nivel. Modo offline"
+    }
+  },
+  "signatureCard": {
+    "tapSign": "TOCA PARA FIRMAR",
+    "enterName": "Ingrese su nombre",
+    "enterPosition": "Ingrese su posición"
+  },
+  "selfieSignature": {
+    "takeSelfie": "Toma una firma Selfie"
+  },
+  "reportTargets": {
+    "emailReport": "Enviar informe PDF a...",
+    "myself": "Mí mismo",
+    "setByAdmin": " (establecido por el administrador)",
+    "addEmail": "Agregar una dirección de correo electrónico",
+    "validEmail": "Introduzca una dirección de correo electrónico válida",
+    "emailDomain": "Ingrese un {{emailDomains}} dominio"
+  },
+  "tutorial": {
+    "reportTargets": {
+      "addEmail": "Agregue aquí la dirección de correo electrónico que recibirá este informe"
+    },
+    "reportSignature": {
+      "next": "SIGUIENTE",
+      "end": "Fin Del Tutorial",
+      "signHere": "Pon tu firma aquí"
+    }
+  },
+  "redFlag": "Señalización Roja",
+  "yellowFlag": "Señalización Amarilla",
+  "greenFlag": "Señalización Verde"
+}

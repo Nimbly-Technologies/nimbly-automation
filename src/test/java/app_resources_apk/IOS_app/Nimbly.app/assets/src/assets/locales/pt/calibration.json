@@ -1,0 +1,11 @@
+{
+  "prompt": {
+    "confirmLocation": "Confirmar Localização",
+    "askCorrectLocation": "Tem a certeza que esta é a localização correta para este site?",
+    "setLocation": "Configurar Localização"
+  },
+  "error": {
+    "invalidLocation": "Erro: Selecione uma localização com um endereço válido",
+    "outsideCircle": "Erro: Selecione uma localização no interior do círculo"
+  }
+}

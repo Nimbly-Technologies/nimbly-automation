@@ -1,0 +1,42 @@
+{
+  "error": {
+    "connection": "Ups, koneksi internet terputus. Coba lagi nanti.",
+    "timeout": "ERROR: Batas waktu permintaan koneksi habis, silakan coba lagi",
+    "fileName": "Nama File Tidak Ditemukan",
+    "offline": "Anda sedang offline.\nMohon coba lagi nanti",
+    "upload": "ERROR: Gagal mengunggah, silakan coba lagi!"
+  },
+  "prompt": {
+    "backPress": "Report sedang diunggah.\nApa kamu yakin untuk meninggalkan halaman ini?",
+    "warningCapital": "PERHATIAN",
+    "warning": "Perhatian"
+  },
+  "container": {
+    "loading": "Memuat...",
+    "failUpload": "GAGAL MENGUNGGAH",
+    "uploadingCapital": "SEDANG DIUNGGAH...",
+    "reportSaved": "LAPORAN TERSIMPAN!",
+    "reportSavedDesc": "Laporan Anda telah disimpan. Anda dapat mengunggah laporan Anda dari Lobi Situs setelah Anda terhubung kembali ke internet.",
+    "uploadFailed": "GAGAL MENGUNGGAH",
+    "inProgress": "Sedang Berlangsung",
+    "oops": "Ups!",
+    "failUploading": "Laporan gagal diunggah. Tekan tombol dibawah untuk mengunggah kembali!",
+    "hooray": "Horee!",
+    "hitButton": "Menekan tombol dibawah untuk mengunggah laporan!",
+    "offline": "OFFLINE",
+    "uploadLater": "Anda dapat mengunggah di lain waktu.",
+    "retryUpload": "UNGGAH KEMBALI",
+    "uploading": "SEDANG DIUNGGAH...",
+    "uploadReport": "UNGGAH LAPORAN",
+    "uploadLaterCapital": "UNGGAH NANTI",
+    "online": "ONLINE",
+    "backToHome": "Kembali ke Beranda"
+  },
+  "failedModal": {
+    "general": {
+      "title": "Ups! Lampiran Anda Gagal Diunggah",
+      "text": "Sistem mengalami gangguan dan file lampiran Anda tidak bisa diunggah. Mohon unggah ulang file lampiran Anda.",
+      "button": "Kembali ke Kuesioner"
+    }
+  }
+}

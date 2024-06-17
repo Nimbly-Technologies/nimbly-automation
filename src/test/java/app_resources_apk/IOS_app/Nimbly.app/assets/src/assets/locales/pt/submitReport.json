@@ -1,0 +1,71 @@
+{
+  "error": {
+    "internet": "Erro de ligação. Tente novamente mais tarde",
+    "questionnaire": "Os dados do questionário não foram encontrados. Entre em contacto com o suporte.",
+    "signature": "{{invalidCount}} assinatura(s) incompleta(s). Preencha todos os campos e tente novamente.",
+    "selfieSignature": "Foto de assinatura incompleta. Tire uma foto selfie",
+    "location": "Ocorreu um erro enquanto se recuperava a sua localização. Tente novamente.",
+    "distance": "Está demasiado longe da localização. Aproxime-se e tente novamente.",
+    "submit": "Ups. Ocorreu um erro. Tente enviar novamente!"
+  },
+  "prompt": {
+    "checkout": "Tem a certeza que pretende sair desta página da Internet?",
+    "addPhoto": "Adicionar Foto",
+    "openMap": "Abrir Mapa",
+    "editSignature": "Editar Assinatura",
+    "signature": "O que pretende fazer com esta assinatura?"
+  },
+  "checkout": "SAIR",
+  "takeSelfie": "Tire uma foto selfie",
+  "change": "Alterar",
+  "editReport": "Prima o botão Voltar caso pretenda retroceder e editar o relatório.",
+  "reportStarted": "Relatório iniciado:",
+  "signatures": "Assinaturas",
+  "loadingCapital": "A CARREGAR...",
+  "loading": "A carregar...",
+  "overview": {
+    "decsGrade": "O Grau de Auditoria é:",
+    "summary": "Sumário de Relatórios",
+    "topIssues": "Problemas principais:",
+    "comment": "comentário",
+    "redFlag": "Sinalizadores Vermelhos:",
+    "yellowFlag": "Sinalizadores Amarelos:",
+    "greenFlag": "Sinalizadores Verdes:",
+    "score": "Pontuação:",
+    "gradeError": {
+      "failed": "Não foi possível mostrar um valor",
+      "offline": "Unable to display grade, offline mode.",
+      "retry": "Retry"
+    }
+  },
+  "signatureCard": {
+    "tapSign": "TOQUE PARA ASSINAR",
+    "enterName": "Introduza o seu nome",
+    "enterPosition": "Introduza o seu cargo"
+  },
+  "selfieSignature": {
+    "takeSelfie": "Tirar uma foto selfie da assinatura"
+  },
+  "reportTargets": {
+    "supervisorDefault": "Supervisor (predefinição)",
+    "emailReport": "Enviar por e-mail o PDF do relatório para...",
+    "myself": "Mim próprio",
+    "setByAdmin": " (definido pelo administrador)",
+    "addEmail": "Adicione um endereço de e-mail",
+    "validEmail": "Introduza um endereço de e-mail válido",
+    "emailDomain": "Introduza um domínio {{emailDomains}}"
+  },
+  "tutorial": {
+    "reportTargets": {
+      "addEmail": "Adicione aqui o endereço de e-mail que irá receber este relatório"
+    },
+    "reportSignature": {
+      "next": "AVANÇAR",
+      "end": "Terminar tutorial",
+      "signHere": "Insira a sua assinatura aqui"
+    }
+  },
+  "redFlag": "Sinalizadores Vermelhos",
+  "yellowFlag": "Sinalizadores Amarelos",
+  "greenFlag": "Sinalizadores Verdes"
+}

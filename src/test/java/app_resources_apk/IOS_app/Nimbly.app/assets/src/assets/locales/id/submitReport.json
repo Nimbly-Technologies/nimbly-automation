@@ -1,0 +1,83 @@
+{
+  "error": {
+    "internet": "Terjadi gangguan jaringan. Silahkan coba lagi nanti.",
+    "questionnaire": "Data pertanyaan tidak ditemukan. Silahkan hubungi support.",
+    "signature": "{{invalidCount}} tanda tangan belum lengkap. Mohon lengkapi dan coba kembali.",
+    "selfieSignature": "Foto diri belum lengkap. Mohon ambil foto diri",
+    "location": "Terjadi kendala dalam menentukan lokasi Anda. Coba ulangi kembali.",
+    "distance": "Anda berada sangat jauh dengan lokasi. Dekati lokasi dan coba kembali",
+    "submit": "Oops. Terjadi Kendala. Coba kirim kembali!",
+    "checkout": {
+      "title": "Checkout Gagal",
+      "description": "Gagal menampilkan skor. Mohon coba kembali"
+    }
+  },
+  "prompt": {
+    "checkout": "Apakah Anda yakin ingin check-out dari lokasi ini?",
+    "rejectTitle": "Tolak Bagian Ini?",
+    "approveTitle": "Setujui Bagian Ini?",
+    "reject": "Anda yakin ingin menolak? Pengguna harus mengirimkan ulang laporannya, jadi kami sarankan untuk memberikan timbal balik kepada mereka.",
+    "approve": "Anda yakin ingin menyetujui?.",
+    "addPhoto": "Tambahkan Foto",
+    "openMap": "Buka Peta",
+    "editSignature": "Ubah Tanda Tangan",
+    "signature": "Apa yang ingin Anda lakukan dengan tanda tangan ini?"
+  },
+  "checkout": "CHECK-OUT",
+  "reject": "tolak",
+  "approve": "setujui",
+  "viewAll": "perlihatkan semua",
+  "selectSection": "pilih bagian",
+  "searchSection": "cari bagian",
+  "takeSelfie": "Foto Diri",
+  "change": "Ubah",
+  "editReport": "Tekan tombol Kembali jika ingin kembali dan memperbarui jawaban Anda",
+  "reportStarted": "Laporan Dimulai:",
+  "signatures": "Tanda Tangan",
+  "loadingCapital": "MEMUAT...",
+  "loading": "Memuat...",
+  "overview": {
+    "decsGrade": "Nilai Laporan:",
+    "summary": "Ringkasan Laporan",
+    "questionsAnswers": "Pertanyaan dan jawaban:",
+    "topIssues": "Isu-isu Utama:",
+    "comment": "Komen",
+    "redFlag": "Bendera Merah:",
+    "yellowFlag": "Bendera Kuning:",
+    "greenFlag": "Bendera Hijau:",
+    "score": "Skor:",
+    "gradeError": {
+      "failed": "Gagal menampilkan skor",
+      "offline": "Gagal menampilkan skor. Mode offline"
+    }
+  },
+  "signatureCard": {
+    "tapSign": "TANDA TANGAN",
+    "enterName": "Masukkan nama anda",
+    "enterPosition": "Masukkan posisi anda"
+  },
+  "selfieSignature": {
+    "takeSelfie": "Ambil foto diri"
+  },
+  "reportTargets": {
+    "emailReport": "Kirim PDF Laporan kepada...",
+    "myself": "Diri sendiri",
+    "setByAdmin": " (ditentukan oleh admin)",
+    "addEmail": "Tambahkan alamat email",
+    "validEmail": "Mohon masukkan dengan alamat email yang valid",
+    "emailDomain": "Mohon masukkan alamat dengan domain {{emailDomains}}"
+  },
+  "tutorial": {
+    "reportTargets": {
+      "addEmail": "Tambahkan alamat email yang akan menerima laporan ini"
+    },
+    "reportSignature": {
+      "next": "LANJUT",
+      "end": "Akhiri Tutorial",
+      "signHere": "Bubuhkan tanda tangan di sini"
+    }
+  },
+  "redFlag": "Bendera Merah",
+  "yellowFlag": "Bendera Kuning",
+  "greenFlag": "Bendera Hijau"
+}

@@ -1,0 +1,36 @@
+{
+    "permission":{
+        "checkGallery":"Nimbly needs access to your camera and gallery to take pictures.\nPlease enable it under your device settings.",
+        "cameraAccess":"Access Camera",
+        "close":"Close",
+        "changePhoto":"Change Photo",
+        "deleteThisPhoto":"Delete this photo?",
+        "delete":"Delete",
+        "cancel":"Cancel"
+    },
+    "complete":"Complete required field",
+    "form":{
+        "companyName":"Company Name",
+        "companyLogo":"Company Logo",
+        "takePicture":"Take Picture",
+        "fromGallery":"From Gallery",
+        "description":"Description",
+        "website":"Website",
+        "established":"Established",
+        "numEmployees":"No. of Employees",
+        "strength":"Strength",
+        "weakness":"Weakness",
+        "save":"Save"
+
+    },
+    "placeholder":{
+        "strength":"Type the company's strength",
+        "weakness":"Type the company's weakness",
+        "companyName":"Enter the company name",
+        "describeCompany":"Describe the company"
+    },
+    "error":{
+        "fail":"failed to upload company logo"
+    },
+    "createCompany": "Create Company"
+}

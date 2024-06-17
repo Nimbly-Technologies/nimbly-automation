@@ -1,0 +1,32 @@
+{
+    "oops": "Ooops",
+    "finalizeReport":"Finalize Report",
+    "reportCompleted": "Report Completed.",
+    "reportCompletedSubtitle": "Sorry, this report has been completed.\nYou'll be redirected to the Home Page.",
+    "uploadReport": "Upload Report",
+    "areYouSure": "Are you sure ?",
+    "requiredSection": "Required Section",
+    "optionalSection": "Optional Section",
+    "leader": "Leader",
+    "member": "Member",
+    "prompt": {
+        "uploadingInProgress": "Report is still being uploaded.\nAre you sure you want to leave this page ?",
+        "sectionInProgress": "{{displayName}} is working on this section.\nDo you wish to proceed ?",
+        "unfinishedReport": "WARNING: Unfinished section(s) will be deleted.",
+        "uploadWarning": "WARNING: Once you've uploaded your section(s), you cannot edit them."
+    },
+    "error": {
+        "offlineAlert": "You are currently offline.\nPlease try again later",
+        "connectionLost": "Oops, internet connection lost. Please try again later.",
+        "uploadTimeout": "ERROR: Connection request timeout, please try again",
+        "uploadFailed": "ERROR: Upload failed, please try again!"
+    },
+    "status": {
+        "tapToStart": "Tap to Start",
+        "inProgress": "In Progress",
+        "uploaded": "Uploaded",
+        "waitingForUpload": "Waiting For Upload",
+        "rejected": "Rejected",
+        "approved": "Approved"
+    }
+}

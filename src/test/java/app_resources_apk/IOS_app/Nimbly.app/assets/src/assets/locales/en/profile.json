@@ -1,0 +1,44 @@
+{
+  "upload": "Upload Photo",
+  "selectSource": "Select source to upload photo",
+  "camera": "Camera",
+  "editPhoto": "Edit Photo",
+  "gallery": "Gallery",
+  "titlePhoto": "What would you like to do with this photo?",
+  "change": "Change",
+  "delete": "Delete",
+  "totalReports": "TOTAL REPORTS",
+  "statistic": {
+    "totalFlags": "TOTAL FLAGS",
+    "flagsVisit": "FLAGS PER VISIT",
+    "avgTime": "AVG. TIME HOURS",
+    "missed": "MISSED",
+    "doReport": "Do a report to generate your chart",
+    "onTime": "ON TIME",
+    "madeUp": "MADE UP",
+    "scheduled": "SCHEDULED",
+    "avgFlags": "AVG. FLAGS",
+    "thisWeek": "THIS WEEK",
+    "numberOption": ""
+  },
+  "auth": {
+    "alert": {
+      "title": "Existing Login",
+      "message": "You have logged in on another device, and will now be logged out of this device.",
+      "buttonOK": "OK"
+    },
+    "blockedAlert": {
+      "title": "Your Account is Removed",
+      "message": "Your Nimbly account has been removed from the organization. For more details, please contact your organization’s Account Holder.",
+      "buttonOK": "OK"
+    },
+    "recognizedAlert": {
+      "title": "User not recognized",
+      "message": "You are not registered in any organization.\nPlease contact admin",
+      "buttonOK": "OK"
+    },
+    "toast": {
+      "message": "You are experiencing a poor connection"
+    }
+  }
+}

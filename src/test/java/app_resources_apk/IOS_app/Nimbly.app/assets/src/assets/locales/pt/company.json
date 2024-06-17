@@ -1,0 +1,35 @@
+{
+  "permission": {
+    "checkGallery": "Para tirar fotografias, o Nimbly tem de ter acesso à sua câmara e à sua galeria.\nPor favor, permita o acesso nas configurações do seu dispositivo.",
+    "cameraAccess": "Acessar Câmara",
+    "close": "Fechar",
+    "changePhoto": "Alterar Foto",
+    "deleteThisPhoto": "Eliminar esta fotografia?",
+    "delete": "Eliminar",
+    "cancel": "Cancelar"
+  },
+  "complete": "Preencha o campo obrigatório",
+  "form": {
+    "companyName": "Nome da empresa",
+    "companyLogo": "Logótipo da empresa",
+    "takePicture": "Tirar Foto",
+    "fromGallery": "Da Galeria",
+    "description": "Descrição",
+    "website": "Página Internet",
+    "established": "Criada",
+    "numEmployees": "N.º de Funcionários",
+    "strength": "Solidez",
+    "weakness": "Fraqueza",
+    "save": "Guardar"
+  },
+  "placeholder": {
+    "strength": "Descreva o ponto forte da empresa",
+    "weakness": "Descreva o ponto fraco da empresa",
+    "companyName": "Insira o nome da empresa",
+    "describeCompany": "Descreva a empresa"
+  },
+  "error": {
+    "fail": "falha ao carregar o logótipo da empresa"
+  },
+  "createCompany": "Criar Empresa"
+}

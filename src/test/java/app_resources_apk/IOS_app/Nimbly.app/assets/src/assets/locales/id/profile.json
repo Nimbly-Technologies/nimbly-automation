@@ -1,0 +1,44 @@
+{
+  "upload": "Unggah Foto",
+  "selectSource": "Pilih sumber untuk unggah foto",
+  "camera": "Kamera",
+  "gallery": "Galeri",
+  "editPhoto": "Ubah Foto",
+  "titlePhoto": "Apa yang ingin Anda lakukan dengan foto ini?",
+  "change": "Ubah",
+  "delete": "Hapus",
+  "totalReports": "JUMLAH LAPORAN",
+  "statistic": {
+    "totalFlags": "JUMLAH BENDERA",
+    "flagsVisit": "BENDERA PER KUNJUNGAN",
+    "avgTime": "RATA-RATA JAM",
+    "missed": "TERTINGGAL",
+    "doReport": "Lakukan sebuah laporan agar menampilkan bagan Anda",
+    "onTime": "TEPAT WAKTU",
+    "madeUp": "SUSULAN",
+    "scheduled": "TERJADWAL",
+    "avgFlags": "RATA-RATA BENDERA",
+    "thisWeek": "MINGGU INI",
+    "numberOption": "KE-{{num}}"
+  },
+  "auth": {
+    "alert": {
+      "title": "Akun Terhubung",
+      "message": "Anda telah login pada perangkat lain dan akan logout pada perangkat ini.",
+      "buttonOK": "OK"
+    },
+    "blockedAlert": {
+      "title": "Akun Anda Telah Dihapus",
+      "message": "Akun Nimbly Anda telah dihapus dari organisasi Anda. Untuk informasi lebih lanjut, silakan hubungi Account Holder organisasi Anda.",
+      "buttonOK": "OK"
+    },
+    "recognizedAlert": {
+      "title": "Pengguna tidak dikenal",
+      "message": "Anda tidak terdaftar di organisasi mana pun.\nSilahkan hubungi admin",
+      "buttonOK": "OK"
+    },
+    "toast": {
+      "message": "Koneksi jaringan lemah."
+    }
+  }
+}
