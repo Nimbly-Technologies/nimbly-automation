@@ -89,7 +89,7 @@ public  void click_on_login () throws InterruptedException
 {	
 	Thread.sleep(1000);
 	String loginbutton_locator = locators.getProperty("loginbutton_locator");
-	appdriver.findElement(AppiumBy.className(loginbutton_locator)).click();
+	appdriver.findElement(AppiumBy.xpath(loginbutton_locator)).click();
 Thread.sleep(3000);
 }
 

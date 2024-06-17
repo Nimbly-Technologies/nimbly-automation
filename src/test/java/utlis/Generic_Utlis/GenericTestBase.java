@@ -70,6 +70,9 @@ public AppiumDriver ConfigureAppDriver() throws IOException
 		androidoptions.setDeviceName(androidDeviceName);
 		androidoptions.setApp(androidAppBuildPath);
 		androidoptions.setCapability("appium:noReset", true);
+		androidoptions.setAutoGrantPermissions(true);
+		androidoptions.setAutomationName("UiAutomator2");
+		androidoptions.setNewCommandTimeout(Duration.ofSeconds(300));
 
 		//options.setCapability("appium:autoAcceptAlerts", true);
 		//options.setCapability("appium:dontStopAppOnReset",true);

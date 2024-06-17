@@ -18,7 +18,7 @@ Background
     Then search the adhoc single audit site in search tab and select the site 
     Then search the questionnaire in search tab and select the questionnaire
     Then click on adhoc report and start adhoc report for single audit
-    And Accept the checkin popup
+    And accept the checkin popup
     And answer the questions
     And review and checkout the report
 #
