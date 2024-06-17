@@ -1,0 +1,109 @@
+{
+  "stockOpname": "Stok Opname",
+  "stockMovement": "Pergerakan Stok",
+  "stockOnHand": "Stok Saat Ini",
+  "stockIn": "Stok Masuk",
+  "stockOut": "Stok Keluar",
+  "beforeAudit": "Sebelum Audit",
+  "beforeAuditValue": "Jumlah sebelum audit",
+  "afterAudit": "Setelah Audit",
+  "updatedOn": "diperbaharui pada",
+  "skus": "SKUs",
+  "lowStockSkus": "Low Stock SKUs",
+  "stockAuditForm": {
+    "enterNumber": "Masukkan angka",
+    "valueExceedsMax": "Angka maks. 1,000,000,000",
+    "finalExceedsMax": "Angka tidak boleh lebih dari 1,000,000,000",
+    "beforeAuditSubtitle": "Jumlah stok saat ini",
+    "afterAuditSubtitle": "Total jumlah stok setelah stok masuk dan keluar dihitung",
+    "negativeStockAlert": "After audit must not be below zero",
+    "purchaseOrder": "Pesanan Pembelian",
+    "purchaseOrderSubtitle": "Stok yang dibeli dari vendor",
+    "transferIn": "Transfer Masuk",
+    "transferInSubtitle": "Stok yang ditransfer dari lokasi lain",
+    "otherIn": "Stok Masuk Lainnya",
+    "otherInSubtitle": "Stok masuk karena alasan lainnya",
+    "sales": "Penjualan",
+    "salesSubtitle": "Stok yang terjual",
+    "transferOut": "Transfer Keluar",
+    "transferOutSubtitle": "Stok yang ditransfer ke lokasi lain",
+    "wasteOrExpired": "Kadaluwarsa",
+    "wasteOrExpiredSubtitle": "Stok yang telah kadaluwarsa",
+    "otherOut": "Stok Keluar Lainnya",
+    "otherOutSubtitle": "Stok keluar karena alasan lainnya",
+    "note": "Catatan",
+    "addNote": "Tambahkan catatan",
+    "noteExceedsLimit": "Melebihi batas jumlah karakter",
+    "mediaAttachments": "Lampiran media",
+    "mediaLimitAlert": "Maksimum 3 foto dan 1 video",
+    "draftError": {
+      "title":"Maaf, terjadi kesalahan",
+      "description":"Terjadi kesalahan pada draf laporan. Kami akan muat ulang tetapi draf laporan Anda yang sekarang akan tertimpa. Anda juga bisa melakukannya secara manual setelah menekan tombol batal."
+    },
+    "hasEmptyValueAlert": {
+      "title": "Ada Jumlah yang Kosong",
+      "description": "Beberapa jumlah SKU masih kosong. Apa Anda yakin ingin melanjutkan?"
+    },
+    "deleteNoteModal": {
+      "title": "Hapus catatan",
+      "description": "Apa Anda yakin ingin menghapus catatan ini? Langkah ini tidak bisa diulang."
+    },
+    "deleteMediaModal": {
+      "title": "Hapus lampiran media",
+      "description": "Apa Anda yakin ingin menghapus lampiran media? Langkah ini tidak bisa diulang."
+    },
+    "stockTypeSelectionAlert": "Angka yang telah dimasukkan akan hilang jika Anda menghapus pilihan",
+    "applyToAllSkus": "Terapkan ke Semua",
+    "confirmApplyToAllSkus": "Ya, terapkan ke semua",
+    "applyToAllSkusModal": {
+      "description": "Apa anda ingin menerapkan pilihan ke semua SKU? Angka stok akan hilang jika Anda menghapus pilihan"
+    }
+  },
+  "stockAuditReview": {
+    "lowStockSkuFound": "Stok SKU Menipis",
+    "stockinvalid": "Ada angka stok yang tidak sesuai, mohon periksa kembali",
+    "checkoutSettings": "Pengaturan Saat Keluar",
+    "signature": "Tanda Tangan",
+    "editSignaturePrompt": {
+      "title": "Edit Tanda Tangan",
+      "description": "Apa yang ingin Anda lakukan untuk tanda tangan ini?"
+    },
+    "nameAndPosition": "Nama dan posisi",
+    "enterName": "Masukkan nama",
+    "enterPosition": "Masukkan Posisi",
+    "signatureRequired": "Tanda tangan diperlukan",
+    "nameRequired": "Mohon isi nama",
+    "positionRequired": "Mohon isi posisi",
+    "nameAndPositionRequired": "Mohon isi nama dan posisi",
+    "selfieSignature": "Foto Diri",
+    "selfieSignatureRequired": "Foto diperlukan, mohon ambil foto Anda sebelum melanjutkan.",
+    "openCamera": "Gunakan Kamera",
+    "emailReportTo": "Kirim laporan melalui email",
+    "supervisorDefault": "Supervisor (Default)",
+    "addAnEmail": "Tambahkan alamat email lain",
+    "emailInvalid": "Mohon masukkan alamat email yang valid",
+    "emailDuplicate": "Email telah terpakai, mohon gunakan email lain ",
+    "checkOut": "Check Out",
+    "checkOutPrompt": {
+      "title": "Check Out",
+      "description": "Apa Anda ingin mengirimkan laporan dan keluar?"
+    }
+  },
+  "stockAuditUpload": {
+    "uploading": "Mengunggah...",
+    "preventClosePrompt": "Mohon tunggu hingga proses mengunggah selesai. Waktu mengunggah tergantung pada ukuran berkas dan kecepatan koneksi Anda.",
+    "second": "detik",
+    "secondLeftFormat": "s [detik lagi]"
+  },
+  "stockAuditSummary": {
+    "reportSubmitted": "Laporan Terkirim",
+    "generatingReportPrompt": "Laporan Anda sedang dipersiapkan dan akan dikirimkan dalam beberapa menit",
+    "siteLabel": "Lokasi:",
+    "checkInLabel": "Masuk:",
+    "checkOutLabel": "Keluar:",
+    "durationLabel": "Durasi:",
+    "totalSkuChecked": "Total SKU yang diperiksa",
+    "lowStockSku": "Stok SKU Menipis",
+    "gotItButton": "OK!"
+  }
+}

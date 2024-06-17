@@ -1,0 +1,86 @@
+{
+  "backButton": "សូមចុចប៉ូតុងត្រឡប់ក្រោយម្តងទៀតដើម្បីចាកចេញ",
+  "welcome": {
+    "checkPermission": "អ្នកអាចបើកដំណើរទីតាំងសម្រាប់ Nimbly នៅក្នុងការកំណត់កម្មវិធីរបស់អ្នកពេលក្រោយ ។",
+    "accessLocation": "ការចូលទៅប្រើទីតាំង",
+    "openSettings": "បើកការកំណត់",
+    "skip": "រំលង"
+  },
+  "tutorial": {
+    "end": "បញ្ចប់ការបង្រៀន",
+    "tap": "ប៉ះលើកាតដើម្បីចាប់ផ្តើមរបាយការណ៍ដែលបានគ្រោងទុករបស់អ្នក ។"
+  },
+  "daySchedule": {
+    "onGoing": "ដំណើរមួយទៀតកំពុងបន្ត \nនអ្នកមិនអាចចាប់ផ្តើមដំណើរនេះទេ",
+    "reminder": "ការរំលឹក",
+    "noDue": "គ្មានដល់កំណត់ថ្ងៃនេះទេ!",
+    "pullDown": "(ទាញចុះដើម្បីធ្វើឲ្យថ្មីម្តងទៀត)"
+  },
+  "siteItem": {
+    "pendingUpload": "ការបញ្ចូលកំពុងផ្អាក",
+    "inProgress": "កំពុងបន្ត",
+    "overdue": "ហួសកាលកំណត់",
+    "priority": "អាទិភាព",
+    "onGoing": "កំពុងបន្ត",
+    "noLocation": "រកមិនឃើញទីតាំង ។ \nនសូមចុះឈ្មោះដើម្បីក្រិតខ្នាត ។",
+    "done": "ចប់  ",
+    "tap": "ប៉ះដើម្បីធ្វើរបាយការណ៍"
+  },
+  "notification": {
+    "uploadDone": "ការបញ្ចូលរបាយការណ៍ចប់ហើយ",
+    "title": "ការជូនដំណឹង",
+    "tap": "ប៉ះដើម្បីមើល"
+  },
+  "offDay": {
+    "title": "ថ្ងៃនេះនៅក្នុងថ្ងៃដែលមិនមានប្រតិបត្តិការ",
+    "description": "អ្នកនៅតែអាចធ្វើរបាយការណ៍តាមពេលវេលាកំណត់របស់អ្នក ប៉ុន្តែវានឹងមិនរួមបញ្ចូលនៅក្នុងស្ថិតិផ្ទាល់ខ្លួនរបស់អ្នកទេ"
+  },
+  "summary": {
+    "hi": "សួស្តី, "
+  },
+  "progress": {
+    "thisWeek": "សប្តាហ៍នេះ",
+    "thisMonth": "ខែនេះ",
+    "thisYear": "ឆ្នាំនេះ"
+  },
+  "sales": {
+    "title": "ការលក់",
+    "toDate": "រហូតមកដល់ឥឡូវនេះ",
+    "toMonth": "ខែ",
+    "dayLeft": "{{daysLeft}} ថ្ងៃ{{add}} នៅសល់"
+  },
+  "home": "ផ្ទះ",
+  "softUpdate": {
+    "title": "Update Available",
+    "description": "A newer version of the Nimbly app is available for download. Please update to the new version to get the latest features and best experience.",
+    "dismiss": "Dismiss",
+    "updateButton": "Update Now"
+  },
+  "freezeModal": {
+    "title": "Your Account is Frozen",
+    "subtitle": "Your Nimbly account has been temporarily disabled. For more details, please contact your organization’s Account Holder.",
+    "button": "OK"
+  },
+  "forceUpdate": {
+    "title": "Upgrade Required",
+    "description": "Sorry, this version of the app is no longer supported. Please update your app to continue using the app.",
+    "updateButton": "Update Now"
+  },
+  "offlineAudit": {
+    "switchLabel": "ទាញយក",
+    "progressBarTitle": "កំពុងទាញយកកម្រងសំណួរ ...",
+    "stopButtonTitle": "ឈប់",
+    "stopModal": {
+      "title": "បញ្ឈប់ការទាញយក?",
+      "body": "អ្នកនឹងមិនអាចចូលប្រើការទាញយកដែលមិនទាន់ចប់ក្រៅបណ្តាញបានទេ។ ទោះយ៉ាងណាក៏ដោយកម្រងសំណួរដែលបានទាញយកនឹងនៅតែអាចប្រើបាននៅពេលអ្នកនៅក្រៅអ៊ីនធឺណិត។",
+      "stopDownloadButtonLabel": "ឈប់ទាញយក",
+      "cancelDownloadButtonLabel": "បោះបង់"
+    },
+    "deleteModal": {
+      "title": "លុបការទាញយកទាំងអស់?",
+      "body": "រាល់ការទាញយកកម្រងសំណួរនឹងត្រូវលុបហើយអ្នកនឹងមិនអាចធ្វើសវនកម្មក្រៅបណ្តាញបានទេ។",
+      "deleteDownloadButtonLabel": "លុបការទាញយក",
+      "cancelDownloadButtonLabel": "បោះបង់"
+    }
+  }
+}

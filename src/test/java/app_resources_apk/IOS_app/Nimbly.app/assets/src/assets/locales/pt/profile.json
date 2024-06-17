@@ -1,0 +1,44 @@
+{
+  "upload": "Carregar Foto",
+  "selectSource": "Selecionar a fonte para carregar a fotografia",
+  "camera": "Câmara",
+  "editPhoto": "Editar Foto",
+  "gallery": "Galeria",
+  "titlePhoto": "O que gostaria de fazer com esta foto?",
+  "change": "Alterar",
+  "delete": "Eliminar",
+  "totalReports": "RELATÓRIOS TOTAIS",
+  "statistic": {
+    "totalFlags": "SINALIZADORES TOTAIS",
+    "flagsVisit": "SINALIZADORES POR VISITA",
+    "avgTime": "MÉD. HORAS",
+    "missed": "PERDIDAS",
+    "doReport": "Crie um relatório para gerar o seu gráfico",
+    "onTime": "PONTUAL",
+    "madeUp": "COMPENSAR",
+    "scheduled": "AGENDADO",
+    "avgFlags": "MÉD. SINALIZADORES",
+    "thisWeek": "ESTA SEMANA",
+    "numberOption": ""
+  },
+  "auth": {
+    "alert": {
+      "title": "Acesso existente",
+      "message": "Já acedeu noutro dispositivo e agora será desligado deste dispositivo.",
+      "buttonOK": "OK"
+    },
+    "blockedAlert": {
+      "title": "A sua conta foi removida",
+      "message": "A sua conta Nimbly foi removida da organização. Para mais detalhes, contacte o Titular de Conta da sua organização.",
+      "buttonOK": "OK"
+    },
+    "recognizedAlert": {
+      "title": "Utilizador não reconhecido",
+      "message": "Não está registado em nenhuma organização.\nContacte o administrador",
+      "buttonOK": "OK"
+    },
+    "toast": {
+      "message": "A sua ligação está fraca"
+    }
+  }
+}

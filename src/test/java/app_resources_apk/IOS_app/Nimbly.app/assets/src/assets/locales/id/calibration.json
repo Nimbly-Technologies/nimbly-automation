@@ -1,0 +1,11 @@
+{
+  "prompt": {
+    "confirmLocation": "Pastikan Lokasi",
+    "askCorrectLocation": "Apakah Anda yakin lokasi sudah benar untuk situs ini?",
+    "setLocation": "Sesuaikan Lokasi"
+  },
+  "error": {
+    "invalidLocation": "Error: Mohon pilih lokasi dengan alamat yang benar",
+    "outsideCircle": "Error: Mohon pilih lokasi di dalam lingkaran"
+  }
+}

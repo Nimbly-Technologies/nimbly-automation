@@ -1,0 +1,43 @@
+{
+    "error":{
+        "connection":"Oops, internet connection lost. Please try again later.",
+        "timeout":"ERROR: Connection request timeout, please try again",
+        "fileName":"File name not found",
+        "offline":"You are currently offline.\nPlease try again later",
+        "upload":"ERROR: Upload failed, please try again!"
+    },
+    "prompt":{
+        "backPress":"Report is still being uploaded.\nAre you sure you want to leave this page?",
+        "warningCapital":"WARNING",
+        "warning":"Warning"
+    },
+    "container":{
+        "loading":"Loading ...",
+        "failUpload":"FAILED TO UPLOAD",
+        "uploadingCapital":"UPLOADING...",
+        "reportSaved":"REPORT SAVED!",
+        "reportSavedDesc": "Your report has been saved. You can upload your report from the Site Lobby once you're reconnected to the internet.",
+        "uploadFailed":"UPLOAD FAILED",
+        "inProgress":"In Progress",
+        "oops":"Uh-oh!",
+        "failUploading":"Report failed to upload. Hit the button below to retry upload!",
+        "hooray":"Hooray!",
+        "hitButton":"Hit the button below to send the report!",
+        "offline":"You are currently offline",
+        "uploadLater":"You can try uploading at a later time.",
+        "retryUpload":"RETRY UPLOAD",
+        "uploading":"UPLOADING...",
+        "uploadReport":"UPLOAD REPORT",
+        "uploadLaterCapital":"UPLOAD LATER",
+        "online": "ONLINE",
+        "offline": "OFFLINE",
+        "backToHome": "Back to Home"
+    },
+    "failedModal": {
+        "general": {
+            "title": "Uh Oh! Your Attachment Wasn’t Uploaded",
+            "text": "Something went wrong and we can’t upload your attachment files. Please reupload your attachment files.",
+            "button": "Back to Questionnaire"
+        }
+    }
+}

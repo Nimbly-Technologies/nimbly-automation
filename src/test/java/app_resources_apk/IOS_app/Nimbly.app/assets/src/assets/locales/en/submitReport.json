@@ -1,0 +1,85 @@
+{
+  "error": {
+    "internet": "Connection error. Please try again later",
+    "questionnaire": "Questionnaire data was not found. Please contact support.",
+    "signature": "{{invalidCount}} signature(s) incomplete. Please fill in all fields and try again.",
+    "selfieSignature": "Selfie signature incomplete. Please take a selfie photo",
+    "location": "Something went wrong while retrieving your location. Please try again.",
+    "distance": "You are too far away from the location. Get nearer and try again.",
+    "submit": "Oops. Something went wrong. Please try submitting again!",
+    "checkout": {
+      "title": "Check-Out Failed",
+      "description": "Unable to display grade. Please retry"
+    }
+  },
+  "prompt": {
+    "checkout": "Are you sure you want to check out of this site?",
+    "rejectTitle": "Reject Section?",
+    "approveTitle": "Approve Section?",
+    "reject": "Are you sure you want to reject this section? Auditors will have to resubmit this report, so we advise you to provide them some feedback.",
+    "approve": "Are you sure you want to approve this section? ",
+    "addPhoto": "Add Photo",
+    "openMap": "Open Map",
+    "editSignature": "Edit Signature",
+    "signature": "What would you like to do with this signature?"
+  },
+  "checkout": "CHECK-OUT",
+  "reject": "reject",
+  "approve": "approve",
+  "viewAll": "view all",
+  "selectSection": "please select a section",
+  "searchSection": "search section",
+  "takeSelfie": "Take Selfie",
+  "change": "Change",
+  "editReport": "Hit the Back button if you want to go back and edit your report.",
+  "reportStarted": "Report Started:",
+  "signatures": "Signatures",
+  "loadingCapital": "LOADING...",
+  "loading": "Loading...",
+  "overview": {
+    "decsGrade": "The Audit Grade is :",
+    "summary": "Report Summary",
+    "topIssues": "Top Issues:",
+    "questionsAnswers": "Questions and Answers:",
+    "comment": "comment",
+    "redFlag": "Red Flags:",
+    "yellowFlag": "Yellow Flags:",
+    "greenFlag": "Green Flags:",
+    "score": "Score:",
+    "gradeError": {
+      "failed": "Unable to display grade",
+      "offline": "Unable to display grade, offline mode.",
+      "retry": "Retry"
+    }
+  },
+  "signatureCard": {
+    "tapSign": "TAP TO SIGN",
+    "enterName": "Enter your name",
+    "enterPosition": "Enter your position"
+  },
+  "selfieSignature": {
+    "takeSelfie": "Take a selfie signature"
+  },
+  "reportTargets": {
+    "supervisorDefault": "Supervisor (default)",
+    "emailReport": "Email Report PDF to...",
+    "myself": "Myself",
+    "setByAdmin": " (set by admin)",
+    "addEmail": "Add an Email Address",
+    "validEmail": "Please enter a valid email address",
+    "emailDomain": "Please enter a {{emailDomains}} domain"
+  },
+  "tutorial": {
+    "reportTargets": {
+      "addEmail": "Add email address here who will receive this report"
+    },
+    "reportSignature": {
+      "next": "NEXT",
+      "end": "End Tutorial",
+      "signHere": "Put your signature here"
+    }
+  },
+  "redFlag": "Red Flag",
+  "yellowFlag": "Yellow Flag",
+  "greenFlag": "Green Flag"
+}

@@ -1,0 +1,30 @@
+{
+  "oops": "Ups",
+  "finalizeReport": "Terminar relatório",
+  "reportCompleted": "Relatório Concluído.",
+  "reportCompletedSubtitle": "Lamentamos, este relatório já foi concluído.\nSerá redirecionado para a Página Inicial.",
+  "uploadReport": "Carregar Relatório",
+  "areYouSure": "Tem a certeza?",
+  "requiredSection": "Secção Obrigatória",
+  "optionalSection": "Secção Opcional",
+  "leader": "Líder",
+  "member": "Membro",
+  "prompt": {
+    "uploadingInProgress": "O relatório ainda está a ser carregado.\nTem a certeza que deseja sair desta página?",
+    "sectionInProgress": "O {{displayName}} trabalha nesta secção.\nDeseja continuar?",
+    "unfinishedReport": "AVISO: Secção(ões) inacabada(s) será(ão) elimada(s).",
+    "uploadWarning": "AVISO: Depois de ter carregado a(s) sua(s) secção(ões), não poderá editá-la(s)."
+  },
+  "error": {
+    "offlineAlert": "Está desligado.\nTente novamente mais tarde",
+    "connectionLost": "Ups, sem ligação à Internet. Tente novamente mais tarde.",
+    "uploadTimeout": "ERRO: O pedido de ligação ultrapassou o tempo limite, tente novamente.",
+    "uploadFailed": "ERRO: Falha no carregamento, tente novamente!"
+  },
+  "status": {
+    "tapToStart": "Clique para Iniciar",
+    "inProgress": "Em andamento",
+    "uploaded": "Carregado",
+    "waitingForUpload": "A aguardar o Carregamento"
+  }
+}

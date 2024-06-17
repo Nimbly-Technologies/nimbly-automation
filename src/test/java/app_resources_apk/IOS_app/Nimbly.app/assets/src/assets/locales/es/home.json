@@ -1,0 +1,86 @@
+{
+  "backButton": "Presione el botón Atrás nuevamente para salir ",
+  "welcome": {
+    "checkPermission": "Puede habilitar el acceso a la ubicación para Nimbly en la configuración de la aplicación más adelante.",
+    "accessLocation": "Accesar la ubicación",
+    "openSettings": "Abrir configuración",
+    "skip": "Omitir"
+  },
+  "tutorial": {
+    "end": "Fin del Tutorial",
+    "tap": "Toque la tarjeta para iniciar su informe programado."
+  },
+  "daySchedule": {
+    "onGoing": "Hay otro viaje en curso \nNo puedes iniciar este viaje",
+    "reminder": "Recordatorio",
+    "noDue": "Ningún Pendiente hoy!",
+    "pullDown": "(tire hacia abajo para actualizar)"
+  },
+  "siteItem": {
+    "pendingUpload": "PENDIENTE DE CARGA",
+    "inProgress": "EN CURSO",
+    "overdue": "ATRASADO",
+    "priority": "PRIORIDAD",
+    "onGoing": "EN CURSO",
+    "noLocation": "No se encontró ninguna ubicación.\nRegistrarse para calibrar.",
+    "done": "HECHO",
+    "tap": "TOCAR PARA HACER INFORME"
+  },
+  "notification": {
+    "uploadDone": "Informe de Subida Finalizado",
+    "title": "Notificaciones",
+    "tap": "Toca para ver"
+  },
+  "offDay": {
+    "title": "Hoy en un día no operativo",
+    "description": "Aún puede hacer su informe programado, pero no se incluirá en sus estadísticas personales"
+  },
+  "summary": {
+    "hi": "Hola, "
+  },
+  "progress": {
+    "thisWeek": "ESTA SEMANA",
+    "thisMonth": "ESTE MES",
+    "thisYear": "ESTE AÑO"
+  },
+  "sales": {
+    "title": "VENTAS",
+    "toDate": "Hasta-la-Fecha",
+    "toMonth": "Mes",
+    "dayLeft": "{{daysLeft}} día{{add}} restante"
+  },
+  "home": "Home",
+  "softUpdate": {
+    "title": "Update Available",
+    "description": "A newer version of the Nimbly app is available for download. Please update to the new version to get the latest features and best experience.",
+    "dismiss": "Dismiss",
+    "updateButton": "Update Now"
+  },
+  "freezeModal": {
+    "title": "Your Account is Frozen",
+    "subtitle": "Your Nimbly account has been temporarily disabled. For more details, please contact your organization’s Account Holder.",
+    "button": "OK"
+  },
+  "forceUpdate": {
+    "title": "Upgrade Required",
+    "description": "Sorry, this version of the app is no longer supported. Please update your app to continue using the app.",
+    "updateButton": "Update Now"
+  },
+  "offlineAudit": {
+    "switchLabel": "Descargar",
+    "progressBarTitle": "Descarga de cuestionarios...",
+    "stopButtonTitle": "Parada",
+    "stopModal": {
+      "title": "¿Detener la descarga?",
+      "body": "No podrá acceder a la descarga inacabada sin conexión. Sin embargo, los cuestionarios descargados seguirán estando accesibles cuando no esté conectado.",
+      "stopDownloadButtonLabel": "Dejar de descargar",
+      "cancelDownloadButtonLabel": "Cancelar"
+    },
+    "deleteModal": {
+      "title": "¿Eliminar todas las descargas?",
+      "body": "Se eliminarán todas las descargas de cuestionarios y no podrá realizar la auditoría sin conexión.",
+      "deleteDownloadButtonLabel": "Eliminar descargas",
+      "cancelDownloadButtonLabel": "Cancelar"
+    }
+  }
+}

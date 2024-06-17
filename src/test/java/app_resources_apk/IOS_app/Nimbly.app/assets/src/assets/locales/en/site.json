@@ -1,0 +1,146 @@
+{
+  "outlet": {
+    "button": {
+      "setLocation": "Set Location",
+      "enterLobby": "Enter Lobby",
+      "startAdhoc": "Start Ad hoc Report",
+      "uploadReport": "Upload Report",
+      "resumeReporting": "Resume Reporting",
+      "viewReport": "View Report",
+      "makeUpReport": "Make up Report",
+      "viewDetails": "View Details"
+    },
+    "error": {
+      "noQuestionnaireFound": "Error: No questionnaire found. Please contact admin.",
+      "noScheduleFound": "Error: No schedule found. Please contact support.",
+      "alreadySetLocation": "Someone else is already setting the location of this site.",
+      "notAllowedSetLocation": "Your organization does not allow site location calibration.",
+      "farFromLocation": "You are too far away from the location. Get nearer and try again.",
+      "failedCompilingData": "Failed when compiling your data. Please try again",
+      "failedParseMakeUpData": "Failed to parse make up date. Please try again."
+    },
+    "prompt": {
+      "deleteDraft": "Are you sure want to delete all your answers?",
+      "teamReportNotStarted": "Report Has Not Started",
+      "leaderCheckIn": "Please ensure your team leader has checked-in."
+    },
+    "placeholder": {
+      "noSchedule": "No Schedule",
+      "noScheduleTitle": "You don’t have any task for this date."
+    },
+    "offlineInfo": "You are offline. Please try again later.",
+    "noReportDue": "No report to do due this period.",
+    "overdueReport": "Check-in time for reporting has passed.",
+    "alreadyCompletedReport": "You have already completed a report today. Try again tomorrow.",
+    "ongoingDraftFound": "You have already started a report for {{title}}. Please resume your ongoing report.",
+    "finishThisPeriod": "You have completed all reports for the period. Well done!",
+    "startAnytime": "Start Anytime",
+    "selectQuestionnaire": "Select a Questionnaire for today’s report",
+    "reportDoneToday": "Reports done for today",
+    "seeMap": "see map",
+    "openMap": "Open Map",
+    "questionnairesDownloaded": "Questionnaires Downloaded",
+    "downloadQuestionnaires": "Download Questionnaires",
+    "deleteButton": "Delete",
+    "searchQuestionnaires": "Search for questionnaires",
+    "outletListHeadline": "Select a questionnaire to start auditing",
+    "outletListSubtitle": "Reports completed for",
+    "mapNotAvailableOffline": "Map is not available offline"
+  },
+  "calendar": {
+    "emptySchedules": " No scheduled task",
+    "emptySchedulesSubtitle": "You don’t have any task for this date.",
+    "viewPeriod": "Viewing {{day}} day period"
+  },
+  "footer": {
+    "title": "Questionnaire to use for report",
+    "selectType": "Select the type of report",
+    "multisiteTitle": "Start Team Audit",
+    "multisiteSubtitle": "Start the report lobby so your team could join in and select a questionnaire."
+  },
+  "error": {
+    "failedRetrieveLocation": "Something went wrong while retrieving your location. Please try again.",
+    "enableLocationAccess": "You can enable Location Access for Nimbly in your App Settings later.",
+    "selectQuestionnaireFirst": "Select questionnaire first.",
+    "missingDraftReport": "Cannot find report when trying to resume draft report, try again later."
+  },
+  "promotions": {
+    "empty_board": "You have no active promotions right now. Come back later."
+  },
+  "sales": {
+    "achieve": "You've Achieved",
+    "thisMonth": "of this month's Sales Target",
+    "toDate": "To Date",
+    "toMonth": "To Month",
+    "current": "Current",
+    "target": "Target"
+  },
+  "siteReports": {
+    "footer": {
+      "message": "Looks like you've reached the end."
+    },
+    "time": {
+      "mtd": "Month-to-date",
+      "ytd": "Year-to-date",
+      "custom": "Custom",
+      "thisPeriod": "This {{period}}",
+      "lastPeriod": "Last {{period}}",
+      "period": "Period",
+      "last-7": "Last 7 Days",
+      "last-28": "Last 28 Days",
+      "last-30": "Last 30 Days",
+      "last-60": "Last 60 Days",
+      "last-90": "Last 90 Days",
+      "last-6-m": "Last 6 Months",
+      "last-12-m": "Last 12 Months",
+      "last-year": "Last Year",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year",
+      "daily": "Daily",
+      "everyday": "Everyday",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "today": "Today",
+      "filter": "Filter"
+    },
+    "empty_board_title": "There are no reports yet",
+    "empty_board_subtitle": "After a questionnaire has been successfully filled up and uploaded, you can view the report here.",
+    "date": "Date",
+    "latestDate": "Oldest date",
+    "earliestDate": "Newest date",
+    "filter": "Filter and Sort",
+    "byTime": "By Time",
+    "byCustom": "By date",
+    "sortBy": "Sort by",
+    "download":"Download"
+  },
+  "confirmCheckIn": "Are you sure you want to begin a report at this site?",
+  "startAnytime": "Start Anytime",
+  "makeupReport": "Make-Up Report",
+  "overdue": "Overdue",
+  "continueReport": "Continue Report",
+  "pendingReport":"Pending Upload",
+  "makeUpReport": "Make-Up Report",
+  "fillMakeupField": "Please fill with the reason for missing the deadline",
+  "notAllowedMakeUpReport": "Please complete today's reports before sending make up report",
+  "scheduleNotStartedYet": "This schedule hasn't started yet",
+  "leaderMustCheckIn": "Please ensure your team leader has checked-in.",
+  "reportHasNotStarted": "Report Has Not Started",
+  "ok": "OK",
+  "loadingSite":"Loading Site ...",
+  "makeUpDate":"Make up date",
+  "questionnaireNotDownloaded": "Questionnaire was not downloaded",
+  "startAuditCta": "Tap to start audit",
+  "resumeAuditCta": "Tap to resume audit",
+  "uploadAuditCta": "Tap to upload",
+  "uploadedDisplay": "Report uploaded",
+  "inventory": {
+    "searchPlaceholder": "Search tasks",
+    "todayLabel":  "(Today)",
+    "emptyInventoryTitle": "No Inventory task found",
+    "emptyInventoryHelperText": "Please try other keywords.",
+    "endOfListLabel": "You’ve reached the end of the list"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "thanks": "Terima kasih atas bantuan Anda dalam upaya peningkatan Nimbly ke semua pengguna!",
+  "open": {
+    "enterText": "Isi Teks",
+    "maxCharacter": "Maks. 400 karakter"
+  },
+  "score": {
+    "notLikely": "Tidak mungkin",
+    "extremeLikely": "Sangat mungkin"
+  },
+  "error": {
+    "maxCharacterExceeded": "Melebihi batas karakter maksimum",
+    "answer": "Jawaban",
+    "noEmpty": "Jawaban tidak boleh kosong",
+    "chooseOne": "Pilih setidaknya satu jawaban"
+  }
+}

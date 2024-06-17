@@ -1,0 +1,17 @@
+{
+  "title": "Sem acesso",
+  "subtitle": "Lamentamos, mas não tem acesso a esta função.",
+  "body": "Contacte o seu administrador para ativar esta função.",
+  "buttonTranslation": "OK",
+  "error": {
+    "title": "Ups!",
+    "subtitle": "Problema ao recuperar o acesso à função",
+    "body": "Reinicie a aplicação."
+  },
+  "freezeBanner": {
+    "title": "A conta a que está a tentar aceder foi desativada. Tente outra conta."
+  },
+  "saga": {
+    "fail": "Erro ao obter acesso à Funcionalidade"
+  }
+}

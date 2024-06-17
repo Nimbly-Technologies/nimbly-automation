@@ -1,0 +1,19 @@
+{
+  "reportComplete": "Informe Completo!",
+  "generateReport": "Actualmente estamos generando sus informes,\nse enviará en unos minutos.",
+  "dateOfVisit": "Fecha De Visita",
+  "timeOfVisit": "Hora De Visita",
+  "duration": "Duración",
+  "totalScore": "Puntuación Total",
+  "gotIt": "Entendido!",
+  "backToJourneyPlan": "Volver al plan de viaje",
+  "score": "Puntuación",
+  "redFlags": "Red Flags",
+  "yellowFlags": "Yellow Flags",
+  "greenFlags": "Green Flags",
+  "grade": "Grade",
+  "notification": {
+    "title": "Reporte @",
+    "body": "Toque aquí para finalizar su informe."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "assignedDepartment": {
+    "update": "เปลี่ยนแผนกที่กำหนดเป็น {{payload}}",
+    "remove": "ถอดแผนกที่กำหนดออก"
+  },
+  "assignedTo": {
+    "update": "เปลี่ยนผู้ตรวจสอบสอบที่กำหนดเป็น {{payload}}",
+    "default": "คุณถูกกำหนดให้เป็นผู้ตรวจสอบปัญหานี้"
+  },
+  "dueDate": {
+    "update": "เปลี่ยนวันกำหนดส่งเป็น {{payload}}"
+  },
+  "severity": {
+    "update": "เปลี่ยนธงของปัญหานี้เป็น {{payload}}"
+  },
+  "priority": {
+    "update": "เปลี่ยนลำดับความสำคัญเป็น {{payload}}"
+  },
+  "status": {
+    "update": "Changed issue status from {{prevStatus}} to {{currentStatus}}"
+  },
+  "comment": {
+    "add": "{{payload}} ให้ความคิดเห็นเกี่ยวกับตัวปัญหา"
+  },
+  "members": {
+    "add": "เพิ่ม {{payload}} เข้าเป็นปัญหาสมาชิก",
+    "remove": "ลบ {{payload}} ออกจากปัญหาสมาชิก"
+  },
+  "escalation": {
+    "default": "ปัญหานี้ได้รับการยกระดับเป็น {{payload}}"
+  }
+}

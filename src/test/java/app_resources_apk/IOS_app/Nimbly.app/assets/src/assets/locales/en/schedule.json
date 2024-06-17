@@ -1,0 +1,90 @@
+{
+  "pendingUpload": "Pending Upload",
+  "inProgress": "In Progress",
+  "overdue": "Overdue",
+  "priority": "Not Started",
+  "notStarted": "Not Started",
+  "onGoing": "In Progress",
+  "completed": "Completed",
+  "noLocation": "No Location",
+  "done": "Done",
+  "tapTodoReport": "Go to site lobby",
+  "questionnaireNotDownloaded": "Questionnaire was not downloaded",
+  "sales": "Sales",
+  "toDate": "To-Date",
+  "month": "Month",
+  "error": {
+    "noLocationFound": "No location found.\nPlease check-in to calibrate.",
+    "getLocation": "Something went wrong while retrieving your location. Please try again."
+  },
+  "promptPermission": "You can enable Location Access for Nimbly in your App Settings later.",
+  "promptOnGoingJourney": "Another journey is ongoing\nYou can not start this journey",
+  "accessLocation": "Access Location",
+  "skip": "Skip",
+  "openSettings": "Open Settings",
+  "reminder": "Reminder",
+  "lastUpdated": "Last Updated",
+  "noSitesFound": "No Sites Found",
+  "journeyReadyToUpload": "Journey Ready to Upload",
+  "journeyAssigned": "Journey Assigned",
+  "journeyCompleted": "Journey Completed",
+  "sitesReadyToUpload": "Sites ready to Upload",
+  "sitesAssigned": "Sites Assigned",
+  "sitesCompleted": "Sites Completed",
+  "nearby": "Nearby",
+  "ok": "OK",
+  "thisWeek": "This Week",
+  "reason": "reason missing report",
+  "inventory": {
+    "startAnytime": "Start anytime",
+    "start": "Start",
+    "end": "End",
+    "status": {
+      "notStarted": "Not Started",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "overdue": "Overdue"
+    },
+    "type": {
+      "scheduled": "Scheduled",
+      "onDemand": "On Demand"
+    },
+    "occursOn": "Occurs on",
+    "multipleDates": "Multiple dates",
+    "onceAMonth": "Once a month",
+    "timesAMonth": "time(s) a month",
+    "timesAWeek": "time(s) a week",
+    "repeats": "Repeats",
+    "footer": {
+      "tapToStart": "Tap to start",
+      "tapToResume": "Tap to resume",
+      "reportAvailable": "Report available in Web Admin"
+    },
+    "days": {
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    },
+    "frequencies": {
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "custom": "Custom"
+    }
+  },
+  "inventoryBottomSheet": {
+    "checkIn": "Check-In",
+    "reset": "Reset",
+    "startReportPrompt": "Are you sure you want to begin a report at\nthis site?",
+    "resetPrompt": "Are you sure that you want to delete all your answers?",
+    "startScheduleTitle": "Start Schedule Task",
+    "resumeScheduleTitle": "Resume Schedule Task",
+    "startButton": "Start",
+    "resetButton": "Reset",
+    "resumeButton": "Resume"
+  }
+}

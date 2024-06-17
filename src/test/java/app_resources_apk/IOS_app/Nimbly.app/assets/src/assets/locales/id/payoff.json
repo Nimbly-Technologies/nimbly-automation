@@ -1,0 +1,20 @@
+{
+  "reportComplete": "Laporan Selesai!",
+  "generateReport": "Kami sedang dalam memproses laporan Anda.\nLaporan akan dikirim dalam beberapa menit.",
+  "dateOfVisit": "Tanggal Kunjungan",
+  "timeOfVisit": "Jam Kunjungan",
+  "duration": "Durasi",
+  "totalScore": "Total Skor",
+  "gotIt": "OK!",
+  "backToJourneyPlan": "Kembali ke Rencana Perjalanan",
+  "score": "Skor",
+  "flags": "",
+  "redFlags": "Bendera Merah",
+  "yellowFlags": "Bendera Kuning",
+  "greenFlags": "Bendera Hijau",
+  "grade": "Nilai",
+  "notification": {
+    "title": "Laporan di",
+    "body": "Tekan disini untuk menyelesaikan laporan."
+  }
+}

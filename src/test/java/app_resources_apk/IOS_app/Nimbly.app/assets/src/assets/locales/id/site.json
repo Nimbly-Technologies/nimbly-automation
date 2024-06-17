@@ -1,0 +1,151 @@
+{
+  "outlet": {
+    "button": {
+      "setLocation": "Atur Location",
+      "enterLobby": "Masuk Lobi",
+      "startAdhoc": "Mulai Laporan Ad hoc",
+      "uploadReport": "Unggah Laporan",
+      "resumeReporting": "Lanjutkan Laporan",
+      "viewReport": "Lihat Laporan",
+      "makeUpReport": "Mulai Laporan Susulan",
+      "viewDetails": "Lihat Rincian"
+    },
+    "error": {
+      "noQuestionnaireFound": "Error: Kuesioner tidak ditemukan. Hubungi admin.",
+      "noScheduleFound": "Error: Schedule tidak ditemukan. Hubungi dukungan.",
+      "alreadySetLocation": "Seseorang telah mengatur lokasi pada situs ini.",
+      "notAllowedSetLocation": "Organisasi anda tidak membolehkan kalibrasi lokasi situs. Mohon hubungi admin anda.",
+      "farFromLocation": "Anda berada sangat jauh dengan lokasi. Dekati lokasi dan coba kembali",
+      "failedCompilingData": "Gagal memproses data anda. Silahkan coba lagi.",
+      "failedParseMakeUpData": "Gagal mendapatkan tanggal report anda. Silahkan coba lagi."
+    },
+    "prompt": {
+      "deleteDraft": "Apakah Anda yakin ingin menghapus seluruh jawaban yang telah diisi?",
+      "teamReportNotStarted": "Laporan Belum Dimulai",
+      "leaderCheckIn": "Pastikan ketua grup anda telah check-in terlebih dahulu."
+    },
+    "footer": {
+      "title": "Kuesioner yang digunakan untuk laporan",
+      "selectType": "Pilih jenis laporan"
+    },
+    "placeholder": {
+      "noSchedule": "Tidak ada jadwal",
+      "noScheduleTitle": "Anda tidak punya jadwal untuk tanggal ini."
+    },
+    "offlineInfo": "Tidak ada jaringan. Coba lagi nanti.",
+    "alreadyCompletedReport": "Anda tidak perlu mengerjakan laporan pada hari ini. Coba lagi besok.",
+    "ongoingReportFound": "Anda sudah memulai laporan {{title}}. Mohon lanjutkan laporan Anda.",
+    "finishThisPeriod": "Anda telah menyelesaikan semua laporan dalam periode ini. Kerja yang bagus!",
+    "noReportDue": "Tidak ada laporan untuk dikerjakan.",
+    "overdueReport": "Waktu mengerjakan laporan sudah habis.",
+    "startAnytime": "Mulai Sekarang",
+    "selectQuestionnaire": "Pilih kuesioner untuk membuat laporan",
+    "reportDoneToday": "Laporan yang telah selesai hari ini",
+    "seeMap": "lihat peta",
+    "openMap": "Buka Peta",
+    "ongoingDraftFound": "You have already started a report for {{title}}. Please resume your ongoing report.",
+    "questionnairesDownloaded": "Kuesioner Selesai Diunduh",
+    "downloadQuestionnaires": "Unduh Kuesioner",
+    "deleteButton": "Hapus",
+    "searchQuestionnaires": "Cari kuesioner",
+    "outletListHeadline": "Pilih kuesioner untuk mulai mengaudit",
+    "outletListSubtitle": "Laporan selesai hingga",
+    "mapNotAvailableOffline": "Peta tidak tersedia saat offline"
+  },
+  "calendar": {
+    "emptySchedules": "Tidak ada jadwal",
+    "emptySchedulesSubtitle": "Tidak ada tugas untuk tanggal ini.",
+    "viewPeriod": "Melihat periode {{day}} hari"
+  },
+  "footer": {
+    "title": "Kuesioner yang digunakan untuk laporan",
+    "selectType": "Pilih jenis laporan",
+    "multisiteTitle": "Mulai Tim Audit",
+    "multisiteSubtitle": "Mulai laporan dan pilih kuesioner di Lobi"
+  },
+  "promotions": {
+    "empty_board": "Kamu belum memiliki promosi di situs ini."
+  },
+  "sales": {
+    "achieve": "Anda telah Mencapai",
+    "thisMonth": "Target Penjualan bulan ini",
+    "toDate": "Saat ini",
+    "toMonth": "Bulan ini",
+    "current": "Saat ini",
+    "target": "Target"
+  },
+  "siteReports": {
+    "footer": {
+      "message": "Anda sudah mencapai di akhir riwayat"
+    },
+    "time": {
+      "mtd": "Bulan ini",
+      "ytd": "Setahun lalu",
+      "custom": "Kustom",
+      "thisPeriod": "{{period}} ini",
+      "lastPeriod": "{{period}} lalu",
+      "period": "Periode",
+      "last-7": "7 Hari lalu",
+      "last-28": "28 Hari lalu",
+      "last-30": "30 Hari lalu",
+      "last-60": "60 Hari lalu",
+      "last-90": "90 Hari lalu",
+      "last-6-m": "6 Bulan lalu",
+      "last-12-m": "12 Bulan lalu",
+      "last-year": "Setahun lalu",
+      "day": "Hari",
+      "week": "Minggu",
+      "month": "Bulan",
+      "year": "Tahun",
+      "daily": "Harian",
+      "everyday": "Setiap hari",
+      "weekly": "Mingguan",
+      "monthly": "Bulanan",
+      "today": "Hari ini",
+      "filter": "Saring"
+    },
+    "empty_board_title": "Tidak ada Laporan.",
+    "empty_board_subtitle": "Setelah kuesioner berhasil diisi dan diunggah, Anda dapat melihat laporannya di sini.",
+    "date": "Tanggal",
+    "latestDate": "Tanggal terjauh",
+    "earliestDate": "Tanggal terdekat",
+    "filter": "Saring dan Urutkan",
+    "byTime": "Berdasarkan waktu",
+    "byCustom": "Berdasarkan tanggal",
+    "sortBy": "Urutkan",
+    "download": "Unduh"
+  },
+  "error": {
+    "failedRetrieveLocation": "Terjadi kendala dalam menentukan lokasi anda. Coba ulangi kembali.",
+    "enableLocationAccess": "Anda dapat mengatur ulang akses lokasi untuk Nimbly pada Pengaturan Aplikasi.",
+    "selectQuestionnaireFirst": "Pilih kuesioner dahulu.",
+    "missingDraftReport": "Tidak dapat menemukan draf laporan untuk melanjutkan laporan, coba lagi nanti."
+  },
+  "confirmCheckIn": "Apakah anda yakin ingin memulai laporan pada lokasi ini?",
+  "startAnytime": "Mulai kapanpun",
+  "makeupReport": "Laporan Susulan",
+  "overdue": "Melewati batas",
+  "continueReport": "Lanjutkan Laporan",
+  "pendingReport": "Unggahan Tertunda",
+  "makeUpReport": "Laporan Susulan",
+  "fillMakeupField": "Mohon isi alasan keterlambatan pengerjaan laporan",
+  "notAllowedMakeUpReport": "Mohon selesaikan laporan Anda hari ini terlebih dahulu sebelum mengirimkan laporan susulan ini",
+  "scheduleNotStartedYet": "Jadwal ini belum dimulai.",
+  "leaderMustCheckIn": "Pastikan ketua grup anda telah check-in terlebih dahulu.",
+  "reportHasNotStarted": "Laporan Belum Dimulai",
+  "ok": "OK",
+  "loadingSite": "Memuat Lokasi ...",
+  "makeUpDate": "Tanggal Laporan Susulan",
+  "questionnaireNotDownloaded": "Kuesioner tidak diunduh",
+  "startAuditCta": "Ketuk untuk memulai audit",
+  "resumeAuditCta": "Ketuk untuk melanjutkan",
+  "uploadAuditCta": "Ketuk untuk mengunggah",
+  "uploadedDisplay": "Laporan telah diunggah",
+  "inventory": {
+    "searchPlaceholder": "Cari tugas",
+    "todayLabel":  "(Hari ini)",
+    "emptyInventoryTitle": "Jadwal tidak ditemukan",
+    "emptyInventoryHelperText": "Mohon gunakan kata kunci lain.",
+    "endOfListLabel": "Anda telah mencapai bagian akhir halaman ini"
+  }
+}

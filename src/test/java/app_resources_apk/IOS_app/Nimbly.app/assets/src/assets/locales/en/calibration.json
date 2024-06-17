@@ -1,0 +1,11 @@
+{
+  "prompt": {
+    "confirmLocation": "Confirm Location",
+    "askCorrectLocation": "Are you sure this is correct location for this site?",
+    "setLocation": "Set Location"
+  },
+  "error": {
+    "invalidLocation": "Error: Please select a location with a valid address",
+    "outsideCircle": "Error: Please select a location within the circle"
+  }
+}

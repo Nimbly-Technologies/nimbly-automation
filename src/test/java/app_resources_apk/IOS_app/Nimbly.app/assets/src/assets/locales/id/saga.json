@@ -1,0 +1,64 @@
+{
+  "journey": {
+    "create": {
+      "error": "Gagal membuat laporan perjalanan"
+    },
+    "update": {
+      "error": "Gagal memperbarui laporan perjalanan"
+    }
+  },
+  "company": {
+    "fetch": {
+      "error": "Gagal mendapatkan data perusahaan"
+    },
+    "create": {
+      "error": "Gagal membuat data perusahaan"
+    },
+    "fetchProduct": {
+      "error": "Gagal mendapatkan data produk"
+    },
+    "fetchProductCategories": {
+      "error": "Gagal mendapatkan kategori produk"
+    },
+    "fetchTargetMarket": {
+      "error": "Gagal mendapatkan pasar sasaran produk"
+    },
+    "createCategory": {
+      "error": "Gagal membuat kategori produk"
+    },
+    "createTargetMarket": {
+      "error": "Gagal menciptakan pasar sasaran"
+    },
+    "createPromotion": {
+      "error": "Gagal membuat promosi"
+    },
+    "createProduct": {
+      "error": "Gagal membuat produk"
+    }
+  },
+  "issue": {
+    "fetchIssueCategory": {
+      "error": "KELOLA - GAGAL MENDAPATKAN KATEGORI PERTANYAAN"
+    },
+    "readAllIssue": {
+      "error": "Gagal membaca semua isu",
+      "success": "Berhasil membaca isu"
+    }
+  },
+  "sales": {
+    "error": "Gagal mengambil penjualan"
+  },
+  "reportCache": {
+    "noConnection": "Tidak ada jaringan. Silahkan coba lagi nanti.",
+    "systemError": "Kesalahan pada sistem. Silahkan coba lagi nanti.",
+    "noKeyReport": "Tidak dapat menemukan kunci laporan saat menghapus laporan",
+    "multipleCheckIn": "Lebih dari 1 check-in terdeteksi."
+  },
+  "document": {
+    "documentDoesntExist": "Dokument tidak dapat ditemukan",
+    "documentFailtoUpload": "Gagal mengunggah dokumen"
+  },
+  "submitApiReport": {
+    "error": "Gagal mengupload report"
+  }
+}

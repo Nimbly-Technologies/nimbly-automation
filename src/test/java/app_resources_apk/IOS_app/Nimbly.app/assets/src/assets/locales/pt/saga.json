@@ -1,0 +1,64 @@
+{
+  "journey": {
+    "create": {
+      "error": "Falha ao criar o relatório da viagem"
+    },
+    "update": {
+      "error": "Falha ao atualizar o relatório da viagem"
+    }
+  },
+  "company": {
+    "fetch": {
+      "error": "Falha ao obter empresas"
+    },
+    "create": {
+      "error": "Falha ao criar a empresa"
+    },
+    "fetchProduct": {
+      "error": "Falha ao obter o produto"
+    },
+    "fetchProductCategories": {
+      "error": "Falha ao obter as categorias de produto"
+    },
+    "fetchTargetMarket": {
+      "error": "Falha ao obter o público-alvo do produto"
+    },
+    "createCategory": {
+      "error": "Falha ao criar a categoria do produto"
+    },
+    "createTargetMarket": {
+      "error": "Falha ao criar o público-alvo"
+    },
+    "createPromotion": {
+      "error": "Falha ao criar a promoção"
+    },
+    "createProduct": {
+      "error": "Falha ao criar o produto"
+    }
+  },
+  "issue": {
+    "fetchIssueCategory": {
+      "error": "GERIR - A PESQUISA DE CATEGORIAS DA PERGUNTA FALHOU"
+    },
+    "readAllIssue": {
+      "error": "Erro ao ler todos os problemas",
+      "success": "Êxito ao ler todos os problemas"
+    }
+  },
+  "sales": {
+    "error": "Erro na pesquisa de vendas"
+  },
+  "reportCache": {
+    "noConnection": "Sem ligação à internet. Tente novamente mais tarde.",
+    "systemError": "Erro do servidor interno. Tente novamente mais tarde",
+    "noKeyReport": "não é possível encontrar a chave do relatório ao remover o relatório",
+    "multipleCheckIn": "múltiplos registos detetados."
+  },
+  "document": {
+    "documentDoesntExist": "O documento não existe",
+    "documentFailtoUpload": "Falha ao carregar o documento"
+  },
+  "submitApiReport": {
+    "error": "Falha ao carregar o relatório"
+  }
+}

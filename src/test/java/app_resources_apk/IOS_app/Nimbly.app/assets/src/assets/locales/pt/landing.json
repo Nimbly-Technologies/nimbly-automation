@@ -1,0 +1,19 @@
+{
+  "toast": {
+    "concurrent": "ERRO: A rede excedeu o tempo limite. Inicie a sessão novamente."
+  },
+  "modal": {
+    "title": "Acesso existente",
+    "message": "Está atualmente ligado a outro dispositivo.\n\nAo iniciar sessão neste dispositivo, será automaticamente desligado do seu primeiro dispositivo e perderá todas as fotografias de ensaio.\n\nTem a certeza?",
+    "buttonOK": "Continuar",
+    "buttonCancel": "Cancelar"
+  },
+  "generalError": "Ocorreu um erro, tente iniciar a sessão novamente.",
+  "roleError": {
+    "toast": {
+      "message": "ERRO: Função de recuperação de problemas - {{errorMessageRole}}. Reinicie a aplicação."
+    }
+  },
+  "loading": "A CARREGAR",
+  "welcomeMessage": "Bem-vindo à aplicação Nimbly."
+}

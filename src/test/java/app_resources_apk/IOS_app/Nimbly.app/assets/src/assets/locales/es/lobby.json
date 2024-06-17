@@ -1,0 +1,32 @@
+{
+  "oops": "Ooops",
+  "finalizeReport": "Finalizar informe",
+  "reportCompleted": "Informe completado.",
+  "reportCompletedSubtitle": "Lo sentimos, este informe se ha completado.\nSerá re-dirigido a la página de Inicio.",
+  "uploadReport": "Subir informe",
+  "areYouSure": "Está seguro ?",
+  "requiredSection": "Sección requerida",
+  "optionalSection": "Sección opcional",
+  "leader": "Líder",
+  "member": "Miembro",
+  "prompt": {
+    "uploadingInProgress": "El informe aún se está cargando.\nEstá seguro de que desea salir de esta página ?",
+    "sectionInProgress": "{{displayName}} está trabajando en esta sección.\nDesea continuar ?",
+    "unfinishedReport": "ADVERTENCIA: Se eliminarán las seccion(es) no acabadas.",
+    "uploadWarning": "ADVERTENCIA: Una vez que haya subido sus  seccion(es), no podrá editarlas."
+  },
+  "error": {
+    "offlineAlert": "Actualmente está desconectado.\nVuelva a intentarlo más tarde",
+    "connectionLost": "Vaya, se perdió la conexión a Internet. Vuelva a intentarlo más tarde.",
+    "uploadTimeout": "ERROR: El tiempo de espera de la solicitud de conexión ha pasado, inténtelo de nuevo",
+    "uploadFailed": "ERROR: Error al subir, inténtelo de nuevo!"
+  },
+  "status": {
+    "tapToStart": "Toque para Comenzar",
+    "inProgress": "En Progreso",
+    "uploaded": "Subido",
+    "waitingForUpload": "Esperando Subida",
+    "rejected": "Rechazada",
+    "approved": "Aprobada"
+  }
+}

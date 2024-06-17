@@ -1,0 +1,19 @@
+{
+  "reportComplete": "Report Complete!",
+  "generateReport": "We are currently generating your reports,\nit will be sent out in a few minutes.",
+  "dateOfVisit": "Date Of Visit",
+  "timeOfVisit": "Time Of Visit",
+  "duration": "Duration",
+  "totalScore": "Total Score",
+  "gotIt": "Got It!",
+  "backToJourneyPlan": "Back to Journey Plan",
+  "score": "Score",
+  "redFlags": "Red Flags",
+  "yellowFlags": "Yellow Flags",
+  "greenFlags": "Green Flags",
+  "grade": "Grade",
+  "notification": {
+    "title": "Report @",
+    "body": "Tap here to finish your report."
+  }
+}

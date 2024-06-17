@@ -1,0 +1,164 @@
+{
+  "alert": {
+    "undoAction": "Se enviará un correo electrónico a su supervisor",
+    "undoActionContent": "\nSe ha enviado un correo electrónico a su supervisor.\nContacte a su supervisor para cambiar la prioridad.",
+    "setHighPriority": "Establecer como prioridad alta?",
+    "setHighPriorityContent": "\nASe enviará un correo electrónico a su supervisor.\nNo puede deshacer esta acción."
+  },
+  "toast": {
+    "successAddNewMember": "Se agregó correctamente un nuevo miembro",
+    "removeMember": "se ha eliminado correctamente del problema"
+  },
+  "placeholder": {
+    "assignedDepartment": "Departamento asignado",
+    "enterYourTitle": "Ingrese su título aquí",
+    "filterSearch": "Buscar usuario por nombre o correo electrónico",
+    "updateStatusHere": "Actualiza tu estado aquí",
+    "assignedDept": "Busque su ID de departamento",
+    "reporterDept": "Seleccione el departamento del reportero",
+    "assignedUser": "Seleccionar el usuario asignado"
+  },
+  "errors": {
+    "limitAddPhoto": "No puedes agregar más fotos.",
+    "limitComment": "El comentario no debe estar vacío y debe tener más de 10 caracteres.",
+    "tryAgain": "Se ha producido un error, inténtelo de nuevo más tarde.",
+    "emptyTitle": "El título no puede estar vacío",
+    "emptyDepartment": "Departamento no puede estar vacío",
+    "emptyAssignedUser": "Assigned User cannot be empty",
+    "emptyCategory": "La categoría no puede estar vacía",
+    "emptySite": "El sitio no puede estar vacío",
+    "emptyAssignedDept": "Assigned Department cannot be empty"
+  },
+  "statusSecondary": {
+    "Overdue": "Overdue",
+    "Behind Time": "Behind Time",
+    "On Time": "On Time"
+  },
+  "addAComment": "Añadir un comentario",
+  "enterBlockedReason": "Enter reason for blocked issue",
+  "charLimit": "caracteres restantes",
+  "thisHighPriorityIssue": "Este problema es de alta prioridad",
+  "addMembers": "Agregar miembros",
+  "userAssignedTitle": "Seleccione un usuario para asignarlo",
+  "addMemberTitle": "Seleccione los miembros que desea agregar",
+  "addMemberNotification": "Los miembros agregados serán notificados por correo electrónico o notificación en la aplicación",
+  "assignedTo": "Asignado a",
+  "highPriority": "Alta prioridad",
+  "highPriorityIssue": "Problema de alta prioridad",
+  "endList": "Parece que has llegado al final.",
+  "unknownUser": "Usuario desconocido",
+  "issueOn": "Problema en",
+  "issueStatus": "Estado del problema",
+  "markAllAsRead": "Marcar todo como leído",
+  "loadingMoreIssues": "Cargando más problemas",
+  "noIssueFound": "No se encontraron problemas.",
+  "setAsHighPriority": "Establecer como prioridad alta ?",
+  "selectIssueCategory": "Seleccionar la categoría del problema",
+  "searchIssueCategory": "Buscar categoría del problema",
+  "reporterDepartment": "Departamento de reporteros",
+  "reportIssue": "Informar un problema",
+  "filterByCreatedDate": "Filtrar por fecha de creación",
+  "issueTracker": "Rastreador De Problemas",
+  "actions": "comportamiento",
+  "ok": "Okay",
+  "filter": "Filtrar",
+  "sort": "Ordenar",
+  "departmentReporter": "Elegir Reportero",
+  "chooseSite": "Elegir Sitio",
+  "resolveThisIssue": "Resolver Este Problema",
+  "attachment": {
+    "infoTitle": "Supported File Size and Formats",
+    "exceedLimitTitle": "You've reached the maximum number of files",
+    "totalAttachment": "{{count}} Attachment(s):",
+    "infoDescription": {
+      "maxSize": "Maximum size for each file is 7 MB",
+      "image": "Image: .gif, .jpg, .jpeg, and .png",
+      "document": "Document: .pdf, .doc, .docx, .xls, .xlsx, and .csv",
+      "video": "Video: .mp4, .mov, and .avia"
+    },
+    "title": "Add Maximum 10 attachments",
+    "validation": {
+      "fileSizeExceeded": "The file size is too big. Please reduce the file size to 7 MB or below.",
+      "fileCountExceeded": "You have reach the maximum file attachment",
+      "fileTypeInvalid": "Cargue el archivo en el formato admitido",
+      "unknownIssueDownloadFailed": "Algo salió mal y la descarga falló. Inténtalo de nuevo.",
+      "unknownIssueSubmitCommentFailed": "Algo salió mal y el envío del comentario falló. Inténtalo de nuevo"
+    },
+    "button": {
+      "camera": "Cámara",
+      "gallery": "Galería",
+      "document": "Documento",
+      "video": "Video"
+    },
+    "hide": "Hide",
+    "show": "Show"
+  },
+  "addIssue": {
+    "input": {
+      "question": "Question/Title",
+      "category": "Category",
+      "assignedDept": "Assigned Department",
+      "reporterDept": "Reporter Department",
+      "flag": "Flag (Severity)",
+      "due": "Due Date and Time",
+      "site": "Site",
+      "assignedUser": "Assigned User",
+      "cancel": "Cancelar",
+      "replace": "Reemplazar"
+    },
+    "slaModal": {
+      "title": "¿Reemplazar fecha de vencimiento automática?",
+      "body": "La personalización de la fecha de vencimiento reemplazará la configuración existente de Fecha de vencimiento automática"
+    }
+  },
+  "autoGenerated": {
+    "header": "agregó un problema al Rastreador de problemas",
+    "footer": "-- Este es un mensaje generado automáticamente --"
+  },
+  "messageHeaderList": "Actualizaciones más recientes",
+  "confirmBackModal": {
+    "header": "Leave This Page?",
+    "body": "All the changes you've made will be lost if you leave this page without submitting",
+    "stayBtn": "Stay On This Page",
+    "leaveBtn": "Leave"
+  },
+  "statusUpdateBottomSheet": {
+    "title": "Actualizar estado del problema",
+    "helperText": "¿Cuál es el estado de su problema?",
+    "options": {
+      "openTitle": "Abierto",
+      "openHelper": "Todavía estamos trabajando en este problema.",
+      "resolvedTitle": "Resuelto",
+      "resolvedHelper": "Hemos resuelto este problema"
+    },
+    "update": "Actualizar"
+  },
+  "statusUpdatePrompt": {
+    "resolvedTitle": "¡Problema resuelto!",
+    "resolvedBody": "Hemos movido este problema a la lista de Problemas resueltos",
+    "reopenedTitle": "Problema reabierto",
+    "reopenedBody": "Hemos movido este problema de nuevo a la lista de Problemas abiertos. Puede monitorear y actualizar la resolución de este problema nuevamente allí.",
+    "okButton": "¡Entiendo!"
+  },
+  "searchIssue": "Search for questions or categories or Issue ID",
+  "type": {
+    "report": "Report",
+    "report-adhoc": "Adhoc",
+    "report-scheduled": "Scheduled",
+    "manual-addition": "Manually Added",
+    "customer-feedback": "Customer Feedback"
+  },
+  "statusLabel": {
+    "open": "Open",
+    "resolved": "Resolved",
+    "expired": "Expired",
+    "blocked": "Blocked",
+    "in-review": "In Review",
+    "in-progress": "In Progress"
+  },
+  "secondaryStatusLabel": {
+    "overdue": "Overdue",
+    "on-time": "On Time",
+    "behind-time": "Behind Time"
+  }
+}

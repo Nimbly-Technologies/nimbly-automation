@@ -1,0 +1,35 @@
+{
+  "permission": {
+    "checkGallery": "Nimbly necesita acceso a su cámara y galería para tomar fotos.\nHabilítelo en la configuración de su dispositivo.",
+    "cameraAccess": "Acceder a la cámara",
+    "close": "Cerrar",
+    "changePhoto": "Cambiar foto",
+    "deleteThisPhoto": "Eliminar esta foto?",
+    "delete": "Eliminar",
+    "cancel": "Cancelar"
+  },
+  "complete": "Complete el campo requerido",
+  "form": {
+    "companyName": "Nombre de la Empresa",
+    "companyLogo": "Logotipo de la Empresa",
+    "takePicture": "Tomar Foto",
+    "fromGallery": "Desde la Galería",
+    "description": "Descripción",
+    "website": "Sitio Web",
+    "established": "Establecido",
+    "numEmployees": "No. de Empleados",
+    "strength": "Fuerza",
+    "weakness": "Debilidad",
+    "save": "Guardar"
+  },
+  "placeholder": {
+    "strength": "Escriba la fuerza de la empresa",
+    "weakness": "Escriba la debilidad de la empresa",
+    "companyName": "Introduzca el nombre de la empresa",
+    "describeCompany": "Describe la empresa"
+  },
+  "error": {
+    "fail": "no se pudo cargar el logotipo de la empresa"
+  },
+  "createCompany": "Crear Empresa"
+}

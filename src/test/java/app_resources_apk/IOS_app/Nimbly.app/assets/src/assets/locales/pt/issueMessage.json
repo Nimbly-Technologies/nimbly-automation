@@ -1,0 +1,32 @@
+{
+  "assignedDepartment": {
+    "update": "alterado o departamento atribuído a {{payload}}",
+    "remove": "removido o departamento atribuído"
+  },
+  "assignedTo": {
+    "update": "alterado o auditor atribuído a {{payload}}",
+    "default": "Foi-lhe atribuído o cargo de auditor deste problema"
+  },
+  "dueDate": {
+    "update": "alterada a data limite para {{payload}}"
+  },
+  "severity": {
+    "update": "alterada a sinalização do problema para {{payload}}"
+  },
+  "priority": {
+    "update": "alterada a prioridade para {{payload}}"
+  },
+  "status": {
+    "update": "Changed issue status from {{prevStatus}} to {{currentStatus}}"
+  },
+  "comment": {
+    "add": "{{payload}} comentou o problema"
+  },
+  "members": {
+    "add": "{{payload}} adicionado aos membros do problema",
+    "remove": "remover {{payload}} dos membros do problema"
+  },
+  "escalation": {
+    "default": "Este problema foi escalado para {{payload}}"
+  }
+}

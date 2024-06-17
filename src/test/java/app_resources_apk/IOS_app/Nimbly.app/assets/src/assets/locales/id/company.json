@@ -1,0 +1,35 @@
+{
+  "permission": {
+    "checkGallery": "Nimbly membutuhkan akses kamera dan galeri untuk mengambil gambar.\nHarap berikan akses di pengaturan perangkat anda.",
+    "cameraAccess": "Akses Kamera",
+    "close": "Tutup",
+    "changePhoto": "Ubah Photo",
+    "deleteThisPhoto": "Hapus foto ini?",
+    "delete": "Hapus",
+    "cancel": "Batalkan"
+  },
+  "complete": "Lengkapi form",
+  "form": {
+    "companyName": "Nama Perusahaan",
+    "companyLogo": "Logo Perusahaan",
+    "takePicture": "Mengambil Gambar",
+    "fromGallery": "Dari Galeri",
+    "description": "Deskripsi",
+    "website": "Situs Web",
+    "established": "Didirikan",
+    "numEmployees": "Jumlah Karyawan",
+    "strength": "Kekuatan",
+    "weakness": "Kelemahan",
+    "save": "Simpan"
+  },
+  "placeholder": {
+    "strength": "Tuliskan kekuatan perusahaan",
+    "weakness": "Tuliskan kelemahan perusahaan",
+    "companyName": "Masukkan nama perusahaan",
+    "describeCompany": "Deskripsikan perusahaan ini"
+  },
+  "error": {
+    "fail": "Gagal mengunggah logo perusahaan"
+  },
+  "createCompany": "Tambah Perusahaan"
+}

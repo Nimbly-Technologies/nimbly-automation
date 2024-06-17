@@ -1,0 +1,64 @@
+{
+    "journey": {
+        "create": {
+            "error": "Failed to create journey report"
+        },
+        "update": {
+            "error": "Failed to update journey report"
+        }
+    },
+    "company": {
+        "fetch": {
+            "error": "Failed to get companies"
+        },
+        "create": {
+            "error": "Failed to create company"
+        },
+        "fetchProduct": {
+            "error": "Failed to get product"
+        },
+        "fetchProductCategories": {
+            "error": "Failed to get product categories"
+        },
+        "fetchTargetMarket": {
+            "error": "Failed to get product target market"
+        },
+        "createCategory": {
+            "error": "Failed to create product category"
+        },
+        "createTargetMarket": {
+            "error": "Failed to create target market"
+        },
+        "createPromotion": {
+            "error": "Failed to create promotion"
+        },
+        "createProduct": {
+            "error": "Failed to create product"
+        }
+    },
+    "issue": {
+        "fetchIssueCategory": {
+            "error": "MANAGE - FETCH QUESTION CATEGORIES FAILED"
+        },
+        "readAllIssue": {
+            "error": "Fail to read all issues",
+            "success": "Success Read All Issue"
+        }
+    },
+    "sales": {
+        "error": "Fail to fetch sales"
+    },
+    "reportCache": {
+        "noConnection": "No internet connection. Please try again later.",
+        "systemError": "Internal server error. Please try again later",
+        "noKeyReport": "cannot find report key when removing report",
+        "multipleCheckIn": "multiple check in detected."
+    },
+    "document": {
+        "documentDoesntExist": "Document doesnt exist",
+        "documentFailtoUpload": "Fail to Upload Document"
+    },
+    "submitApiReport": {
+        "error": "Failed to upload report"
+    }
+}

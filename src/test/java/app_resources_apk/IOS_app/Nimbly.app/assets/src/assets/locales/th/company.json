@@ -1,0 +1,35 @@
+{
+  "permission": {
+    "checkGallery": "Nimbly ต้องการเข้าถึงกล้องกับแฟ้มภาพของคุณเพื่อถ่ายภาพ\nกรุณาเปิดการใช้งานผ่านการตั้งค่าอุปกรณ์ของคุณ",
+    "cameraAccess": "เข้าถึงกล้อง",
+    "close": "ปิด",
+    "changePhoto": "เปลี่ยนรูปภาพ",
+    "deleteThisPhoto": "ลบรูปภาพนี้?",
+    "delete": "ลบ",
+    "cancel": "ยกเลิก"
+  },
+  "complete": "กรอกช่องที่จำเป็นให้ครบ",
+  "form": {
+    "companyName": "ชื่อบริษัท",
+    "companyLogo": "โลโก้บริษัท",
+    "takePicture": "ถ่ายภาพ",
+    "fromGallery": "จากแฟ้มภาพ",
+    "description": "รายละเอียด",
+    "website": "เว็บไซต์",
+    "established": "จัดตั้งแล้ว",
+    "numEmployees": "จำนวนพนักงาน",
+    "strength": "จุดแข็ง",
+    "weakness": "จุดอ่อน",
+    "save": "บันทึก"
+  },
+  "placeholder": {
+    "strength": "กรอกจุดแข็งของบริษัท",
+    "weakness": "กรอกจุดอ่อนของบริษัท",
+    "companyName": "กรอกชื่อของบริษัท",
+    "describeCompany": "ให้รายละเอียดบริษัท"
+  },
+  "error": {
+    "fail": "อัปโหลดโลโก้บริษัทล้มเหลว"
+  },
+  "createCompany": "สร้างบริษัท"
+}

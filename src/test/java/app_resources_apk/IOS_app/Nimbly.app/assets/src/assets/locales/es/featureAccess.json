@@ -1,0 +1,17 @@
+{
+  "title": "No hay Acceso",
+  "subtitle": "Lo siento, pero no tienes acceso a esta función.",
+  "body": "Comuníquese con su administrador para habilitar esta función.",
+  "buttonTranslation": "Okay",
+  "error": {
+    "title": "Vaya!",
+    "subtitle": "Problema al recuperar el acceso a la función.",
+    "body": "Reinicia la aplicación."
+  },
+  "freezeBanner": {
+    "title": "La Cuenta a la que intenta acceder está desactivada. Pruebe con otra cuenta."
+  },
+  "saga": {
+    "fail": "Failed to Fetch Feature Access"
+  }
+}

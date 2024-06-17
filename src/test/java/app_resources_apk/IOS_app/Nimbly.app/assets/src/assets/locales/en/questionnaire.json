@@ -1,0 +1,249 @@
+{
+  "prompt": {
+    "editPhoto": "Edit Photo",
+    "photo": "What would you like to do with this photo?",
+    "draw": "Draw",
+    "change": "Change",
+    "addPhoto": "Add Photo",
+    "accessCamera": "Access Camera",
+    "close": "Close",
+    "aiVerification": "AI Verification",
+    "editFile": "Edit File",
+    "file": "Would you to delete with this file?",
+    "warningNewFile": "Select a new file",
+    "warningCancel": "Cancel",
+    "cannotAttach": "Cannot attach",
+    "limitFile": "The file size you selected exceeds our 7mb limit."
+  },
+  "modal": {
+    "warningMissing": "WARNING: This report was started on a different device. {{invalidAttachmentCount}} attachment(s) will be deleted if you continue.\n\nAre you sure?",
+    "photoMissing": "Photos Missing",
+    "attachmentMissing": "Attachment Missing",
+    "proceed": "Proceed"
+  },
+  "permission": {
+    "check": "Nimbly needs access to your camera and gallery to take pictures.\nPlease enable it under your device settings."
+  },
+  "takePhoto": "Take Photo",
+  "recordVideo": "Record Video",
+  "sourceCamera": "From Camera",
+  "sourceGallery": "From Gallery",
+  "takeFile": "Add pdf, xlsx, or doc files",
+  "error": {
+    "noPerson": "Error: No person detected in photo. Please try again.",
+    "detectFailed": "Something went wrong with the AI. Please fill your answer in manually.",
+    "noTemperature": "Error: No temperature number detected in photo. Please try again.",
+    "missingData": {
+      "title": "Missing Data",
+      "description": "Some data are missing from this report. Please reset the report and try again."
+    }
+  },
+  "toast": {
+    "detectSuccess": "The AI generated an answer successfully. Please check before continuing."
+  },
+  "container": {
+    "loadingQuestionnaire": "Loading Questionnaire...",
+    "nextQuestion": "NEXT QUESTION"
+  },
+  "tutorial": {
+    "clickReport": "Click here to review the report",
+    "questionnaireProgress": "The progress bar will change when filling in the answers",
+    "loadingCapital": "LOADING...",
+    "finishSection": "FINISH SECTION",
+    "reviewReport": "REVIEW REPORT",
+    "clickIcon": "Click the icon to add a photo",
+    "notRequired": "This option will be appear if answer is not required"
+  },
+  "uploadCVModal": {
+    "loadingAI": "Loading AI ..."
+  },
+  "questionnaireSwiper": {
+    "followUp": "Go {{index}}/{{total}} Follow up question",
+    "backToTop": "{{index}}/{{total}} - Back To Top",
+    "questionNumber": "Question {{index}} of {{length}}",
+    "done": "[DONE]",
+    "conditionalNumber": "Question {{index}} of {{length}}",
+    "followUpConditional": "Follow-up question {{index}} of {{length}}:",
+    "scrollError": {
+      "title": "Error",
+      "description": "Sorry, there is an error. Please scroll manually."
+    }
+  },
+  "recommendation": {
+    "title": "Recommendation",
+    "choseRecommendation": "You may choose more than 1",
+    "placeholder": "Type your custom answer here",
+    "set": "SET",
+    "tap": "+ Tap to add a recommendation"
+  },
+  "swiperMedia": {
+    "selectMedia": "Select media to add to your answer",
+    "minimumPhoto": "Photo min",
+    "minimumVideo": "Video min",
+    "minimumDocuments": "Document Minimum"
+  },
+  "addPhoto": "Add Photo",
+  "addVideo": "Add Video",
+  "question": {
+    "notApplicable": "Not Applicable",
+    "binary": {
+      "firstYes": "Yes",
+      "no": "No",
+      "redFlag": "Red Flag (problem is severe)",
+      "comments": "Comments",
+      "optional": " (optional)"
+    },
+    "multipleChoice": {
+      "comments": "Comments",
+      "optional": " (optional)"
+    },
+    "checkList": {
+      "comments": "Comments",
+      "optional": " (optional)"
+    },
+    "number": {
+      "typeAnswer": "Type your answer here",
+      "comments": "Comments",
+      "optional": " (optional)"
+    },
+    "takePhoto": "Take Photo",
+    "sourceCamera": "From Camera",
+    "sourceGallery": "From Gallery",
+    "takeFile": "Add pdf, xlsx, or doc files",
+    "error": {
+      "noPerson": "Error: No person detected in photo. Please try again.",
+      "detectFailed": "Something went wrong with the AI. Please fill your answer in manually.",
+      "noTemperature": "Error: No temperature number detected in photo. Please try again.",
+      "missingData": {
+        "title": "Missing Data",
+        "description": "Some data are missing from this report. Please reset the report and try again."
+      }
+    },
+    "score": {
+      "weight": "Weight",
+      "note": "Note: An issue will be created for this question.",
+      "comments": "Comments",
+      "optional": " (optional)",
+      "title": "Score",
+      "answer": "Slide to set score"
+    },
+    "rangeFlag": {
+      "typeAnswer": "Type your answer here",
+      "comments": "Comments",
+      "optional": " (optional)",
+      "answerWithin": "Answer within",
+      "redFlag": "Red Flag",
+      "yellowFlag": "Yellow Flag",
+      "greenFlag": "Green Flag"
+    },
+    "inventory": {
+      "previous": "Previous",
+      "onHand": "On Hand",
+      "comments": "Comments",
+      "optional": " (optional)"
+    },
+    "newInventory": {
+      "searchSKU": "Search for an SKU",
+      "SKUNotFound": "SKU not found.",
+      "contactAdmin": "Please contact Your Administrator",
+      "previous": "Previous",
+      "onHand": "On Hand",
+      "comments": "Comments",
+      "optional": " (optional)",
+      "currentStock": "What is the current stock?",
+      "comment": "Comment",
+      "takePhoto": "Take a Photo"
+    },
+    "open": {
+      "typeAnswer": "Type your answer here"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "Select Company",
+      "addNewCompany": "Add New Company",
+      "categoryEmpty": "Category Cannot be empty",
+      "targetMarketEmpty": "Target Market Cannot be empty",
+      "promotion": {
+        "title": "Promotion Title",
+        "name": "Enter the name of the promotion",
+        "product": "Product",
+        "selectProduct": "Select Product",
+        "choosePromotionType": "Choose Promotion Type",
+        "promotionType": "Promotion Type",
+        "promotionImage": "Promotion Images",
+        "takePicture": "Take Picture",
+        "fromGallery": "From Gallery",
+        "displayLocation": "Display Location",
+        "enterLocation": "Enter the display location of the promotion",
+        "detailPromotion": "Promotion Detail",
+        "enterDetail": "Describe the details of the promotion",
+        "promotionPeriod": "Promo Period",
+        "startDate": "Start Date",
+        "to": "to",
+        "endDate": "End Date"
+      },
+      "product": {
+        "name": "Product Name",
+        "enterName": "Enter the name of the product",
+        "category": "Product Category",
+        "selectCategory": "Select Category",
+        "addNewCategory": "Add New Category",
+        "productImage": "Product Images",
+        "takePicture": "Take Picture",
+        "fromGallery": "From Gallery",
+        "productPrice": "Product Price Range",
+        "add": "Add",
+        "description": "Description",
+        "enterDescription": "Describe the product detail",
+        "targetMarket": "Target Market",
+        "selectTargetMarket": "Select Target Market",
+        "addNewTargetMarket": "Add New Target Market",
+        "variantOf": "Product is a variant of...",
+        "selectProduct": "Select Product",
+        "store": "Store",
+        "selectStore": "Select Store"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[AI] Face mask detected on staff member.",
+        "incorrectly_wear": "[AI] Face mask detected but not worn properly.",
+        "without_mask": "[AI] Face mask not detected on staff member."
+      },
+      "temperature": {
+        "with_temperature": "[AI] Temperature detected on the photo.",
+        "without_temperature": "[AI] Temperature not detected on the photo."
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "Please type in a comment",
+    "commentTooLong": "Comment too long",
+    "insertNumber": "Please type in a number",
+    "outRange": "Number is out of range",
+    "negative": "Number is negative",
+    "outNumber": "Out number is negative"
+  },
+  "drawer": {
+    "noQuestions": "No questions found with '{{query}}'",
+    "searchQuestions": "Search questions",
+    "score": "Score"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - Camera Permissions",
+    "cameraText": "Take photos/videos of issues and attach them to your report",
+    "audioPermission": "Nimbly - Audio Recording Permissions",
+    "auditText": "Take videos of issues and attach them to your report",
+    "failCapture": "Failed to capture photo",
+    "failVideoCapture": "Failed to capture video",
+    "onMountError": "Error mounting the camera",
+    "clearCache": "Please clear the cache and make sure to allow camera permissions",
+    "tryAgain": "Please try again or contact an admin",
+    "takeSixtySecond": "Take a 60-second video"
+  },
+  "priorityModal": {
+    "title": "Priority Set to",
+    "description1": "Answer generated a",
+    "description2": "priority issue",
+    "changePriority": "Change Priority"
+  }
+}

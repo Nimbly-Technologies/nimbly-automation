@@ -1,0 +1,19 @@
+{
+  "reportComplete": "Relatório Concluído!",
+  "generateReport": "Estamos a criar os seus relatórios,\nserão enviados dentro de alguns minutos.",
+  "dateOfVisit": "Data da Visita",
+  "timeOfVisit": "Hora da Visita",
+  "duration": "Duração",
+  "totalScore": "Pontuação total",
+  "gotIt": "Entendido!",
+  "backToJourneyPlan": "Voltar ao Plano de Viagem",
+  "score": "Pontuação",
+  "redFlags": "Sinalizadores Vermelhos",
+  "yellowFlags": "Sinalizadores Amarelos",
+  "greenFlags": "Sinalizadores Verdes",
+  "grade": "Grau",
+  "notification": {
+    "title": "Relatório @",
+    "body": "Toque aqui para finalizar o seu relatório."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "backButton": "Press the Back button again to exit",
+  "welcome": {
+    "checkPermission": "You can enable Location Access for Nimbly in your App Settings later.",
+    "accessLocation": "Access Location",
+    "openSettings": "Open Settings",
+    "skip": "Skip"
+  },
+  "tutorial": {
+    "end": "End Tutorial",
+    "tap": "Tap on the card to start your scheduled report."
+  },
+  "daySchedule": {
+    "onGoing": "Another journey is ongoing\nYou can not start this journey",
+    "reminder": "Reminder",
+    "noDue": "None Due Today!",
+    "pullDown": "(pull down to refresh)"
+  },
+  "siteItem": {
+    "pendingUpload": "PENDING UPLOAD",
+    "inProgress": "IN PROGRESS",
+    "overdue": "OVERDUE",
+    "priority": "PRIORITY",
+    "onGoing": "ONGOING",
+    "noLocation": "No location found.\nPlease check-in to calibrate.",
+    "done": "DONE  ",
+    "tap": "TAP TO DO REPORT"
+  },
+  "notification": {
+    "uploadDone": "Report Upload Done",
+    "title": "Notifications",
+    "tap": "Tap to view"
+  },
+  "offDay": {
+    "title": "Today in a non-operational day",
+    "description": "You can still do your scheduled report, but it will not be included in your personal stats"
+  },
+  "summary": {
+    "hi": "Hi, "
+  },
+  "progress": {
+    "thisWeek": "THIS WEEK",
+    "thisMonth": "THIS MONTH",
+    "thisYear": "THIS YEAR"
+  },
+  "sales": {
+    "title": "SALES",
+    "toDate": "To-Date",
+    "toMonth": "Month",
+    "dayLeft": "{{daysLeft}} day{{add}} left"
+  },
+  "softUpdate": {
+    "title": "Update Available",
+    "description": "A newer version of the Nimbly app is available for download. Please update to the new version to get the latest features and best experience.",
+    "dismiss": "Dismiss",
+    "updateButton": "Update Now"
+  },
+  "forceUpdate": {
+    "title": "Upgrade Required",
+    "description": "Sorry, this version of the app is no longer supported. Please update your app to continue using the app.",
+    "updateButton": "Update Now"
+  },
+  "home": "Home",
+  "offlineAudit": {
+    "switchLabel": "Download",
+    "progressBarTitle": "Downloading questionnaires...",
+    "stopButtonTitle": "Stop",
+    "stopModal": {
+      "title": "Stop The Download?",
+      "body": "You won't be able to access the unfinished download offline. However, the downloaded questionnaires will remain accessible when you're offline.",
+      "stopDownloadButtonLabel": "Stop Downloading",
+      "cancelDownloadButtonLabel": "Cancel"
+    },
+    "deleteModal": {
+      "title": "Delete All Downloads?",
+      "body": "All questionnaire downloads will be deleted, and you won't be able to conduct the audit offline.",
+      "deleteDownloadButtonLabel": "Delete Downloads",
+      "cancelDownloadButtonLabel": "Cancel"
+    }
+  },
+  "freezeModal": {
+    "title": "Your Account is Frozen",
+    "subtitle": "Your Nimbly account has been temporarily disabled. For more details, please contact your organization’s Account Holder.",
+    "button": "OK"
+  },
+  "home": "Home"
+}

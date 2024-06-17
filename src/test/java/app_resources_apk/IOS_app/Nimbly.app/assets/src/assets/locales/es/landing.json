@@ -1,0 +1,19 @@
+{
+  "toast": {
+    "concurrent": "ERROR: The network timed out. Please log in again."
+  },
+  "modal": {
+    "title": "Existing Login",
+    "message": "You are currently logged in to another device.\n\nIf you log in to this device, you will be automatically logged out of your first device and lose all draft photos.\n\nAre you sure?",
+    "buttonOK": "Proceed",
+    "buttonCancel": "Cancel"
+  },
+  "generalError": "Something went wrong, please try signing up again.",
+  "roleError": {
+    "toast": {
+      "message": "ERROR: Problem retrieving role - {{errorMessageRole}}. Please restart the app."
+    }
+  },
+  "loading": "CARGANDO",
+  "welcomeMessage": "Bienvenido a la aplicación Nimbly."
+}

@@ -1,0 +1,232 @@
+{
+  "prompt": {
+    "editPhoto": "แก้ไขรูปภาพ",
+    "photo": "คุณต้องการทำอะไรกับรูปภาพนี้?",
+    "draw": "วาด",
+    "change": "เปลี่ยนแปลง",
+    "addPhoto": "เพิ่มภาพถ่าย",
+    "accessCamera": "เข้าถึงกล้อง",
+    "close": "ปิด",
+    "aiVerification": "การยืนยันตัวตนผ่าน AI",
+    "editFile": "การแก้ไขไฟล์",
+    "file": "คุณต้องการลบไฟล์นี้หรือไม่?",
+    "warningNewFile": "เลือกไฟล์ใหม่",
+    "warningCancel": "ยกเลิก",
+    "cannotAttach": "ไม่สามารถแนบได้",
+    "limitFile": "ขนาดของไฟล์ที่คุณเลือกเกินขีดจำกัด 7mb ของเรา"
+  },
+  "modal": {
+    "warningMissing": "คำเตือน: รายงานนี้เริ่มขึ้นบนอุปกรณ์ตัวอื่น ไฟล์แนบ {{invalidAttachmentCount}} ชิ้นจะถูกลบออกหากคุณดำเนินการต่อ\n\nคุณแน่ใจหรือไม่?",
+    "photoMissing": "ขาดรูปภาพ",
+    "attachmentMissing": "ขาดไฟล์แนบ",
+    "proceed": "ดำเนินการ"
+  },
+  "permission": {
+    "check": "Nimbly ต้องการเข้าถึงกล้องกับแฟ้มภาพของคุณเพื่อถ่ายภาพ\nกรุณาเปิดการใช้งานผ่านการตั้งค่าอุปกรณ์ของคุณ"
+  },
+  "takePhoto": "ถ่ายภาพ",
+  "recordVideo": "ถ่ายวิดีโอ",
+  "sourceCamera": "จากกล้อง",
+  "sourceGallery": "จากแฟ้มภาพ",
+  "takeFile": "เพิ่มไฟล์ pdf xlsx หรือ doc",
+  "error": {
+    "noPerson": "ข้อผิดพลาด: ไม่พบบุคคลในรูปภาพ กรุณาลองใหม่อีกครั้ง",
+    "detectFailed": "บางอย่างผิดพลาดกับตัว AI กรุณากรอกคำตอบของคุณเอง",
+    "noTemperature": "ข้อผิดพลาด: ไม่พบหมายเลขอุณหภูมิในรูปภาพ กรุณาลองใหม่อีกครั้ง"
+  },
+  "toast": {
+    "detectSuccess": "ตัว AI สร้างคำตอบออกมาได้เรียบร้อย กรุณาตรวจสอบก่อนดำเนินการต่อ"
+  },
+  "container": {
+    "loadingQuestionnaire": "กำลังโหลดแบบสอบถาม...",
+    "nextQuestion": "คำถามต่อไป"
+  },
+  "tutorial": {
+    "clickReport": "คลิกที่นี่เพื่อทบทวนรายงาน",
+    "questionnaireProgress": "แถบความคืบหน้าจะเปลี่ยนแปลงเมื่อคุณกรอกคำตอบลงไป",
+    "loadingCapital": "กำลังโหลด...",
+    "finishSection": "จบส่วน",
+    "reviewReport": "ทบทวนรายงาน",
+    "clickIcon": "คลิกบนไอคอนเพื่อเพิ่มรูปภาพ",
+    "notRequired": "ตัวเลือกนี้จะปรากฏขึ้นมาหากไม่ต้องการคำตอบ"
+  },
+  "uploadCVModal": {
+    "loadingAI": "กำลังโหลด AI ..."
+  },
+  "questionnaireSwiper": {
+    "followUp": "ไปที่คำถามติดตาม {{index}}/{{total}}",
+    "backToTop": "{{index}}/{{total}} - กลับไปด้านบน",
+    "questionNumber": "คำถามที่ {{index}} จาก {{length}}",
+    "done": "[DONE]",
+    "conditionalNumber": "คำถามที่ {{index}} จาก {{length}}",
+    "followUpConditional": "คำถามติดตาม {{index}} จาก {{length}}:",
+    "scrollError": {
+      "title": "เกิดข้อผิดพลาด",
+      "description": "เกิดข้อผิดพลาดขึ้น โปรดเลื่อนด้วยตัวเอง"
+    }
+  },
+  "recommendation": {
+    "title": "คำแนะนำ",
+    "choseRecommendation": "คุณสามารถเลือกได้มากกว่า 1",
+    "placeholder": "กรอกคำตอบเฉพาะของคุณได้ที่นี่",
+    "set": "กำหนด",
+    "tap": "+แตะเพื่อเพิ่มคำแนะนำ"
+  },
+  "swiperMedia": {
+    "selectMedia": "เลือกไฟล์สื่อที่คุณต้องการเพิ่มเข้าคำตอบของคุณ",
+    "minimumPhoto": "รูปภาพขั้นต่ำ",
+    "minimumVideo": "วิดีโอขั้นต่ำ",
+    "minimumDocuments": "เอกสารขั้นต่ำ"
+  },
+  "addPhoto": "เพิ่มภาพถ่าย",
+  "addVideo": "เพิ่มวิดีโอ",
+  "question": {
+    "binary": {
+      "firstYes": "ใช่",
+      "no": "ไม่",
+      "redFlag": "ธงแดง (ปัญหาร้ายแรง)",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)"
+    },
+    "multipleChoice": {
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)"
+    },
+    "checkList": {
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)"
+    },
+    "number": {
+      "typeAnswer": "กรอกคำตอบของคุณที่นี่",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)"
+    },
+    "score": {
+      "weight": "น้ำหนัก",
+      "note": "หมายเหตุ: ปัญหาจะถูกสร้างขึ้นมาสำหรับคำถามนี้",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)",
+      "title": "คะแนน",
+      "answer": "เลื่อนเพื่อกำหนดคะแนน"
+    },
+    "rangeFlag": {
+      "typeAnswer": "กรอกคำตอบของคุณที่นี่",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)",
+      "answerWithin": "กรอกคำตอบภายใน",
+      "redFlag": "ธงแดง",
+      "yellowFlag": "ธงเหลือง",
+      "greenFlag": "ธงเขียว"
+    },
+    "inventory": {
+      "previous": "ก่อนหน้า",
+
+      "onHand": "ที่มีอยู่",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)"
+    },
+    "newInventory": {
+      "searchSKU": "ค้นหา SKU",
+      "SKUNotFound": "ไม่พบ SKU",
+      "contactAdmin": "กรุณาติดต่อผู้ดูแลระบบของคุณ",
+      "previous": "ก่อนหน้า",
+      "onHand": "ที่มีอยู่",
+      "comments": "ความคิดเห็น",
+      "optional": " (ทางเลือก)",
+      "currentStock": "สต๊อกปัจจุบัน?",
+      "comment": "ความคิดเห็น",
+      "takePhoto": "ถ่ายภาพ"
+    },
+    "open": {
+      "typeAnswer": "กรอกคำตอบของคุณที่นี่"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "เลือกบริษัท",
+      "addNewCompany": "เพิ่มบริษัทใหม่",
+      "categoryEmpty": "ต้องกรอกหมวดหมู่",
+      "targetMarketEmpty": "เป้าการตลาดต้องไม่ว่าง",
+      "promotion": {
+        "title": "ชื่อโปรโมชัน",
+        "name": "กรอกชื่อของโปรโมชัน",
+        "product": "สินค้า",
+        "selectProduct": "เลือกสินค้า",
+        "choosePromotionType": "เลือกประเภทโปรโมชัน",
+        "promotionType": "ประเภทโปรโมชัน",
+        "promotionImage": "ภาพโปรโมชัน",
+        "takePicture": "ถ่ายภาพ",
+        "fromGallery": "จากแฟ้มภาพ",
+        "displayLocation": "ตำแหน่งจัดแสดง",
+        "enterLocation": "กรอกตำแหน่งจัดแสดงของโปรโมชัน",
+        "detailPromotion": "รายละเอียดโปรโมชัน",
+        "enterDetail": "อธิบายรายละเอียดของโปรโมชัน",
+        "promotionPeriod": "ช่วงเวลาโปรโมชัน",
+        "startDate": "วันที่เริ่ม",
+        "to": "ถึง",
+        "endDate": "วันที่จบ"
+      },
+      "product": {
+        "name": "ชื่อสินค้า",
+        "enterName": "กรอกชื่อของสินค้า",
+        "category": "หมวดหมู่สินค้า",
+        "selectCategory": "เลือกหมวดหมู่",
+        "addNewCategory": "เพิ่มหมวดหมู่ใหม่",
+        "productImage": "ภาพสินค้า",
+        "takePicture": "ถ่ายภาพ",
+        "fromGallery": "จากแฟ้มภาพ",
+        "productPrice": "ระดับราคาสินค้า",
+        "add": "เพิ่ม",
+        "description": "รายละเอียด",
+        "enterDescription": "อธิบายรายละเอียดของสินค้า",
+        "targetMarket": "เป้าการตลาด",
+        "selectTargetMarket": "เลือกเป้าการตลาด",
+        "addNewTargetMarket": "เพิ่มเป้าการตลาดใหม่",
+        "variantOf": "สินค้ามีรูปแบบจาก...",
+        "selectProduct": "เลือกสินค้า",
+        "store": "ร้านค้า",
+        "selectStore": "เลือกร้านค้า"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[AI] พบผ้าปิดปากบนพนักงาน",
+        "incorrectly_wear": "[AI] พบผ้าปิดปากแต่สวมใส่ไม่ถูกต้อง",
+        "without_mask": "[AI] ไม่พบผ้าปิดปากบนพนักงาน"
+      },
+      "temperature": {
+        "with_temperature": "[AI] พบอุณหภูมิบนรูปภาพ",
+        "without_temperature": "[AI] ไม่พบอุณหภูมิบนรูปภาพ"
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "กรุณากรอกความคิดเห็น",
+    "commentTooLong": "ความคิดเห็นยาวเกินไป",
+    "insertNumber": "กรุณากรอกหมายเลข",
+    "outRange": "หมายเลขเกินขอบเขต",
+    "negative": "หมายเลขเป็นลบ",
+    "outNumber": "หมายเลขออกเป็นลบ"
+  },
+  "drawer": {
+    "noQuestions": "ไม่พบคำถามที่มี '{{query}}'",
+    "searchQuestions": "ค้นหาคำถาม",
+    "score": "คะแนน"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - การอนุญาตใช้กล้อง",
+    "cameraText": "ถ่าย ภาพ/วิดีโอ ปัญหาแล้วแนบมันมากับรายงานของคุณ",
+    "audioPermission": "Nimbly - การอนุญาตบันทึกเสียง",
+    "auditText": "ถ่ายวิดีโอปัญหาแล้วแนบมันมากับรายงานของคุณ",
+    "failCapture": "การถ่ายภาพล้มเหลว",
+    "onMountError": "เกิดข้อผิดพลาดในการตั้งกล้อง",
+    "clearCache": "กรุณาทำการเคลียร์แคช และตรวจสอบว่าได้อนุญาตให้ใช้กล้องแล้ว",
+    "tryAgain": "โปรดลองใหม่อีกครั้ง หรือติดต่อผู้ดูแลระบบ",
+    "takeSixtySecond": "ถ่ายวิดีโอ 60-วินาที",
+    "failVideoCapture": "ไม่สามารถจับภาพได้"
+  },
+  "priorityModal": {
+    "title": "ตั้งลำดับความสำคัญเป็น",
+    "description1": "คำตอบสร้าง",
+    "description2": "ปัญหาลำดับความสำคัญ",
+    "changePriority": "เปลี่ยนลำดับความสำคัญ"
+  }
+}

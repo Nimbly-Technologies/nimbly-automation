@@ -1,0 +1,32 @@
+{
+  "assignedDepartment": {
+    "update": "បានប្តូរផ្នែកដែលបានកំណត់ទៅជា {{payload}}",
+    "remove": "បានយកផ្នែកដែលត្រូវបានកំណត់ចេញ"
+  },
+  "assignedTo": {
+    "update": "បានប្តូរសវនករដែលបានចាត់តាំងទៅជា {{payload}}",
+    "default": "អ្នកត្រូវបានចាត់ឲ្យធ្វើជាសវនករនៃបញ្ហានេះ "
+  },
+  "dueDate": {
+    "update": "បានប្តូរកាលបរិច្ឆេទដល់កំណត់ទៅជា {{payload}}"
+  },
+  "severity": {
+    "update": "បានប្តូរទង់បញ្ហាទៅជា {{payload}}"
+  },
+  "priority": {
+    "update": "បានប្តូរអាទិភាពទៅជា {{payload}}"
+  },
+  "status": {
+    "update": "Changed issue status from {{prevStatus}} to {{currentStatus}}"
+  },
+  "comment": {
+    "add": "{{payload}} បានផ្តល់យោបល់នៅលើបញ្ហា "
+  },
+  "members": {
+    "add": "{{payload}}ដែលត្រូវបានបន្ថែម ទៅសមាជិក",
+    "remove": "លុបចេញ {{payload}} ពីសមាជិក "
+  },
+  "escalation": {
+    "default": "បញ្ហានេះត្រូវបានកើនឡើងដល់ {{payload}}"
+  }
+}

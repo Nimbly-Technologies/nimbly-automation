@@ -1,0 +1,139 @@
+{
+  "outlet": {
+    "button": {
+      "setLocation": "Escoger ubicación",
+      "enterLobby": "Ingresar al lobby",
+      "startAdhoc": "Iniciar informe ad hoc",
+      "uploadReport": "Subir Informe",
+      "resumeReporting": "Reanudar Informe",
+      "viewReport": "Ver informe",
+      "makeUpReport": "Creación de Informe",
+      "viewDetails": "Ver detalles"
+    },
+    "error": {
+      "noQuestionnaireFound": "Error: No se encontró ningún cuestionario. Comuníquese con el administrador.",
+      "noScheduleFound": "Error: No se encontró el horario. Comuníquese con el servicio de asistencia.",
+      "alreadySetLocation": "Alguien más ya está configurando la ubicación de este sitio.",
+      "notAllowedSetLocation": "Su organización no permite la calibración de la ubicación del sitio.",
+      "farFromLocation": "Está demasiado lejos de la ubicación. Acércate y vuelve a intentarlo.",
+      "failedCompilingData": "Error al compilar sus datos. Vuelva a intentarlo",
+      "failedParseMakeUpData": "No se pudo analizar la fecha de recuperación. Vuelva a intentarlo."
+    },
+    "prompt": {
+      "deleteDraft": "Está seguro de que desea eliminar todas sus respuestas?",
+      "teamReportNotStarted": "El informe no ha comenzado",
+      "leaderCheckIn": "Asegúrese de que el líder de su equipo se haya registrado."
+    },
+    "placeholder": {
+      "noSchedule": "No hay horario",
+      "noScheduleTitle": "No tiene ninguna tarea para esta fecha."
+    },
+    "offlineInfo": "No tiene conexión. Vuelva a intentarlo más tarde.",
+    "noReportDue": "No hay informe pendiente este período.",
+    "overdueReport": "Ha pasado el tiempo de registro para los informes.",
+    "alreadyCompletedReport": "Ya completó un informe hoy. Vuelva a intentarlo mañana.",
+    "ongoingDraftFound": "a ha iniciado un informe para {{title}}. Reanude su informe en curso.",
+    "finishThisPeriod": "Ha completado todos los informes del período. Bien hecho!",
+    "startAnytime": "Empiece  en cualquier momento",
+    "selectQuestionnaire": "Seleccione un cuestionario para el informe de hoy",
+    "reportDoneToday": "Informes realizados para hoy",
+    "seeMap": "ver mapa",
+    "openMap": "Abrir mapa",
+    "questionnairesDownloaded": "Cuestionarios descargados",
+    "downloadQuestionnaires": "Descargar cuestionarios",
+    "deleteButton": "Borrar",
+    "searchQuestionnaires": "Buscar cuestionarios",
+    "outletListHeadline": "Seleccione un cuestionario para comenzar a auditar",
+    "outletListSubtitle": "Informes completados para",
+    "mapNotAvailableOffline": "El mapa no está disponible sin conexión"
+  },
+  "calendar": {
+    "emptySchedules": " No hay tarea programada",
+    "emptySchedulesSubtitle": "No tiene ninguna tarea para esta fecha.",
+    "viewPeriod": "Visualización del período de {{day}} días"
+  },
+  "footer": {
+    "title": "Cuestionario para utilizar en el informe",
+    "selectType": "Seleccione el tipo de informe",
+    "multisiteTitle": "Iniciar auditoría de equipo",
+    "multisiteSubtitle": "Inicie el lobby de informes para que su equipo pueda unirse y seleccionar un cuestionario."
+  },
+  "error": {
+    "failedRetrieveLocation": "Se produjo un error al recuperar tu ubicación. Vuelva a intentarlo.",
+    "enableLocationAccess": "Puede habilitar el acceso a la ubicación para Nimbly en la configuración de la aplicación más adelante.",
+    "selectQuestionnaireFirst": "Seleccione el cuestionario primero.",
+    "missingDraftReport": "No se puede encontrar el informe al intentar reanudar el borrador del informe. Vuelva a intentarlo más tarde."
+  },
+  "promotions": {
+    "empty_board": "No tiene promociones activas en este momento. Vuelva más tarde."
+  },
+  "sales": {
+    "achieve": "Has logrado",
+    "thisMonth": "del objetivo de ventas de este mes",
+    "toDate": "Hasta la fecha",
+    "toMonth": "Al mes",
+    "current": "Actualmente",
+    "target": "Objetivo"
+  },
+  "siteReports": {
+    "footer": {
+      "message": "Parece que has llegado al final."
+    },
+    "time": {
+      "mtd": "Mes-hasta-la-fecha",
+      "ytd": "Año-hasta-la-fech",
+      "custom": "Personalizado",
+      "thisPeriod": "Este {{period}}",
+      "lastPeriod": "Último {{period}}",
+      "period": "Periodo",
+      "last-7": "Últimos 7 Días",
+      "last-28": "Últimos 28 Días",
+      "last-30": "Últimos 30 Días",
+      "last-60": "Últimos 60 Días",
+      "last-90": "Últimos 90 Días",
+      "last-6-m": "Últimos 6 Meses",
+      "last-12-m": "Últimos 12 Meses",
+      "last-year": "Último Año",
+      "day": "Día",
+      "week": "Semana",
+      "month": "Mes",
+      "year": "Año",
+      "daily": "Diariamente",
+      "everyday": "Todos los dias",
+      "weekly": "Semanal",
+      "monthly": "Mensual",
+      "today": "Hoy",
+      "filter": "Filtrar"
+    },
+    "empty_board_title": "Aún no hay informes",
+    "empty_board_subtitle": "Después de que un cuestionario se haya llenado y cargado correctamente, puede ver el informe aqu.",
+    "date": "Fecha",
+    "latestDate": "Fecha más antigua",
+    "earliestDate": "Fecha más reciente",
+    "filter": "Filtrar y ordenar",
+    "byTime": "Por Hora",
+    "byCustom": "Por Fecha",
+    "sortBy": "Ordenar por",
+    "download": "Download"
+  },
+  "confirmCheckIn": "Está seguro de que desea comenzar un informe en este sitio?",
+  "startAnytime": "Empiece en cualquier momento",
+  "makeupReport": "Rehacer Informe",
+  "overdue": "Atrasado",
+  "continueReport": "Continuar informe",
+  "pendingReport": "Subida pendiente",
+  "makeUpReport": "Rehacer Informe",
+  "fillMakeupField": "Por favor, complete con el motivo del incumplimiento de la fecha límite",
+  "notAllowedMakeUpReport": "Complete los informes de hoy antes de enviar el informe que faltaba",
+  "scheduleNotStartedYet": "Esta programación aún no ha comenzado",
+  "leaderMustCheckIn": "Asegúrese de que el líder de su equipo se haya registrado.",
+  "reportHasNotStarted": "El informe no ha comenzado",
+  "ok": "Okay",
+  "loadingSite": "Cargando sitio ...",
+  "makeUpDate": "Make up date",
+  "questionnaireNotDownloaded": "No se descargó el cuestionario",
+  "startAuditCta": "Toca para iniciar la auditoría",
+  "resumeAuditCta": "Toca para reanudar la auditoría",
+  "uploadAuditCta": "Toca para cargar",
+  "uploadedDisplay": "Informe subido"
+}

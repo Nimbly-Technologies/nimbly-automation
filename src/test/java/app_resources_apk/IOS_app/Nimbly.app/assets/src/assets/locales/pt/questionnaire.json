@@ -1,0 +1,249 @@
+{
+  "prompt": {
+    "editPhoto": "Editar Foto",
+    "photo": "O que gostaria de fazer com esta foto?",
+    "draw": "Desenhar",
+    "change": "Alterar",
+    "addPhoto": "Adicionar Foto",
+    "accessCamera": "Acessar Câmara",
+    "close": "Fechar",
+    "aiVerification": "Verificação de IA",
+    "editFile": "Editar o ficheiro",
+    "file": "Pretende eliminar este ficheiro?",
+    "warningNewFile": "Selecionar um novo ficheiro",
+    "warningCancel": "Cancelar",
+    "cannotAttach": "Não é possível anexar",
+    "limitFile": "O tamanho do ficheiro excede o nosso limite de 7 mb."
+  },
+  "modal": {
+    "warningMissing": "AVISO: Este relatório foi iniciado num outro dispositivo. {{invalidAttachmentCount}} anexo(s) serão eliminados, se continuar.\n\nTem a certeza?",
+    "photoMissing": "Fotos em falta",
+    "attachmentMissing": "Anexo em falta",
+    "proceed": "Continuar"
+  },
+  "permission": {
+    "check": "Para tirar fotografias, o Nimbly tem de ter acesso à sua câmara e à sua galeria.\nPor favor, permita o acesso nas configurações do seu dispositivo."
+  },
+  "takePhoto": "Tirar Foto",
+  "recordVideo": "Gravar Vídeo",
+  "sourceCamera": "Da Câmara",
+  "sourceGallery": "Da Galeria",
+  "takeFile": "Adicionar ficheiros pdf, xlsx ou doc",
+  "error": {
+    "noPerson": "Erro: nenhuma pessoa foi detetada na foto. Tente novamente.",
+    "detectFailed": "Ocorreu um erro com a IA. Por favor, insira a sua resposta manualmente.",
+    "noTemperature": "Erro: não foi detetado nenhum valor de temperatura na foto. Tente novamente.",
+    "missingData": {
+      "title": "Dados em Falta",
+      "description": "Este relatório tem dados em falta. Reinicie o relatório e tente novamente."
+    }
+  },
+  "toast": {
+    "detectSuccess": "A IA gerou uma resposta com sucesso. Por favor, verifique antes de continuar."
+  },
+  "container": {
+    "loadingQuestionnaire": "A carregar Questionário...",
+    "nextQuestion": "PRÓXIMA PERGUNTA"
+  },
+  "tutorial": {
+    "clickReport": "Clique aqui para rever o relatório",
+    "questionnaireProgress": "A barra de progresso será alterada com o preenchimento das respostas",
+    "loadingCapital": "A CARREGAR...",
+    "finishSection": "TERMINAR A SECÇÃO",
+    "reviewReport": "REVER O RELATÓRIO",
+    "clickIcon": "Clique no ícone para adicionar uma foto",
+    "notRequired": "Esta opção irá aparecer caso a resposta não seja obrigatória"
+  },
+  "uploadCVModal": {
+    "loadingAI": "A carregar IA.."
+  },
+  "questionnaireSwiper": {
+    "followUp": "Ir a{{index}}/{{total}}. Pergunta de acompanhamento",
+    "backToTop": "{{index}}/{{total}} - Voltar ao Topo",
+    "questionNumber": "Pergunta {{index}} de {{length}}",
+    "done": "[FEITO]",
+    "conditionalNumber": "Pergunta {{index}} de {{length}}",
+    "followUpConditional": "Pergunta de acompanhamento {{index}} de {{length}}:",
+    "scrollError": {
+      "title": "Erro",
+      "description": "Lamentamos, mas há um erro. Desloque manualmente."
+    }
+  },
+  "recommendation": {
+    "title": "Recomendação",
+    "choseRecommendation": "Pode escolher mais de 1",
+    "placeholder": "Introduza aqui a sua resposta personalizada",
+    "set": "CONFIGURAR",
+    "tap": "+ Clique para adicionar uma recomendação"
+  },
+  "swiperMedia": {
+    "selectMedia": "Selecione multimédia para adicionar à sua resposta",
+    "minimumPhoto": "Mínimo para foto",
+    "minimumVideo": "Mínimo para vídeo",
+    "minimumDocuments": "Mínimo do documento"
+  },
+  "addPhoto": "Adicionar Foto",
+  "addVideo": "Adicionar vídeo",
+  "question": {
+    "notApplicable": "Não Aplicável",
+    "binary": {
+      "firstYes": "Sim",
+      "no": "Não",
+      "redFlag": "Sinalizador Vermelho (o problema é grave)",
+      "comments": "Comentários",
+      "optional": " (opcional)"
+    },
+    "multipleChoice": {
+      "comments": "Comentários",
+      "optional": " (opcional)"
+    },
+    "checkList": {
+      "comments": "Comentários",
+      "optional": " (opcional)"
+    },
+    "number": {
+      "typeAnswer": "Digite a sua resposta aqui",
+      "comments": "Comentários",
+      "optional": " (opcional)"
+    },
+    "score": {
+      "weight": "Peso",
+      "note": "Nota: será criado um caso para esta pergunta.",
+      "comments": "Comentários",
+      "optional": " (opcional)",
+      "title": "Pontuação",
+      "answer": "Deslize para definir a pontuação"
+    },
+    "rangeFlag": {
+      "typeAnswer": "Digite a sua resposta aqui",
+      "comments": "Comentários",
+      "optional": " (opcional)",
+      "answerWithin": "Responda dentro de",
+      "redFlag": "Sinalizador Vermelho",
+      "yellowFlag": "Sinalizador Amarelo",
+      "greenFlag": "Sinalizador Verte"
+    },
+    "inventory": {
+      "previous": "Anterior",
+      "onHand": "Disponível",
+      "comments": "Comentários",
+      "optional": " (opcional)"
+    },
+    "newInventory": {
+      "searchSKU": "Procure um SKU",
+      "SKUNotFound": "SKU não encontrado.",
+      "contactAdmin": "Por favor, contacte o seu Administrador",
+      "previous": "Anterior",
+      "onHand": "Disponível",
+      "comments": "Comentários",
+      "optional": " (opcional)",
+      "currentStock": "Qual é o stock atual?",
+      "comment": "Comentar",
+      "takePhoto": "Tirar uma Foto"
+    },
+    "open": {
+      "typeAnswer": "Digite a sua resposta aqui"
+    },
+    "competitorAnalysis": {
+      "selectCompany": "Selecionar uma Empresa",
+      "addNewCompany": "Adicionar uma Nova Empresa",
+      "categoryEmpty": "Categoria não pode ficar em branco",
+      "targetMarketEmpty": "Público Alvo não pode ficar em branco",
+      "promotion": {
+        "title": "Titulo da Promoção",
+        "name": "Introduzir o nome da promoção",
+        "product": "Produto",
+        "selectProduct": "Selecionar produto",
+        "choosePromotionType": "Escolher tipo de promoção",
+        "promotionType": "Tipo de Promoção",
+        "promotionImage": "Imagens da promoção",
+        "takePicture": "Tirar Foto",
+        "fromGallery": "Da Galeria",
+        "displayLocation": "Mostrar Localização",
+        "enterLocation": "Introduzir a localização da promoção exibida",
+        "detailPromotion": "Informação da Promoção",
+        "enterDetail": "Descreva os detalhes da promoção",
+        "promotionPeriod": "Período de promoção",
+        "startDate": "Data de ínicio",
+        "to": "a",
+        "endDate": "Data de fim"
+      },
+      "product": {
+        "name": "Nome do Produto",
+        "enterName": "Inserir o nome do produto",
+        "category": "Categoria do produto",
+        "selectCategory": "Selecionar categoria",
+        "addNewCategory": "Adicionar nova categoria",
+        "productImage": "Imagens do produto",
+        "takePicture": "Tirar Foto",
+        "fromGallery": "Da Galeria",
+        "productPrice": "Gama de Preços dos Produtos",
+        "add": "Adicionar",
+        "description": "Descrição",
+        "enterDescription": "Descreva os detalhes do produto",
+        "targetMarket": "Público Alvo",
+        "selectTargetMarket": "Selecionar Público Alvo",
+        "addNewTargetMarket": "Adicionar Novo Público Alvo",
+        "variantOf": "O produto é uma variante de...",
+        "selectProduct": "Selecionar produto",
+        "store": "Loja",
+        "selectStore": "Selecionar loja"
+      }
+    },
+    "visionDetection": {
+      "ppe": {
+        "with_mask": "[IA] Máscara facial detetada num funcionário.",
+        "incorrectly_wear": "[IA] Máscara facial detetada, mas não usada adequadamente.",
+        "without_mask": "[IA] Máscara facial não detetada num funcionário."
+      },
+      "temperature": {
+        "with_temperature": "[IA] Temperatura detetada na foto.",
+        "without_temperature": "[IA] Temperatura não detetada na foto."
+      }
+    },
+    "takePhoto": "Tirar Foto",
+    "sourceCamera": "Da Câmera",
+    "sourceGallery": "Da Galeria",
+    "takeFile": "Adicionar ficheiros pdf, xlsx ou doc",
+    "error": {
+      "noPerson": "Erro: nenhuma pessoa foi detetada na foto. Tente novamente.",
+      "detectFailed": "Ocorreu um erro com a IA. Por favor, insira a sua resposta manualmente.",
+      "noTemperature": "Erro: não foi detetado nenhum valor de temperatura na foto. Tente novamente.",
+      "missingData": {
+        "title": "Dados em Falta",
+        "description": "Este relatório tem dados em falta. Reinicie o relatório e tente novamente."
+      }
+    }
+  },
+  "utils": {
+    "insertComment": "Por favor, insira um comentário",
+    "commentTooLong": "Comentário demasiado longo",
+    "insertNumber": "Por favor, insira um número",
+    "outRange": "O número está fora do limite",
+    "negative": "O número é negativo",
+    "outNumber": "O número de saída é negativo"
+  },
+  "drawer": {
+    "noQuestions": "Nenhuma pergunta encontrada com '{{query}}'",
+    "searchQuestions": "Procurar perguntas",
+    "score": "Pontuação"
+  },
+  "mediaRecord": {
+    "cameraPermission": "Nimbly - Permissões de acesso à Câmara",
+    "cameraText": "Tire fotos/grave vídeos dos problemas e anexe-os ao seu relatório",
+    "audioPermission": "Nimbly - Permissões de Gravação de Áudio",
+    "auditText": "Grave vídeos dos problemas e anexe-os ao seu relatório",
+    "failCapture": "Falha na captura da foto",
+    "onMountError": "Erro ao montar a câmara",
+    "clearCache": "Limpe o cache e conceda permissões à câmara",
+    "tryAgain": "Por favor, tente novamente ou contacte um administrador",
+    "takeSixtySecond": "Grave um vídeo de 60 segundos",
+    "failVideoCapture": "Falha na captura de vídeo"
+  },
+  "priorityModal": {
+    "title": "Prioridade definida para",
+    "description1": "A resposta gerou um",
+    "description2": "problema de prioridade",
+    "changePriority": "Alterar prioridade"
+  }
+}

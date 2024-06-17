@@ -1,0 +1,86 @@
+{
+  "backButton": "Prima o botão Voltar novamente para sair",
+  "welcome": {
+    "checkPermission": "Poderá ativar mais tarde o Acesso Local à Nimbly nas Definições da sua aplicação.",
+    "accessLocation": "Local de Acesso",
+    "openSettings": "Abrir Definições",
+    "skip": "Saltar"
+  },
+  "tutorial": {
+    "end": "Terminar tutorial",
+    "tap": "Toque no cartão para iniciar o seu relatório agendado."
+  },
+  "daySchedule": {
+    "onGoing": "Há outra viagem em curso\nNão pode iniciar esta viagem",
+    "reminder": "Lembrete",
+    "noDue": "Nada Agendado Hoje!",
+    "pullDown": "(deslize para baixo para atualizar)"
+  },
+  "siteItem": {
+    "pendingUpload": "CARREGAMENTO PENDENTE",
+    "inProgress": "EM ANDAMENTO",
+    "overdue": "ATRASADO",
+    "priority": "PRIORIDADE",
+    "onGoing": "EM CURSO",
+    "noLocation": "Nenhuma localização encontrada.\nFaça o registo para calibrar.",
+    "done": "FINALIZADO  ",
+    "tap": "TOQUE PARA ELABORAR O RELATÓRIO"
+  },
+  "notification": {
+    "uploadDone": "Carregamento do Relatório Finalizado",
+    "title": "Notificações",
+    "tap": "Toque para visualizar"
+  },
+  "offDay": {
+    "title": "Hoje num dia não operacional",
+    "description": "Ainda pode fazer o seu relatório agendado, mas ele não será incluído nas suas estatísticas pessoais"
+  },
+  "summary": {
+    "hi": "Olá, "
+  },
+  "progress": {
+    "thisWeek": "ESTA SEMANA",
+    "thisMonth": "ESTE MÊS",
+    "thisYear": "ESTE ANO"
+  },
+  "sales": {
+    "title": "VENDAS",
+    "toDate": "Até ao momento",
+    "toMonth": "Mês",
+    "dayLeft": "{{daysLeft}}. dia.{{add}}. restante"
+  },
+  "softUpdate": {
+    "title": "Atualização disponível",
+    "description": "Uma nova versão da aplicação Nimbly está disponível para transferência. Atualize para a nova versão para usufruir dos novos recursos e de uma melhor experiência.",
+    "dismiss": "Dispensar",
+    "updateButton": "Atualizar Agora"
+  },
+  "forceUpdate": {
+    "title": "Atualização Necessária",
+    "description": "Lamentamos, esta versão da aplicação já não é suportada. Atualize a sua aplicação para continuar a utilizá-la.",
+    "updateButton": "Atualizar Agora"
+  },
+  "home": "Página inicial",
+  "offlineAudit": {
+    "switchLabel": "Transferir",
+    "progressBarTitle": "A transferir questionários...",
+    "stopButtonTitle": "Parar",
+    "stopModal": {
+      "title": "Parar a transferência?",
+      "body": "Não poderá aceder à transferência inacabada offline.  No entanto, os questionários transferidos permanecerão acessíveis quando estiver offline.",
+      "stopDownloadButtonLabel": "Parar a transferência",
+      "cancelDownloadButtonLabel": "Cancelar"
+    },
+    "deleteModal": {
+      "title": "Eliminar todas as transferências?",
+      "body": "Todos os questionários transferidos serão eliminados e não será possível realizar a auditoria offline.",
+      "deleteDownloadButtonLabel": "Eliminar transferências",
+      "cancelDownloadButtonLabel": "Cancelar"
+    }
+  },
+  "freezeModal": {
+    "title": "A sua Conta está Congelada",
+    "subtitle": "A sua conta Nimbly foi temporariamente desativada. Para mais detalhes, contacte o Titular de Conta da sua organização.",
+    "button": "OK"
+  }
+}

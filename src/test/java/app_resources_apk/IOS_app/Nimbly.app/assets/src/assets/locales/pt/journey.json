@@ -1,0 +1,21 @@
+{
+  "startJourney": "Iniciar Viagem",
+  "finishJourney": "Terminar Viagem",
+  "finished": "Terminada",
+  "totalTime": "Tempo total de viagem",
+  "visitedSites": "Sites visitados",
+  "loadingJourneyInfo": "A carregar informação da viagem...",
+  "toast": {
+    "errorOcurred": "Ocorreu um erro, tente novamente mais tarde."
+  },
+  "alert": {
+    "noSchedule": "Sem programação para a viagem de hoje",
+    "onGoingJourney": "Há outra viagem em curso\nNão pode iniciar esta viagem",
+    "confirmStartJourney": "Tem a certeza que pretende iniciar esta viagem?",
+    "confirmFinishJourney": "Tem a certeza que pretende terminar a viagem?",
+    "missedSites": "Haverá sites em falta",
+    "alreadyFinishSite": "Já terminou este site",
+    "alreadyFinishJourney": "Já terminou esta viagem",
+    "startJourneyFirst": "Primeiro tem de iniciar esta viagem"
+  }
+}

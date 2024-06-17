@@ -1,0 +1,83 @@
+{
+  "stockOpname": "Stock Opname",
+  "stockMovement": "Stock Movement",
+  "stockOnHand": "Stock On Hand",
+  "stockIn": "Stock In",
+  "stockOut": "Stock Out",
+  "beforeAudit": "Before Audit",
+  "beforeAuditValue": "Before audit value",
+  "afterAudit": "After Audit",
+  "updatedOn": "updated on",
+  "skus": "SKUs",
+  "lowStockSkus": "Low Stock SKUs",
+  "stockAuditForm": {
+    "enterNumber": "Enter number",
+    "valueExceedsMax": "Max value is 1,000,000,000",
+    "beforeAuditSubtitle": "Current number of stocks",
+    "afterAuditSubtitle": "Stock count after stock in and stock out are calculated",
+    "negativeStockAlert": "After audit must not be below zero",
+    "purchaseOrder": "Purchase Order",
+    "purchaseOrderSubtitle": "Stocks that are purchased from the vendors",
+    "transferIn": "Transfer In",
+    "transferInSubtitle": "Stocks that are transferred from other sites",
+    "otherIn": "Other - Stock In",
+    "otherInSubtitle": "Stocks that came because of other reasons",
+    "sales": "Sales",
+    "salesSubtitle": "Stocks that are sold",
+    "transferOut": "Transfer Out",
+    "transferOutSubtitle": "Stocks that are transferred to other sites",
+    "wasteOrExpired": "Waste / Expired",
+    "wasteOrExpiredSubtitle": "Expired stocks and considered as waste",
+    "otherOut": "Other - Stock Out",
+    "otherOutSubtitle": "Stocks that went out because of other reasons",
+    "note": "Note",
+    "addNote": "Add a note",
+    "noteExceedsLimit": "Exceeds the character limit",
+    "mediaAttachments": "Media attachments",
+    "mediaLimitAlert": "Up to 3 photos and 1 video are allowed",
+    "deleteNoteModal": {
+      "title": "Delete Note",
+      "description": "Are you sure you want to delete this note? This action can't be undone."
+    },
+    "deleteMediaModal": {
+      "title": "Delete media attachments",
+      "description": "Are you sure you want to delete all attachments? This action can't be undone."
+    },
+    "stockTypeSelectionAlert": "Stock numbers will be discarded when you unselect these options",
+    "applyToAllSkus": "Apply to all SKUs",
+    "confirmApplyToAllSkus": "Yes, apply to all SKU",
+    "applyToAllSkusModal": {
+      "description": "Do you want to apply selection to all SKUs? Stock numbers will be discarded when you unselect these options"
+    }
+  },
+  "stockAuditReview": {
+    "lowStockSkuFound": "Low stock SKUs found",
+    "stockinvalid": "There is an invalid stock number in this report, please go back and check.",
+    "checkoutSettings": "Checkout Settings",
+    "signature": "Signature",
+    "editSignaturePrompt": {
+      "title": "Edit Signature",
+      "description": "What would you like to do with this signature?"
+    },
+    "nameAndPosition": "Name and position",
+    "enterName": "Enter name",
+    "enterPosition": "Enter position",
+    "signatureRequired": "Signature required",
+    "nameRequired": "Please enter name",
+    "positionRequired": "Please enter position",
+    "nameAndPositionRequired": "Please enter name and position",
+    "selfieSignature": "Selfie Signature",
+    "selfieSignatureRequired": "Selfie required. Please take a selfie before proceeding.",
+    "openCamera": "Open Camera",
+    "emailReportTo": "Email report to",
+    "supervisorDefault": "Supervisor (Default)",
+    "addAnEmail": "Add an email address",
+    "emailInvalid": "Please enter a valid email address",
+    "emailDuplicate": "Email has been used, please choose another one",
+    "checkOut": "Check Out",
+    "checkOutPrompt": {
+      "title": "Check Out",
+      "description": "Are you sure you want to submit report and check out of this site?"
+    }
+  }
+}

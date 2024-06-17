@@ -1,0 +1,18 @@
+{
+    "title":"No Access",
+    "subtitle":"Sorry, but you don’t have access to this feature.",
+    "body":"Please contact your admin to enable this feature.",
+    "buttonTranslation":"Okay",
+    "error":{
+        "title":"Oops!",
+        "subtitle":"Problem retrieving feature access.",
+        "body":"Please restart the app."
+    },
+    "freezeBanner":{
+        "title":"The Account you’re trying to access is deactivated. Try another account."
+    },
+    "saga":{
+        "fail":"Failed to Fetch Feature Access"
+    }
+
+}

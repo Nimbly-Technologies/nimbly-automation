@@ -1,0 +1,32 @@
+{
+  "oops": "Ooops",
+  "finalizeReport": "Selesaikan Laporan",
+  "reportCompleted": "Laporan telah selesai.",
+  "reportCompletedSubtitle": "Maaf, laporan ini telah diselesaikan.\nAnda akan diarahkan ke Halaman Utama.",
+  "uploadReport": "Unggah laporan",
+  "areYouSure": "Apakah anda yakin ?",
+  "requiredSection": "Bagian Wajib",
+  "optionalSection": "Bagian Opsional",
+  "leader": "Pemimpin",
+  "member": "Anggota",
+  "prompt": {
+    "uploadingInProgress": "Laporan sedang diunggah.\nLanjut untuk meninggalkan halaman?",
+    "sectionInProgress": "{{displayName}} sedang mengerjakan bagian ini.\nApakah Anda yakin untuk melanjutkan?",
+    "unfinishedReport": "PERINGATAN: Bagian yang belum diselesaikan akan dihapus.",
+    "uploadWarning": "PERINGATAN: Anda tidak dapat lanjut mengerjakan laporan setelah mengunggah laporan."
+  },
+  "error": {
+    "offlineAlert": "Anda sedang offline.\nMohon coba lagi nanti",
+    "connectionLost": "Ups, koneksi internet terputus. Coba lagi nanti.",
+    "uploadTimeout": "ERROR: Batas waktu permintaan koneksi habis, silakan coba lagi",
+    "uploadFailed": "ERROR: Gagal mengunggah, silakan coba lagi!"
+  },
+  "status": {
+    "tapToStart": "Ketuk untuk memulai",
+    "inProgress": "Sedang Dikerjakan",
+    "uploaded": "Telah diunggah",
+    "waitingForUpload": "Menunggu untuk diunggah",
+    "rejected": "Ditolak",
+    "approved": "Disetujui"
+  }
+}

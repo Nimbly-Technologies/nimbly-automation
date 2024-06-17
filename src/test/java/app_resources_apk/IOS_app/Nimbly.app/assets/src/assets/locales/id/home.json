@@ -1,0 +1,86 @@
+{
+  "backButton": "Tekan tombol Kembali lagi untuk keluar",
+  "welcome": {
+    "checkPermission": "Anda dapat mengatur ulang akses lokasi untuk Nimbly pada Pengaturan Aplikasi.",
+    "accessLocation": "Akses Lokasi",
+    "openSettings": "Buka Pengaturan",
+    "skip": "Lewati"
+  },
+  "tutorial": {
+    "end": "Akhiri Tutorial",
+    "tap": "Ketuk pada kartu ini untuk memulai laporan terjadwal"
+  },
+  "daySchedule": {
+    "onGoing": "Journey lain sedang berjalan\nTidak bisa menjalankan journey ini",
+    "reminder": "Peringatan",
+    "noDue": "Tidak Ada Hari ini!",
+    "pullDown": "(tarik ke bawah untuk menyegarkan)"
+  },
+  "siteItem": {
+    "pendingUpload": "UNGGAHAN TERTUNDA",
+    "inProgress": "SEDANG DIJERJAKAN",
+    "overdue": "TERLAMBAT",
+    "priority": "PRIORITAS",
+    "onGoing": "DIJALANKAN",
+    "noLocation": "Lokasi tidak ditemukan.\nSilakan check-in untuk mengatur lokasi.",
+    "done": "SELESAI  ",
+    "tap": "KETUK UNTUK MELAPORKAN"
+  },
+  "notification": {
+    "uploadDone": "Laporan selesai",
+    "title": "Notifikasi",
+    "tap": "Lihat laporan"
+  },
+  "offDay": {
+    "title": "Hari ini adalah hari non-operasional",
+    "description": "Anda tetap dapat mengerjakan audit yang telah dijadwalkan. Namun, laporan tersebut tidak akan diikutsertakan dalam statistik personal Anda."
+  },
+  "summary": {
+    "hi": "Hai, "
+  },
+  "progress": {
+    "thisWeek": "MINGGU INI",
+    "thisMonth": "BULAN INI",
+    "thisYear": "TAHUN INI"
+  },
+  "sales": {
+    "title": "PENJUALAN",
+    "toDate": "Saat ini",
+    "toMonth": "Bulan ini",
+    "dayLeft": "{{daysLeft}} hari lagi"
+  },
+  "home": "Beranda",
+  "softUpdate": {
+    "title": "Pembaruan Tersedia",
+    "description": "Versi terbaru dari aplikasi Nimbly telah tersedia untuk diunduh. Harap perbarui aplikasi Anda untuk mendapatkan fitur terbaru dan pengalaman terbaik",
+    "updateButton": "Perbarui Sekarang",
+    "dismiss": "Tutup"
+  },
+  "freezeModal": {
+    "title": "Akun Anda Dibekukan",
+    "subtitle": "Akun Nimbly Anda telah dinonaktifkan sementara. Untuk informasi lebih lanjut, silakan hubungi Account Holder organisasi Anda.",
+    "button": "OK"
+  },
+  "forceUpdate": {
+    "title": "Pembaruan Dibutuhkan",
+    "description": "Maaf, versi aplikasi ini tidak lagi didukung. Perbarui aplikasi Anda untuk terus menggunakan aplikasi",
+    "updateButton": "Perbarui Sekarang"
+  },
+  "offlineAudit": {
+    "switchLabel": "Unduh",
+    "progressBarTitle": "Mengunduh kuesioner...",
+    "stopButtonTitle": "Stop",
+    "stopModal": {
+      "title": "Stop Unduhan?",
+      "body": "Anda tidak akan dapat mengakses unduhan yang belum selesai secara offline. Namun, kuesioner yang diunduh tetap dapat diakses saat Anda offline.",
+      "stopDownloadButtonLabel": "Stop Unduhan",
+      "cancelDownloadButtonLabel": "Batal"
+    },
+    "deleteModal": {
+      "title": "Hapus Semua Unduhan?",
+      "body": "Semua unduhan kuesioner akan dihapus, dan Anda tidak akan dapat melakukan audit secara offline.",
+      "deleteDownloadButtonLabel": "Hapus Unduhan",
+      "cancelDownloadButtonLabel": "Batal"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "pendingUpload": "Unggahan Tertunda",
+  "inProgress": "Sedang Dikerjakan",
+  "overdue": "Lewat Batas",
+  "priority": "Prioritas",
+  "notStarted": "Belum Dimulai",
+  "onGoing": "Sedang Dikerjakan",
+  "completed": "Selesai",
+  "noLocation": "Lokasi tidak ditemukan",
+  "done": "Selesai",
+  "tapTodoReport": "Buka lobi lokasi",
+  "questionnaireNotDownloaded": "Kuesioner tidak diunduh",
+  "sales": "Penjualan",
+  "toDate": "Saat ini",
+  "month": "Bulan",
+  "error": {
+    "noLocationFound": "Lokasi tidak ditemukan.\nSilakan check-in untuk mengatur lokasi.",
+    "getLocation": "Terjadi kendala dalam menentukan lokasi Anda. Coba ulangi kembali."
+  },
+  "promptPermission": "Anda dapat mengatur ulang akses lokasi untuk Nimbly pada Pengaturan Aplikasi.",
+  "promptOnGoingJourney": "Journey lain sedang berjalan\nTidak bisa menjalankan journey ini",
+  "accessLocation": "Akses Lokasi",
+  "skip": "Lewati",
+  "openSettings": "Buka Pengaturan",
+  "reminder": "Peringatann",
+  "lastUpdated": "Terakhir diperbaharui",
+  "noSitesFound": "Lokasi tidak ditemukan",
+  "journeyReadyToUpload": "Journey Siap Diunggah",
+  "journeyAssigned": "Journey Ditugaskan",
+  "journeyCompleted": "Journey Selesai",
+  "sitesReadyToUpload": "Lokasi Siap Diunggah",
+  "sitesAssigned": "Lokasi Ditugaskan",
+  "sitesCompleted": "Lokasi Telah Selesai",
+  "nearby": "Terdekat",
+  "ok": "OK",
+  "thisWeek": "Minggu Ini",
+  "reason": "Alasan mengerjakan laporan susulan",
+  "inventory": {
+    "startAnytime": "Mulai kapan saja",
+    "start": "Mulai",
+    "end": "Berakhir",
+    "status": {
+      "notStarted": "Belum Dimulai",
+      "inProgress": "Sedang berlangsung",
+      "completed": "Selesai",
+      "overdue": "Terlambat"
+    },
+    "type": {
+      "scheduled": "Terjadwal",
+      "onDemand": "Sesuai Permintaan"
+    },
+    "occursOn": "Pada",
+    "multipleDates": "Beberapa tanggal",
+    "onceAMonth": "Satu kali per bulan",
+    "timesAMonth": "kali per bulan",
+    "timesAWeek": "kali per minggu",
+    "repeats": "Berulang",
+    "footer": {
+      "tapToStart": "Tap untuk mulai",
+      "tapToResume": "Tap untuk melanjutkan",
+      "reportAvailable": "Laporan tersedia di Web Admin"
+    },
+    "days": {
+      "monday": "Min",
+      "tuesday": "Sen",
+      "wednesday": "Sel",
+      "thursday": "Rab",
+      "friday": "Kam",
+      "saturday": "Jum",
+      "sunday": "Sab"
+    },
+    "frequencies": {
+      "daily": "Harian",
+      "weekly": "Mingguan",
+      "monthly": "Bulanan",
+      "custom": "Kustom"
+    }
+  },
+  "inventoryBottomSheet": {
+    "checkIn": "Check-In",
+    "reset": "Reset",
+    "startReportPrompt": "Apa Anda ingin check in dan mulai laporan di lokasi ini?",
+    "resetPrompt": "Apa Anda ingin menghapus hasil laporan ini?",
+    "startScheduleTitle": "Mulai Laporan Terjadwal",
+    "resumeScheduleTitle": "Lanjutkan Laporan Terjadwal",
+    "startButton": "Mulai",
+    "resetButton": "Reset",
+    "resumeButton": "Lanjutkan"
+  }
+}
