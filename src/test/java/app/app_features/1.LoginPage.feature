@@ -8,7 +8,6 @@ Feature: Login_to_Nimbly_App
     And validate and click on login button
     Then validate and Enter the userpassword 
     And validate and click on login button
-    And click on Allow Nimbly to access this device location
 
 #@smoke
   #Scenario: validation of login screen 
