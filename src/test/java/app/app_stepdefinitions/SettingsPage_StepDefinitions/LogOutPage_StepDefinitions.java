@@ -1,6 +1,7 @@
 package app.app_stepdefinitions.SettingsPage_StepDefinitions;
 
 import app.app_page_objects.SettingsPage_PageObjects.LogOutPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import utlis.UtlisManager;
@@ -13,19 +14,18 @@ public UtlisManager utlisManager; //making utlisManager as global
 public LogOutPage logoutpage;
 
 
-
-public LogOutPage_StepDefinitions (UtlisManager utlisManager)	//creating a constructor to use utlisManager class methods
+public LogOutPage_StepDefinitions (UtlisManager utlisManage) throws Exception	//creating a constructor to use utlisManager class methods
 {
-	this.utlisManager = utlisManager; //accessing the global variable utlisManager by "this class" instance
+	
+    this.utlisManager = utlisManage;
+	this.logoutpage = utlisManager.appPageobjectManager.getLogOutPage();
 }
-@Given("navigate to settings page")
+@And("navigate to settings page")
 public void navigate_to_settings_page() throws InterruptedException {
-	LogOutPage logoutpage = utlisManager.appPageobjectManager.getlogoutpage();
 	logoutpage.navigate_to_settingspage();
 }
 @Then("click on logout")
 public void click_on_logout() throws InterruptedException {
-	LogOutPage logoutpage = utlisManager.appPageobjectManager.getlogoutpage();
 	logoutpage.click_on_logout();
 	logoutpage.accept_logout_popup();
 }
