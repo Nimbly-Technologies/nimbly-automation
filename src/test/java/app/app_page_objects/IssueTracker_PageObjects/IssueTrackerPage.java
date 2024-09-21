@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -49,7 +50,7 @@ public class IssueTrackerPage {
 	By categorysearchboxlocator = AppiumBy.className("android.widget.EditText");
 	By categorydropdownoptionlocator = AppiumBy.xpath("(//android.widget.TextView)[2]");
 	By sitedropdownlocator = AppiumBy.xpath("//android.widget.TextView[@text='Select Site']");
-	By selectsitefromlistlocator = AppiumBy.xpath("(//android.widget.TextView)[10]");
+	By selectsitefromlistlocator = AppiumBy.xpath("(//android.view.ViewGroup)[10]");
 	By assigneddepartmentdropdownlocator = AppiumBy
 			.xpath("(//android.widget.TextView)[@text='Select the assigned department']");
 	By selectassigneddepartmentfromlistlocator = AppiumBy.xpath("(//android.widget.TextView)[4]");
@@ -57,9 +58,9 @@ public class IssueTrackerPage {
 			.xpath("(//android.widget.TextView)[@text='Select the reporter department']");
 	By selectreporterdepartmentfromlistlocator = AppiumBy.xpath("(//android.widget.TextView)[4]");
 	By scrolltoend = AppiumBy.androidUIAutomator(
-			"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Video: .mp4, .mov, and .avi\"));");
+			"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add maximum 10 attachments\"));");
 	By assigneduserdropdownlocator = AppiumBy.xpath("(//android.widget.TextView)[@text='Select the assigned user']");
-	By assignedusersearchboxlocator = AppiumBy.className("android.widget.EditText");
+	By assignedusersearchboxlocator = AppiumBy.xpath("//android.widget.EditText[@text='Search by user name or email']");
 	By selectassigneduserfromlistlocator = AppiumBy.xpath("(//android.widget.TextView)[4]");
 	By successfullyaddissuelocator = AppiumBy.className("android.widget.Button");
 	By captureissueIDlocator = AppiumBy.xpath("(//android.widget.TextView)[3]");
@@ -84,12 +85,15 @@ public class IssueTrackerPage {
 	By editcommentboxlocator = AppiumBy.className("android.widget.EditText");
 	By submitcommentlocator = AppiumBy.xpath("(//android.widget.TextView)[@text='Submit']");
 	By addissuebuttonlocator = AppiumBy.xpath("//android.widget.TextView[@text='󰐕']");
+	By feedback_notification = AppiumBy.xpath("//android.widget.TextView[@text='How likely are you recommend nimbly to your friend?']");
+	By tab_on_close_button = AppiumBy.xpath("//android.widget.TextView[@text='󰅖']");
+	By search_site_name = AppiumBy.xpath("//android.widget.EditText[@text='Search by site name or location']");
 
 	// defining random string
 	String s = RandomStringUtils.randomAlphanumeric(6);
 
 	public void navigate_to_issuetrackermaintab() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(issuetrackermaintablocator).click();
 		Thread.sleep(3000);
@@ -124,11 +128,14 @@ public class IssueTrackerPage {
 		Thread.sleep(1000);
 		driver.findElement(sitedropdownlocator).click();
 		Thread.sleep(1000);
+		String siteName = prop.getProperty("Singleauditsitename");
+		driver.findElement(search_site_name).sendKeys(siteName);
 		driver.findElement(selectsitefromlistlocator).click();
 		Thread.sleep(1000);
 	}
 
 	public void select_assigned_department() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(assigneddepartmentdropdownlocator).click();
 		Thread.sleep(2000);
 		driver.findElement(selectassigneddepartmentfromlistlocator).click();
@@ -161,7 +168,7 @@ public class IssueTrackerPage {
 	}
 
 	public void add_all_the_required_fields_in_add_issue() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		select_questiontitle();
 		Thread.sleep(1000);
 		select_category();
@@ -281,6 +288,7 @@ public class IssueTrackerPage {
 		Thread.sleep(2000);
 		change_status_from_inreview_to_resolved();
 		Thread.sleep(2000);
+		feedbackPopup();
 		add_comment();
 		Thread.sleep(2000);
 	}
@@ -295,5 +303,19 @@ public class IssueTrackerPage {
 		Thread.sleep(2000);
 		driver.findElement(sort_buttonlocator).click();
 		Thread.sleep(2000);
+	}
+
+	public void feedbackPopup() throws InterruptedException {
+		Thread.sleep(2000);
+		try {
+			String fdPopup = driver.findElement(feedback_notification).getText();
+			if (!fdPopup.isEmpty()) {
+				driver.findElement(tab_on_close_button).click();
+			} else {
+				Assert.assertTrue(false, "There is no feedback popup");
+			}
+		} catch (NoSuchElementException e) {
+
+		}
 	}
 }

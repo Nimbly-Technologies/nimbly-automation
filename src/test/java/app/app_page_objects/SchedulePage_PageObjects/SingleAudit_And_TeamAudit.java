@@ -32,8 +32,10 @@ public class SingleAudit_And_TeamAudit {
 	By select_questionnaire_from_searchbox_results = AppiumBy
 			.xpath("//android.widget.TextView[@text='Tap to start audit']");
 	By adhoc_button_locator = AppiumBy.xpath("(//android.widget.TextView)[6]");
-	By start_adhoc_report_button_locator = AppiumBy.className("android.widget.Button");
-	By checkin_popup_yes_button_locator = AppiumBy.id("android:id/button2");
+	By start_adhoc_report_button_locator = AppiumBy.xpath("//android.widget.Button");
+	By checkin_popup_yes_button_locator = AppiumBy.xpath("//android.widget.Button[@text='YES']");
+	By scrolltoend = AppiumBy
+			.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Tap to start audit\"));");
 
 	public void navigate_to_schedulepage() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -67,6 +69,7 @@ public class SingleAudit_And_TeamAudit {
 		questionnairename = prop.getProperty("questionnairename");
 		driver.findElement(schedulePage_questionnaire_searchbox_locator).sendKeys(questionnairename);
 //		driver.hideKeyboard();
+		driver.findElement(scrolltoend);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(select_questionnaire_from_searchbox_results).click();
 	}
@@ -83,8 +86,32 @@ public class SingleAudit_And_TeamAudit {
 		Thread.sleep(2000);
 	}
 
-	public void click_yes_on_checkin_popup() {
+	public void click_yes_on_checkin_popup() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(checkin_popup_yes_button_locator).click();
 	}
 
+	public void search_site(String siteNameWithAttachments ) throws InterruptedException {
+		Thread.sleep(3000);
+		siteNameWithAttachments = prop.getProperty("SiteNameWithAttachments");
+		driver.findElement(schedulepage_search_loacator).sendKeys(siteNameWithAttachments);
+		Thread.sleep(2000);
+//		driver.hideKeyboard();
+		driver.findElement(select_site_from_searchbox_results).click();
+	}
+	public void search_adhoc_schedule(String questionnaireNameWithAttachments) throws InterruptedException {
+		Thread.sleep(3000);
+		questionnaireNameWithAttachments = prop.getProperty("QuestionnaireNameWithAttachments");
+		driver.findElement(schedulePage_questionnaire_searchbox_locator).sendKeys(questionnaireNameWithAttachments);
+//		driver.hideKeyboard();
+		driver.findElement(scrolltoend);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(select_questionnaire_from_searchbox_results).click();
+		Thread.sleep(2000);
+		driver.findElement(adhoc_button_locator).click();
+		driver.findElement(start_adhoc_report_button_locator).click();
+	}
+	public void start_auditing() {
+		
+	}
 }
