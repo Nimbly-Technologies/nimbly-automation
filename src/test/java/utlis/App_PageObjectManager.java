@@ -12,6 +12,7 @@ import app.app_page_objects.LoginPage_PageObjects.LoginPage;
 import app.app_page_objects.SchedulePage_PageObjects.AuditingWorkflow;
 import app.app_page_objects.SchedulePage_PageObjects.SingleAudit_And_TeamAudit;
 import app.app_page_objects.SettingsPage_PageObjects.LogOutPage;
+import app.nimbly2.page_objects.LoginPage2;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -23,6 +24,7 @@ public class App_PageObjectManager {
 	public IssueTrackerPage issuetrackerpage;
 	public AuditingWorkflow auditing;
 	public SingleAudit_And_TeamAudit schedulepage;
+	public LoginPage2 loginpage2;
 	public Properties prop;
 
 	public App_PageObjectManager(AppiumDriver driver, Properties prop) // constructor
@@ -71,5 +73,11 @@ public class App_PageObjectManager {
 			schedulepage = new SingleAudit_And_TeamAudit(driver, prop);
 		}
 		return schedulepage;
+	}
+	public LoginPage2 getLoginPage2() throws IOException {
+		if (loginpage2 == null) {
+			loginpage2 = new LoginPage2(driver,prop);
+		}
+		return loginpage2;
 	}
 }

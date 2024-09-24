@@ -1,6 +1,5 @@
 Feature: schedule page workflows
 
-  @sanity
   Scenario: Single Audit Adhoc Schedule Without Attachments
     Given handle allow notification pop up
     Given Enter useremail and password
@@ -17,7 +16,6 @@ Feature: schedule page workflows
     And navigate to settings page
     Then click on logout
 
-  @sanity
   Scenario: Single Audit Adhoc Schedule With Attachments
     Given handle allow notification pop up
     Given Enter useremail and password

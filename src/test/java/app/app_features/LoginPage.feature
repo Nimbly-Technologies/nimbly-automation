@@ -1,7 +1,6 @@
 Feature: Login_to_Nimbly_App
 
-
-  @smoke @C2433 @failcase
+  @C2433 @failcase
   Scenario: Validate Login & Logout functionality
     Given handle allow notification pop up
     Then validate and enter the useremail

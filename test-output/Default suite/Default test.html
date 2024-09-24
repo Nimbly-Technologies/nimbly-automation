@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Sep 20 19:22:07 IST 2024</td>
+<td>Started on:</td><td>Tue Sep 24 19:02:01 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>449 seconds (449833 ms)</td>
+<tr><td>Total time:</td><td>247 seconds (247303 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,129 +76,257 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add and Edit Issue", "Issue_Tracker"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;19.0.2&apos;
-Driver info: io.appium.java_client.AppiumDriver
-Command: [66d1db89-d7b9-4868-9d64-54813ce22390, findElement {using=xpath, value=(//android.widget.TextView)[4]}]
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.sh..., appium:appPackage: com.sustainnovationgroup.sh..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.sh..., appPackage: com.sustainnovationgroup.sh..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S23, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 13, resetKeyboard: true, systemPort: 12291, udid: RZCW12H8JGW, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S911B, appium:deviceName: RZCW12H8JGW, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZCW12H8JGW, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 3, appium:platformVersion: 13, appium:resetKeyboard: true, appium:statBarHeight: 81, appium:systemPort: 12291, appium:takesScreenshot: true, appium:udid: RZCW12H8JGW, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2034, left: 0, top: 81, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 66d1db89-d7b9-4868-9d64-54813ce22390
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.IssueTracker_PageObjects.IssueTrackerPage.select_assigned_department(IssueTrackerPage.java:141)
-	at app.app_page_objects.IssueTracker_PageObjects.IssueTrackerPage.add_all_the_required_fields_in_add_issue(IssueTrackerPage.java:178)
-	at app.app_stepdefinitions.IssueTracker_StepDefinitions.IssueTrackerPage_StepDefinitions.add_all_the_required_fields(IssueTrackerPage_StepDefinitions.java:36)
-	at ✽.Add all the required fields(file:///Users/user/Desktop/nimbly-automation-009/src/test/java/app/app_features/Issue_Tracker.feature:21)
-</pre></div><a href='#' onClick='toggleBox("stack-trace756268296", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace756268296'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;19.0.2&apos;
-Driver info: io.appium.java_client.AppiumDriver
-Command: [66d1db89-d7b9-4868-9d64-54813ce22390, findElement {using=xpath, value=(//android.widget.TextView)[4]}]
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.sh..., appium:appPackage: com.sustainnovationgroup.sh..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.sh..., appPackage: com.sustainnovationgroup.sh..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S23, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 13, resetKeyboard: true, systemPort: 12291, udid: RZCW12H8JGW, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S911B, appium:deviceName: RZCW12H8JGW, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZCW12H8JGW, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 3, appium:platformVersion: 13, appium:resetKeyboard: true, appium:statBarHeight: 81, appium:systemPort: 12291, appium:takesScreenshot: true, appium:udid: RZCW12H8JGW, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2034, left: 0, top: 81, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 66d1db89-d7b9-4868-9d64-54813ce22390
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.IssueTracker_PageObjects.IssueTrackerPage.select_assigned_department(IssueTrackerPage.java:141)
-	at app.app_page_objects.IssueTracker_PageObjects.IssueTrackerPage.add_all_the_required_fields_in_add_issue(IssueTrackerPage.java:178)
-	at app.app_stepdefinitions.IssueTracker_StepDefinitions.IssueTrackerPage_StepDefinitions.add_all_the_required_fields(IssueTrackerPage_StepDefinitions.java:36)
-	at ✽.Add all the required fields(file:///Users/user/Desktop/nimbly-automation-009/src/test/java/app/app_features/Issue_Tracker.feature:21)
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login Page Functionality", "Login to Nimbly2 App"</td>
+<td><div><pre>org.picocontainer.PicoCompositionException: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:353)
+	at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+	at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+	at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+	at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+	at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+	at io.cucumber.picocontainer.PicoFactory.getInstance(PicoFactory.java:49)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:111)
+	at app.nimbly2.page_objects.LoginPage2.loadLocators(LoginPage2.java:42)
+	at app.nimbly2.page_objects.LoginPage2.initLocators(LoginPage2.java:25)
+	at app.nimbly2.page_objects.LoginPage2.&lt;init&gt;(LoginPage2.java:21)
+	at utlis.App_PageObjectManager.getLoginPage2(App_PageObjectManager.java:79)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.&lt;init&gt;(LoginPage_Nimbly2_StepDefinition.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
+	... 40 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace851209476", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace851209476'><pre>org.picocontainer.PicoCompositionException: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:353)
+	at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+	at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+	at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+	at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+	at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+	at io.cucumber.picocontainer.PicoFactory.getInstance(PicoFactory.java:49)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:111)
+	at app.nimbly2.page_objects.LoginPage2.loadLocators(LoginPage2.java:42)
+	at app.nimbly2.page_objects.LoginPage2.initLocators(LoginPage2.java:25)
+	at app.nimbly2.page_objects.LoginPage2.&lt;init&gt;(LoginPage2.java:21)
+	at utlis.App_PageObjectManager.getLoginPage2(App_PageObjectManager.java:79)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.&lt;init&gt;(LoginPage_Nimbly2_StepDefinition.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
+	... 40 more
 </pre></div></td>
-<td>449</td>
-<td>cucumber_options.TestNG_testrunner_app@747ddf94</td></tr>
+<td>24</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
 <tr>
-<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Single Audit Adhoc Schedule With Attachments", "schedule page workflows"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;19.0.2&apos;
-Driver info: io.appium.java_client.AppiumDriver
-Command: [5a5d86f8-3ff2-46bb-a695-f72a2a35ce28, findElement {using=xpath, value=(//android.widget.TextView)[@text=&apos;Schedule&apos;]}]
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.sh..., appium:appPackage: com.sustainnovationgroup.sh..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.sh..., appPackage: com.sustainnovationgroup.sh..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S23+, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 13, resetKeyboard: true, systemPort: 12057, udid: RZCW20S8PLY, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S916B, appium:deviceName: RZCW20S8PLY, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZCW20S8PLY, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 3, appium:platformVersion: 13, appium:resetKeyboard: true, appium:statBarHeight: 74, appium:systemPort: 12057, appium:takesScreenshot: true, appium:udid: RZCW20S8PLY, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2048, left: 0, top: 74, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 5a5d86f8-3ff2-46bb-a695-f72a2a35ce28
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.SchedulePage_PageObjects.SingleAudit_And_TeamAudit.navigate_to_schedulepage(SingleAudit_And_TeamAudit.java:44)
-	at app.app_stepdefinitions.SchedulePage_StepDefinitions.SingleAudit_And_TeamAudit_StepDefinitions.navigate_to_schedule_page(SingleAudit_And_TeamAudit_StepDefinitions.java:33)
-	at ✽.navigates to app schedule page(file:///Users/user/Desktop/nimbly-automation-009/src/test/java/app/app_features/SchedulePage.feature:26)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1339743943", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1339743943'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;19.0.2&apos;
-Driver info: io.appium.java_client.AppiumDriver
-Command: [5a5d86f8-3ff2-46bb-a695-f72a2a35ce28, findElement {using=xpath, value=(//android.widget.TextView)[@text=&apos;Schedule&apos;]}]
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.sh..., appium:appPackage: com.sustainnovationgroup.sh..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.sh..., appPackage: com.sustainnovationgroup.sh..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: uiautomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S23+, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 13, resetKeyboard: true, systemPort: 12057, udid: RZCW20S8PLY, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S916B, appium:deviceName: RZCW20S8PLY, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZCW20S8PLY, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 3, appium:platformVersion: 13, appium:resetKeyboard: true, appium:statBarHeight: 74, appium:systemPort: 12057, appium:takesScreenshot: true, appium:udid: RZCW20S8PLY, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2048, left: 0, top: 74, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 5a5d86f8-3ff2-46bb-a695-f72a2a35ce28
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at app.app_page_objects.SchedulePage_PageObjects.SingleAudit_And_TeamAudit.navigate_to_schedulepage(SingleAudit_And_TeamAudit.java:44)
-	at app.app_stepdefinitions.SchedulePage_StepDefinitions.SingleAudit_And_TeamAudit_StepDefinitions.navigate_to_schedule_page(SingleAudit_And_TeamAudit_StepDefinitions.java:33)
-	at ✽.navigates to app schedule page(file:///Users/user/Desktop/nimbly-automation-009/src/test/java/app/app_features/SchedulePage.feature:26)
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login Page Functionality", "Login to Nimbly2 App"</td>
+<td><div><pre>org.picocontainer.PicoCompositionException: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:353)
+	at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+	at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+	at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+	at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+	at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+	at io.cucumber.picocontainer.PicoFactory.getInstance(PicoFactory.java:49)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:111)
+	at app.nimbly2.page_objects.LoginPage2.loadLocators(LoginPage2.java:42)
+	at app.nimbly2.page_objects.LoginPage2.initLocators(LoginPage2.java:25)
+	at app.nimbly2.page_objects.LoginPage2.&lt;init&gt;(LoginPage2.java:21)
+	at utlis.App_PageObjectManager.getLoginPage2(App_PageObjectManager.java:79)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.&lt;init&gt;(LoginPage_Nimbly2_StepDefinition.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
+	... 40 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace94216983", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace94216983'><pre>org.picocontainer.PicoCompositionException: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:353)
+	at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+	at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+	at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+	at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+	at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+	at io.cucumber.picocontainer.PicoFactory.getInstance(PicoFactory.java:49)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.FileNotFoundException: /Users/user/git/nimbly-automation/src/test/java/app/nimbly2_page_objects/LoginPage2_AndroidLocators.properties (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:111)
+	at app.nimbly2.page_objects.LoginPage2.loadLocators(LoginPage2.java:42)
+	at app.nimbly2.page_objects.LoginPage2.initLocators(LoginPage2.java:25)
+	at app.nimbly2.page_objects.LoginPage2.&lt;init&gt;(LoginPage2.java:21)
+	at utlis.App_PageObjectManager.getLoginPage2(App_PageObjectManager.java:79)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.&lt;init&gt;(LoginPage_Nimbly2_StepDefinition.java:16)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
+	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
+	... 40 more
 </pre></div></td>
-<td>100</td>
-<td>cucumber_options.TestNG_testrunner_app@747ddf94</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Single Audit Adhoc Schedule Without Attachments", "schedule page workflows"</td>
-<td></td>
-<td>310</td>
-<td>cucumber_options.TestNG_testrunner_app@747ddf94</td></tr>
+<td>245</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
 </table><p>
 </body>
 </html>

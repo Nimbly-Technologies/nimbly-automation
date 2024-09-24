@@ -2,15 +2,14 @@ Feature: Issue_Tracker
 
   #@smoke @C2445 @C2446
   #Scenario: Issue Tracker Page Smoke
-    #Given navigate to issue tracker main tab
-    #And click on add issue
-    #And click on backarrow
-    #Then click on filter
-    #And click on backarrow
-    #Then click on sort
-    #And click on backarrow
-
-  @sanity @C2456 @C2457
+  #Given navigate to issue tracker main tab
+  #And click on add issue
+  #And click on backarrow
+  #Then click on filter
+  #And click on backarrow
+  #Then click on sort
+  #And click on backarrow
+  @C2456 @C2457
   Scenario: Add and Edit Issue
     Given handle allow notification pop up
     Given Enter useremail and password
@@ -25,7 +24,6 @@ Feature: Issue_Tracker
     And click on backarrow
     And navigate to settings page
     Then click on logout
-
   #@failcase
   #Scenario: Add and Edit Issue
     #Given navigate to issue tracker main tab

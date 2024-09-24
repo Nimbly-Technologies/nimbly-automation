@@ -1,4 +1,4 @@
-package app.app_stepdefinitions;
+package app.nimbly2.stepdefinitions;
 
 import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.*;
@@ -22,7 +22,6 @@ public class Hooks_StepDefinitions {
 
 	@Before
 	public void updateName(Scenario scenario) throws Exception {
-		Thread.sleep(30);
 		driver.executeScript("lambda-name=" + scenario.getName());
 	}
 
