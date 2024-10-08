@@ -32,17 +32,25 @@ public class LoginPage_Nimbly2_StepDefinition {
 	public void validate_login_button_and_click_on_it() throws InterruptedException {
 		loginpage2.validateLoginButtonAndClick();
 	}
+
 	@And("^validate in app update popup$")
 	public void validate_in_app_update_popup() throws InterruptedException {
 		loginpage2.validateInAppUpdate();
 	}
+
 	@And("^validate multiple login popup$")
 	public void validate_multiple_login_popup() throws InterruptedException {
 		loginpage2.validateMultipleLogin();
 	}
+
 	@And("^logout from nimbly2$")
 	public void logout_from_nimbly2() throws InterruptedException {
 		loginpage2.logout();
+	}
+
+	@Given("^I login to application with (.*),(.*)$")
+	public void login(String username, String password) throws InterruptedException {
+		loginpage2.login(username, password);
 	}
 
 }
