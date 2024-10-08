@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
@@ -81,22 +82,20 @@ public class LoginPage2 {
 	}
 
 	public void validateInAppUpdate() throws InterruptedException {
-		Thread.sleep(3000);
 		try {
-			String update_button = locators.getProperty("update_button");
-			if (!appdriver.findElement(AppiumBy.xpath(update_button)).getText().isEmpty()) {
-				appdriver.findElement(AppiumBy.xpath(update_button)).click();
-			}else {
-				Assert.fail("No element found for locator: " + update_button);
+			Thread.sleep(5000);
+			String updateButton = locators.getProperty("update_button");
+			String okButtonLocator = locators.getProperty("sync_successful");
+			WebElement expUpdateButton = appdriver.findElement(AppiumBy.xpath(updateButton));
+			if (!expUpdateButton.getText().isEmpty()) {
+				expUpdateButton.click();
+				appdriver.findElement(AppiumBy.xpath(okButtonLocator)).click();
+				// click on back button
+				appdriver.navigate().back();
 			}
-		} catch (NoSuchElementException e) {
-			// Handle exception or log
+		} catch (Exception e) {
+
 		}
-		// click on Ok button if data sync is successful
-		String ok_button = locators.getProperty("sync_successful");
-		appdriver.findElement(AppiumBy.xpath(ok_button)).click();
-		// click on back button
-		appdriver.navigate().back();
 	}
 
 	public void validateMultipleLogin() throws InterruptedException {
@@ -105,21 +104,42 @@ public class LoginPage2 {
 			String multiple_login = locators.getProperty("multiple_login");
 			if (!appdriver.findElement(AppiumBy.xpath(multiple_login)).getText().isEmpty()) {
 				appdriver.findElement(AppiumBy.xpath(multiple_login)).click();
-			}else {
+			} else {
 				Assert.fail("No element found for locator: " + multiple_login);
 			}
 		} catch (NoSuchElementException e) {
 			// Handle exception or log
 		}
 	}
+
 	public void logout() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		String logout_button = locators.getProperty("logout_button");
 		String logout_confirmation = locators.getProperty("logout_confirmation");
 		// click on logout button
 		appdriver.findElement(AppiumBy.xpath(logout_button)).click();
-		//click on yes from logout confirmation
+		// click on yes from logout confirmation
+		Thread.sleep(3000);
 		appdriver.findElement(AppiumBy.xpath(logout_confirmation)).click();
-		
+
+	}
+
+	public void login(String username, String password) throws InterruptedException {
+		Thread.sleep(5000);
+		if (!username.isEmpty() && !password.isEmpty()) {
+			String emil_or_userid = locators.getProperty("enetr_email_userid");
+			String useremail = prop.getProperty(username);
+			String password_box = locators.getProperty("enter_password");
+			String user_password = prop.getProperty(password);
+			appdriver.findElement(AppiumBy.xpath(emil_or_userid)).sendKeys(useremail);
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(password_box)).sendKeys(user_password);
+			Thread.sleep(2000);
+			String login_button = locators.getProperty("login_button");
+			appdriver.findElement(AppiumBy.xpath(login_button)).click();
+		} else {
+			Assert.fail("Failed to login to application !!");
+
+		}
 	}
 }
