@@ -85,22 +85,19 @@ public class LoginPage2 {
 		try {
 			String updateButton = locators.getProperty("update_button");
 			String okButtonLocator = locators.getProperty("sync_successful");
-			String new_app_update = locators.getProperty("new_app_version");
-			String in_app_update = locators.getProperty("in_app_update");
-			String in_app_update_restart_button = locators.getProperty("in_app_update_restart_button");
-
-			String newAppUpdate = appdriver.findElement(AppiumBy.xpath(new_app_update)).getText();
-			String inAppUpdate = appdriver.findElement(AppiumBy.xpath(in_app_update)).getText();
-			if (newAppUpdate.contains("New App Version Available!")) {
+			String in_app_update_later_button = locators.getProperty("in_app_update_later_button");
+			String app_update_pop_up = locators.getProperty("version_pop_up_text");
+			Thread.sleep(2000);
+			String versionUpdatePopup = appdriver.findElement(AppiumBy.xpath(app_update_pop_up)).getText();
+			if (versionUpdatePopup.equals("New App Version Available!")) {
 				Thread.sleep(5000);
 				appdriver.findElement(AppiumBy.xpath(updateButton)).click();
 				appdriver.findElement(AppiumBy.xpath(okButtonLocator)).click();
 				// click on back button
 				appdriver.navigate().back();
-			} else if (inAppUpdate.contains("New In-App Update Available!")) {
-				Thread.sleep(5000);
-				appdriver.findElement(AppiumBy.xpath(updateButton)).click();
-				appdriver.findElement(AppiumBy.xpath(in_app_update_restart_button)).click();
+			} else if (versionUpdatePopup.equals("New In-App Update Available!")) {
+				Thread.sleep(2000);
+				appdriver.findElement(AppiumBy.xpath(in_app_update_later_button)).click();
 			}
 		} catch (Exception e) {
 
@@ -113,6 +110,7 @@ public class LoginPage2 {
 			String multiple_login = locators.getProperty("multiple_login");
 			if (!appdriver.findElement(AppiumBy.xpath(multiple_login)).getText().isEmpty()) {
 				appdriver.findElement(AppiumBy.xpath(multiple_login)).click();
+				Thread.sleep(4000);
 			} else {
 				Assert.fail("No element found for locator: " + multiple_login);
 			}
