@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 08 20:34:34 IST 2024</td>
+<td>Started on:</td><td>Mon Oct 14 15:02:09 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>633 seconds (633833 ms)</td>
+<tr><td>Total time:</td><td>319 seconds (319376 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,9 +76,350 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Monthly Schedule Audit Process", "Validate Audit Process For Daily Schedule Type"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.widget.TextView[@text=&apos;Yes&apos;]&apos; does not exist in DOM anymore
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [fce88f98-8532-45aa-b3a8-9744d4912874, getElementText {id=00000000-0000-140d-ffff-ffff00000169}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12291, udid: R5CX40ZFK8E, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CX40ZFK8E, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX40ZFK8E, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12291, appium:takesScreenshot: true, appium:udid: R5CX40ZFK8E, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (fce88f98-8532-45aa-b3a8-9744d4912874)] -&gt; xpath: //android.widget.TextView[@text=&apos;Yes&apos;]]
+Session ID: fce88f98-8532-45aa-b3a8-9744d4912874
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+	at app.nimbly2.page_objects.LoginPage2.validateMultipleLogin(LoginPage2.java:109)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.validate_multiple_login_popup(LoginPage_Nimbly2_StepDefinition.java:43)
+	at ✽.validate multiple login popup(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1020773143", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1020773143'><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.widget.TextView[@text=&apos;Yes&apos;]&apos; does not exist in DOM anymore
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [fce88f98-8532-45aa-b3a8-9744d4912874, getElementText {id=00000000-0000-140d-ffff-ffff00000169}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12291, udid: R5CX40ZFK8E, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CX40ZFK8E, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX40ZFK8E, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12291, appium:takesScreenshot: true, appium:udid: R5CX40ZFK8E, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (fce88f98-8532-45aa-b3a8-9744d4912874)] -&gt; xpath: //android.widget.TextView[@text=&apos;Yes&apos;]]
+Session ID: fce88f98-8532-45aa-b3a8-9744d4912874
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+	at app.nimbly2.page_objects.LoginPage2.validateMultipleLogin(LoginPage2.java:109)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.validate_multiple_login_popup(LoginPage_Nimbly2_StepDefinition.java:43)
+	at ✽.validate multiple login popup(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:58)
+</pre></div></td>
+<td>52</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
+<tr>
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Adhoc Schedule Audit Process", "Validate Audit Process For Daily Schedule Type"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [e022dfa0-04c5-47b9-92c1-8eb9b2d9ec7b, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12065, udid: R5CWC0PL7SW, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CWC0PL7SW, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CWC0PL7SW, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12065, appium:takesScreenshot: true, appium:udid: R5CWC0PL7SW, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: e022dfa0-04c5-47b9-92c1-8eb9b2d9ec7b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Adhoc_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:73)
+</pre></div><a href='#' onClick='toggleBox("stack-trace280959134", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace280959134'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [e022dfa0-04c5-47b9-92c1-8eb9b2d9ec7b, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12065, udid: R5CWC0PL7SW, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CWC0PL7SW, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CWC0PL7SW, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12065, appium:takesScreenshot: true, appium:udid: R5CWC0PL7SW, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: e022dfa0-04c5-47b9-92c1-8eb9b2d9ec7b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Adhoc_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:73)
+</pre></div></td>
+<td>103</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
+<tr>
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Weekly Schedule Audit Process", "Validate Audit Process For Daily Schedule Type"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [3179c266-b37f-438b-9c15-853e46f8f55e, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12125, udid: RZCWC0GJXKD, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: RZCWC0GJXKD, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: RZCWC0GJXKD, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12125, appium:takesScreenshot: true, appium:udid: RZCWC0GJXKD, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 3179c266-b37f-438b-9c15-853e46f8f55e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Weekly_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:45)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2092379152", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2092379152'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [3179c266-b37f-438b-9c15-853e46f8f55e, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12125, udid: RZCWC0GJXKD, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: RZCWC0GJXKD, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: RZCWC0GJXKD, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12125, appium:takesScreenshot: true, appium:udid: RZCWC0GJXKD, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 3179c266-b37f-438b-9c15-853e46f8f55e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Weekly_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:45)
+</pre></div></td>
+<td>267</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
+<tr>
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login Page Functionality", "Login to Nimbly2 App"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [d11e16eb-d49c-43d0-aba8-48188421905a, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;Yes&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12127, udid: R5CX40ZFGSR, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CX40ZFGSR, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX40ZFGSR, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12127, appium:takesScreenshot: true, appium:udid: R5CX40ZFGSR, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: d11e16eb-d49c-43d0-aba8-48188421905a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.LoginPage2.logout(LoginPage2.java:127)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.logout_from_nimbly2(LoginPage_Nimbly2_StepDefinition.java:48)
+	at ✽.logout from nimbly2(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/login_page_nimbly2.feature:10)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1411462333", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1411462333'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [d11e16eb-d49c-43d0-aba8-48188421905a, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;Yes&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12127, udid: R5CX40ZFGSR, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928U1, appium:deviceName: R5CX40ZFGSR, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX40ZFGSR, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12127, appium:takesScreenshot: true, appium:udid: R5CX40ZFGSR, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: d11e16eb-d49c-43d0-aba8-48188421905a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.LoginPage2.logout(LoginPage2.java:127)
+	at app.nimbly2.stepdefinitions.LoginPage_Nimbly2_StepDefinition.logout_from_nimbly2(LoginPage_Nimbly2_StepDefinition.java:48)
+	at ✽.logout from nimbly2(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/login_page_nimbly2.feature:10)
+</pre></div></td>
+<td>167</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
+<tr>
+<td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Daily Schedule Audit Process", "Validate Audit Process For Daily Schedule Type"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [f236d109-75a5-40ab-bcbc-97f1433711b7, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12353, udid: RZCX103T45P, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: RZCX103T45P, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: RZCX103T45P, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12353, appium:takesScreenshot: true, appium:udid: RZCX103T45P, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: f236d109-75a5-40ab-bcbc-97f1433711b7
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Daily_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace34215638", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace34215638'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [f236d109-75a5-40ab-bcbc-97f1433711b7, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;SCHEDULES&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12353, udid: RZCX103T45P, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: RZCX103T45P, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: RZCX103T45P, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12353, appium:takesScreenshot: true, appium:udid: RZCX103T45P, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: f236d109-75a5-40ab-bcbc-97f1433711b7
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.searchForSchedule(SchedulesPage2.java:62)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.serach_for_the_schedule(SchedulesPage_Nimbly2_StepDefinition.java:20)
+	at ✽.search for the Daily_Schedule(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:8)
+</pre></div></td>
+<td>317</td>
+<td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
+<tr>
 <td title='cucumber_options.TestNG_testrunner_app.runScenario()'><b>runScenario</b><br>Test class: cucumber_options.TestNG_testrunner_app<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Offline Scheduling Audit Process", "Validate Audit Process For Daily Schedule Type"</td>
-<td></td>
-<td>632</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [7c11cf80-0371-4260-a9fe-20f57cc7b81f, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;Settings&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12338, udid: R5CX11PCB8J, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: R5CX11PCB8J, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX11PCB8J, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12338, appium:takesScreenshot: true, appium:udid: R5CX11PCB8J, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 7c11cf80-0371-4260-a9fe-20f57cc7b81f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.switchToOfflineMode(SchedulesPage2.java:1091)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.switch_to_offline_mode(SchedulesPage_Nimbly2_StepDefinition.java:57)
+	at ✽.switch to offline mode(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2106532864", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2106532864'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.6.0&apos;, revision: &apos;79f1c02ae20&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;17.0.5&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [7c11cf80-0371-4260-a9fe-20f57cc7b81f, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;Settings&apos;]}]
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: com.sustainnovationgroup.ni..., appium:appPackage: com.sustainnovationgroup.ni..., appium:autoAcceptAlerts: true, appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:chromeOptions: {args: []}, appium:chromedriverExecutableDir: /appium/assets/drivers/chro..., appium:chromedriverPorts: [[11001, 11049]], appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: com.sustainnovationgroup.ni..., appPackage: com.sustainnovationgroup.ni..., autoAcceptAlerts: true, autoGrantPermissions: true, automationName: UiAutomator2, chromeOptions: {args: []}, chromedriverExecutableDir: /appium/assets/drivers/chro..., chromedriverPorts: [[11001, 11049]], deviceName: Galaxy S24 Ultra, headless: false, mode: cloud, nativeWebScreenshot: true, newCommandTimeout: 0, orientation: PORTRAIT, platformName: android, platformVersion: 14, resetKeyboard: true, systemPort: 12338, udid: R5CX11PCB8J, uiautomator2ServerLaunchTimeout: 60000, unicodeKeyboard: true, waitForQuiescence: false}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S928B, appium:deviceName: R5CX11PCB8J, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2316, appium:deviceUDID: R5CX11PCB8J, appium:headless: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:mode: cloud, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 0, appium:orientation: PORTRAIT, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:resetKeyboard: true, appium:statBarHeight: 76, appium:systemPort: 12338, appium:takesScreenshot: true, appium:udid: R5CX11PCB8J, appium:uiautomator2ServerLaunchTimeout: 60000, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2029, left: 0, top: 76, width: 1080}, appium:waitForQuiescence: false, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 7c11cf80-0371-4260-a9fe-20f57cc7b81f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:189)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at app.nimbly2.page_objects.SchedulesPage2.switchToOfflineMode(SchedulesPage2.java:1091)
+	at app.nimbly2.stepdefinitions.SchedulesPage_Nimbly2_StepDefinition.switch_to_offline_mode(SchedulesPage_Nimbly2_StepDefinition.java:57)
+	at ✽.switch to offline mode(file:///Users/user/Desktop/App-Automation/nimbly-automation/src/test/java/app/nimbly2/features/schedules_page_nimbly2.feature:22)
+</pre></div></td>
+<td>222</td>
 <td>cucumber_options.TestNG_testrunner_app@359df09a</td></tr>
 </table><p>
 </body>

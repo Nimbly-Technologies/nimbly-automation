@@ -36,3 +36,45 @@ Feature: Validate Audit Process For Daily Schedule Type
     And submit the report in online mode
     And validate report submitted page for Offline schedule
     And logout from nimbly2
+    
+    @sanity
+  Scenario: Validate Weekly Schedule Audit Process
+    Given I login to application with WeeklyUserEmail,WeeklyUserPassword
+    And validate in app update popup
+    And validate multiple login popup
+    When search for the Weekly_Schedule
+    And validate schedule card details for Weekly schedule
+    And verify check in pop up details for Weekly schedule
+    Then start the auditing process for Weekly schedule
+    And validate report review page for Weekly schedule
+    And submit the report in online mode
+    And validate report submitted page for Weekly schedule
+    And logout from nimbly2
+    
+    @sanity
+  Scenario: Validate Monthly Schedule Audit Process
+    Given I login to application with MonthlyUserEmail,MonthlyUserPassword
+    And validate in app update popup
+    And validate multiple login popup
+    When search for the Monthly_Schedule
+    And validate schedule card details for Monthly schedule
+    And verify check in pop up details for Monthly schedule
+    Then start the auditing process for Monthly schedule
+    And validate report review page for Monthly schedule
+    And submit the report in online mode
+    And validate report submitted page for Monthly schedule
+    And logout from nimbly2
+    
+    @sanity
+  Scenario: Validate Adhoc Schedule Audit Process
+    Given I login to application with AdhocUserEmail,AdhocUserPassword
+    And validate in app update popup
+    And validate multiple login popup
+    When search for the Adhoc_Schedule
+    And validate schedule card details for Adhoc schedule
+    And verify check in pop up details for Adhoc schedule
+    Then start the auditing process for Adhoc schedule
+    And validate report review page for Adhoc schedule
+    And submit the report in online mode
+    And validate report submitted page for Adhoc schedule
+    And logout from nimbly2

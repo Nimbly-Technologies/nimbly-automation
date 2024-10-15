@@ -83,15 +83,24 @@ public class LoginPage2 {
 
 	public void validateInAppUpdate() throws InterruptedException {
 		try {
-			Thread.sleep(5000);
 			String updateButton = locators.getProperty("update_button");
 			String okButtonLocator = locators.getProperty("sync_successful");
-			WebElement expUpdateButton = appdriver.findElement(AppiumBy.xpath(updateButton));
-			if (!expUpdateButton.getText().isEmpty()) {
-				expUpdateButton.click();
+			String new_app_update = locators.getProperty("new_app_version");
+			String in_app_update = locators.getProperty("in_app_update");
+			String in_app_update_restart_button = locators.getProperty("in_app_update_restart_button");
+
+			String newAppUpdate = appdriver.findElement(AppiumBy.xpath(new_app_update)).getText();
+			String inAppUpdate = appdriver.findElement(AppiumBy.xpath(in_app_update)).getText();
+			if (newAppUpdate.contains("New App Version Available!")) {
+				Thread.sleep(5000);
+				appdriver.findElement(AppiumBy.xpath(updateButton)).click();
 				appdriver.findElement(AppiumBy.xpath(okButtonLocator)).click();
 				// click on back button
 				appdriver.navigate().back();
+			} else if (inAppUpdate.contains("New In-App Update Available!")) {
+				Thread.sleep(5000);
+				appdriver.findElement(AppiumBy.xpath(updateButton)).click();
+				appdriver.findElement(AppiumBy.xpath(in_app_update_restart_button)).click();
 			}
 		} catch (Exception e) {
 

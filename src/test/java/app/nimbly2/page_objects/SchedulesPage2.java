@@ -78,7 +78,7 @@ public class SchedulesPage2 {
 		// locators
 		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name");
 		String site_name = locators.getProperty("site_name");
-		String schedule_type = locators.getProperty("schedule_type");
+		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String schedule_status = locators.getProperty("schedule_status");
 		String completed_text = locators.getProperty("completed_text");
 		// Expected values
@@ -86,7 +86,7 @@ public class SchedulesPage2 {
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String scheduleStatus = prop.getProperty("Schedule_Status");
 		String completedProgress = prop.getProperty("Completed_Text");
-		String expScheduleType = prop.getProperty("Scheduled_Type");
+		String expScheduleType = prop.getProperty(scheduleType + "_" + "Scheduled_Type");
 
 		// validate schedule name
 		String actScheduleName = appdriver.findElement(AppiumBy.xpath(schedule_name)).getText();
@@ -134,7 +134,7 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 		// locators
 		String schedule_name = locators.getProperty(scheduleType + "_" + "checkin_popup_schedule_name");
-		String schedule_type = locators.getProperty("schedule_type");
+		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String site_name = locators.getProperty("checkin_popup_site_name");
 		String completed_text = locators.getProperty("checkin_popup_completed_text");
 		String checkin_button = locators.getProperty("checkin_button");
@@ -142,7 +142,7 @@ public class SchedulesPage2 {
 		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule");
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String completedProgress = prop.getProperty("Completed_Text");
-		String expScheduleType = prop.getProperty("Scheduled_Type");
+		String expScheduleType = prop.getProperty(scheduleType + "_" + "Scheduled_Type");
 		String checkinButton = prop.getProperty("Checkin_Button");
 
 		// Validate schedule name
@@ -1026,7 +1026,7 @@ public class SchedulesPage2 {
 		String expRedFlagsCount = "0" + prop.getProperty(scheduleType + "_" + "Red_Flag_Counts");
 		String expYellowFalgsCount = "0" + prop.getProperty(scheduleType + "_" + "Yellow_Flag_Counts");
 		String expGreenFlagsCount = "0" + prop.getProperty(scheduleType + "_" + "Green_Flags_Count");
-		Thread.sleep(20000);
+		Thread.sleep(70000);
 
 		// validate report submitted text
 		String actReportSubmittedText = appdriver.findElement(AppiumBy.xpath(report_submitted_text)).getText();
