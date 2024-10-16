@@ -14,7 +14,7 @@ Feature: Validate Audit Process For Weekly Schedule
     And validate report submitted page for Weekly schedule
     And logout from nimbly2
 
-  @smoke
+  @sanity
   Scenario: Validate Weekly Schedule Audit Process Without Attachments
     Given I login to application with WeeklyUserEmail,WeeklyUserPassword
     And validate in app update popup
