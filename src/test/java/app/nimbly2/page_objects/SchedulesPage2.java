@@ -73,16 +73,16 @@ public class SchedulesPage2 {
 
 	}
 
-	public void validateScheduleCardDetails(String scheduleType) throws InterruptedException {
+	public void validateScheduleCardDetails(String scheduleType, String attachmentType) throws InterruptedException {
 		Thread.sleep(3000);
 		// locators
-		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name");
+		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name" +"_" + attachmentType);
 		String site_name = locators.getProperty("site_name");
 		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String schedule_status = locators.getProperty("schedule_status");
 		String completed_text = locators.getProperty("completed_text");
 		// Expected values
-		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule");
+		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" +"_" + attachmentType);
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String scheduleStatus = prop.getProperty("Schedule_Status");
 		String completedProgress = prop.getProperty("Completed_Text");
@@ -130,16 +130,16 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void validateCheckinPopupDetails(String scheduleType) throws InterruptedException {
+	public void validateCheckinPopupDetails(String scheduleType, String attachmentType) throws InterruptedException {
 		Thread.sleep(3000);
 		// locators
-		String schedule_name = locators.getProperty(scheduleType + "_" + "checkin_popup_schedule_name");
+		String schedule_name = locators.getProperty(scheduleType + "_" + "checkin_popup_schedule_name" +"_" + attachmentType);
 		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String site_name = locators.getProperty("checkin_popup_site_name");
 		String completed_text = locators.getProperty("checkin_popup_completed_text");
 		String checkin_button = locators.getProperty("checkin_button");
 		// Expected values
-		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule");
+		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" +"_" + attachmentType);
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String completedProgress = prop.getProperty("Completed_Text");
 		String expScheduleType = prop.getProperty(scheduleType + "_" + "Scheduled_Type");
@@ -188,31 +188,31 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void auditingProcess(String scheduleType) throws InterruptedException {
-		answerYesAndNoQuestion(scheduleType);
+	public void auditingProcess(String scheduleType, String attachmentType) throws InterruptedException {
+		answerYesAndNoQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerGreenYellowRedQuestion(scheduleType);
+		answerGreenYellowRedQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerScoreQuestion(scheduleType);
+		answerScoreQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerOpenEndedQuestion(scheduleType);
+		answerOpenEndedQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerNumberQuestion(scheduleType);
+		answerNumberQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerMultipleChoiceQuestion(scheduleType);
+		answerMultipleChoiceQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerMultipleChoiceWithScoreQuestion(scheduleType);
+		answerMultipleChoiceWithScoreQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerChecklistQuestion(scheduleType);
+		answerChecklistQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerRangeWithFlagQuestion(scheduleType);
+		answerRangeWithFlagQuestion(scheduleType, attachmentType);
 		tabOnNextButton();
-		answerDateTimeQuestion(scheduleType);
+		answerDateTimeQuestion(scheduleType, attachmentType);
 		tabOnReviewButton();
 
 	}
 
-	public void answerYesAndNoQuestion(String scheduleType) throws InterruptedException {
+	public void answerYesAndNoQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name1");
 		String question_text = locators.getProperty("yes_no_question_text");
@@ -249,11 +249,12 @@ public class SchedulesPage2 {
 		}
 
 		// Add attachments photo & doc
-		addAttachments();
-
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 	}
 
-	public void answerGreenYellowRedQuestion(String scheduleType) throws InterruptedException {
+	public void answerGreenYellowRedQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name1");
 		String question_text = locators.getProperty("green_yellow_red_text");
@@ -264,7 +265,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category Name
 		String actCategoryName = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -303,7 +306,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void answerMultipleChoiceQuestion(String scheduleType) throws InterruptedException {
+	public void answerMultipleChoiceQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name2");
 		String question_text = locators.getProperty("multiple_choice_question_text");
@@ -314,7 +317,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 2
 		String actCategoryName2 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -345,7 +350,8 @@ public class SchedulesPage2 {
 
 	}
 
-	public void answerMultipleChoiceWithScoreQuestion(String scheduleType) throws InterruptedException {
+	public void answerMultipleChoiceWithScoreQuestion(String scheduleType, String attachmentType)
+			throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name3");
 		String question_text = locators.getProperty("multiple_choice_score_question_text");
@@ -356,7 +362,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 3
 		String actCategoryName3 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -392,7 +400,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void answerOpenEndedQuestion(String scheduleType) throws InterruptedException {
+	public void answerOpenEndedQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name2");
 		String question_text = locators.getProperty("open_ended_question_answer_text");
@@ -404,7 +412,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 2
 		String actCategoryName2 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -436,7 +446,7 @@ public class SchedulesPage2 {
 
 	}
 
-	public void answerNumberQuestion(String scheduleType) throws InterruptedException {
+	public void answerNumberQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name2");
 		String question_text = locators.getProperty("number_question_text");
@@ -452,7 +462,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 2
 		String actCategoryName2 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -483,7 +495,7 @@ public class SchedulesPage2 {
 
 	}
 
-	public void answerRangeWithFlagQuestion(String scheduleType) throws InterruptedException {
+	public void answerRangeWithFlagQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name3");
 		String question_text = locators.getProperty("range_with_flag_question_text");
@@ -498,7 +510,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 3
 		String actCategoryName3 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -539,7 +553,7 @@ public class SchedulesPage2 {
 
 	}
 
-	public void answerScoreQuestion(String scheduleType) throws InterruptedException {
+	public void answerScoreQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name1");
 		String question_text = locators.getProperty("score_question_text");
@@ -550,7 +564,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category Name
 		String actCategoryName = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -588,7 +604,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void answerChecklistQuestion(String scheduleType) throws InterruptedException {
+	public void answerChecklistQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name3");
 		String question_text = locators.getProperty("checklist_question_text");
@@ -599,7 +615,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 3
 		String actCategoryName3 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -634,7 +652,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void answerDateTimeQuestion(String scheduleType) throws InterruptedException {
+	public void answerDateTimeQuestion(String scheduleType, String attachmentType) throws InterruptedException {
 		// Locators
 		String category_name = locators.getProperty("category_name3");
 		String question_text = locators.getProperty("date_time_question_text");
@@ -646,7 +664,9 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Add photo & document attachments
-		addAttachments();
+		if (attachmentType.equals("with")) {
+			addAttachments();
+		}
 
 		// Validate Category 3
 		String actCategoryName3 = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
@@ -820,7 +840,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void validateReviewReport(String scheduleType) throws InterruptedException {
+	public void validateReviewReport(String scheduleType, String attachmentType) throws InterruptedException {
 		// locators
 		String green_flags_count = locators.getProperty("review_dailytype_green_flags_count");
 		String yellow_flags_count = locators.getProperty("review_dailytype_yellow_flags_count");
@@ -828,10 +848,14 @@ public class SchedulesPage2 {
 		String total_questions = locators.getProperty("review_dailytype_total_questions");
 		String answered_questions = locators.getProperty("review_dailytype_answered");
 		String skipped_questions = locators.getProperty("review_dailytype_skipped");
-		String total_attachments = locators.getProperty("review_dailytype_total_attachments");
-		String photo_attachments = locators.getProperty("review_dailytype_photo_attachments");
-		String video_attachmnets = locators.getProperty("review_dailytype_video_attachments");
-		String document_attachmnets = locators.getProperty("review_dailytype_document_attachments");
+		String total_attachments = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "total_attachments");
+		String photo_attachments = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "photo_attachments");
+		String video_attachmnets = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "video_attachments");
+		String document_attachmnets = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "document_attachments");
 		String take_selfie = locators.getProperty("review_take_selfie");
 		String capture_selfie = locators.getProperty("review_capture_button");
 		String use_photo = locators.getProperty("review_use_photo");
@@ -846,10 +870,13 @@ public class SchedulesPage2 {
 		String expTotalQuestions = prop.getProperty(scheduleType + "_" + "Total_Questions");
 		String expAnsweredQuestions = prop.getProperty(scheduleType + "_" + "Answered_Questions");
 		String expSkippedQuestions = prop.getProperty(scheduleType + "_" + "Skipped_Questions");
-		String expTotalAttachments = prop.getProperty(scheduleType + "_" + "Total_Attachmnets");
-		String expPhotoAttachments = prop.getProperty(scheduleType + "_" + "Photo_Attachmnets_Counts");
-		String expVideoAttachments = prop.getProperty(scheduleType + "_" + "Video_Attachments_Counts");
-		String expDocumentAttachments = prop.getProperty(scheduleType + "_" + "Document_Attachmnets_Counts");
+		String expTotalAttachments = prop.getProperty(scheduleType + "_" + attachmentType + "_" + "Total_Attachmnets");
+		String expPhotoAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Photo_Attachmnets_Counts");
+		String expVideoAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Video_Attachments_Counts");
+		String expDocumentAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Document_Attachmnets_Counts");
 		Thread.sleep(4000);
 
 		// validate green flags count
@@ -1237,7 +1264,8 @@ public class SchedulesPage2 {
 
 	}
 
-	public void validateReviewReportPageAfterSwitchingToOnlineMode(String scheduleType) throws InterruptedException {
+	public void validateReviewReportPageAfterSwitchingToOnlineMode(String scheduleType, String attachmentType)
+			throws InterruptedException {
 		// locators
 		String green_flags_count = locators.getProperty("review_dailytype_green_flags_count");
 		String yellow_flags_count = locators.getProperty("review_dailytype_yellow_flags_count");
@@ -1245,10 +1273,14 @@ public class SchedulesPage2 {
 		String total_questions = locators.getProperty("review_dailytype_total_questions");
 		String answered_questions = locators.getProperty("review_dailytype_answered");
 		String skipped_questions = locators.getProperty("review_dailytype_skipped");
-		String total_attachments = locators.getProperty("review_dailytype_total_attachments");
-		String photo_attachments = locators.getProperty("review_dailytype_photo_attachments");
-		String video_attachmnets = locators.getProperty("review_dailytype_video_attachments");
-		String document_attachmnets = locators.getProperty("review_dailytype_document_attachments");
+		String total_attachments = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "total_attachments");
+		String photo_attachments = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "photo_attachments");
+		String video_attachmnets = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "video_attachments");
+		String document_attachmnets = locators
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "document_attachments");
 		// Expected values
 		String expGreenFlagCount = prop.getProperty(scheduleType + "_" + "Green_Flags_Count");
 		String expYellowFlagCount = prop.getProperty(scheduleType + "_" + "Yellow_Flag_Counts");
@@ -1256,10 +1288,13 @@ public class SchedulesPage2 {
 		String expTotalQuestions = prop.getProperty(scheduleType + "_" + "Total_Questions");
 		String expAnsweredQuestions = prop.getProperty(scheduleType + "_" + "Answered_Questions");
 		String expSkippedQuestions = prop.getProperty(scheduleType + "_" + "Skipped_Questions");
-		String expTotalAttachments = prop.getProperty(scheduleType + "_" + "Total_Attachmnets");
-		String expPhotoAttachments = prop.getProperty(scheduleType + "_" + "Photo_Attachmnets_Counts");
-		String expVideoAttachments = prop.getProperty(scheduleType + "_" + "Video_Attachments_Counts");
-		String expDocumentAttachments = prop.getProperty(scheduleType + "_" + "Document_Attachmnets_Counts");
+		String expTotalAttachments = prop.getProperty(scheduleType + "_" + attachmentType + "_" + "Total_Attachmnets");
+		String expPhotoAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Photo_Attachmnets_Counts");
+		String expVideoAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Video_Attachments_Counts");
+		String expDocumentAttachments = prop
+				.getProperty(scheduleType + "_" + attachmentType + "_" + "Document_Attachmnets_Counts");
 		Thread.sleep(4000);
 
 		// validate green flags count
