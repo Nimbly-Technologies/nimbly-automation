@@ -21,24 +21,24 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 
 	}
 
-	@And("^validate schedule card details for (.*) schedule$")
-	public void validate_schedule_card_details(String scheduleType) throws InterruptedException {
-		schedulespage2.validateScheduleCardDetails(scheduleType);
+	@And("^validate schedule card details for (.*) schedule (.*)$")
+	public void validate_schedule_card_details(String scheduleType, String attachmentType) throws InterruptedException {
+		schedulespage2.validateScheduleCardDetails(scheduleType,attachmentType);
 	}
 
-	@And("^verify check in pop up details for (.*) schedule$")
-	public void validate_checkin_popup(String scheduleType) throws InterruptedException {
-		schedulespage2.validateCheckinPopupDetails(scheduleType);
+	@And("^verify check in pop up details for (.*) schedule (.*)$")
+	public void validate_checkin_popup(String scheduleType, String attachmentType) throws InterruptedException {
+		schedulespage2.validateCheckinPopupDetails(scheduleType, attachmentType);
 	}
 
-	@Then("^start the auditing process for (.*) schedule$")
-	public void start_auditing(String scheduleType) throws InterruptedException {
-		schedulespage2.auditingProcess(scheduleType);
+	@Then("^start the auditing process for (.*) schedule (.*) attachments$")
+	public void start_auditing(String scheduleType, String attachmentType) throws InterruptedException {
+		schedulespage2.auditingProcess(scheduleType,attachmentType);
 	}
 
-	@And("^validate report review page for (.*) schedule$")
-	public void validate_report_review_page(String scheduleType) throws InterruptedException {
-		schedulespage2.validateReviewReport(scheduleType);
+	@And("^validate report review page for (.*) schedule (.*) attachments$")
+	public void validate_report_review_page(String scheduleType, String attachmentType) throws InterruptedException {
+		schedulespage2.validateReviewReport(scheduleType,attachmentType);
 
 	}
 
@@ -82,9 +82,9 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 		schedulespage2.validateModifyAndSyncWithServer();
 	}
 
-	@And("^validate review report for (.*) schedule after switching to online mode$")
-	public void validate_review_report_after_switching_to_online_mode(String scheduleType) throws InterruptedException {
-		schedulespage2.validateReviewReportPageAfterSwitchingToOnlineMode(scheduleType);
+	@And("^validate review report for (.*) schedule (.*) attachments after switching to online mode$")
+	public void validate_review_report_after_switching_to_online_mode(String scheduleType, String attachmentType) throws InterruptedException {
+		schedulespage2.validateReviewReportPageAfterSwitchingToOnlineMode(scheduleType,attachmentType);
 	}
 
 	@And("^sync your data with server$")
