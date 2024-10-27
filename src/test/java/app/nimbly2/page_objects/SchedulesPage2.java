@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -55,7 +56,7 @@ public class SchedulesPage2 {
 	}
 
 	public void searchForSchedule(String scheduleName) throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		String home_schedules_tab = locators.getProperty("home_page_schedules_tab");
 		String search_bar = locators.getProperty("search_for_schedule");
 		String schedule_name = prop.getProperty(scheduleName);
@@ -64,8 +65,8 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Schedule tab is not displayed on home page");
 		}
+		Thread.sleep(5000);
 		if (appdriver.findElement(AppiumBy.xpath(search_bar)).isDisplayed()) {
-			Thread.sleep(1000);
 			appdriver.findElement(AppiumBy.xpath(search_bar)).sendKeys(schedule_name);
 		} else {
 			Assert.fail("Failed to serach schedule name");
@@ -1226,7 +1227,7 @@ public class SchedulesPage2 {
 
 	public void validateModifyAndSyncWithServer() throws InterruptedException {
 		// locators
-		String schedule_type = locators.getProperty("schedule_type");
+		String schedule_type = locators.getProperty("Offline_schedule_type");
 		String modify_button = locators.getProperty("modify_button");
 		String sync_with_server = locators.getProperty("sync_with_server");
 
@@ -1398,6 +1399,248 @@ public class SchedulesPage2 {
 			Thread.sleep(30000);
 		} else {
 			Assert.fail("failed to sync data with server");
+		}
+	}
+	
+	public void saveAsDraft() throws InterruptedException {
+		// locators
+		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		String tap_on_add_photo = locators.getProperty("add_photo");
+		String tap_gallery_from_popup = locators.getProperty("tab_gallery");
+		String select_photo = locators.getProperty("select_photo_from_gallery");
+		String tap_add_vidoe = locators.getProperty("add_video");
+		String start_recording = locators.getProperty("start_video_recording");
+		String use_video = locators.getProperty("use_video");
+		String add_document = locators.getProperty("add_document");
+		String select_pdf = locators.getProperty("select_pdf_attachmnet");
+		String select_answer = locators.getProperty("yes_and_no_question_answer");
+		String select_green_and_yellow = locators.getProperty("green_yellow_red_answer");
+		String tap_save_button = locators.getProperty("tap_save_button");
+		String saved_button = locators.getProperty("saved_button");
+
+		// Expected value
+		String expSavedButton = prop.getProperty("Saved_Button");
+
+		// tab on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(tap_on_schedule_card)).isDisplayed()) {
+			appdriver.findElement(By.xpath(tap_on_schedule_card)).click();
+		} else {
+			Assert.fail("Failed to tab schedule card");
+		}
+
+		// tab on checkin button
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(By.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tab checkin button");
+		}
+
+		// select yes and no question answer
+		Thread.sleep(4000);
+		if (appdriver.findElement(AppiumBy.xpath(select_answer)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_answer)).click();
+		} else {
+			Assert.fail("Failed to clcik on Yes and No Question");
+		}
+
+		// upload photo from gallery
+		if (appdriver.findElement(AppiumBy.xpath(tap_on_add_photo)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_on_add_photo)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_gallery_from_popup)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_photo)).click();
+		} else {
+			Assert.fail("Failed to upload photo from gallery");
+		}
+
+		// scroll down the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+
+		// record a video
+		if (appdriver.findElement(AppiumBy.xpath(tap_add_vidoe)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tap_add_vidoe)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(start_recording)).click();
+			Thread.sleep(6000);
+			appdriver.findElement(AppiumBy.xpath(start_recording)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(use_video)).click();
+		} else {
+			Assert.fail("Failed to record video");
+		}
+
+		// upload a document
+		if (appdriver.findElement(AppiumBy.xpath(add_document)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(add_document)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_pdf)).click();
+		} else {
+			Assert.fail("Failed to upload document");
+		}
+
+		// tap on next button
+		tabOnNextButton();
+
+		// add attachmnets
+		addAttachments();
+
+		// Select green, yellow & red question answer
+		if (appdriver.findElement(AppiumBy.xpath(select_green_and_yellow)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_green_and_yellow)).click();
+		} else {
+			Assert.fail("Failed to answer green, yellow & red question");
+		}
+
+		// Validate Add comment box and enter comments
+		validateCommentBoxAndEnterComments();
+
+		// scroll down the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+
+		// validate sync successful
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(tap_save_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tap_save_button)).click();
+			Thread.sleep(20000);
+		} else {
+			Assert.fail("Failed to tap on save button");
+		}
+		String actSavedButton = appdriver.findElement(AppiumBy.xpath(saved_button)).getText();
+		if (expSavedButton.equals(actSavedButton)) {
+			Assert.assertEquals(expSavedButton, actSavedButton, "Successfully validated save button");
+		} else {
+			Assert.fail("Failed to validate Saved button");
+		}
+	}
+	
+	public void validateAttachments() throws InterruptedException {
+		// locators
+		String back_button = locators.getProperty("tap_back_button");
+		String continue_button = locators.getProperty("tap_continue_button");
+		String validate_image = locators.getProperty("validate_image");
+		String validate_video = locators.getProperty("validate_video");
+		String validate_document = locators.getProperty("validate_document");
+		String validate_image2 = locators.getProperty("validate_image2");
+		String validate_document2 = locators.getProperty("validate_document2");
+		String reset_button = locators.getProperty("tap_reset_button");
+		String delete_progress = locators.getProperty("delete_progress");
+		String schedule_type = locators.getProperty("Daily_schedule_type");
+
+		// tap on back button
+
+		if (appdriver.findElement(AppiumBy.xpath(back_button)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(back_button)).click();
+		} else {
+			Assert.fail("Failed to tab on back button");
+		}
+
+		// tab on schedule card
+		Thread.sleep(5000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tab on schedule card");
+		}
+
+		// tap on continue button
+		if (appdriver.findElement(AppiumBy.xpath(continue_button)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(continue_button)).click();
+		} else {
+			Assert.fail("Failed to tab on continue button");
+		}
+
+		// validate photo attachment for first question
+		Thread.sleep(8000);
+		if (appdriver.findElement(AppiumBy.xpath(validate_image)).isDisplayed()) {
+			Assert.assertTrue(true, "Successfully validated image attachmnet");
+
+		} else {
+			Assert.fail("Failed to validate image attachmnet");
+		}
+
+		// validate video attachment for first question
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(validate_video)).isDisplayed()) {
+			Assert.assertTrue(true, "Successfully validated video attachmnet");
+
+		} else {
+			Assert.fail("Failed to validate video attachmnet");
+		}
+
+		// validate document attachment for first question
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(validate_document)).isDisplayed()) {
+			Assert.assertTrue(true, "Successfully validated document attachmnet");
+
+		} else {
+			Assert.fail("Failed to validate document attachmnet");
+		}
+
+		// tap on next button
+		tabOnNextButton();
+
+		// validate photo attachment for second question
+		Thread.sleep(7000);
+		if (appdriver.findElement(AppiumBy.xpath(validate_image2)).isDisplayed()) {
+			Assert.assertTrue(true, "Successfully validated image attachmnet");
+
+		} else {
+			Assert.fail("Failed to validate image attachmnet");
+		}
+
+		// validate document attachment for second question
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(validate_document2)).isDisplayed()) {
+			Assert.assertTrue(true, "Successfully validated document attachmnet");
+
+		} else {
+			Assert.fail("Failed to validate document attachmnet");
+		}
+
+		// tap on back button
+
+		if (appdriver.findElement(AppiumBy.xpath(back_button)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(back_button)).click();
+		} else {
+			Assert.fail("Failed to tab on back button");
+		}
+
+		// tab on schedule card
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tab on schedule card");
+		}
+
+		// tab on reset button
+		if (appdriver.findElement(AppiumBy.xpath(reset_button)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(reset_button)).click();
+		} else {
+			Assert.fail("Failed to tab on reset button");
+		}
+
+		// tap on delete progress yes
+		if (appdriver.findElement(AppiumBy.xpath(delete_progress)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(delete_progress)).click();
+			Thread.sleep(6000);
+		} else {
+			Assert.fail("Failed to delete schedule progress");
 		}
 	}
 }
