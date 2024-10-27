@@ -87,7 +87,7 @@ public class LoginPage2 {
 			String okButtonLocator = locators.getProperty("sync_successful");
 			String in_app_update_later_button = locators.getProperty("in_app_update_later_button");
 			String app_update_pop_up = locators.getProperty("version_pop_up_text");
-			Thread.sleep(2000);
+			Thread.sleep(9000);
 			String versionUpdatePopup = appdriver.findElement(AppiumBy.xpath(app_update_pop_up)).getText();
 			if (versionUpdatePopup.equals("New App Version Available!")) {
 				Thread.sleep(5000);
@@ -96,7 +96,7 @@ public class LoginPage2 {
 				// click on back button
 				appdriver.navigate().back();
 			} else if (versionUpdatePopup.equals("New In-App Update Available!")) {
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 				appdriver.findElement(AppiumBy.xpath(in_app_update_later_button)).click();
 			}
 		} catch (Exception e) {

@@ -19,7 +19,7 @@ public class TestNG_testrunner_app extends AbstractTestNGCucumberTests {
 
 //	for parallel browser testing
 	@Override 
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][]scenarios()
 	{
 		return super.scenarios();

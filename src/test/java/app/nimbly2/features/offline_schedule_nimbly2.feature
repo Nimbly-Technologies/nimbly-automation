@@ -14,7 +14,7 @@ Feature: Validate Audit Process For Offline Schedule
     And checkout the report in offline mode
     And validate offline schedule status after checkout
     And switch to online mode
-    When search for the Offline_Schedule
+    When search for the Offline_Schedule_With_Attachments
     Then validate schedule status after switching to online mode
     And validate modify and sync with server on checkin pop up
     And validate review report for Offline schedule with attachments after switching to online mode

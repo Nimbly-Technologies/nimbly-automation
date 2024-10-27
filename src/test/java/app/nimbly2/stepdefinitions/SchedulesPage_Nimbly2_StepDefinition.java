@@ -91,4 +91,14 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void sync_your_data_with_server() throws InterruptedException {
 		schedulespage2.syncDataWithServer();
 	}
+	
+	@And("^start the audit process to validate save as draft$")
+	public void strat_audit_process_to_validate_save_as_draft() throws InterruptedException {
+		schedulespage2.saveAsDraft();
+	}
+	
+	@Then("^validate attachments after save as a draft$")
+	public void validate_attachments_after_save_as_draft() throws InterruptedException {
+		schedulespage2.validateAttachments();
+	}
 }
