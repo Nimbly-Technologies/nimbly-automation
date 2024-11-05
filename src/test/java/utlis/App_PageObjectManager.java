@@ -12,6 +12,8 @@ import app.app_page_objects.LoginPage_PageObjects.LoginPage;
 import app.app_page_objects.SchedulePage_PageObjects.AuditingWorkflow;
 import app.app_page_objects.SchedulePage_PageObjects.SingleAudit_And_TeamAudit;
 import app.app_page_objects.SettingsPage_PageObjects.LogOutPage;
+import app.nimbly2.page_objects.FileRepositoryPage2;
+import app.nimbly2.page_objects.GalleryPage2;
 import app.nimbly2.page_objects.IssuesPage2;
 import app.nimbly2.page_objects.LoginPage2;
 import app.nimbly2.page_objects.ReportsPage2;
@@ -31,6 +33,8 @@ public class App_PageObjectManager {
 	public SchedulesPage2 schedulepage2;
 	public ReportsPage2 reportspage2;
 	public IssuesPage2 issuespage2;
+	public FileRepositoryPage2 filerepositorypage2;
+	public GalleryPage2 gallerypage2;
 	public Properties prop;
 
 	public App_PageObjectManager(AppiumDriver driver, Properties prop) // constructor
@@ -103,6 +107,18 @@ public class App_PageObjectManager {
 			issuespage2 = new IssuesPage2(driver, prop);
 		}
 		return issuespage2;
+	}
+	public FileRepositoryPage2 getFileRepositoryPage2() throws IOException {
+		if (filerepositorypage2 == null) {
+			filerepositorypage2 = new FileRepositoryPage2(driver, prop);
+		}
+		return filerepositorypage2;
+	}
+	public GalleryPage2 getGalleryPagePage2() throws IOException {
+		if (gallerypage2 == null) {
+			gallerypage2 = new GalleryPage2(driver, prop);
+		}
+		return gallerypage2;
 	}
 	
 }
