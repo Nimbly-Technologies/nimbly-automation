@@ -1048,6 +1048,7 @@ public class SchedulesPage2 {
 		String report_submitted_yellow_flag_count = locators.getProperty("report_submitted_page_yellow_flags_count");
 		String report_submitted_green_flags_count = locators.getProperty("report_submitted_page_green_flags_count");
 		String report_submitted_got_it = locators.getProperty("report_submitted_page_got_it_text");
+		String close_nps_popup = locators.getProperty("close_nps_pop_up");
 		// expected values
 		String expReportSubmittedText = prop.getProperty("Report_Submitted");
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
@@ -1105,6 +1106,15 @@ public class SchedulesPage2 {
 			Thread.sleep(3000);
 		} else {
 			Assert.fail("Failed to click on got it button");
+		}
+
+		// close nps pop up
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(close_nps_popup)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(close_nps_popup)).click();
+			Thread.sleep(3000);
+		} else {
+			Assert.fail("Failed to close nps pop up");
 		}
 	}
 
@@ -1641,6 +1651,70 @@ public class SchedulesPage2 {
 			Thread.sleep(6000);
 		} else {
 			Assert.fail("Failed to delete schedule progress");
+		}
+	}
+	
+	public void startAuditAndSubmitReport() throws InterruptedException {
+		// Locators
+		String schedule_type = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		String answer_as_no = locators.getProperty("answer_red_flag");
+		String review_button = locators.getProperty("review_button");
+		String got_it = locators.getProperty("report_submitted_page_got_it_text");
+		String close_nps_popup = locators.getProperty("close_nps_pop_up");
+
+		// tap on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tap on schedule card");
+		}
+
+		// tap on check-in button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tap on checkin button");
+		}
+
+		// answer first question
+		Thread.sleep(6000);
+		if (appdriver.findElement(AppiumBy.xpath(answer_as_no)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(answer_as_no)).click();
+		} else {
+			Assert.fail("Failed to answer first question");
+		}
+
+		// add comments
+		validateCommentBoxAndEnterComments();
+
+		// tap on review button
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(review_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(review_button)).click();
+		} else {
+			Assert.fail("Failed to tap on review button");
+		}
+
+		// tap on submit button
+		submitReport();
+
+		// tap on got it button
+		Thread.sleep(7000);
+		if (appdriver.findElement(AppiumBy.xpath(got_it)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(got_it)).click();
+		} else {
+			Assert.fail("Failed to tap on got it button");
+		}
+
+		// close nps popup
+		Thread.sleep(10000);
+		if (appdriver.findElement(AppiumBy.xpath(close_nps_popup)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(close_nps_popup)).click();
+		} else {
+			Assert.fail("Failed to tap on close nps popup button");
 		}
 	}
 }
