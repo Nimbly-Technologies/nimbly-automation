@@ -101,4 +101,9 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void validate_attachments_after_save_as_draft() throws InterruptedException {
 		schedulespage2.validateAttachments();
 	}
+	
+	@And("^start audit proccess and submit the report$")
+	public void start_audit_and_submit_report() throws InterruptedException {
+		schedulespage2.startAuditAndSubmitReport();
+	}
 }
