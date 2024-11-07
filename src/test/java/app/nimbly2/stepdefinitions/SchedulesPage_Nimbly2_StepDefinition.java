@@ -106,4 +106,9 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void start_audit_and_submit_report() throws InterruptedException {
 		schedulespage2.startAuditAndSubmitReport();
 	}
+	
+	@And("^validate checkin radius$")
+	public void validate_checkin_radius() throws InterruptedException {
+		schedulespage2.validateCheckinRadius();
+	}
 }

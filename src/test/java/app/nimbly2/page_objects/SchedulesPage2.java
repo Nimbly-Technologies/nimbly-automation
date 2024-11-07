@@ -77,13 +77,13 @@ public class SchedulesPage2 {
 	public void validateScheduleCardDetails(String scheduleType, String attachmentType) throws InterruptedException {
 		Thread.sleep(3000);
 		// locators
-		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name" +"_" + attachmentType);
+		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name" + "_" + attachmentType);
 		String site_name = locators.getProperty("site_name");
 		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String schedule_status = locators.getProperty("schedule_status");
 		String completed_text = locators.getProperty("completed_text");
 		// Expected values
-		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" +"_" + attachmentType);
+		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" + "_" + attachmentType);
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String scheduleStatus = prop.getProperty("Schedule_Status");
 		String completedProgress = prop.getProperty("Completed_Text");
@@ -134,13 +134,14 @@ public class SchedulesPage2 {
 	public void validateCheckinPopupDetails(String scheduleType, String attachmentType) throws InterruptedException {
 		Thread.sleep(3000);
 		// locators
-		String schedule_name = locators.getProperty(scheduleType + "_" + "checkin_popup_schedule_name" +"_" + attachmentType);
+		String schedule_name = locators
+				.getProperty(scheduleType + "_" + "checkin_popup_schedule_name" + "_" + attachmentType);
 		String schedule_type = locators.getProperty(scheduleType + "_" + "schedule_type");
 		String site_name = locators.getProperty("checkin_popup_site_name");
 		String completed_text = locators.getProperty("checkin_popup_completed_text");
 		String checkin_button = locators.getProperty("checkin_button");
 		// Expected values
-		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" +"_" + attachmentType);
+		String expScheduleName = prop.getProperty(scheduleType + "_" + "Schedule" + "_" + attachmentType);
 		String expSiteName = prop.getProperty(scheduleType + "_" + "Site_Name");
 		String completedProgress = prop.getProperty("Completed_Text");
 		String expScheduleType = prop.getProperty(scheduleType + "_" + "Scheduled_Type");
@@ -1411,7 +1412,7 @@ public class SchedulesPage2 {
 			Assert.fail("failed to sync data with server");
 		}
 	}
-	
+
 	public void saveAsDraft() throws InterruptedException {
 		// locators
 		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
@@ -1532,7 +1533,7 @@ public class SchedulesPage2 {
 			Assert.fail("Failed to validate Saved button");
 		}
 	}
-	
+
 	public void validateAttachments() throws InterruptedException {
 		// locators
 		String back_button = locators.getProperty("tap_back_button");
@@ -1653,7 +1654,7 @@ public class SchedulesPage2 {
 			Assert.fail("Failed to delete schedule progress");
 		}
 	}
-	
+
 	public void startAuditAndSubmitReport() throws InterruptedException {
 		// Locators
 		String schedule_type = locators.getProperty("Daily_schedule_type");
@@ -1715,6 +1716,41 @@ public class SchedulesPage2 {
 			appdriver.findElement(AppiumBy.xpath(close_nps_popup)).click();
 		} else {
 			Assert.fail("Failed to tap on close nps popup button");
+		}
+	}
+
+	public void validateCheckinRadius() throws InterruptedException {
+		// Locators
+		String schedule_type = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		String checkin_radius = locators.getProperty("checkin_radius");
+		
+		//Expected Value
+		String expCheckinRadiusMessage = prop.getProperty("Checkin_Radius_Message");
+
+		// tap on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tap on schedule card");
+		}
+
+		// tap on check-in button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tap on checkin button");
+		}
+		
+		//verify check-in pop-up
+		Thread.sleep(3000);
+		String actCheckinRadiusMessage = appdriver.findElement(AppiumBy.xpath(checkin_radius)).getText();
+		if(actCheckinRadiusMessage.equals(actCheckinRadiusMessage)) {
+			Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage, "Successfully validated unable to checkin toast message");
+		}else {
+			Assert.fail("Failed to validate checkin toast message");
 		}
 	}
 }
