@@ -3,8 +3,7 @@ Feature: Validate Audit Process For Offline Schedule
   @sanity
   Scenario: Validate Offline Scheduling Audit Process
     Given I login to application with OfflineUserEmail,OfflineUserPassword
-    And validate in app update popup
-    And validate multiple login popup
+    And validate multiple login and version update popups
     When switch to offline mode
     When search for the Offline_Schedule_With_Attachments
     And validate schedule card details for Offline schedule With_Attachments
@@ -15,7 +14,6 @@ Feature: Validate Audit Process For Offline Schedule
     And validate offline schedule status after checkout
     And switch to online mode
     When search for the Offline_Schedule_With_Attachments
-    When search for the Offline_Schedule
     Then validate schedule status after switching to online mode
     And validate modify and sync with server on checkin pop up
     And validate review report for Offline schedule with attachments after switching to online mode

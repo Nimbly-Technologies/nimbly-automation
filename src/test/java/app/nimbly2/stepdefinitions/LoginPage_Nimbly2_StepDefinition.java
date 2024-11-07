@@ -52,5 +52,10 @@ public class LoginPage_Nimbly2_StepDefinition {
 	public void login(String username, String password) throws InterruptedException {
 		loginpage2.login(username, password);
 	}
+	
+	@And("^validate multiple login and version update popups$")
+	public void validate_popups() throws InterruptedException {
+		loginpage2.validatePopups();
+	}
 
 }

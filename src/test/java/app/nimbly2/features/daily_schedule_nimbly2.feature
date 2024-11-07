@@ -3,8 +3,7 @@ Feature: Validate Audit Process For Daily Schedule
   @sanity
   Scenario: Validate Daily Schedule Audit Process
     Given I login to application with DailyUserEmail,DailyUserPassword
-    And validate in app update popup
-    And validate multiple login popup
+    And validate multiple login and version update popups
     When search for the Daily_Schedule_With_Attachments
     And validate schedule card details for Daily schedule With_Attachments
     And verify check in pop up details for Daily schedule With_Attachments
@@ -17,8 +16,7 @@ Feature: Validate Audit Process For Daily Schedule
   @sanity
   Scenario: Validate Daily Schedule Audit Process Without Attachments
     Given I login to application with DailyUserEmail,DailyUserPassword
-    And validate in app update popup
-    And validate multiple login popup
+    And validate multiple login and version update popups
     When search for the Daily_Schedule_Without_Attachments
     And validate schedule card details for Daily schedule Without_Attachments
     And verify check in pop up details for Daily schedule Without_Attachments

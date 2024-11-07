@@ -1,10 +1,9 @@
 Feature: Validate Serach, Report Card and Download Report Functionality
 
-@sanity
+  @sanity
   Scenario: Validate Serach, Report Card and Download Report Functionality
     Given I login to application with ReportUserEmail,ReportUserPassword
-    And validate in app update popup
-    And validate multiple login popup
+    And validate multiple login and version update popups
     When search for the Report_Schedule_Without_Attachments
     And validate schedule card details for Report schedule Without_Attachments
     And verify check in pop up details for Report schedule Without_Attachments
