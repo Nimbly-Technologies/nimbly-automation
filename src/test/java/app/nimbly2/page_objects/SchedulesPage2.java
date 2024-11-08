@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.PointerInput;
@@ -1724,8 +1725,8 @@ public class SchedulesPage2 {
 		String schedule_type = locators.getProperty("Daily_schedule_type");
 		String checkin_button = locators.getProperty("checkin_button");
 		String checkin_radius = locators.getProperty("checkin_radius");
-		
-		//Expected Value
+
+		// Expected Value
 		String expCheckinRadiusMessage = prop.getProperty("Checkin_Radius_Message");
 
 		// tap on schedule card
@@ -1743,14 +1744,117 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Failed to tap on checkin button");
 		}
-		
-		//verify check-in pop-up
+
+		// verify check-in pop-up
 		Thread.sleep(3000);
 		String actCheckinRadiusMessage = appdriver.findElement(AppiumBy.xpath(checkin_radius)).getText();
-		if(actCheckinRadiusMessage.equals(actCheckinRadiusMessage)) {
-			Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage, "Successfully validated unable to checkin toast message");
-		}else {
+		if (actCheckinRadiusMessage.equals(actCheckinRadiusMessage)) {
+			Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage,
+					"Successfully validated unable to checkin toast message");
+		} else {
 			Assert.fail("Failed to validate checkin toast message");
+		}
+	}
+
+	public void answerMandatoryQuestions() throws InterruptedException {
+		// Locators
+		String schedule_type = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		String preview_button = locators.getProperty("preview_button");
+		String review_button = locators.getProperty("review_report");
+		String yes_no_question = locators.getProperty("yes_and_no_question_answer");
+		String green_yellow_red_question = locators.getProperty("green_yellow_red_answer");
+
+		// tap on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tap on schedule card");
+		}
+
+		// tap on check-in button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tap on checkin button");
+		}
+
+		// select yes and no question answer
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(yes_no_question)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(yes_no_question)).click();
+		} else {
+			Assert.fail("Failed to clcik on Yes and No Question");
+		}
+
+		tabOnNextButton();
+
+		// Select green, yellow & red question answer
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(green_yellow_red_question)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(green_yellow_red_question)).click();
+		} else {
+			Assert.fail("Failed to answer green, yellow & red question");
+		}
+
+		// Validate Add comment box and enter comments
+		validateCommentBoxAndEnterComments();
+
+		// tap on preview button
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(preview_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(preview_button)).click();
+		} else {
+			Assert.fail("Failed to tap on preview icon");
+		}
+
+		// tap on review button from questionnaire preview
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(review_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(review_button)).click();
+		} else {
+			Assert.fail("Failed to tap on review report");
+		}
+	}
+
+	public void validateReviewReportUseDeductions() throws InterruptedException {
+		// Locators
+		String total_questions = locators.getProperty("deduction_review_dailytype_total_questions");
+		String answered_questions = locators.getProperty("deduction_review_dailytype_answered");
+		String skipped_questions = locators.getProperty("deduction_review_dailytype_skipped");
+
+		// Expected Values
+		String expTotalQuestions = prop.getProperty("Deductions_Total_Questions");
+		String expAnsweredQuestions = prop.getProperty("Deductions_Answered_Questions");
+		String expSkippedQuestions = prop.getProperty("Deductions_Skipped_Questions");
+
+		// validate total questions count
+		Thread.sleep(3000);
+		String actTotalQuestionsCount = appdriver.findElement(AppiumBy.xpath(total_questions)).getText();
+		if (actTotalQuestionsCount.equals(expTotalQuestions)) {
+			Assert.assertEquals(actTotalQuestionsCount, expTotalQuestions,
+					"Successfully validated total questions count");
+		} else {
+			Assert.fail("Failed to validate total questions count");
+		}
+
+		// validate answered questions
+		String actAnsweredQuestionsCount = appdriver.findElement(AppiumBy.xpath(answered_questions)).getText();
+		if (actAnsweredQuestionsCount.equals(expAnsweredQuestions)) {
+			Assert.assertEquals(actAnsweredQuestionsCount, expAnsweredQuestions,
+					"Successfully validated answered questions count");
+		} else {
+			Assert.fail("Failed to validate answered questions count");
+		}
+		// validate skipped questions
+		String actSkippedQuestionsCount = appdriver.findElement(AppiumBy.xpath(skipped_questions)).getText();
+		if (actSkippedQuestionsCount.equals(expSkippedQuestions)) {
+			Assert.assertEquals(actSkippedQuestionsCount, expSkippedQuestions,
+					"Successfully validated total skipped count");
+		} else {
+			Assert.fail("Failed to validate skipped questions count");
 		}
 	}
 }
