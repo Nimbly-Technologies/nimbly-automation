@@ -111,4 +111,12 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void validate_checkin_radius() throws InterruptedException {
 		schedulespage2.validateCheckinRadius();
 	}
+	@And("^start audit process and answer only mandatory questions$")
+	public void answer_only_mandatory_questions() throws InterruptedException {
+		schedulespage2.answerMandatoryQuestions();
+	}
+	@And("^validate review repoprt page for use deductions$")
+	public void review_report_page_for_use_deductions() throws InterruptedException {
+		schedulespage2.validateReviewReportUseDeductions();
+	}
 }
