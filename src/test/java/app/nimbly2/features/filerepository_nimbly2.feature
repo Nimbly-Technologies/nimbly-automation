@@ -1,6 +1,6 @@
 Feature: Validate User Navigation to File Repo
 
-  @smoke
+  @sanity
   Scenario: Validate User Navigation to File Repo
     Given I login to application with FileRepoUserEmail,FileRepoUserPassword
     And validate multiple login and version update popups

@@ -226,6 +226,7 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Validate Category Name
+		Thread.sleep(3000);
 		String actCategoryName = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
 		if (actCategoryName.equals(expCategoryName1)) {
 			Assert.assertEquals(actCategoryName, expCategoryName1, "Successfully validated Category Name!");
