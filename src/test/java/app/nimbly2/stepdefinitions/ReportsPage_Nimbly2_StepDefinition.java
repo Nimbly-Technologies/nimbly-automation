@@ -28,5 +28,10 @@ public class ReportsPage_Nimbly2_StepDefinition {
 	public void validate_download_report_button_and_report_generation_popup() throws InterruptedException {
 		reportspage2.verifyDownloadReportAndReportGenerationPopup();
 	}
+	
+	@And("^validate filter functionality and download this week reports$")
+	public void validate_filter_functionalty_and_download_this_week_reports() throws InterruptedException {
+		reportspage2.validateFilterFunctionalityAndDownloadReportsFromThisWeek();
+	}
 
 }

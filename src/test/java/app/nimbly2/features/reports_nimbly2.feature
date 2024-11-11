@@ -1,6 +1,6 @@
 Feature: Validate Serach, Report Card and Download Report Functionality
 
-  @sanity
+  @smoke @P1
   Scenario: Validate Serach, Report Card and Download Report Functionality
     Given I login to application with ReportUserEmail,ReportUserPassword
     And validate multiple login and version update popups
@@ -12,6 +12,7 @@ Feature: Validate Serach, Report Card and Download Report Functionality
     And submit the report in online mode
     And validate report submitted page for Report schedule
     When access the Reports tab and checks the search functionality
+    And validate filter functionality and download this week reports
     And verify report card details
     Then validate download report button and report generation popup
     And logout from nimbly2

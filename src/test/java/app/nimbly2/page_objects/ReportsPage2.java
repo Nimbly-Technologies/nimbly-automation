@@ -2,9 +2,13 @@ package app.nimbly2.page_objects;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
@@ -171,6 +175,91 @@ public class ReportsPage2 {
 			Assert.fail("Failed to validate report generation popup");
 		}
 
+	}
+	
+	public void validateFilterFunctionalityAndDownloadReportsFromThisWeek() throws InterruptedException {
+		// Locators
+		String filter = locators.getProperty("tap_filter");
+		String tapSiteName = locators.getProperty("tap_filter_by_site");
+		String searchSiteName = locators.getProperty("serach_stite_name");
+		String checkbox = locators.getProperty("checkbox");
+		String saveButton = locators.getProperty("tap_save_button");
+		String applyButton = locators.getProperty("tap_apply_button");
+		String resetButton = locators.getProperty("tap_reset_button");
+		String date = locators.getProperty("tap_date");
+		String selectThisWeek = locators.getProperty("select_this_week");
+
+		// Expected values
+		String expSiteName = prop.getProperty("Report_Site_Name");
+
+		// Click on the filter and perform actions
+		performAction(filter, "Failed to tap on report filter");
+		performAction(tapSiteName, "Failed to tap on site name");
+		performAction(searchSiteName, "Failed to search site name", expSiteName);
+		performAction(checkbox, "Failed to select site name");
+		performAction(saveButton, "Failed to save filter");
+		performAction(applyButton, "Failed to apply filter");
+
+		// Verify the report card details after applying the filter
+		verifyReportCardDetails();
+
+		// Reset the filter
+		performAction(filter, "Failed to tap on report filter");
+		resetFilter(resetButton);
+
+		// Set the date filter to 'This Week'
+		performAction(filter, "Failed to tap on report filter");
+		performAction(date, "Failed to tap on date field");
+		performAction(selectThisWeek, "Failed to select this week");
+
+		// Save and apply the filter again
+		performAction(saveButton, "Failed to save filter");
+		performAction(applyButton, "Failed to apply filter");
+
+		// Verify the report card details again
+		verifyReportCardDetails();
+
+		// Final reset of the filter
+		performAction(filter, "Failed to tap on report filter");
+		resetFilter(resetButton);
+	}
+
+	private void performAction(String locator, String errorMessage) {
+		performAction(locator, errorMessage, null);
+	}
+
+	private void performAction(String locator, String errorMessage, String inputText) {
+		try {
+			WebElement element = waitForElementToBeClickable(locator);
+
+			if (inputText != null) {
+				element.sendKeys(inputText);
+			} else {
+				element.click();
+			}
+
+		} catch (TimeoutException e) {
+			System.out.println("Timeout waiting for element: " + locator);
+			Assert.fail(errorMessage);
+		} catch (Exception e) {
+			System.out.println("Error performing action on element: " + locator);
+			e.printStackTrace();
+			Assert.fail(errorMessage);
+		}
+	}
+
+	private WebElement waitForElementToBeClickable(String locator) {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+			return wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(locator)));
+		} catch (TimeoutException e) {
+			System.out.println("Timeout waiting for element to be clickable: " + locator);
+			throw e; // Rethrow exception to be handled in the calling method
+		}
+	}
+
+	private void resetFilter(String resetButtonLocator) {
+		performAction(resetButtonLocator, "Failed to reset filter");
 	}
 
 }
