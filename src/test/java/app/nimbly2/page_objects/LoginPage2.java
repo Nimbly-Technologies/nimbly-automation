@@ -86,43 +86,32 @@ public class LoginPage2 {
 	}
 	
 	public void validatePopups() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10)); // Explicit wait
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30)); // Explicit wait
 		boolean isPopupsHandled = false; // Flag to track if both pop-ups are handled
 
 		// Retry loop for handling popups
-		int maxRetries = 2; // You can tweak this based on how frequently popups appear
+		int maxRetries = 1; // You can tweak this based on how frequently popups appear
 		int retryCount = 0;
 
 		while (!isPopupsHandled && retryCount < maxRetries) {
 			try {
 				retryCount++;
 
-				// 1. Check for Multiple Login Pop-up first
-				String multipleLoginXpath = locators.getProperty("multiple_login");
-				WebElement loginPopup = wait
-						.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(multipleLoginXpath)));
-
-				if (loginPopup.isDisplayed()) {
-					System.out.println("Multiple Login Pop-up found. Attempting to handle it.");
-					loginPopup.click(); // Click the login pop-up "Yes" button (or other action based on the app)
-					Thread.sleep(2000); // Wait for the login pop-up to close (optional, depends on the behavior of the
-										// app)
-
-					// Check if In-App Update Pop-up appears after handling the login pop-up
+				// Check for Multiple Login Pop-up
+				if (handleMultipleLoginPopup(wait)) {
+					// After handling the Multiple Login Pop-up, check for In-App Update
 					if (isInAppUpdatePresent(wait)) {
 						handleInAppUpdatePopup(wait);
-						continue; // After handling the In-App Update, recheck the login pop-up
+						continue; // After handling the In-App Update, retry the whole logic
 					}
-
-					isPopupsHandled = true; // Mark login popup as handled
+					isPopupsHandled = true; // Mark as handled if no further popups
 					System.out.println("Handled Multiple Login Pop-up.");
 				}
 
-				// 2. Check for In-App Update Pop-up if the login pop-up isn't present or
-				// handled
+				// Check for In-App Update Pop-up if no login pop-up is present
 				if (!isPopupsHandled && isInAppUpdatePresent(wait)) {
 					handleInAppUpdatePopup(wait);
-					continue; // After handling the In-App Update pop-up, recheck the login pop-up
+					continue; // After handling the In-App Update pop-up, retry the whole logic
 				}
 
 			} catch (Exception e) {
@@ -144,12 +133,32 @@ public class LoginPage2 {
 		}
 	}
 
-	// Method to handle the In-App Update Pop-up
+	private boolean handleMultipleLoginPopup(WebDriverWait wait) throws InterruptedException {
+		try {
+			String multipleLoginXpath = locators.getProperty("multiple_login");
+			WebElement loginPopup = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(multipleLoginXpath)));
+
+			if (loginPopup.isDisplayed()) {
+				System.out.println("Multiple Login Pop-up found. Attempting to handle it.");
+				loginPopup.click(); // Click the login pop-up "Yes" button (or other action based on the app)
+				Thread.sleep(2000); // Wait for the login pop-up to close (optional, depends on the behavior of the
+									// app)
+				return true;
+			}
+		} catch (Exception e) {
+			// Handle exceptions gracefully
+			System.out.println("No Multiple Login Pop-up detected.");
+		}
+		return false;
+	}
+
 	private void handleInAppUpdatePopup(WebDriverWait wait) throws InterruptedException {
 		try {
 			String updateButtonXpath = locators.getProperty("update_button");
 			String versionPopUpTextXpath = locators.getProperty("version_pop_up_text");
 			String okButtonXpath = locators.getProperty("sync_successful");
+			String inAppUpdateLaterButtonXpath = locators.getProperty("in_app_update_later_button");
 
 			// Wait until the In-App Update pop-up is visible
 			WebElement versionPopup = wait
@@ -164,7 +173,6 @@ public class LoginPage2 {
 					appdriver.navigate().back(); // Navigate back to the previous screen or app
 				} else if (popupText.equals("New In-App Update Available!")) {
 					System.out.println("Handling In-App Update Pop-up (In-App Update Available).");
-					String inAppUpdateLaterButtonXpath = locators.getProperty("in_app_update_later_button");
 					appdriver.findElement(AppiumBy.xpath(inAppUpdateLaterButtonXpath)).click(); // Skip the update
 				}
 			}
@@ -173,7 +181,6 @@ public class LoginPage2 {
 		}
 	}
 
-	// Method to check if the In-App Update Pop-up is present
 	private boolean isInAppUpdatePresent(WebDriverWait wait) {
 		try {
 			String appUpdatePopUpXpath = locators.getProperty("version_pop_up_text");

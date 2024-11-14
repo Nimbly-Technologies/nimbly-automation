@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = "src/test/java/app/nimbly2/features", glue = "app/nimbly2/stepdefinitions", tags = "@smoke",
+@CucumberOptions(features = "src/test/java/app/nimbly2/features", glue = "app/nimbly2/stepdefinitions", tags = "@sanity",
 //		dryRun = true, 
 		monochrome = true, plugin = { "pretty", "html:target/cucumberhtmltestruns/samplerun.html",
 				"json:target/cucumberjsontestruns/samplerun.json", "junit:target/cucumberxmltestruns/samplerun.xml",
