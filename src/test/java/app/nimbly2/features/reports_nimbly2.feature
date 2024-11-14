@@ -1,6 +1,6 @@
 Feature: Validate Serach, Report Card and Download Report Functionality
 
-  @smoke @P1
+  @sanity @P1
   Scenario: Validate Serach, Report Card and Download Report Functionality
     Given I login to application with ReportUserEmail,ReportUserPassword
     And validate multiple login and version update popups

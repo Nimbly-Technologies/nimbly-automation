@@ -6,7 +6,7 @@ Feature: Validate Issue Card Details, Edit Issue Functionality and Create Adhoc 
     And validate multiple login and version update popups
     When search for the Issue_Schedule_Without_Attachments
     And start audit proccess and submit the report
-    Then navigate back to issues page and search for issue
+    Then navigate back to issues page and search for Issue_Question_Name
     And validate issue card details
     And validate edit issue details
 
