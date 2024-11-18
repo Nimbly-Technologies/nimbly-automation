@@ -119,4 +119,8 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void review_report_page_for_use_deductions() throws InterruptedException {
 		schedulespage2.validateReviewReportUseDeductions();
 	}
+	@And("^validate site and questionnaire names along with signature and selfie error messagaes$")
+	public void validate_site_and_questionnaire() throws InterruptedException {
+		schedulespage2.validateSiteAndQuestionnaireOnReviewPage();
+	}
 }
