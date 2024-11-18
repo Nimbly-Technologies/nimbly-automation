@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -1058,7 +1060,7 @@ public class SchedulesPage2 {
 		String expRedFlagsCount = "0" + prop.getProperty(scheduleType + "_" + "Red_Flag_Counts");
 		String expYellowFalgsCount = "0" + prop.getProperty(scheduleType + "_" + "Yellow_Flag_Counts");
 		String expGreenFlagsCount = "0" + prop.getProperty(scheduleType + "_" + "Green_Flags_Count");
-		Thread.sleep(70000);
+		Thread.sleep(80000);
 
 		// validate report submitted text
 		String actReportSubmittedText = appdriver.findElement(AppiumBy.xpath(report_submitted_text)).getText();
@@ -1783,7 +1785,7 @@ public class SchedulesPage2 {
 		}
 
 		// select yes and no question answer
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		if (appdriver.findElement(AppiumBy.xpath(yes_no_question)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(yes_no_question)).click();
 		} else {
@@ -1857,5 +1859,80 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Failed to validate skipped questions count");
 		}
+	}
+	
+	public void validateSiteAndQuestionnaireOnReviewPage() throws InterruptedException {
+	    // Locators
+		Map<String, String> locatorsMap = new LinkedHashMap<>();
+		locatorsMap.put("siteName", locators.getProperty("review_page_site_name"));
+		locatorsMap.put("questionnaireName", locators.getProperty("review_page_questionnaire_name"));
+		locatorsMap.put("errorToastMessage", locators.getProperty("review_page_error_toast_message"));
+		locatorsMap.put("signatureAndSelfieErrorMessage", locators.getProperty("review_page_signature_and_selfie_error_messages"));
+		locatorsMap.put("takeSelfie", locators.getProperty("review_take_selfie"));
+		locatorsMap.put("captureSelfie", locators.getProperty("review_capture_button"));
+		locatorsMap.put("usePhoto", locators.getProperty("review_use_photo"));
+		locatorsMap.put("tapToSign", locators.getProperty("review_tap_to_sign"));
+		locatorsMap.put("userName", locators.getProperty("enter_username"));
+		locatorsMap.put("userRole", locators.getProperty("enter_user_role"));
+		locatorsMap.put("saveButton", locators.getProperty("tap_on_save"));
+
+	    // Expected values
+		Map<String, String> expectedValuesMap = new LinkedHashMap<>();
+		expectedValuesMap.put("siteName", prop.getProperty("ReviewReport_Site_Name"));
+		expectedValuesMap.put("questionnaireName", prop.getProperty("ReviewReport_Schedule_With_Attachments"));
+		expectedValuesMap.put("errorToastMessage", prop.getProperty("ReviewReport_Toast_Message"));
+		expectedValuesMap.put("signatureAndSelfieErrorMessage", prop.getProperty("ReviewReport_Error_Message"));
+
+	    // Validate fields
+	    validateElementText(locatorsMap.get("siteName"), expectedValuesMap.get("siteName"), "site name");
+	    validateElementText(locatorsMap.get("questionnaireName"), expectedValuesMap.get("questionnaireName"), "questionnaire name");
+
+	    // Submit report
+	    submitReport();
+
+	    // Validate error messages
+	    validateElementText(locatorsMap.get("errorToastMessage"), expectedValuesMap.get("errorToastMessage"), "error toast pop-up");
+	    validateElementText(locatorsMap.get("signatureAndSelfieErrorMessage"), expectedValuesMap.get("signatureAndSelfieErrorMessage"), "signature and selfie error message");
+
+	    // Add selfie and signature
+	    addSelfieAndSignature(locatorsMap);
+	}
+
+	private void validateElementText(String locator, String expectedValue, String elementName) {
+	    String actualValue = appdriver.findElement(AppiumBy.xpath(locator)).getText();
+	    Assert.assertEquals(actualValue, expectedValue, "Successfully validated " + elementName);
+	}
+
+	private void addSelfieAndSignature(Map<String, String> locatorsMap) throws InterruptedException {
+	    // Scroll down
+	    appdriver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+
+	    // Add selfie
+	    takeSelfie(locatorsMap);
+
+	    // Add signature
+	    addSignature(locatorsMap);
+	}
+
+	private void takeSelfie(Map<String, String> locatorsMap) throws InterruptedException {
+	    Thread.sleep(3000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("takeSelfie"))).click();
+	    Thread.sleep(2000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("captureSelfie"))).click();
+	    Thread.sleep(5000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("usePhoto"))).click();
+	}
+
+	private void addSignature(Map<String, String> locatorsMap) throws InterruptedException {
+	    Thread.sleep(2000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("tapToSign"))).click();
+	    Thread.sleep(2000);
+	    digitalSignature();
+	    Thread.sleep(2000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("userName"))).sendKeys("Test User");
+	    Thread.sleep(2000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("userRole"))).sendKeys("Test Role");
+	    Thread.sleep(2000);
+	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("saveButton"))).click();
 	}
 }
