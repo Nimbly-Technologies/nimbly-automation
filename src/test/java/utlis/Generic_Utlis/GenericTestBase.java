@@ -80,9 +80,9 @@ public class GenericTestBase {
 			ltOptions.put("mitmProxy", true);
 			ltOptions.put("appProfiling", true);
 			ltOptions.put("video", true);
-			ltOptions.put("build", "Nimbly 2.0 - Sanity 72");
+			ltOptions.put("build", "Nimbly 2.0 - Sanity 85");
 			ltOptions.put("name", "POC Tests");
-			ltOptions.put("app", "lt://APP1016025291730971945687367");
+			ltOptions.put("app", "lt://APP10160542501732021056580390");
 			ltOptions.put("isRealMobile", true);
 			ltOptions.put("autoGrantPermissions", true);
 			ltOptions.put("autoAcceptAlerts", true);

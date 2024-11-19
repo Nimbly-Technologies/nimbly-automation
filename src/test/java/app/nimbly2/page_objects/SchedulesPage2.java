@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -1934,5 +1935,215 @@ public class SchedulesPage2 {
 	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("userRole"))).sendKeys("Test Role");
 	    Thread.sleep(2000);
 	    appdriver.findElement(AppiumBy.xpath(locatorsMap.get("saveButton"))).click();
+	}
+	
+	public void auditProcessForConditionalQuestions() throws InterruptedException {
+		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		// Map to store parent and child question XPaths
+		Map<String, String> parentChildQuestionMap = new LinkedHashMap<>();
+		parentChildQuestionMap.put(locators.getProperty("answer_first_parent_question"),
+				locators.getProperty("answer_first_child_question"));
+		parentChildQuestionMap.put(locators.getProperty("answer_second_parent_question"),
+				locators.getProperty("answer_second_child_question"));
+		parentChildQuestionMap.put(locators.getProperty("answer_third_parent_question"),
+				locators.getProperty("answer_third_child_question"));
+		
+		// tab on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(tap_on_schedule_card)).isDisplayed()) {
+			appdriver.findElement(By.xpath(tap_on_schedule_card)).click();
+		} else {
+			Assert.fail("Failed to tab schedule card");
+		}
+
+		// tab on checkin button
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(By.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tab checkin button");
+		}
+
+		// Answer all parent and child questions using the map
+		for (Map.Entry<String, String> entry : parentChildQuestionMap.entrySet()) {
+			String parentQuestionXPath = entry.getKey();
+			String childQuestionXPath = entry.getValue();
+
+			answerParentAndChildQuestionWithAttachments(parentQuestionXPath, childQuestionXPath);
+			tabOnNextButton();
+		}
+
+		// Handle the range with flag question
+		addAttachments();
+		handleRangeWithFlagQuestion(locators.getProperty("range_with_flag_error_message"),
+				locators.getProperty("answer_range_with_flag_question"));
+		tabOnReviewButton();
+	}
+
+	private void answerParentAndChildQuestionWithAttachments(String parentQuestionXPath, String childQuestionXPath)
+			throws InterruptedException {
+		String add_Comments = locators.getProperty("add_mandatory_comments");
+
+		// Attach files to the parent question
+		addAttachments();
+		try {
+			// Answer the parent question
+			Thread.sleep(2000);
+			WebElement parentQuestionElement = appdriver.findElement(AppiumBy.xpath(parentQuestionXPath));
+			parentQuestionElement.click();
+
+			appdriver.findElement(AppiumBy.xpath(add_Comments)).sendKeys("Successfully added comments");
+
+			// Scroll and answer the child question if displayed
+			scrollToNextElement();
+			// Attach files to the child question
+			addAttachmentsForChildQuestion();
+			Thread.sleep(2000);
+			WebElement childQuestionElement = appdriver.findElement(AppiumBy.xpath(childQuestionXPath));
+			if (childQuestionElement.isDisplayed()) {
+				childQuestionElement.click();
+				appdriver.findElement(AppiumBy.xpath(add_Comments)).sendKeys("Successfully added comments");
+			} else {
+			}
+		} catch (NoSuchElementException e) {
+		}
+	}
+
+	private void handleRangeWithFlagQuestion(String errorMessageXPath, String rangeQuestionXPath)
+			throws InterruptedException {
+		String expErrorMessage = "Answer must be within the range";
+		try {
+			// Check for the error message
+			if (appdriver.findElement(AppiumBy.xpath(rangeQuestionXPath)).isDisplayed()) {
+				appdriver.findElement(AppiumBy.xpath(rangeQuestionXPath)).sendKeys("14");
+			} else {
+				Assert.fail("Failed to input score");
+			}
+
+			// validate error message
+			WebElement errorMessage = appdriver.findElement(AppiumBy.xpath(errorMessageXPath));
+			String actErrorMessage = errorMessage.getText();
+			if (actErrorMessage.equals(expErrorMessage)) {
+				Assert.assertEquals(actErrorMessage, expErrorMessage, "Successfully validated error message");
+			} else {
+				Assert.fail("Failed to validate error message");
+			}
+
+			// answer range with flag question
+			appdriver.findElement(AppiumBy.xpath(rangeQuestionXPath)).sendKeys("2");
+
+		} catch (NoSuchElementException e) {
+		}
+	}
+
+	private void scrollToNextElement() {
+		try {
+			appdriver.findElement(AppiumBy
+					.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+			System.out.println("Scrolled down the page.");
+		} catch (Exception e) {
+			System.out.println("Scroll operation failed: " + e.getMessage());
+		}
+	}
+	
+	public void validateReviewPageForConditionalQuestions() {
+		// Locators for conditional-based questions on the review page
+		Map<String, String> locatorsMap = new HashMap<>();
+		locatorsMap.put("Green Flags", locators.getProperty("conditional_green_flags_count"));
+		locatorsMap.put("Yellow Flags", locators.getProperty("conditional_yellow_flags_count"));
+		locatorsMap.put("Red Flags", locators.getProperty("conditional_red_flags_count"));
+		locatorsMap.put("Total Questions", locators.getProperty("conditional_total_questions"));
+		locatorsMap.put("Answered Questions", locators.getProperty("conditional_answered"));
+		locatorsMap.put("Skipped Questions", locators.getProperty("conditional_skipped"));
+		locatorsMap.put("Total Attachments", locators.getProperty("conditional_total_attachments"));
+		locatorsMap.put("Photo Attachments", locators.getProperty("conditional_photo_attachments"));
+		locatorsMap.put("Video Attachments", locators.getProperty("conditional_video_attachments"));
+		locatorsMap.put("Document Attachments", locators.getProperty("conditional_document_attachments"));
+
+		// Expected values for validation
+		Map<String, String> expectedValuesMap = new HashMap<>();
+		expectedValuesMap.put("Green Flags", prop.getProperty("ConditionalQuestion_Green_Flags_Count"));
+		expectedValuesMap.put("Yellow Flags", prop.getProperty("ConditionalQuestion_Yellow_Flag_Counts"));
+		expectedValuesMap.put("Red Flags", prop.getProperty("ConditionalQuestion_Red_Flag_Counts"));
+		expectedValuesMap.put("Total Questions", prop.getProperty("ConditionalQuestion_Total_Questions"));
+		expectedValuesMap.put("Answered Questions", prop.getProperty("ConditionalQuestion_Answered_Questions"));
+		expectedValuesMap.put("Skipped Questions", prop.getProperty("ConditionalQuestion_Skipped_Questions"));
+		expectedValuesMap.put("Total Attachments", prop.getProperty("ConditionalQuestion_Total_Attachments"));
+		expectedValuesMap.put("Photo Attachments", prop.getProperty("ConditionalQuestion_Photo_Attachments_Counts"));
+		expectedValuesMap.put("Video Attachments", prop.getProperty("ConditionalQuestion_Video_Attachments_Counts"));
+		expectedValuesMap.put("Document Attachments",
+				prop.getProperty("ConditionalQuestion_Document_Attachments_Counts"));
+
+		// Validate each element on the review page
+		for (String key : locatorsMap.keySet()) {
+			String locator = locatorsMap.get(key);
+			String expectedValue = expectedValuesMap.get(key);
+			validate(key, locator, expectedValue);
+		}
+	}
+
+	// Helper method for validation
+	private void validate(String name, String locator, String expectedValue) {
+		String actualValue = appdriver.findElement(AppiumBy.xpath(locator)).getText();
+
+		if (actualValue.equals(expectedValue)) {
+			Assert.assertEquals(actualValue, expectedValue, "Successfully validated: " + name);
+		} else {
+			Assert.fail("Failed to validated: " + name);
+		}
+	}
+
+	public void validateReportSubmittedPageForConditionalQuestions() throws InterruptedException {
+		// Create Maps for locators and expected values
+		Thread.sleep(60000);
+		Map<String, String> locatorsMap = new HashMap<>();
+		locatorsMap.put("greenFlag", locators.getProperty("conditional_report_submitted_page_green_flags_count"));
+		locatorsMap.put("yellowFlag", locators.getProperty("conditional_report_submitted_page_yellow_flags_count"));
+		locatorsMap.put("redFlag", locators.getProperty("conditional_report_submitted_page_red_flags_count"));
+
+		Map<String, String> expectedValuesMap = new HashMap<>();
+		expectedValuesMap.put("greenFlag", prop.getProperty("Conditional_Report_Submitted_Green_Flags_Count"));
+		expectedValuesMap.put("yellowFlag", prop.getProperty("Conditional_Report_Submitted_Yellow_Flag_Counts"));
+		expectedValuesMap.put("redFlag", prop.getProperty("Conditional_Report_Submitted_Red_Flag_Counts"));
+
+		// Loop through the locatorsMap to validate the flag counts
+		for (String key : locatorsMap.keySet()) {
+			String locator = locatorsMap.get(key);
+			String expectedValue = expectedValuesMap.get(key);
+			validate(key, locator, expectedValue);
+		}
+	}
+	
+	public void addAttachmentsForChildQuestion() throws InterruptedException {
+		Thread.sleep(3000);
+		String add_photo = locators.getProperty("child_question_add_photo");
+		String capture_photo = locators.getProperty("child_question_capture_photo");
+		String use_photo = locators.getProperty("use_photo");
+		String pdf_attachment = locators.getProperty("child_question_add_pdf_attachment");
+		String select_pdf_attachment = locators.getProperty("select_pdf_attachmnet");
+
+		// add document attachment
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(pdf_attachment)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(pdf_attachment)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
+		} else {
+			Assert.fail("Failed to add document attachment");
+		}
+		// add photo attachment
+		// scroll down the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+		if (appdriver.findElement(AppiumBy.xpath(add_photo)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_photo)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(capture_photo)).click();
+			Thread.sleep(5000);
+			appdriver.findElement(AppiumBy.xpath(use_photo)).click();
+		} else {
+			Assert.fail("Failed capture photo");
+		}
 	}
 }
