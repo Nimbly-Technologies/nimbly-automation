@@ -123,4 +123,18 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void validate_site_and_questionnaire() throws InterruptedException {
 		schedulespage2.validateSiteAndQuestionnaireOnReviewPage();
 	}
+	@And("^start audit process for conditional questions$")
+	public void start_audit_process_for_conditional_questions() throws InterruptedException {
+		schedulespage2.auditProcessForConditionalQuestions();
+	}
+
+	@And("^validate review page for conditional questions$")
+	public void validate_review_page_for_conditional_questions() {
+		schedulespage2.validateReviewPageForConditionalQuestions();
+	}
+
+	@And("^validate report submitted page for conditional questions$")
+	public void validate_report_submitted_page_for_conditional_question() throws InterruptedException {
+		schedulespage2.validateReportSubmittedPageForConditionalQuestions();
+	}
 }
