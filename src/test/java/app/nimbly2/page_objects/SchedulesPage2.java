@@ -1527,7 +1527,7 @@ public class SchedulesPage2 {
 		Thread.sleep(2000);
 		if (appdriver.findElement(AppiumBy.xpath(tap_save_button)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(tap_save_button)).click();
-			Thread.sleep(20000);
+			Thread.sleep(25000);
 		} else {
 			Assert.fail("Failed to tap on save button");
 		}
