@@ -137,4 +137,14 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void validate_report_submitted_page_for_conditional_question() throws InterruptedException {
 		schedulespage2.validateReportSubmittedPageForConditionalQuestions();
 	}
+	
+	@And("^verify schedule progress after answering few questions$")
+	public void verify_schedule_progress_after_answering_few_questions() throws InterruptedException {
+		schedulespage2.verifyScheduleProgress();
+	}
+	
+	@And("^verify green yellow and red flags count under preview of questionnaire$")
+	public void verify_green_yellow_red_flags_count_under_preview_of_questionnaire() throws InterruptedException {
+		schedulespage2.verifyFlagsCountOfQuestionnairePreview();
+	}
 }

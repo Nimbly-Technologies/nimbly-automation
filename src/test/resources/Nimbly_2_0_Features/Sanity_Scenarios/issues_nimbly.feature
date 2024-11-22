@@ -11,7 +11,7 @@ Feature: Validate Issue Card Details, Edit Issue Functionality and Create Adhoc 
     And validate edit issue details
 
   @sanity
-  Scenario: Create Adhoc Issue
+  Scenario: Create New Operational Issue
     Given I login to application with AdhocIssueUserEmail,AdhocIssueUserPassword
     And validate multiple login and version update popups
     When add adhoc issue

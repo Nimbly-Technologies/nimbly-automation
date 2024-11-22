@@ -21,6 +21,7 @@ import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 
 public class SchedulesPage2 {
 	private AppiumDriver appdriver;
@@ -184,7 +185,7 @@ public class SchedulesPage2 {
 		}
 
 		// Validate check-in button text
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		String actCheckinButton = appdriver.findElement(AppiumBy.xpath(checkin_button)).getText();
 		if (actCheckinButton.equals(checkinButton)) {
 			Assert.assertEquals(actCheckinButton, checkinButton, "Successfully validated check-in button!");
@@ -229,7 +230,7 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Validate Category Name
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		String actCategoryName = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
 		if (actCategoryName.equals(expCategoryName1)) {
 			Assert.assertEquals(actCategoryName, expCategoryName1, "Successfully validated Category Name!");
@@ -593,13 +594,8 @@ public class SchedulesPage2 {
 
 		// Validate Clear, Previous & Next buttons
 		validateNextPreviousClearButtons();
-
-		// Select score question answer
-		if (appdriver.findElement(AppiumBy.xpath(select_answer)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(select_answer)).click();
-		} else {
-			Assert.fail("Failed to answer score question");
-		}
+		
+		setSeekBarToValue();
 
 		// Validate Add comment box and enter comments
 		validateCommentBoxAndEnterComments();
@@ -2145,5 +2141,156 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Failed capture photo");
 		}
+	}
+	
+	public void verifyScheduleProgress() throws InterruptedException {
+		// locators to validate schedule progress
+		String schedule_card_review_back_button = locators.getProperty("schedule_card_review_back_button");
+		String schedule_card_preview_back_button = locators.getProperty("schedule_card_preview_back_button");
+		String schedule_card_back_button = locators.getProperty("schedule_card_back_button");
+		String schedule_card_schedule_progress = locators.getProperty("schedule_card_schedule_progress");
+		String schedule_card_schedule_status = locators.getProperty("schedule_card_schedule_status");
+
+		// expected values
+		String expScheduleProgress = prop.getProperty("Schedule_Card_Schedule_Progress");
+		String expScheduleStatus = prop.getProperty("Schedule_Card_Schedule_Status");
+
+		// tap on review page back button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_card_review_back_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_card_review_back_button)).click();
+		} else {
+			Assert.fail("Failed to tap on review page back button");
+		}
+
+		// tap on preview page back button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_card_preview_back_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_card_preview_back_button)).click();
+		} else {
+			Assert.fail("Failed to tap on preview page back button");
+		}
+
+		// tap on back button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_card_back_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_card_back_button)).click();
+		} else {
+			Assert.fail("Failed to tap on back button during audit");
+		}
+
+		// validate schedule progress
+		Thread.sleep(2000);
+		String actScheduleProgress = appdriver.findElement(AppiumBy.xpath(schedule_card_schedule_progress)).getText();
+		if (actScheduleProgress.equals(expScheduleProgress)) {
+			Assert.assertEquals(actScheduleProgress, expScheduleProgress, "Successfully validated schdule progress");
+		} else {
+			Assert.fail("Failed to validate schedule progress");
+		}
+
+		// validate schedule progress
+		Thread.sleep(2000);
+		String actScheduleSTatus = appdriver.findElement(AppiumBy.xpath(schedule_card_schedule_status)).getText();
+		if (actScheduleSTatus.equals(expScheduleStatus)) {
+			Assert.assertEquals(actScheduleSTatus, expScheduleStatus, "Successfully validated schdule status");
+		} else {
+			Assert.fail("Failed to validate schedule status");
+		}
+
+	}
+
+	public void verifyFlagsCountOfQuestionnairePreview() throws InterruptedException {
+		// locators to validate flags count of questionnaire preview
+		String schedule_card_review_back_button = locators.getProperty("schedule_card_review_back_button");
+		String questionnaire_preview_green_flag = locators.getProperty("questionnaire_preview_green_flag");
+		String questionnaire_preview_yellow_flag = locators.getProperty("questionnaire_preview_yellow_flag");
+		String questionnaire_preview_red_flag = locators.getProperty("questionnaire_preview_red_flag");
+		String review_report = locators.getProperty("review_report");
+		String preview_button = locators.getProperty("preview_button");
+		String questionnaire_preview_answered_tab = locators.getProperty("questionnaire_preview_answered_tab");
+
+		// expected values
+		String expGreenFlags = prop.getProperty("FlagsCount_Green_Flags_Count");
+		String expYellowFlags = prop.getProperty("FlagsCount_Yellow_Flag_Counts");
+		String expRedFlags = prop.getProperty("FlagsCount_Red_Flag_Counts");
+
+		// tap on review page back button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(schedule_card_review_back_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(schedule_card_review_back_button)).click();
+		} else {
+			Assert.fail("Failed to tap on review page back button");
+		}
+		
+		// tap on preview button
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(preview_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(preview_button)).click();
+		} else {
+			Assert.fail("Failed to tap on preview button");
+		}
+		
+		// tap on answered tab	
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(questionnaire_preview_answered_tab)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(questionnaire_preview_answered_tab)).click();
+		} else {
+			Assert.fail("Failed to tap on preview button");
+		}
+
+		// validate green flags count
+		Thread.sleep(2000);
+		String actGreenFlags = appdriver.findElement(AppiumBy.xpath(questionnaire_preview_green_flag)).getText();
+		if (actGreenFlags.equals(expGreenFlags)) {
+			Assert.assertEquals(actGreenFlags, expGreenFlags, "Successfully validated green flags count");
+		} else {
+			Assert.fail("Failed to validate green flags count");
+		}
+
+		// validate yellow flags count
+		Thread.sleep(2000);
+		String actYellowFlags = appdriver.findElement(AppiumBy.xpath(questionnaire_preview_yellow_flag)).getText();
+		if (actYellowFlags.equals(expYellowFlags)) {
+			Assert.assertEquals(actYellowFlags, expYellowFlags, "Successfully validated yellow flags count");
+		} else {
+			Assert.fail("Failed to validate yellow flags count");
+		}
+
+		// validate red flags count
+		Thread.sleep(2000);
+		String actRedFlags = appdriver.findElement(AppiumBy.xpath(questionnaire_preview_red_flag)).getText();
+		if (actRedFlags.equals(expRedFlags)) {
+			Assert.assertEquals(actRedFlags, expRedFlags, "Successfully validated red flags count");
+		} else {
+			Assert.fail("Failed to validate red flags count");
+		}
+
+		// tap on review button
+		if (appdriver.findElement(AppiumBy.xpath(review_report)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(review_report)).click();
+		} else {
+			Assert.fail("Failed to tap on review button");
+		}
+
+	}
+	
+	public void setSeekBarToValue() {
+		WebElement seekBar = appdriver.findElement(AppiumBy.xpath("//android.widget.SeekBar"));
+
+		// Get the SeekBar's coordinates
+		int startX = seekBar.getLocation().getX(); // Starting point of the SeekBar (x = 0)
+		int seekBarWidth = seekBar.getSize().getWidth(); // Total width of the SeekBar (x = 5)
+
+		// Calculate the target position (3) on the SeekBar
+		int targetPositionX = startX + (int) (seekBarWidth * 0.6); // 60% of the width (since 3 is 60% of 5)
+
+		// Create an Actions object for performing gestures
+		Actions actions = new Actions(appdriver);
+
+		// Perform the swipe: click and hold on the SeekBar, move to the target position
+		// (3), and release
+		actions.clickAndHold(seekBar).moveByOffset(targetPositionX - startX, 0) // Move to position 3 (60% of the
+																				// SeekBar width)
+				.release().perform();
 	}
 }
