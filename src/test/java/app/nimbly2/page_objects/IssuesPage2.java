@@ -428,7 +428,7 @@ public class IssuesPage2 {
 		}
 
 		// close nps pop up
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		if (appdriver.findElement(AppiumBy.xpath(close_nps)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(close_nps)).click();
 		} else {
