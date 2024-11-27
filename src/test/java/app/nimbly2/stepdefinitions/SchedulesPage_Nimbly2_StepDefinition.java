@@ -147,4 +147,24 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void verify_green_yellow_red_flags_count_under_preview_of_questionnaire() throws InterruptedException {
 		schedulespage2.verifyFlagsCountOfQuestionnairePreview();
 	}
+	@And("^validate choosing different camera resolutions$")
+	public void validate_choosing_different_camera_resolutions() throws InterruptedException {
+		schedulespage2.validateCameraResolution();
+	}
+	@And("^validate user able to delete attachments$")
+	public void validate_user_able_to_delete_attachments() throws InterruptedException {
+		schedulespage2.verifyAttachmentsDeletion();
+	}
+	@And("^checkin a schedule$")
+	public void checkin_a_schedule() throws InterruptedException {
+		schedulespage2.checkinSchedule();
+	}
+	@And("^verify user can select any piority and schedule progress$")
+	public void verify_user_can_select_any_priority_and_schedule_progress() throws InterruptedException {
+		schedulespage2.verifyScheduleProgressAndSelectPriority();
+	}
+	@And("^validate image annotation$")
+	public void validate_image_annotation() {
+		schedulespage2.validateImageAnnotation();
+	}
 }

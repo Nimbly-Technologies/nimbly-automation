@@ -13,10 +13,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
@@ -2292,5 +2295,292 @@ public class SchedulesPage2 {
 		actions.clickAndHold(seekBar).moveByOffset(targetPositionX - startX, 0) // Move to position 3 (60% of the
 																				// SeekBar width)
 				.release().perform();
+	}
+
+	public void validateCameraResolution() throws InterruptedException {
+		// Initialize locators
+		String addPhoto = locators.getProperty("add_photo");
+		String capturePhoto = locators.getProperty("capture_photo_when_video");
+		String cameraResolutionDropdown = locators.getProperty("camera_resolution_dropdown");
+		String cameraResolutionChooseSmall = locators.getProperty("camera_resolution_choose_small");
+		String cameraResolutionChooseMedium = locators.getProperty("camera_resolution_choose_medium");
+		String cameraResolutionChooseLarge = locators.getProperty("camera_resolution_choose_large");
+		String cameraResolutionBackButton = locators.getProperty("camera_resolution_back_button");
+		String cameraResolutionRetake = locators.getProperty("camera_resolution_retake");
+
+		// Step 1: Tap on add photo
+		Thread.sleep(3000);
+		waitAndClick(addPhoto, "Failed to tap on add photo");
+
+		// Step 3: Choose Small resolution, capture photo and retake photo
+		chooseResolutionAndCapture(cameraResolutionDropdown, cameraResolutionChooseSmall, capturePhoto,
+				cameraResolutionRetake);
+
+		// Step 4: Choose Medium resolution, capture photo and retake photo
+		chooseResolutionAndCapture(cameraResolutionDropdown, cameraResolutionChooseMedium, capturePhoto,
+				cameraResolutionRetake);
+
+		// Step 5: Choose Large resolution, capture photo and retake photo
+		chooseResolutionAndCapture(cameraResolutionDropdown, cameraResolutionChooseLarge, capturePhoto,
+				cameraResolutionRetake);
+
+		// Step 6: Tap on back button
+		waitAndClick(cameraResolutionBackButton, "Failed to tap on back button");
+	}
+
+	private void waitAndClick(String xpath, String failureMessage) {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath))).click();
+		} catch (TimeoutException e) {
+			Assert.fail(failureMessage);
+		}
+	}
+
+	private void chooseResolutionAndCapture(String cameraResolutionDropdownXpath, String resolutionXpath,
+			String capturePhotoXpath, String retakePhotoXpath) throws InterruptedException {
+		// Re-open the resolution dropdown to change it
+		Thread.sleep(3000);
+		waitAndClick(cameraResolutionDropdownXpath, "Failed to tap on camera resolution drop-down");
+
+		// Choose resolution (small, medium, or large)
+		waitAndClick(resolutionXpath, "Failed to choose camera resolution as");
+
+		// Capture the photo
+		waitAndClick(capturePhotoXpath, "Failed to tap on capture photo");
+
+		// Retake the photo
+		waitAndClick(retakePhotoXpath, "Failed to tap on retake photo");
+	}
+
+	public void verifyAttachmentsDeletion() throws InterruptedException {
+		String tapAddVideo = locators.getProperty("add_video_attachment");
+		String startRecording = locators.getProperty("start_video_recording");
+		String useVideo = locators.getProperty("use_video");
+		String selectAnswer = locators.getProperty("yes_and_no_question_answer");
+
+		// Select the yes and no question answer
+		waitAndClick(selectAnswer, "Failed to click on Yes and No Question");
+
+		// Add photo & document attachments
+		addAttachmentsWhenVideoAttachmentPresent();
+
+		// Add video
+		addVideoAttachment(tapAddVideo, startRecording, useVideo);
+
+		// Delete attachments
+		deleteAttachments();
+
+		// Re-upload all the attachments
+		addAttachmentsWhenVideoAttachmentPresent();
+
+		// Re-add video
+		addVideoAttachment(tapAddVideo, startRecording, useVideo);
+
+		// click on next button
+		tabOnNextButton();
+	}
+
+	private void addVideoAttachment(String tapAddVideo, String startRecording, String useVideo) {
+		if (appdriver.findElement(AppiumBy.xpath(tapAddVideo)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tapAddVideo)).click();
+			waitForElementAndClick(startRecording, 2000); // Wait for the video recording button
+			waitForElementAndClick(startRecording, 6000); // Wait for 6 seconds of recording
+			waitForElementAndClick(useVideo, 2000); // Click to use the recorded video
+		} else {
+			Assert.fail("Failed to record video");
+		}
+	}
+
+	private void waitForElementAndClick(String xpath, long waitTime) {
+		try {
+			Thread.sleep(waitTime); // This is to simulate a wait for the element to be ready
+			appdriver.findElement(AppiumBy.xpath(xpath)).click();
+		} catch (InterruptedException e) {
+			Assert.fail("Error while waiting for element: " + xpath);
+		}
+	}
+
+	public void deleteAttachments() {
+		String deletePhotoAttachment = locators.getProperty("delete_photo_attachment");
+		String deleteVideoAttachment = locators.getProperty("delete_video_attachment");
+		String deleteDocumentAttachment = locators.getProperty("delete_document_attachment");
+		String deleteAttachment = locators.getProperty("delete_attachment");
+
+		// Delete photo attachment
+		deleteAttachment(deletePhotoAttachment, deleteAttachment, "photo");
+
+		// Delete video attachment
+		deleteAttachment(deleteVideoAttachment, deleteAttachment, "video");
+
+		// Delete document attachment
+		deleteAttachment(deleteDocumentAttachment, deleteAttachment, "document");
+	}
+
+	private void deleteAttachment(String deleteAttachmentXpath, String deleteButtonXpath, String attachmentType) {
+		try {
+			if (appdriver.findElement(AppiumBy.xpath(deleteAttachmentXpath)).isDisplayed()) {
+				appdriver.findElement(AppiumBy.xpath(deleteAttachmentXpath)).click();
+				waitForElementAndClick(deleteButtonXpath, 2000);
+			} else {
+				Assert.fail("Failed to delete " + attachmentType + " attachment");
+			}
+		} catch (Exception e) {
+			Assert.fail("Error deleting " + attachmentType + " attachment: " + e.getMessage());
+		}
+	}
+
+	public void checkinSchedule() throws InterruptedException {
+		// locators
+		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		// tab on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(tap_on_schedule_card)).isDisplayed()) {
+			appdriver.findElement(By.xpath(tap_on_schedule_card)).click();
+		} else {
+			Assert.fail("Failed to tab schedule card");
+		}
+
+		// tab on checkin button
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(By.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tab checkin button");
+		}
+	}
+
+	public void verifyScheduleProgressAndSelectPriority() throws InterruptedException {
+		String select_answer = locators.getProperty("green_yellow_red_answer");
+		String choose_low_issue_priority = locators.getProperty("choose_low_issue_priority");
+		String choose_high_issue_priority = locators.getProperty("choose_high_issue_priority");
+		String audit_progress = locators.getProperty("audit_progress");
+
+		// Expected audit progress
+		String expAuditProgress = "67%";
+
+		// Select green, yellow & red question answer
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(select_answer)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(select_answer)).click();
+		} else {
+			Assert.fail("Failed to answer green, yellow & red question");
+		}
+
+		// Validate Add comment box and enter comments
+		validateCommentBoxAndEnterComments();
+
+		// choose low priority
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(choose_low_issue_priority)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(choose_low_issue_priority)).click();
+		} else {
+			Assert.fail("Failed to choose low priority");
+		}
+
+		// choose high priority
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(choose_high_issue_priority)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(choose_high_issue_priority)).click();
+		} else {
+			Assert.fail("Failed to choose high priority");
+		}
+
+		// validate audit progress
+		Thread.sleep(2000);
+		String actAuditProgress = appdriver.findElement(AppiumBy.xpath(audit_progress)).getText();
+		if (actAuditProgress.equals(expAuditProgress)) {
+			Assert.assertEquals(actAuditProgress, expAuditProgress,
+					"Successfully validated audit progress:" + actAuditProgress);
+		} else {
+			Assert.fail("Failed to validate audit progress " + "expected : " + expAuditProgress + "actual: "
+					+ actAuditProgress);
+		}
+
+		// click on next button
+		tabOnNextButton();
+
+	}
+
+	// Generic method to enter text with dynamic wait and check if the element is
+	// visible
+	public void enterTextOnElement(String xpath, String text) {
+		// Wait until the element is visible and clickable
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10)); // Wait for up to 10 seconds
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+
+		// Check if the element is displayed and interactable
+		if (element.isDisplayed()) {
+			// Enter the text into the element
+			element.sendKeys(text);
+		} else {
+			Assert.fail("Failed to enter text");
+		}
+	}
+
+	public void validateImageAnnotation() {
+		// Initialize locators
+		String addPhoto = locators.getProperty("add_photo");
+		String capturePhoto = locators.getProperty("capture_photo");
+		String selectAnswer = locators.getProperty("yes_and_no_question_answer");
+		String tap_text_annotation = locators.getProperty("tap_text_annotation");
+		String input_text_annotation = locators.getProperty("input_text_annotation");
+		String tap_done = locators.getProperty("tap_done");
+		String enter_text = "Hello Nimbly";
+		String use_photo = locators.getProperty("use_photo");
+
+		// Select the yes and no question answer
+		waitAndClick(selectAnswer, "Failed to click on Yes and No Question");
+		// tap on add photo
+		waitAndClick(addPhoto, "Failed to tap on add photo");
+		// tap on capture photo
+		waitAndClick(capturePhoto, "Failed to tap on capture photo");
+		// tap on text annotation
+		waitAndClick(tap_text_annotation, "Failed to tap on text annotation");
+		// enter text on image
+		enterTextOnElement(input_text_annotation, enter_text);
+		// tap on done
+		waitAndClick(tap_done, "Failed to tap on done");
+		// tap on use photo
+		waitAndClick(use_photo, "Failed to tap on use photo");
+		// tap on review button
+		tabOnReviewButton();
+
+	}
+
+	public void addAttachmentsWhenVideoAttachmentPresent() throws InterruptedException {
+		Thread.sleep(3000);
+		String add_photo = locators.getProperty("add_photo");
+		String capture_photo = locators.getProperty("capture_photo_when_video");
+		String use_photo = locators.getProperty("use_photo");
+		String pdf_attachment = locators.getProperty("add_pdf_attachment_when_video");
+		String select_pdf_attachment = locators.getProperty("select_pdf_attachmnet");
+
+		// add document attachment
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(pdf_attachment)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(pdf_attachment)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
+		} else {
+			Assert.fail("Failed to add document attachment");
+		}
+		// add photo attachment
+		// scroll down the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+		if (appdriver.findElement(AppiumBy.xpath(add_photo)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_photo)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(capture_photo)).click();
+			Thread.sleep(5000);
+			appdriver.findElement(AppiumBy.xpath(use_photo)).click();
+		} else {
+			Assert.fail("Failed capture photo");
+		}
+		// // Scroll up the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward();"));
 	}
 }
