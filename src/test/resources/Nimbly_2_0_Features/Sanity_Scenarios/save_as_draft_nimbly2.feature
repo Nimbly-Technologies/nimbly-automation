@@ -5,6 +5,7 @@ Feature: Validate Save as Draft and Add Attachment Through Camera and Gallery
     Given I login to application with SaveUserEmail,SaveUserPassword
     And validate multiple login and version update popups
     When search for the Save_Schedule
-    And start the audit process to validate save as draft
+    And start the audit process to validate save as draft in Online mode
+    And navigates back to schedule page
     Then validate attachments after save as a draft
     And logout from nimbly2

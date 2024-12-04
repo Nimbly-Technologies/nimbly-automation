@@ -92,9 +92,9 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 		schedulespage2.syncDataWithServer();
 	}
 	
-	@And("^start the audit process to validate save as draft$")
-	public void strat_audit_process_to_validate_save_as_draft() throws InterruptedException {
-		schedulespage2.saveAsDraft();
+	@And("^start the audit process to validate save as draft in (.*) mode$")
+	public void strat_audit_process_to_validate_save_as_draft(String mode) throws InterruptedException {
+		schedulespage2.saveAsDraft(mode);
 	}
 	
 	@Then("^validate attachments after save as a draft$")
@@ -166,5 +166,9 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	@And("^validate image annotation$")
 	public void validate_image_annotation() {
 		schedulespage2.validateImageAnnotation();
+	}
+	@And("^navigates back to schedule page$")
+	public void navigates_back_to_schedule_page() throws InterruptedException {
+		schedulespage2.navigateBackToSchedulePage();
 	}
 }
