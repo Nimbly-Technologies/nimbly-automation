@@ -1258,7 +1258,7 @@ public class SchedulesPage2 {
 		}
 
 		// validate modify button
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		String actModifyButton = appdriver.findElement(AppiumBy.xpath(modify_button)).getText();
 		if (expModifyButton.contains(actModifyButton)) {
 			Assert.assertEquals(actModifyButton, expModifyButton,
@@ -1417,7 +1417,7 @@ public class SchedulesPage2 {
 		}
 	}
 
-	public void saveAsDraft() throws InterruptedException {
+	public void saveAsDraft(String mode) throws InterruptedException {
 		// locators
 		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
 		String checkin_button = locators.getProperty("checkin_button");
@@ -1523,18 +1523,20 @@ public class SchedulesPage2 {
 				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
 
 		// validate sync successful
-		Thread.sleep(2000);
-		if (appdriver.findElement(AppiumBy.xpath(tap_save_button)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(tap_save_button)).click();
-			Thread.sleep(25000);
-		} else {
-			Assert.fail("Failed to tap on save button");
-		}
-		String actSavedButton = appdriver.findElement(AppiumBy.xpath(saved_button)).getText();
-		if (expSavedButton.equals(actSavedButton)) {
-			Assert.assertEquals(expSavedButton, actSavedButton, "Successfully validated save button");
-		} else {
-			Assert.fail("Failed to validate Saved button");
+		if (mode.equals("Online")) {
+			Thread.sleep(2000);
+			if (appdriver.findElement(AppiumBy.xpath(tap_save_button)).isDisplayed()) {
+				appdriver.findElement(AppiumBy.xpath(tap_save_button)).click();
+				Thread.sleep(25000);
+			} else {
+				Assert.fail("Failed to tap on save button");
+			}
+			String actSavedButton = appdriver.findElement(AppiumBy.xpath(saved_button)).getText();
+			if (expSavedButton.equals(actSavedButton)) {
+				Assert.assertEquals(expSavedButton, actSavedButton, "Successfully validated save button");
+			} else {
+				Assert.fail("Failed to validate Saved button");
+			}
 		}
 	}
 
@@ -1550,15 +1552,6 @@ public class SchedulesPage2 {
 		String reset_button = locators.getProperty("tap_reset_button");
 		String delete_progress = locators.getProperty("delete_progress");
 		String schedule_type = locators.getProperty("Daily_schedule_type");
-
-		// tap on back button
-
-		if (appdriver.findElement(AppiumBy.xpath(back_button)).isDisplayed()) {
-			Thread.sleep(2000);
-			appdriver.findElement(AppiumBy.xpath(back_button)).click();
-		} else {
-			Assert.fail("Failed to tab on back button");
-		}
 
 		// tab on schedule card
 		Thread.sleep(5000);
@@ -2582,5 +2575,19 @@ public class SchedulesPage2 {
 		// // Scroll up the page
 		appdriver.findElement(
 				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward();"));
+	}
+	
+	public void navigateBackToSchedulePage() throws InterruptedException {
+		// locators
+		String back_button = locators.getProperty("tap_back_button");
+
+		// tap on back button
+
+		if (appdriver.findElement(AppiumBy.xpath(back_button)).isDisplayed()) {
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(back_button)).click();
+		} else {
+			Assert.fail("Failed to tab on back button");
+		}
 	}
 }

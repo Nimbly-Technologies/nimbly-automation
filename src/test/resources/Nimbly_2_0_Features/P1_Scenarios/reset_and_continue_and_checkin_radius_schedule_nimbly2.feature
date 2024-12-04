@@ -5,7 +5,8 @@ Feature: Reset and Continue All Type of Schedules
     Given I login to application with <username>,<password>
     And validate multiple login and version update popups
     When search for the <scheduleType>
-    And start the audit process to validate save as draft
+    And start the audit process to validate save as draft in Online mode
+    And navigates back to schedule page
     Then validate attachments after save as a draft
     And logout from nimbly2
 
