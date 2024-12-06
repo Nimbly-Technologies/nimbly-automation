@@ -171,4 +171,8 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void navigates_back_to_schedule_page() throws InterruptedException {
 		schedulespage2.navigateBackToSchedulePage();
 	}
+	@And("^start auditing and validate maximum green flag threshold and negative scoring$")
+	public void start_auditing_and_validate_maximum_green_flag_threshold_and_negative_scoring() throws InterruptedException {
+		schedulespage2.validateGreenFlagThresholdAndNegativeScoring();
+	}
 }
