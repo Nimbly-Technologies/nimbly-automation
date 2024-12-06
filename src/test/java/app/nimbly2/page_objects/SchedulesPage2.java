@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -2589,5 +2590,86 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Failed to tab on back button");
 		}
+	}
+	
+	public void validateGreenFlagThresholdAndNegativeScoring() throws InterruptedException {
+		// locators
+		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
+		String checkin_button = locators.getProperty("checkin_button");
+		String maximum_value_on_slider = locators.getProperty("green_flag_maximum_value_on_slider");
+		String green_flag_minimum_score = locators.getProperty("green_flag_minimum_score");
+		String green_flag_maximum_score = locators.getProperty("green_flag_maximum_score");
+		String select_negative_answer = locators.getProperty("select_negative_answer_multiple_choice_with_score");
+
+		// expected values
+		String expMaxValueOnSlider = prop.getProperty("Green_Flag_Max_Score_On_Slider");
+		String expMinValue = prop.getProperty("Green_Flag_Min_Score");
+		String expMaxValue = prop.getProperty("Green_Flag_Max_Score");
+
+		// tab on schedule card
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(tap_on_schedule_card)).isDisplayed()) {
+			appdriver.findElement(By.xpath(tap_on_schedule_card)).click();
+		} else {
+			Assert.fail("Failed to tab schedule card");
+		}
+
+		// tab on checkin button
+		Thread.sleep(2000);
+		if (appdriver.findElement(By.xpath(checkin_button)).isDisplayed()) {
+			appdriver.findElement(By.xpath(checkin_button)).click();
+		} else {
+			Assert.fail("Failed to tab checkin button");
+		}
+
+		// validate maximum value for score type question
+		Thread.sleep(5000);
+		String actMaxValueOnSlider = appdriver.findElement(AppiumBy.xpath(maximum_value_on_slider)).getText();
+		if (actMaxValueOnSlider.equals(expMaxValueOnSlider)) {
+			Assert.assertEquals(actMaxValueOnSlider, expMaxValueOnSlider,
+					"Successfully validated maximum value on slider");
+		} else {
+			Assert.fail("Failed to validate maximum value on slider");
+		}
+		// answer the score type question
+		setSeekBarToValue();
+		// Validate Add comment box and enter comments
+		validateCommentBoxAndEnterComments();
+		tabOnNextButton();
+
+		// validate minimum score
+		Thread.sleep(2000);
+		String actMinValue = appdriver.findElement(AppiumBy.xpath(green_flag_minimum_score)).getText();
+		if (actMinValue.equals(expMinValue)) {
+			Assert.assertEquals(actMinValue, expMinValue, "Successfully validated minimum score");
+		} else {
+			Assert.fail("Failed to validate minimum score");
+		}
+
+		// validate minimum score
+		String actMaxValue = appdriver.findElement(AppiumBy.xpath(green_flag_maximum_score)).getText();
+		if (actMaxValue.equals(expMaxValue)) {
+			Assert.assertEquals(actMaxValue, expMaxValue, "Successfully validated maximum score");
+		} else {
+			Assert.fail("Failed to validate maximum score");
+		}
+		// answer the score type question
+		setSeekBarToValue();
+		// Validate Add comment box and enter comments
+		validateCommentBoxAndEnterComments();
+		tabOnNextButton();
+
+		// select negative score for multiple choice with score question
+		if (appdriver.findElement(AppiumBy.xpath(select_negative_answer)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(select_negative_answer)).click();
+			// Validate Add comment box and enter comments
+			validateCommentBoxAndEnterComments();
+		} else {
+			Assert.fail("Failed to select negative score");
+		}
+
+		// tap on review button
+		tabOnReviewButton();
+
 	}
 }
