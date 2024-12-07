@@ -175,4 +175,17 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 	public void start_auditing_and_validate_maximum_green_flag_threshold_and_negative_scoring() throws InterruptedException {
 		schedulespage2.validateGreenFlagThresholdAndNegativeScoring();
 	}
+	@And("^navigates to the questionnaire preview and validates the search and questions by toggling the required question option on and off$")
+	public void navigates_to_the_questionnaire_preview() throws InterruptedException {
+		schedulespage2.validateSearchAndQuestionsAtQuestionnairePreview();
+	}
+	@And("^reset the schedule$")
+	public void reset_the_schedule() throws InterruptedException {
+		schedulespage2.resetSchedule();
+	}
+	@And("^validate category wise flag counts at questionnaire preview$")
+		public void validate_flags_count_under_questionnaire_preview() throws InterruptedException {
+		schedulespage2.validateFlagCountsUnderQuestionnairePreview();
+			
+		}
 }
