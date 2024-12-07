@@ -1763,7 +1763,7 @@ public class SchedulesPage2 {
 		String green_yellow_red_question = locators.getProperty("green_yellow_red_answer");
 
 		// tap on schedule card
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		if (appdriver.findElement(AppiumBy.xpath(schedule_type)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
 		} else {
@@ -2671,5 +2671,183 @@ public class SchedulesPage2 {
 		// tap on review button
 		tabOnReviewButton();
 
+	}
+	
+	public void validateSearchAndQuestionsAtQuestionnairePreview() throws InterruptedException {
+		// Locators
+		String preview_button = locators.getProperty("preview_button");
+		String expand_category_questions = locators.getProperty("expand_category_questions");
+		String preview_question1 = locators.getProperty("preview_question1");
+		String preview_question2 = locators.getProperty("preview_question2");
+		String preview_question3 = locators.getProperty("preview_question3");
+		String preview_question4 = locators.getProperty("preview_question4");
+		String preview_question5 = locators.getProperty("preview_question5");
+		String required_question_toggle = locators.getProperty("required_question_toggle");
+		String search_question_at_questionnaire_preview = locators
+				.getProperty("search_question_at_questionnaire_preview");
+		String schedule_card_preview_back_button = locators.getProperty("schedule_card_preview_back_button");
+		String schedule_card_back_button = locators.getProperty("schedule_card_back_button");
+
+		// Expected values
+
+		String expQuestion1 = prop.getProperty("Question1");
+		String expQuestion2 = prop.getProperty("Question2");
+		String expQuestion3 = prop.getProperty("Question3");
+		String expQuestion4 = prop.getProperty("Question4");
+		String expQuestion5 = prop.getProperty("Question5");
+
+		// tap on preview icon
+		Thread.sleep(4000);
+		waitAndClick(preview_button, "Failed to click on previw icon");
+
+		// tap on expand category questions
+		waitAndClick(expand_category_questions, "Failed to tap on expand button");
+
+		// validated questions when required questions toggle is disabled
+
+		// validate first question at questionnaire preview
+		Thread.sleep(4000);
+		String actQuestion1 = appdriver.findElement(AppiumBy.xpath(preview_question1)).getText();
+		if (actQuestion1.equals(expQuestion1)) {
+			Assert.assertEquals(actQuestion1, expQuestion1, "Successfully validated Question1 text");
+		} else {
+			Assert.fail("Failed to validate Question1 text");
+		}
+
+		// validate second question at questionnaire preview
+		String actQuestion2 = appdriver.findElement(AppiumBy.xpath(preview_question2)).getText();
+		if (actQuestion2.equals(expQuestion2)) {
+			Assert.assertEquals(actQuestion2, expQuestion2, "Successfully validated Question2 text");
+		} else {
+			Assert.fail("Failed to validate Question2 text");
+		}
+
+		// validate third question at questionnaire preview
+		String actQuestion3 = appdriver.findElement(AppiumBy.xpath(preview_question3)).getText();
+		if (actQuestion3.equals(expQuestion3)) {
+			Assert.assertEquals(actQuestion3, expQuestion3, "Successfully validated Question3 text");
+		} else {
+			Assert.fail("Failed to validate Question3 text");
+		}
+
+		// validate fourth question at questionnaire preview
+		String actQuestion4 = appdriver.findElement(AppiumBy.xpath(preview_question4)).getText();
+		if (actQuestion4.equals(expQuestion4)) {
+			Assert.assertEquals(actQuestion4, expQuestion4, "Successfully validated Question4 text");
+		} else {
+			Assert.fail("Failed to validate Question4 text");
+		}
+
+		// validate fifth question at questionnaire preview
+		String actQuestion5 = appdriver.findElement(AppiumBy.xpath(preview_question5)).getText();
+		if (actQuestion5.equals(expQuestion5)) {
+			Assert.assertEquals(actQuestion5, expQuestion5, "Successfully validated Question5 text");
+		} else {
+			Assert.fail("Failed to validate Question5 text");
+		}
+
+		// enable required question toggle
+		waitAndClick(required_question_toggle, "Failed to enable required toggle");
+
+		// tap on expand category questions
+		waitAndClick(expand_category_questions, "Failed to tap on expand button");
+
+		// validate first question at questionnaire preview
+		Thread.sleep(2000);
+		String actQuestion11 = appdriver.findElement(AppiumBy.xpath(preview_question1)).getText();
+		if (actQuestion11.equals(expQuestion1)) {
+			Assert.assertEquals(actQuestion11, expQuestion1, "Successfully validated Question1 text");
+		} else {
+			Assert.fail("Failed to validate Question1 text");
+		}
+
+		// validate second question at questionnaire preview
+		String actQuestion22 = appdriver.findElement(AppiumBy.xpath(preview_question2)).getText();
+		if (actQuestion22.equals(expQuestion2)) {
+			Assert.assertEquals(actQuestion22, expQuestion2, "Successfully validated Question2 text");
+		} else {
+			Assert.fail("Failed to validate Question2 text");
+		}
+
+		// verify search functionality
+		if (appdriver.findElement(AppiumBy.xpath(search_question_at_questionnaire_preview)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(search_question_at_questionnaire_preview)).sendKeys(expQuestion1);
+			;
+		} else {
+			Assert.fail("Failed to search question at questionnaire preview");
+		}
+
+		// tap on preview back button
+		waitAndClick(schedule_card_preview_back_button, "Failed to click on preview back button");
+
+		// tap on schedule back button
+		waitAndClick(schedule_card_back_button, "Failed to click on schedule back button");
+	}
+
+	public void resetSchedule() throws InterruptedException {
+		// locators
+		String reset_button = locators.getProperty("tap_reset_button");
+		String delete_progress = locators.getProperty("delete_progress");
+		String schedule_type = locators.getProperty("Daily_schedule_type");
+
+		// tab on schedule card
+		waitAndClick(schedule_type, "Failed to tab on schedule card");
+
+		// tab on reset button
+		waitAndClick(reset_button, "Failed to tab on reset button");
+
+		// tap on delete progress yes
+		waitAndClick(delete_progress, "Failed to delete schedule progress");
+	}
+
+	public void validateFlagCountsUnderQuestionnairePreview() throws InterruptedException {
+		String schedule_card_review_back_button = locators.getProperty("schedule_card_review_back_button");
+		String answered_tap_questionnaire_preview = locators.getProperty("answered_tap_questionnaire_preview");
+		String green_flags_count = locators.getProperty("green_flags_count");
+		String yellow_flags_count = locators.getProperty("yellow_flags_count");
+		String red_flags_count = locators.getProperty("red_flags_count");
+		String review_report = locators.getProperty("review_report");
+
+		// expected values
+		String expGreenFlagsCount = prop.getProperty("Green_Flags_Count");
+		String expYellowFlagsCount = prop.getProperty("Yellow_Flags_Count");
+		String expRedFlagsCount = prop.getProperty("Red_Flags_Count");
+
+		// tap on back button from review page
+		Thread.sleep(4000);
+		waitAndClick(schedule_card_review_back_button, "Failed to tab on review back button");
+		
+		// tap on answered tab
+		waitAndClick(answered_tap_questionnaire_preview,"Failed to tap on answered tab");
+
+		// validate green flags count
+		Thread.sleep(2000);
+		String actGreenFlagsCount = appdriver.findElement(AppiumBy.xpath(green_flags_count)).getText();
+		if (actGreenFlagsCount.equals(expGreenFlagsCount)) {
+			Assert.assertEquals(actGreenFlagsCount, expGreenFlagsCount, "Successfully validated green flags count");
+		} else {
+			Assert.fail("Failed to validate green flags count");
+		}
+
+		// validate yellow flags count
+		Thread.sleep(2000);
+		String actYellowFlagsCount = appdriver.findElement(AppiumBy.xpath(yellow_flags_count)).getText();
+		if (actYellowFlagsCount.equals(expYellowFlagsCount)) {
+			Assert.assertEquals(actYellowFlagsCount, expYellowFlagsCount, "Successfully validated yellow flags count");
+		} else {
+			Assert.fail("Failed to validate yellow flags count");
+		}
+
+		// validate red flags count
+		Thread.sleep(2000);
+		String actRedFlagsCount = appdriver.findElement(AppiumBy.xpath(red_flags_count)).getText();
+		if (actRedFlagsCount.equals(expRedFlagsCount)) {
+			Assert.assertEquals(actRedFlagsCount, expRedFlagsCount, "Successfully validated red flags count");
+		} else {
+			Assert.fail("Failed to validate red flags count");
+		}
+
+		// tap on review report button
+		waitAndClick(review_report, "Failed to tab on review report button");
 	}
 }
