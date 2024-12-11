@@ -783,5 +783,261 @@ public class IssuesPage2 {
 			return false;
 		}
 	}
+	
+	public void navigateToIssues() throws InterruptedException {
+		String issues_tab = locators.getProperty("issues_tab");
 
+		// tap on issues tab
+		Thread.sleep(4000);
+		if (appdriver.findElement(AppiumBy.xpath(issues_tab)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(issues_tab)).click();
+		} else {
+			Assert.fail("Failed to click on issues tab");
+		}
+
+	}
+
+	public void validateIssueSortFunctionality() throws InterruptedException {
+		String issue_tap_filter = locators.getProperty("issue_tap_filter");
+		String issues_sort_due_date = locators.getProperty("issues_sort_due_date");
+		String issues_sort_created_date = locators.getProperty("issues_sort_created_date");
+		String issues_sort_priority = locators.getProperty("issues_sort_priority");
+		String issues_sort_flag = locators.getProperty("issues_sort_flag");
+
+		// Create WebDriverWait
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(20));
+
+		// Test sorting and filter for various fields
+		validateSortingAndFiltering(issue_tap_filter, issues_sort_due_date, wait);
+		validateSortingAndFiltering(issue_tap_filter, issues_sort_created_date, wait);
+		validateSortingAndFiltering(issue_tap_filter, issues_sort_priority, wait);
+		validateSortingAndFiltering(issue_tap_filter, issues_sort_flag, wait);
+	}
+
+	// Helper method to wait for an element to be clickable and return the element
+	private WebElement waitForElementToBeClickable(String locator, WebDriverWait wait) {
+		return wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(locator)));
+	}
+
+	// Helper method to perform sorting, apply filters, and validate results
+	private void validateSortingAndFiltering(String filterLocator, String sortLocator, WebDriverWait wait)
+			throws InterruptedException {
+		// Tap on filter
+		waitForElementToBeClickable(filterLocator, wait).click();
+
+		// scroll down the page
+		Thread.sleep(4000);
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+
+		// Select sort option
+		waitForElementToBeClickable(sortLocator, wait).click();
+
+		// Apply filter
+		applyFilters();
+
+		// Wait for results to be visible and validate
+		WebElement filterResults = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(AppiumBy.xpath(locators.getProperty("issue_filter_results"))));
+		String results = filterResults.getText();
+		Thread.sleep(6000);
+
+		if (results.equals("Scheduled") || results.equals("Report Adhoc") || results.equals("Manually Added")
+				|| results.equals("Generic")) {
+		} else {
+			Assert.fail("No results found");
+		}
+	}
+
+	public void applyFilters() throws InterruptedException {
+		Thread.sleep(4000);
+		appdriver.findElement(AppiumBy.xpath(locators.getProperty("issue_filter_apply_button"))).click();
+	}
+	
+	// Method to validate ascending order
+	public void validateAscendingOrder(String firstText, String secondText) {
+	    // Check if first element is less than or equal to second element
+	    if (firstText.compareToIgnoreCase(secondText) > 0) {
+	        // Fail if first element is greater than second
+	        Assert.fail("Ascending order validation failed: '" + firstText + "' is greater than '" + secondText + "'");
+	    }
+	}
+
+	// Method to validate descending order
+	public void validateDescendingOrder(String firstText, String secondText) {
+	    // Check if first element is greater than or equal to second element
+	    if (firstText.compareToIgnoreCase(secondText) < 0) {
+	        // Fail if first element is less than second
+	        Assert.fail("Descending order validation failed: '" + firstText + "' is less than '" + secondText + "'");
+	    }
+	}
+
+	public void verifyAscendingAndDescendingSorting() throws InterruptedException {
+		String issues_sort_ascending = locators.getProperty("issues_sort_ascending");
+		String issues_sort_descending = locators.getProperty("issues_sort_descending");
+		String issues_order_by_ascending_first_element = locators.getProperty("issues_order_by_ascending_first_element");
+		String issues_order_by_ascending_second_element = locators.getProperty("issues_order_by_ascending_second_element");
+		String issues_order_by_decending_first_element = locators.getProperty("issues_order_by_decending_first_element");
+		String issues_order_by_decending_second_element = locators.getProperty("issues_order_by_decending_second_element");
+		String issue_tap_filter = locators.getProperty("issue_tap_filter");
+		String issues_sort_due_date = locators.getProperty("issues_sort_due_date");
+
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10)); // Set a 10-second wait
+
+		// Tap on the filter tab to open sorting options
+		WebElement filterTab = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issue_tap_filter)));
+		filterTab.click();
+
+		// Scroll down to ensure list elements are visible
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.presenceOfElementLocated(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();")));
+
+		// tap on due date
+		WebElement dueDate = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issues_sort_due_date)));
+		dueDate.click();
+
+		// Order by ascending
+		WebElement ascendingSortButton = wait
+				.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issues_sort_ascending)));
+		ascendingSortButton.click();
+
+		// apply filter
+		applyFilters();
+
+		// Wait for the first and second elements to be visible after sorting
+		Thread.sleep(4000);
+		WebElement firstElementAscending = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(issues_order_by_ascending_first_element)));
+		WebElement secondElementAscending = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(issues_order_by_ascending_second_element)));
+
+		// Get the text of the first and second elements
+		Thread.sleep(2000);
+		String firstTextAscending = firstElementAscending.getText();
+		String secondTextAscending = secondElementAscending.getText();
+
+		// Validate ascending order using the method
+		validateAscendingOrder(firstTextAscending, secondTextAscending);
+
+		// Tap on the filter tab again to access sorting options for descending order
+		filterTab = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issue_tap_filter)));
+		filterTab.click();
+
+		// Scroll down to ensure list elements are visible again
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.presenceOfElementLocated(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();")));
+		
+		// tap on due date
+		WebElement dueDate2 = wait
+				.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issues_sort_due_date)));
+		dueDate2.click();
+
+		// Order by descending
+		WebElement descendingSortButton = wait
+				.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(issues_sort_descending)));
+		descendingSortButton.click();
+
+		// apply filter
+		applyFilters();
+
+		// Wait for the first and second elements to be visible after sorting
+		Thread.sleep(4000);
+		WebElement firstElementDescending = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(issues_order_by_decending_first_element)));
+		WebElement secondElementDescending = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(issues_order_by_decending_second_element)));
+
+		// Get the text of the first and second elements
+		Thread.sleep(2000);
+		String firstTextDescending = firstElementDescending.getText();
+		String secondTextDescending = secondElementDescending.getText();
+
+		// Validate descending order using the method
+		validateDescendingOrder(firstTextDescending, secondTextDescending);
+	}
+	
+	public void VerifyAllOverdueMyIssuesAlongWithSavedFilters() throws InterruptedException {
+		String issues_all_tab = locators.getProperty("issues_all_tab");
+		String issues_overdue_tab = locators.getProperty("issues_overdue_tab");
+		String issues_my_issues = locators.getProperty("issues_my_issues");
+		String issues_my_approvel_queue = locators.getProperty("issues_my_approvel_queue");
+		String issues_my_saved_filters = locators.getProperty("issues_my_saved_filters");
+		String issues_saved_filter_name1 = locators.getProperty("issues_saved_filter_name1");
+		String issues_saved_filter_name2 = locators.getProperty("issues_saved_filter_name2");
+
+		// expected values
+		String expFilter1 = prop.getProperty("Saved_Filter_One");
+		String expFilter2 = prop.getProperty("Saved_Filter_Two");
+		String Issues_All_Tab = prop.getProperty("Issues_All_Tab");
+		String Issues_Overdue_Tab = prop.getProperty("Issues_Overdue_Tab");
+		String Issues_My_Issues = prop.getProperty("Issues_My_Issues");
+		String Issues_My_Approval_Queue = prop.getProperty("Issues_My_Approval_Queue");
+		String Issues_My_Saved_Filters = prop.getProperty("Issues_My_Saved_Filters");
+
+		// validate all tab
+		validateActualAndExpectedValues(issues_all_tab, Issues_All_Tab);
+
+		// validate overdue tab
+		validateActualAndExpectedValues(issues_overdue_tab, Issues_Overdue_Tab);
+
+		// validate my issues
+		validateActualAndExpectedValues(issues_my_issues, Issues_My_Issues);
+
+		// scroll the filter headers
+		try {
+			// Locate the second instance of HorizontalScrollView using the specified XPath
+			WebElement headerScrollView = appdriver
+					.findElement(AppiumBy.xpath("(//android.widget.HorizontalScrollView)[2]"));
+
+			// Check if the header scroll view is displayed and apply horizontal scroll
+			// action
+			if (headerScrollView.isDisplayed()) {
+				appdriver.findElement(AppiumBy.androidUIAutomator(
+						"new UiScrollable(new UiSelector().className(\"android.widget.HorizontalScrollView\").instance(1))"
+								+ ".setAsHorizontalList().scrollForward()"));
+			} else {
+				System.out.println("Specified header scroll view is not visible.");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Horizontal header not found: " + e.getMessage());
+		}
+
+		// validate my approval queue
+		validateActualAndExpectedValues(issues_my_approvel_queue, Issues_My_Approval_Queue);
+
+		// validate my saved filters
+		validateActualAndExpectedValues(issues_my_saved_filters, Issues_My_Saved_Filters);
+
+		// validate default filters
+		Thread.sleep(4000);
+		if (appdriver.findElement(AppiumBy.xpath(issues_my_saved_filters)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(issues_my_saved_filters)).click();
+		} else {
+			Assert.fail("Failed to click on issues tab");
+		}
+		validateActualAndExpectedValues(issues_saved_filter_name1, expFilter1);
+		validateActualAndExpectedValues(issues_saved_filter_name2, expFilter2);
+	}
+
+	public boolean validateActualAndExpectedValues(String xpath, String expectedValue) {
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+		// Wait for the element to be visible and present
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(xpath)));
+
+		// Fetch the actual value from the element
+		String actualValue = element.getText();
+
+		// Compare expected value with actual value
+		if (expectedValue.equals(actualValue)) {
+			Assert.assertEquals(actualValue, expectedValue,
+					"Successfully validated" + "Actual: " + actualValue + "Expected: " + "Values");
+			return true;
+		} else {
+			Assert.fail("Validation failed: Expected value '" + expectedValue + "' does not match actual value '"
+					+ actualValue + "'.");
+			return false;
+		}
+	}
 }
