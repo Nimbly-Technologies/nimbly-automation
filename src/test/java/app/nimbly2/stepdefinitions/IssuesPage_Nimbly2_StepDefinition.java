@@ -52,5 +52,23 @@ public class IssuesPage_Nimbly2_StepDefinition {
 	public void verify_default_filter() {
 		issuespage2.verifyDefaultFilter();
 	}
+	@When("^navigates to issues$")
+	public void navigates_to_issues() throws InterruptedException {
+		issuespage2.navigateToIssues();
+	}
+	@And("^validate issue sort functionality$")
+	public void validate_issue_sort_functionality() throws InterruptedException {
+		issuespage2.validateIssueSortFunctionality();
+	}
+	@Then("^verify sorting in ascending and descending order$")
+	public void verify_sorting_in_ascending_and_descending_order() throws InterruptedException {
+		issuespage2.verifyAscendingAndDescendingSorting();
+	}
+	@And("^verify all, overdue, and my issues, along with the saved filters$")
+	public void verify_all_overdue_and_my_issues() throws InterruptedException {
+		issuespage2.VerifyAllOverdueMyIssuesAlongWithSavedFilters();
+	}
+		
+	
 
 }
