@@ -507,7 +507,7 @@ public class IssuesPage2 {
 		String schedule_type = locators.getProperty("issue_card_schedule_type");
 
 		// Tap on issue card
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
 		// Map to store the locators for various elements
 		Map<String, String> locatorsMap = new HashMap<>();
@@ -541,7 +541,7 @@ public class IssuesPage2 {
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_tap_comment"));
 
 		// We specifically handle this locator here to add the comment to the system
-		enterComment(locatorsMap.get("issue_activity_add_comment"), "Successfully Added Comments");
+		enterComment(locatorsMap.get("issue_activity_add_comment"), "Successfully Added Issue Comments");
 
 		// Tap on the photo icon to add a photo attachment
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_tap_photo"));
@@ -577,6 +577,7 @@ public class IssuesPage2 {
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
 
 		// Tap on the submit button to finalize the comment with attachments
+		Thread.sleep(3000);
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_submit_button"));
 	}
 
@@ -585,7 +586,7 @@ public class IssuesPage2 {
 	private void clickElementIfDisplayed(String locator) {
 		try {
 			// Wait for the element to be visible and clickable
-			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(25));
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(40));
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 
 			// Additional check for element interactability
@@ -958,7 +959,7 @@ public class IssuesPage2 {
 		validateDescendingOrder(firstTextDescending, secondTextDescending);
 	}
 	
-	public void VerifyAllOverdueMyIssuesAlongWithSavedFilters() throws InterruptedException {
+	public void verifyAllOverdueMyIssuesAlongWithSavedFilters() throws InterruptedException {
 		String issues_all_tab = locators.getProperty("issues_all_tab");
 		String issues_overdue_tab = locators.getProperty("issues_overdue_tab");
 		String issues_my_issues = locators.getProperty("issues_my_issues");
@@ -1038,6 +1039,285 @@ public class IssuesPage2 {
 			Assert.fail("Validation failed: Expected value '" + expectedValue + "' does not match actual value '"
 					+ actualValue + "'.");
 			return false;
+		}
+	}
+	
+	public void addNewIssueMemberInIssueDetails() throws InterruptedException {
+		String issue_card_schedule_type = locators.getProperty("issue_card_schedule_type");
+		String tap_add_issue_member = locators.getProperty("tap_add_issue_member");
+		String search_issue_member = locators.getProperty("search_issue_member");
+		String add_issue_member = locators.getProperty("add_issue_member");
+		String add_issue_member_save_button = locators.getProperty("add_issue_member_save_button");
+		String issue_activity_back_button = locators.getProperty("issue_activity_back_button");
+
+		// Expected Value
+		String AddIssueMember_User_Name = prop.getProperty("AddIssueMember_User_Name");
+
+		// tap on issue card
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(issue_card_schedule_type)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(issue_card_schedule_type)).click();
+		} else {
+			Assert.fail("Failed to tap on issue card");
+		}
+
+		// scroll down the page
+		Thread.sleep(4000);
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+
+		// tap on add issue member
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(tap_add_issue_member)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tap_add_issue_member)).click();
+		} else {
+			Assert.fail("Failed to tap on add issue member");
+		}
+
+		// search issue member
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(search_issue_member)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(search_issue_member)).sendKeys(AddIssueMember_User_Name);
+		} else {
+			Assert.fail("Failed to search issue member");
+		}
+
+		// tap on select add member
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_issue_member)).click();
+		} else {
+			Assert.fail("Failed to select add member");
+		}
+
+		// tap on save button
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_save_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_issue_member_save_button)).click();
+		} else {
+			Assert.fail("Failed to tap save button");
+		}
+
+		// tap on back button
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(issue_activity_back_button)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(issue_activity_back_button)).click();
+		} else {
+			Assert.fail("Failed to tap on back button");
+		}
+	}
+
+	public void validateIssueHistoryAndComments() throws InterruptedException {
+		String add_issue_member_tap_all_tab = locators.getProperty("add_issue_member_tap_all_tab");
+		String add_issue_member_issue_history = locators.getProperty("add_issue_member_issue_history");
+		String add_issue_member_issue_comments = locators.getProperty("add_issue_member_issue_comments");
+		String add_issue_member_photo_attachment = locators.getProperty("add_issue_member_photo_attachment");
+		String add_issue_member_video_attachment = locators.getProperty("add_issue_member_video_attachment");
+		String add_issue_member_doc_attachment = locators.getProperty("add_issue_member_doc_attachment");
+		String add_issue_member_download_photo_attachment = locators
+				.getProperty("add_issue_member_download_photo_attachment");
+		// expected values
+		String expIssueHistory = prop.getProperty("AddIssueMember_Issue_History");
+		String expIssueComments = prop.getProperty("AddIssueMember_Issue_Comments");
+
+		// calling method to add comments along with attachments
+		validateAddCommentsAlongWithAttachments();
+
+		// tap on All tab
+		Thread.sleep(6000);
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_tap_all_tab)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_issue_member_tap_all_tab)).click();
+		} else {
+			Assert.fail("Failed to tap on All tab");
+		}
+
+		// validate issue history
+		validateActualAndExpectedValues(add_issue_member_issue_history, expIssueHistory);
+		// validate issue comments
+		validateActualAndExpectedValues(add_issue_member_issue_comments, expIssueComments);
+
+		// validate photo attachment
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_photo_attachment)).isDisplayed()) {
+		} else {
+			Assert.fail("Failed to validate photo attachment");
+		}
+
+		// validate video attachment
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_video_attachment)).isDisplayed()) {
+		} else {
+			Assert.fail("Failed to validate video attachment");
+		}
+
+		// validate document attachment
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_doc_attachment)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_issue_member_doc_attachment)).click();
+		} else {
+			Assert.fail("Failed to validate document attachment");
+		}
+
+		// download document attachment
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_download_photo_attachment)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(add_issue_member_download_photo_attachment)).click();
+		} else {
+			Assert.fail("Failed to download document attachment");
+		}
+	}
+	
+	public void VerifyUserCanUploadTenAttachments() throws InterruptedException {
+		String resolve_issue = locators.getProperty("resolve_issue");
+		String resolve_issue_confirmation_popup = locators.getProperty("resolve_issue_confirmation_popup");
+		String schedule_type = locators.getProperty("issue_card_schedule_type");
+		// Map to store the locators for various elements
+		Map<String, String> locatorsMap = new HashMap<>();
+		locatorsMap.put("issue_activity_tab", locators.getProperty("issue_activity_tab"));
+		locatorsMap.put("issue_activity_comments_tab", locators.getProperty("issue_activity_comments_tab"));
+		locatorsMap.put("issue_activity_tap_comment", locators.getProperty("issue_activity_tap_comment"));
+		locatorsMap.put("issue_activity_add_comment", locators.getProperty("issue_activity_add_comment"));
+		locatorsMap.put("issue_activity_tap_photo", locators.getProperty("issue_activity_tap_photo"));
+		locatorsMap.put("issue_activity_add_video", locators.getProperty("issue_activity_add_video"));
+		locatorsMap.put("issue_activity_add_document", locators.getProperty("issue_activity_add_document"));
+		locatorsMap.put("issue_activity_upload_photo_from_gallery",
+				locators.getProperty("issue_activity_upload_photo_from_gallery"));
+		locatorsMap.put("issue_activity_select_photo", locators.getProperty("issue_activity_select_photo"));
+		locatorsMap.put("issue_activity_add_photo", locators.getProperty("issue_activity_add_photo"));
+		locatorsMap.put("issue_activity_start_recording", locators.getProperty("issue_activity_start_recording"));
+		locatorsMap.put("issue_activity_stop_recording", locators.getProperty("issue_activity_stop_recording"));
+		locatorsMap.put("issue_activity_use_video", locators.getProperty("issue_activity_use_video"));
+		locatorsMap.put("issue_activity_select_document", locators.getProperty("issue_activity_select_document"));
+		locatorsMap.put("add_ten_attachments_tap_camera_second", locators.getProperty("add_ten_attachments_tap_camera_second"));
+		locatorsMap.put("add_ten_attachments_tap_camera_third", locators.getProperty("add_ten_attachments_tap_camera_third"));
+		locatorsMap.put("add_ten_attachments_tap_document_second", locators.getProperty("add_ten_attachments_tap_document_second"));
+		locatorsMap.put("add_ten_attachments_select_second_photo", locators.getProperty("add_ten_attachments_select_second_photo"));
+		locatorsMap.put("issue_activity_submit_button", locators.getProperty("issue_activity_submit_button"));
+		
+		
+		// Tap on issue card
+		Thread.sleep(3000);
+		appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+
+		// Tap on the activity tab to start the process
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_tab"));
+
+		// Tap on the comments tab to navigate to the comment section
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_comments_tab"));
+
+		// Tap on the comment box to enter a new comment
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_tap_comment"));
+
+		// We specifically handle this locator here to add the comment to the system
+		enterComment(locatorsMap.get("issue_activity_add_comment"), "Successfully Added Issue Comments");
+
+		// Tap on the photo icon to add a photo attachment
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_tap_photo"));
+
+		// Upload photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_upload_photo_from_gallery"));
+
+		// Select the photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_photo"));
+
+		// Confirm photo selection by clicking "Add Photo"
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_photo"));
+
+		// Tap on the video icon to prepare for adding a video attachment
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_video"));
+
+		// Start video recording
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_start_recording"));
+
+		// Adding sleep to record video
+		Thread.sleep(4000);
+
+		// Stop video recording after some time
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_stop_recording"));
+
+		// Use the recorded video
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_use_video"));
+
+		// Tap on the document icon to add a document attachment
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_document"));
+
+		// Select the document to attach
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
+		
+		// Add two more photos again
+		
+		// Tap on the photo icon to add a photo attachment
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_tap_camera_second"));
+
+		// Upload photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_upload_photo_from_gallery"));
+
+		// Select the photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_photo"));
+
+		// Select the second photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_select_second_photo"));
+
+		// Confirm photo selection by clicking "Add Photo"
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_photo"));
+		
+		// Add Two more photos again
+		
+		// Tap on the photo icon to add a photo attachment
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_tap_camera_third"));
+
+		// Upload photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_upload_photo_from_gallery"));
+
+		// Select the photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_photo"));
+
+		// Select the second photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_select_second_photo"));
+
+		// Confirm photo selection by clicking "Add Photo"
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_photo"));
+		
+		// add second doc attachment
+		// Tap on the document icon to add a document attachment
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_tap_document_second"));
+
+		// Select the document to attach
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
+
+		// two more photos again
+
+		// Tap on the photo icon to add a photo attachment
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_tap_camera_third"));
+
+		// Upload photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_upload_photo_from_gallery"));
+
+		// Select the photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_photo"));
+
+		// Select the second photo from the gallery
+		clickElementIfDisplayed(locatorsMap.get("add_ten_attachments_select_second_photo"));
+
+		// Confirm photo selection by clicking "Add Photo"
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_photo"));
+
+		// Tap on the submit button to finalize the comment with attachments
+		Thread.sleep(10000);
+		clickElementIfDisplayed(locatorsMap.get("issue_activity_submit_button"));
+
+		// resolve issue
+		Thread.sleep(6000);
+		if (appdriver.findElement(AppiumBy.xpath(resolve_issue)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(resolve_issue)).click();
+		} else {
+			Assert.fail("Failed to resolve issue");
+		}
+
+		// close resolve issue confirmation pop up
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(resolve_issue_confirmation_popup)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(resolve_issue_confirmation_popup)).click();
+		} else {
+			Assert.fail("Failed to resolve issue");
 		}
 	}
 }
