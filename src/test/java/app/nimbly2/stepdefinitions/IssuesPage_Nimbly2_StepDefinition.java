@@ -66,9 +66,20 @@ public class IssuesPage_Nimbly2_StepDefinition {
 	}
 	@And("^verify all, overdue, and my issues, along with the saved filters$")
 	public void verify_all_overdue_and_my_issues() throws InterruptedException {
-		issuespage2.VerifyAllOverdueMyIssuesAlongWithSavedFilters();
+		issuespage2.verifyAllOverdueMyIssuesAlongWithSavedFilters();
 	}
-		
+	@And("^validate user able to add new issue member in issue details$")
+	public void validate_user_able_to_add_new_issue_member_in_issue_details() throws InterruptedException {
+		issuespage2.addNewIssueMemberInIssueDetails();
+	}
+	@And("^validate issue history and comments under All tab$")
+	public void validate_issue_history_and_comments_under_all_tab() throws InterruptedException {
+		issuespage2.validateIssueHistoryAndComments();
+	}
+	@And("^validate user can upload ten attachments$")
+	public void validate_user_can_upload_ten_attachments() throws InterruptedException {
+		issuespage2.VerifyUserCanUploadTenAttachments();
+	}
 	
 
 }
