@@ -813,6 +813,7 @@ public class SchedulesPage2 {
 		}
 		// add photo attachment
 		// scroll down the page
+		Thread.sleep(2000);
 		appdriver.findElement(
 				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
 		if (appdriver.findElement(AppiumBy.xpath(add_photo)).isDisplayed()) {
@@ -825,6 +826,7 @@ public class SchedulesPage2 {
 			Assert.fail("Failed capture photo");
 		}
 		// // Scroll up the page
+		Thread.sleep(2000);
 		appdriver.findElement(
 				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward();"));
 	}
