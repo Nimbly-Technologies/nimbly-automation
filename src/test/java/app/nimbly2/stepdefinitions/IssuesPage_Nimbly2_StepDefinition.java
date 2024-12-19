@@ -80,6 +80,18 @@ public class IssuesPage_Nimbly2_StepDefinition {
 	public void validate_user_can_upload_ten_attachments() throws InterruptedException {
 		issuespage2.VerifyUserCanUploadTenAttachments();
 	}
+	@And("^navigates back to issues tab$")
+	public void navigates_back_to_issues_tab() throws InterruptedException {
+		issuespage2.navigateToIssuesTab();
+	}
+	@And("^select issues and perform bulk update$")
+	public void select_issues_and_perform_bulk_update() throws InterruptedException {
+		issuespage2.bulkUpdateIssues();
+	}
+	@And("^validate changes after bulk updates$")
+	public void validate_changes_after_bulk_updates() throws InterruptedException {
+		issuespage2.validateChangesAfterBulkUpdates();	
+	}
 	
 
 }

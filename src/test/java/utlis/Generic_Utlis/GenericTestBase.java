@@ -76,13 +76,13 @@ public class GenericTestBase {
 			ltOptions.put("build", "Appium Android UI Automator");
 			ltOptions.put("devicelog", true);
 			ltOptions.put("visual", true);
-			ltOptions.put("network", true);
-			ltOptions.put("mitmProxy", true);
-			ltOptions.put("appProfiling", true);
+			ltOptions.put("network", false);
+			ltOptions.put("mitmProxy", false);
+			ltOptions.put("appProfiling", false);
 			ltOptions.put("video", true);
-			ltOptions.put("build", "Nimbly 2.0 - 135");
+			ltOptions.put("build", "Nimbly 2.0 - 138");
 			ltOptions.put("name", "POC Tests");
-			ltOptions.put("app", "lt://APP10160231121733145916121763");
+			ltOptions.put("app", "lt://APP10160341241734544381283863");
 			ltOptions.put("isRealMobile", true);
 			ltOptions.put("autoGrantPermissions", true);
 			ltOptions.put("autoAcceptAlerts", true);

@@ -1320,4 +1320,203 @@ public class IssuesPage2 {
 			Assert.fail("Failed to resolve issue");
 		}
 	}
+	
+	public void navigateToIssuesTab() throws InterruptedException {
+		// Locators
+		String tab_on_hamburger = locators.getProperty("tap_hamburger");
+		String tab_issues_from_options = locators.getProperty("select_issues");
+
+		// tab on hamburger
+		Thread.sleep(12000);
+		if (appdriver.findElement(AppiumBy.xpath(tab_on_hamburger)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tab_on_hamburger)).click();
+		} else {
+			Assert.fail("Failed to tab on hamburger");
+		}
+
+		// click on issues from from hamburger
+		Thread.sleep(3000);
+		if (appdriver.findElement(AppiumBy.xpath(tab_issues_from_options)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tab_issues_from_options)).click();
+		} else {
+			Assert.fail("Failed to selec Issues from hamburger");
+		}
+	}
+	
+	public void bulkUpdateIssues() throws InterruptedException {
+		String bulk_update_issues_tap_three_dots = locators.getProperty("bulk_update_issues_tap_three_dots");
+		String bulk_update_issues_select_issues = locators.getProperty("bulk_update_issues_select_issues");
+		String bulk_update_issues_select_all = locators.getProperty("bulk_update_issues_select_all");
+		String bulk_update_issues_edit_issues = locators.getProperty("bulk_update_issues_edit_issues");
+		String bulk_update_issue_status = locators.getProperty("bulk_update_issue_status");
+		String bulk_update_select_issue_status = locators.getProperty("bulk_update_select_issue_status");
+		String bulk_update_issue_flag = locators.getProperty("bulk_update_issue_flag");
+		String bulk_update_select_flag = locators.getProperty("bulk_update_select_flag");
+		String tap_due_date = locators.getProperty("adhoc_tap_due_date");
+		String save_button = locators.getProperty("adhoc_save_date");
+		String tap_assign_department = locators.getProperty("adhoc_tap_assign_department");
+		String serach_assign_department = locators.getProperty("adhoc_serach_department");
+		String select_assign_department = locators.getProperty("adhoc_select_department_name");
+		String assigned_user_dropdown = locators.getProperty("adhoc_tap_asigned_user_dropdown");
+		String search_user = locators.getProperty("adhoc_search_user");
+		String select_user = locators.getProperty("adhoc_select_user");
+		String bulk_update_issues = locators.getProperty("bulk_update_issues");
+		String choose_priority = locators.getProperty("adhoc_choose_priority");
+		String bulk_update_issues_toast_message = locators.getProperty("bulk_update_issues_toast_message");
+
+		// expected values
+		String assignedDepartment = prop.getProperty("Adhoc_Issue_Assigned_Department");
+		String userName = prop.getProperty("Adhoc_Issue_User");
+		String expToastMessage = prop.getProperty("BulkUpdateIssues_Toast_Message");
+
+		// tab on three dots
+		Thread.sleep(2000);
+		waitAndClick(bulk_update_issues_tap_three_dots, "Failed to tap on three dots");
+		// tap on select issues
+		waitAndClick(bulk_update_issues_select_issues, "Failed to tap on select issues");
+		// tap on select all button
+		waitAndClick(bulk_update_issues_select_all, "Failed to tap on select all issues");
+		// tap on edit issues
+		waitAndClick(bulk_update_issues_edit_issues, "Failed to tap on edit issues");
+		// tap on issues status drop down
+		waitAndClick(bulk_update_issue_status, "Failed to tap on issue status drop down");
+		// select issue status
+		waitAndClick(bulk_update_select_issue_status, "Failed to select issue status");
+		// tap on issue flag drop down
+		waitAndClick(bulk_update_issue_flag, "Failed to tap on issue severity dropdown");
+		// select issue severity
+		waitAndClick(bulk_update_select_flag, "Failed to select issue severity");
+
+		// select due date
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(tap_due_date)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tap_due_date)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='" + getTodayDate() + "']")).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(save_button)).click();
+		} else {
+			Assert.fail("Failed to select date");
+		}
+		// select assigned department
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(tap_assign_department)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(tap_assign_department)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(serach_assign_department)).sendKeys(assignedDepartment);
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_assign_department)).click();
+		} else {
+			Assert.fail("Failed to select assigned department");
+		}
+
+		// select assignee
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(assigned_user_dropdown)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(assigned_user_dropdown)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(search_user)).sendKeys(userName);
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(select_user)).click();
+		} else {
+			Assert.fail("Failed to select assignee");
+		}
+
+		// choose priority
+		Thread.sleep(2000);
+		if (appdriver.findElement(AppiumBy.xpath(choose_priority)).isDisplayed()) {
+			appdriver.findElement(AppiumBy.xpath(choose_priority)).click();
+		} else {
+			Assert.fail("Failed to choose priority");
+		}
+
+		// tap on update issues button
+		waitAndClick(bulk_update_issues, "Failed to update issues");
+
+		// validate success toast message
+		Thread.sleep(5000);
+		String actToastMessage = appdriver.findElement(AppiumBy.xpath(bulk_update_issues_toast_message)).getText();
+		if (expToastMessage.equals(actToastMessage)) {
+			Assert.assertEquals(actToastMessage, expToastMessage, "Successfully validated toast message");
+		} else {
+			Assert.fail("Failed to validate toast message");
+		}
+
+	}
+
+	private void waitAndClick(String xpath, String failureMessage) {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath))).click();
+		} catch (TimeoutException e) {
+			Assert.fail(failureMessage);
+		}
+	}
+
+	public void validateChangesAfterBulkUpdates() throws InterruptedException {
+		String schedule_type = locators.getProperty("issue_card_schedule_type");
+		String bulk_update_select_issue_status = locators.getProperty("bulk_update_select_issue_status");
+		String bulk_update_select_flag = locators.getProperty("bulk_update_select_flag");
+		String select_assign_department = locators.getProperty("adhoc_select_department_name");
+		String select_user = locators.getProperty("adhoc_select_user");
+		String choose_priority = locators.getProperty("adhoc_choose_priority");
+
+		// expected values
+		String expAssignedDepartment = prop.getProperty("Adhoc_Issue_Assigned_Department");
+		String expAssignee = prop.getProperty("Adhoc_Issue_User");
+		String expIssueStatus = prop.getProperty("BulkUpdateIssues_Status");
+		String expIssuesSeverity = prop.getProperty("BulkUpdateIssues_Severity");
+		String expIssuesPriority = prop.getProperty("BulkUpdateIssues_Priority");
+
+		// tap on issue card
+		Thread.sleep(2000);
+		waitAndClick(schedule_type, "Failed to tap on issue card");
+
+		// validate issue priority
+		Thread.sleep(4000);
+		String actPriority = appdriver.findElement(AppiumBy.xpath(choose_priority)).getText();
+		if (expIssuesPriority.equals(actPriority)) {
+			Assert.assertEquals(actPriority, expIssuesPriority, "Successfully validated issue assignee");
+		} else {
+			Assert.fail("Failed to validate issue priority");
+		}
+
+		// scroll down the page
+		Thread.sleep(2000);
+		WebElement createdDate = appdriver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Date Created\"))"));
+
+		// validate issue status
+		String actIssueStatus = appdriver.findElement(AppiumBy.xpath(bulk_update_select_issue_status)).getText();
+		if (expIssueStatus.equals(actIssueStatus)) {
+			Assert.assertEquals(actIssueStatus, expIssueStatus, "Successfully validated issue status");
+		} else {
+			Assert.fail("Failed to validate issue status");
+		}
+
+		// validate issue severity
+		String actIssueSeverity = appdriver.findElement(AppiumBy.xpath(bulk_update_select_flag)).getText();
+		if (expIssuesSeverity.equals(actIssueSeverity)) {
+			Assert.assertEquals(actIssueSeverity, expIssuesSeverity, "Successfully validated issue severity");
+		} else {
+			Assert.fail("Failed to validate issue severity");
+		}
+
+		// validate issue assigned department
+		String actAssignedDepartment = appdriver.findElement(AppiumBy.xpath(select_assign_department)).getText();
+		if (expAssignedDepartment.equals(actAssignedDepartment)) {
+			Assert.assertEquals(actAssignedDepartment, expAssignedDepartment,
+					"Successfully validated assigned department");
+		} else {
+			Assert.fail("Failed to validate assigned department");
+		}
+
+		// validate issue assignee
+		String actAssignee = appdriver.findElement(AppiumBy.xpath(select_user)).getText();
+		if (expAssignee.equals(actAssignee)) {
+			Assert.assertEquals(actAssignee, expAssignee, "Successfully validated issue assignee");
+		} else {
+			Assert.fail("Failed to validate issue assignee");
+		}
+	}
 }
