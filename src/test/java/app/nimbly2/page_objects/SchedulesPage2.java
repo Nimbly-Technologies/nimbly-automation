@@ -1424,8 +1424,7 @@ public class SchedulesPage2 {
 		// locators
 		String tap_on_schedule_card = locators.getProperty("Daily_schedule_type");
 		String checkin_button = locators.getProperty("checkin_button");
-		String tap_on_add_photo = locators.getProperty("add_photo");
-		String tap_gallery_from_popup = locators.getProperty("tab_gallery");
+		String tap_upload_photo_from_gallery = locators.getProperty("tap_upload_photo_from_gallery");
 		String select_photo = locators.getProperty("select_photo_from_gallery");
 		String tap_add_vidoe = locators.getProperty("add_video");
 		String start_recording = locators.getProperty("start_video_recording");
@@ -1466,11 +1465,9 @@ public class SchedulesPage2 {
 		}
 
 		// upload photo from gallery
-		if (appdriver.findElement(AppiumBy.xpath(tap_on_add_photo)).isDisplayed()) {
+		if (appdriver.findElement(AppiumBy.xpath(tap_upload_photo_from_gallery)).isDisplayed()) {
 			Thread.sleep(2000);
-			appdriver.findElement(AppiumBy.xpath(tap_on_add_photo)).click();
-			Thread.sleep(2000);
-			appdriver.findElement(AppiumBy.xpath(tap_gallery_from_popup)).click();
+			appdriver.findElement(AppiumBy.xpath(tap_upload_photo_from_gallery)).click();
 			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_photo)).click();
 		} else {
