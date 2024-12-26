@@ -442,7 +442,7 @@ public class IssuesPage2 {
 		return questionTitle;
 	}
 
-	private String getTodayDate() {
+	public String getTodayDate() {
 		SimpleDateFormat sdf = new SimpleDateFormat("d"); // Change format as needed
 		return sdf.format(new Date());
 	}
