@@ -2,9 +2,12 @@ package app.nimbly2.page_objects;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -173,6 +176,7 @@ public class ReportsPage2 {
 
 		} else {
 			Assert.fail("Failed to validate report generation popup");
+
 		}
 
 	}
@@ -261,5 +265,264 @@ public class ReportsPage2 {
 	private void resetFilter(String resetButtonLocator) {
 		performAction(resetButtonLocator, "Failed to reset filter");
 	}
+	
+	public void navigateToReportsTab() {
+		String reports_button = locators.getProperty("reports_button");
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(20));
+		WebElement reportsTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reports_button)));
+		if (reportsTab.isDisplayed()) {
+			reportsTab.click();
+		} else {
+			Assert.fail("Failed to tap on reports tab");
+		}
+	}
 
+	public void validateDownloadReportFunctionnalty() throws InterruptedException, IOException {
+		String tap_filter = locators.getProperty("tap_filter");
+		String tap_date = locators.getProperty("tap_date");
+		String select_this_week = locators.getProperty("select_this_week");
+		String select_last_30_days = locators.getProperty("select_last_30_days");
+		String select_last_90_days = locators.getProperty("select_last_90_days");
+		String select_last_6_months = locators.getProperty("select_last_6_months");
+		String select_last_12_months = locators.getProperty("select_last_12_months");
+		String select_month_to_date = locators.getProperty("select_month_to_date");
+		String select_custom_date = locators.getProperty("select_custom_date");
+		String saveButton = locators.getProperty("tap_save_button");
+		String applyButton = locators.getProperty("tap_apply_button");
+
+		// Common method to apply filter and download report
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_this_week, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_last_30_days, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_last_90_days, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_last_6_months, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_last_12_months, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_month_to_date, saveButton, applyButton);
+		applyDateFilterAndDownloadReport(tap_filter, tap_date, select_custom_date, saveButton, applyButton);
+	}
+
+	// Method to apply filter and download report
+	private void applyDateFilterAndDownloadReport(String tap_filter, String tap_date, String dateOption,
+			String saveButton, String applyButton) throws InterruptedException, IOException {
+		String select_custom_date = locators.getProperty("select_custom_date");
+		// Tap on filter
+		performAction(tap_filter, "Failed to tap on filter");
+
+		// Tap on date option
+		performAction(tap_date, "Failed to tap on date");
+
+		// Select the desired date range or custom date
+		if (dateOption.equals(select_custom_date)) {
+			performAction(dateOption, "Failed to tap on custom date");
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='" + getTodayDate() + "']")).click();
+		} else {
+			performAction(dateOption, "Failed to select date option: " + dateOption);
+		}
+
+		// Save and apply the filter
+		performAction(saveButton, "Failed to save filter");
+		performAction(applyButton, "Failed to apply filter");
+
+		// Download report and verify
+		validateDownloadReport();
+	}
+
+	public void validateDownloadReport() throws InterruptedException {
+		String download_button = locators.getProperty("download_button");
+
+		// Validate the download button
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30)); // Explicit wait of 30 seconds
+		WebElement downloadButtonElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(download_button)));
+
+		if (downloadButtonElement.isDisplayed()) {
+			downloadButtonElement.click();
+		} else {
+			Assert.fail("Failed to tap on download report button");
+		}
+
+		// Scenario 1: Check if "Report is being generated" toast is displayed
+		if (isToastMessagePresent()) {
+			return; // Exit the method if the toast is displayed
+		}
+
+		// Scenario 2: If no toast message, check for browser navigation (Chrome/Safari)
+		handleDownloadAndBrowserNavigation();
+
+		// Scenario 3: If a pop-up appears with message "Download report again?"
+		handleDownloadConfirmationPopup();
+	}
+
+	// Method to check for toast message presence
+	private boolean isToastMessagePresent() {
+		String pop_up_message = locators.getProperty("report_generation_pop_up_message");
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5)); // Explicit wait
+			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pop_up_message)));
+			if (toast != null && toast.isDisplayed()) {
+				return true; // Toast found
+			} else {
+				return false; // Toast is not found
+			}
+		} catch (Exception e) {
+			return false; // Toast not found
+		}
+	}
+
+	// Handle download button navigation to browser (Chrome/Safari)
+	private void handleDownloadAndBrowserNavigation() {
+		// Check if we navigated to Chrome/Safari (use appropriate locators for Chrome
+		// or Safari)
+		if (isElementPresent(AppiumBy.xpath("//android.widget.FrameLayout[@resource-id='android:id/content']"))) {
+			navigateBackToReport();
+		}
+	}
+
+	// Handle "Download report again?" confirmation pop-up
+	private void handleDownloadConfirmationPopup() {
+		// Check if the pop-up "Download report again?" appears
+		if (isElementPresent(AppiumBy.xpath("//android.widget.TextView[@text='Download file again?']"))) {
+			System.out.println("Popup displayed: 'Download report again?'");
+			handleDownloadConfirmation();
+		}
+	}
+
+	// Utility method to check if an element is present (with explicit wait)
+	private boolean isElementPresent(By locator) {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5));
+			WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			return element != null; // Return true if element is present
+		} catch (Exception e) {
+			return false; // Element not found
+		}
+	}
+
+	private void navigateBackToReport() {
+		int maxAttempts = 3; // Max attempts to press back
+		int attempts = 0;
+		boolean isAtReportsTab = false;
+		while (attempts < maxAttempts && !isAtReportsTab) {
+			try {
+				// Press back button
+				appdriver.navigate().back();
+				attempts++;
+
+				// Optional: Sleep for a short time to ensure screen transitions
+				Thread.sleep(2000); // Adjust sleep time as needed
+
+				// Check if we're on the Reports tab
+				isAtReportsTab = isReportsTabDisplayed();
+			} catch (Exception e) {
+				break; // Exit if there's an error
+			}
+		}
+	}
+
+	private boolean isReportsTabDisplayed() {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5));
+			WebElement reportsTab = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(AppiumBy.xpath("//android.widget.TextView[@text='Reports']")));
+			return reportsTab.isDisplayed();
+		} catch (TimeoutException e) {
+			return false;
+		}
+	}
+
+	// Confirm the download in the "Download report again?" pop-up
+	private void handleDownloadConfirmation() {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+			WebElement confirmButton = wait.until(ExpectedConditions
+					.elementToBeClickable(AppiumBy.xpath("//android.widget.Button[@text='Download']")));
+			confirmButton.click();
+			navigateBackToReport();
+		} catch (Exception e) {
+		}
+	}
+
+	public String getTodayDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("d"); // Change format as needed
+		return sdf.format(new Date());
+	}
+
+	public void validateUserCanDownloadReportsFromGroupByLocation() throws InterruptedException {
+		String tap_location = locators.getProperty("tap_location");
+		String tap_on_site_name = locators.getProperty("tap_on_site_name");
+		String download_report_from_location = locators.getProperty("download_report_from_location");
+
+		// tap on group by location
+		performAction(tap_location, "Failed to tap on group by location");
+
+		// tap on site name
+		performAction(tap_on_site_name, "Failed to tap on site name");
+
+		// tap on download report from location
+		performAction(download_report_from_location, "Failed to download report from location");
+		// Scenario 1: Check if "Report is being generated" toast is displayed
+		if (isToastMessagePresent()) {
+			return; // Exit the method if the toast is displayed
+		}
+
+		// Scenario 2: If no toast message, check for browser navigation (Chrome/Safari)
+		handleDownloadAndBrowserNavigation();
+
+		// Scenario 3: If a pop-up appears with message "Download report again?"
+		handleDownloadConfirmationPopup();
+
+	}
+	
+	public void verifyDownloadReportsForLastSevenAndThirtyDays() throws InterruptedException {
+		String tap_last_seven_days = locators.getProperty("tap_last_seven_days");
+		String tap_last_thirty_days = locators.getProperty("tap_last_thirty_days");
+		String tap_group_by_none = locators.getProperty("tap_group_by_none");
+		String tap_location = locators.getProperty("tap_location");
+		String download_report_from_location = locators.getProperty("download_report_from_location");
+
+		// tap on last seven days
+		performAction(tap_last_seven_days, "Failed to tap on last seven days");
+
+		// tap on group by none
+		performAction(tap_group_by_none, "Failed to tap on group by none");
+		validateDownloadReport();
+
+		// tap on group by location
+		performAction(tap_location, "Failed to tap on group by location");
+		// tap on download report from location
+		performAction(download_report_from_location, "Failed to download report from location");
+		// Scenario 1: Check if "Report is being generated" toast is displayed
+		if (isToastMessagePresent()) {
+			return; // Exit the method if the toast is displayed
+		}
+
+		// Scenario 2: If no toast message, check for browser navigation (Chrome/Safari)
+		handleDownloadAndBrowserNavigation();
+
+		// Scenario 3: If a pop-up appears with message "Download report again?"
+		handleDownloadConfirmationPopup();
+
+		// tap on last 30 days
+		performAction(tap_last_thirty_days, "Failed to tap on last thirty days");
+
+		// tap on group by none
+		performAction(tap_group_by_none, "Failed to tap on group by none");
+		validateDownloadReport();
+
+		// tap on group by location
+		performAction(tap_location, "Failed to tap on group by location");
+		// tap on download report from location
+		performAction(download_report_from_location, "Failed to download report from location");
+		// Scenario 1: Check if "Report is being generated" toast is displayed
+		if (isToastMessagePresent()) {
+			return; // Exit the method if the toast is displayed
+		}
+
+		// Scenario 2: If no toast message, check for browser navigation (Chrome/Safari)
+		handleDownloadAndBrowserNavigation();
+
+		// Scenario 3: If a pop-up appears with message "Download report again?"
+		handleDownloadConfirmationPopup();
+
+	}
 }
