@@ -153,34 +153,9 @@ public class ReportsPage2 {
 	}
 
 	public void verifyDownloadReportAndReportGenerationPopup() throws InterruptedException {
-		String download_button = locators.getProperty("download_button");
-		String pop_up_message = locators.getProperty("report_generation_pop_up_message");
-
-		// Expected values
-		String expPopupMsg = prop.getProperty("Popup_Message");
-
-		// validate download button
-		Thread.sleep(2000);
-		if (appdriver.findElement(AppiumBy.xpath(download_button)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(download_button)).click();
-		} else {
-			Assert.fail("Failed to tap on download report button");
-		}
-
-		// verify report generation popup
-		Thread.sleep(2000);
-		String actReportGenerationMessage = appdriver.findElement(AppiumBy.xpath(pop_up_message)).getText();
-		if (actReportGenerationMessage.equals(expPopupMsg)) {
-			Assert.assertEquals(actReportGenerationMessage, expPopupMsg,
-					"Successfully validated report generation popup");
-
-		} else {
-			Assert.fail("Failed to validate report generation popup");
-
-		}
-
+		validateDownloadReport();
 	}
-	
+
 	public void validateFilterFunctionalityAndDownloadReportsFromThisWeek() throws InterruptedException {
 		// Locators
 		String filter = locators.getProperty("tap_filter");
@@ -197,6 +172,7 @@ public class ReportsPage2 {
 		String expSiteName = prop.getProperty("Report_Site_Name");
 
 		// Click on the filter and perform actions
+		Thread.sleep(3000);
 		performAction(filter, "Failed to tap on report filter");
 		performAction(tapSiteName, "Failed to tap on site name");
 		performAction(searchSiteName, "Failed to search site name", expSiteName);

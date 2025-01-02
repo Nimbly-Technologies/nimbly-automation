@@ -49,7 +49,7 @@ public class IssuesPage_Nimbly2_StepDefinition {
 		issuespage2.navigateToIssuesList();	
 	}
 	@And("^verify whether default filters are applied$")
-	public void verify_default_filter() {
+	public void verify_default_filter() throws InterruptedException {
 		issuespage2.verifyDefaultFilter();
 	}
 	@When("^navigates to issues$")

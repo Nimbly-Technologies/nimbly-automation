@@ -1456,9 +1456,8 @@ public class SchedulesPage2 {
 		}
 
 		// select yes and no question answer
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		if (appdriver.findElement(AppiumBy.xpath(select_answer)).isDisplayed()) {
-			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_answer)).click();
 		} else {
 			Assert.fail("Failed to clcik on Yes and No Question");
@@ -1466,7 +1465,7 @@ public class SchedulesPage2 {
 
 		// upload photo from gallery
 		if (appdriver.findElement(AppiumBy.xpath(tap_upload_photo_from_gallery)).isDisplayed()) {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			appdriver.findElement(AppiumBy.xpath(tap_upload_photo_from_gallery)).click();
 			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_photo)).click();
@@ -1527,7 +1526,7 @@ public class SchedulesPage2 {
 			Thread.sleep(2000);
 			if (appdriver.findElement(AppiumBy.xpath(tap_save_button)).isDisplayed()) {
 				appdriver.findElement(AppiumBy.xpath(tap_save_button)).click();
-				Thread.sleep(25000);
+				Thread.sleep(35000);
 			} else {
 				Assert.fail("Failed to tap on save button");
 			}
@@ -1570,7 +1569,7 @@ public class SchedulesPage2 {
 		}
 
 		// validate photo attachment for first question
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 		if (appdriver.findElement(AppiumBy.xpath(validate_image)).isDisplayed()) {
 			Assert.assertTrue(true, "Successfully validated image attachmnet");
 
@@ -1678,7 +1677,7 @@ public class SchedulesPage2 {
 		}
 
 		// answer first question
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		if (appdriver.findElement(AppiumBy.xpath(answer_as_no)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(answer_as_no)).click();
 		} else {
