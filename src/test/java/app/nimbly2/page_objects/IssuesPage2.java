@@ -470,8 +470,7 @@ public class IssuesPage2 {
 		expectedValuesMap.put("reported_by", prop.getProperty("Issue_Filter_Reported_By"));
 
 		// Tap on issue card
-		Thread.sleep(2000);
-		appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		clickElementIfDisplayed(schedule_type);
 
 		// WebDriverWait initialization
 		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(20));
@@ -507,8 +506,8 @@ public class IssuesPage2 {
 		String schedule_type = locators.getProperty("issue_card_schedule_type");
 
 		// Tap on issue card
-		Thread.sleep(3000);
-		appdriver.findElement(AppiumBy.xpath(schedule_type)).click();
+		Thread.sleep(2000);
+		clickElementIfDisplayed(schedule_type);
 		// Map to store the locators for various elements
 		Map<String, String> locatorsMap = new HashMap<>();
 		locatorsMap.put("issue_activity_tab", locators.getProperty("issue_activity_tab"));
@@ -651,7 +650,8 @@ public class IssuesPage2 {
 	// Helper method to apply and validate a filter with only a tap and selection
 	private void applyAndValidateFilter(String tapLocator, String selectLocator, String[] validResults)
 			throws InterruptedException {
-		appdriver.findElement(AppiumBy.xpath(locators.getProperty("issue_tap_filter"))).click();
+		String issue_tap_filter = locators.getProperty("issue_tap_filter");
+		clickElementIfDisplayed(issue_tap_filter);
 		Thread.sleep(1000);
 		appdriver.findElement(AppiumBy.xpath(locators.getProperty(tapLocator))).click();
 		Thread.sleep(1000);
@@ -723,7 +723,7 @@ public class IssuesPage2 {
 		}
 	}
 	
-	public void verifyDefaultFilter() {
+	public void verifyDefaultFilter() throws InterruptedException {
 		// Locators
 		String my_saved_filters = locators.getProperty("issue_default_filter_my_saved_filters");
 		String toggle = locators.getProperty("issue_default_filter_toggle");
@@ -764,11 +764,8 @@ public class IssuesPage2 {
 		}
 
 		// close pop up
-		if (appdriver.findElement(AppiumBy.xpath(close_popup)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(close_popup)).click();
-		} else {
-			Assert.fail("Failed to close pop up");
-		}
+		Thread.sleep(3000);
+		clickElementIfDisplayed(close_popup);
 	}
 
 	public boolean isFilterToggleEnabled(String toggleXPath) {
