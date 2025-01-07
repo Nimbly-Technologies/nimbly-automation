@@ -57,5 +57,17 @@ public class LoginPage_Nimbly2_StepDefinition {
 	public void validate_popups() throws InterruptedException {
 		loginpage2.validatePopups();
 	}
+	@When("^validate invalid credentials error message$")
+		public void validate_invalid_credentials_error_message() throws InterruptedException {
+		loginpage2.validateInvalidCredentialsErrorMessage();
+	}
+	@Then("^validate forgot password functionality$")
+	public void validate_forgot_password_functionality() throws InterruptedException {
+		loginpage2.validateForgotPasswordFunctionality();
+	}
+	@And("^validate activate account functionality$")
+	public void validate_activate_account_functionality() throws InterruptedException {
+		loginpage2.validateActivateAccountFunctionality();
+	}
 
 }
