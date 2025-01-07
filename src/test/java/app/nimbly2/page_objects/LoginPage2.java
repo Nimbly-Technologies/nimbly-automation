@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -261,4 +262,101 @@ public class LoginPage2 {
 
 		}
 	}
+	
+	public void validateInvalidCredentialsErrorMessage() throws InterruptedException {
+		String login_error_message = locators.getProperty("login_error_message");
+		
+		//Expected Value
+		String expErrorMessage = prop.getProperty("Error_Message");
+		
+		// validate login error message
+		Thread.sleep(4000);
+		String actErrorMessage = appdriver.findElement(AppiumBy.xpath(login_error_message)).getText();
+		if(actErrorMessage.equals(expErrorMessage)) {
+			Assert.assertEquals(actErrorMessage, expErrorMessage, "Successfully validated login error message");
+		}else {
+			Assert.fail("Failed to validate login error message");
+		}		
+	}
+	
+	public void validateForgotPasswordFunctionality() throws InterruptedException {
+		String forgot_password_label = locators.getProperty("forgot_password_label");
+		String forgot_password_email_address = locators.getProperty("forgot_password_email_address");
+		String get_reset_link = locators.getProperty("get_reset_link");
+		String reset_password_message = locators.getProperty("reset_password_message");
+		String ok_button = locators.getProperty("ok_button");
+
+		// Expected value
+		String expConfirmationPopup = prop.getProperty("Forgot_Password_Confirmation_Popup");
+		String bulkUpdateIssuesUserEmail = prop.getProperty("BulkUpdateIssuesUserEmail");
+
+		// tap on forgot password
+		waitAndClick(forgot_password_label, "Failed to tap on forgot password");
+		// enter email address
+		Thread.sleep(3000);
+		WebElement ele = appdriver.findElement(AppiumBy.xpath(forgot_password_email_address));
+		ele.sendKeys(bulkUpdateIssuesUserEmail);
+
+		// tap on get reset link
+		waitAndClick(get_reset_link, "Failed to tap on get reset link");
+
+		// validate pop up message
+		Thread.sleep(5000);
+		String actConfirmationPopup = appdriver.findElement(AppiumBy.xpath(reset_password_message)).getText();
+		if (actConfirmationPopup.equals(expConfirmationPopup)) {
+			Assert.assertEquals(actConfirmationPopup, expConfirmationPopup,
+					"Successfully validated Confirmation popup");
+		} else {
+			Assert.fail("Failed to validate Confirmation popup");
+		}
+
+		// tap on ok button
+		waitAndClick(ok_button, "Failed to tap on ok button");
+	}
+
+	public void validateActivateAccountFunctionality() throws InterruptedException {
+		String verify_account = locators.getProperty("verify_account");
+		String activate_account = locators.getProperty("activate_account");
+		String forgot_password_email_address = locators.getProperty("forgot_password_email_address");
+		String activate_account_message = locators.getProperty("activate_account_message");
+		String ok_button = locators.getProperty("ok_button");
+		
+		// Expected values
+		String activateAccount = prop.getProperty("Activate_Account");
+		String expConfirmationPopup = prop.getProperty("Activate_Account_Confirmation_Popup");
+
+		// tap on activate account
+		waitAndClick(activate_account, "Failed to tap on activate account");
+
+		// enter email address
+		Thread.sleep(2000);
+		WebElement ele = appdriver.findElement(AppiumBy.xpath(forgot_password_email_address));
+		ele.sendKeys(activateAccount);
+
+		// tap on get reset link
+		waitAndClick(verify_account, "Failed to tap on verify account");
+
+		// validate pop up message
+		Thread.sleep(2000);
+		String actConfirmationPopup = appdriver.findElement(AppiumBy.xpath(activate_account_message)).getText();
+		if (actConfirmationPopup.equals(expConfirmationPopup)) {
+			Assert.assertEquals(actConfirmationPopup, expConfirmationPopup,
+					"Successfully validated Confirmation popup");
+		} else {
+			Assert.fail("Failed to validate Confirmation popup");
+		}
+
+		// tap on ok button
+		waitAndClick(ok_button, "Failed to tap on ok button");
+	}
+
+	private void waitAndClick(String xpath, String failureMessage) {
+		try {
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath))).click();
+		} catch (TimeoutException e) {
+			Assert.fail(failureMessage);
+		}
+	}
+
 }
