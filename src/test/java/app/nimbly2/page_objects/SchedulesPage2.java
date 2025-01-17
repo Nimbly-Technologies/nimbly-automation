@@ -2270,23 +2270,8 @@ public class SchedulesPage2 {
 	}
 	
 	public void setSeekBarToValue() {
-		WebElement seekBar = appdriver.findElement(AppiumBy.xpath("//android.widget.SeekBar"));
-
-		// Get the SeekBar's coordinates
-		int startX = seekBar.getLocation().getX(); // Starting point of the SeekBar (x = 0)
-		int seekBarWidth = seekBar.getSize().getWidth(); // Total width of the SeekBar (x = 5)
-
-		// Calculate the target position (3) on the SeekBar
-		int targetPositionX = startX + (int) (seekBarWidth * 0.6); // 60% of the width (since 3 is 60% of 5)
-
-		// Create an Actions object for performing gestures
-		Actions actions = new Actions(appdriver);
-
-		// Perform the swipe: click and hold on the SeekBar, move to the target position
-		// (3), and release
-		actions.clickAndHold(seekBar).moveByOffset(targetPositionX - startX, 0) // Move to position 3 (60% of the
-																				// SeekBar width)
-				.release().perform();
+		String score_slider = locators.getProperty("score_slider");
+		waitAndClick(score_slider, "Failed to scroll score question");
 	}
 
 	public void validateCameraResolution() throws InterruptedException {
