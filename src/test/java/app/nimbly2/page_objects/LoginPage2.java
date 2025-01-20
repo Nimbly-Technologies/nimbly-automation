@@ -3,6 +3,8 @@ package app.nimbly2.page_objects;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -357,6 +359,144 @@ public class LoginPage2 {
 		} catch (TimeoutException e) {
 			Assert.fail(failureMessage);
 		}
+	}
+	
+	public void validateForgotPasswordErrorMessage() throws InterruptedException {
+		String forgot_password_label = locators.getProperty("forgot_password_label");
+		String forgot_password_email_address = locators.getProperty("forgot_password_email_address");
+		String get_reset_link = locators.getProperty("get_reset_link");
+		String forgot_password_error_message = locators.getProperty("forgot_password_error_message");
+		String back_to_login = locators.getProperty("back_to_login");
+
+		// Expected value
+		String expErrorMessage = prop.getProperty("ForgotPassword_ErrorMessage");
+		String invalidEmailAddress = prop.getProperty("InvalidForgotPasswordUserName");
+
+		// tap on forgot password
+		waitAndClick(forgot_password_label, "Failed to tap on forgot password");
+		// enter email address
+		Thread.sleep(3000);
+		WebElement ele = appdriver.findElement(AppiumBy.xpath(forgot_password_email_address));
+		ele.sendKeys(invalidEmailAddress);
+
+		// tap on get reset link
+		waitAndClick(get_reset_link, "Failed to tap on get reset link");
+
+		// validate pop up message
+		Thread.sleep(5000);
+		String actErrorMessage = appdriver.findElement(AppiumBy.xpath(forgot_password_error_message)).getText();
+		if (actErrorMessage.equals(expErrorMessage)) {
+			Assert.assertEquals(actErrorMessage, expErrorMessage,
+					"Successfully validated forgot password error message");
+		} else {
+			Assert.fail("Failed to validate forgot password error message");
+		}
+
+		// tap on ok button
+		waitAndClick(back_to_login, "Failed to tap on back to login page");
+		
+	}
+	
+	public void validateActivateAccountErrorMessage() throws InterruptedException {
+		String verify_account = locators.getProperty("verify_account");
+		String activate_account = locators.getProperty("activate_account");
+		String forgot_password_email_address = locators.getProperty("forgot_password_email_address");
+		String activate_account_error_message = locators.getProperty("activate_account_error_message");
+		String back_to_login = locators.getProperty("back_to_login");
+		
+		// Expected values
+		String invalidEmailAddress = prop.getProperty("InvalidForgotPasswordUserName");
+		String expErrorMessage = prop.getProperty("ActivateAccount_ErrorMessage");
+
+		// tap on activate account
+		waitAndClick(activate_account, "Failed to tap on activate account");
+
+		// enter email address
+		Thread.sleep(2000);
+		WebElement ele = appdriver.findElement(AppiumBy.xpath(forgot_password_email_address));
+		ele.sendKeys(invalidEmailAddress);
+
+		// tap on get reset link
+		waitAndClick(verify_account, "Failed to tap on verify account");
+
+		// validate pop up message
+		Thread.sleep(2000);
+		String actErrorMessage = appdriver.findElement(AppiumBy.xpath(activate_account_error_message)).getText();
+		if (actErrorMessage.equals(expErrorMessage)) {
+			Assert.assertEquals(actErrorMessage, expErrorMessage,
+					"Successfully validated error message");
+		} else {
+			Assert.fail("Failed to validate error message");
+		}
+
+		// tap on ok button
+		waitAndClick(back_to_login, "Failed to tap on back button");
+	}
+	
+	public void verifyLocalizationOnLoginPage() throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));  // Wait for up to 10 seconds
+
+	    // Define a map to store language locators and expected header texts
+	    Map<String, String[]> languageData = new HashMap<>();
+	    languageData.put("Indonesia", new String[] {
+	        locators.getProperty("select_indonesia"),
+	        locators.getProperty("txt_indonesia_header"),
+	        prop.getProperty("Indonesia_Header")
+	    });
+	    languageData.put("Portugues", new String[] {
+	        locators.getProperty("select_portugues"),
+	        locators.getProperty("txt_portugues_header"),
+	        prop.getProperty("Portugues_Header")
+	    });
+	    languageData.put("Spanish", new String[] {
+	        locators.getProperty("select_spanish"),
+	        locators.getProperty("txt_spanish_header"),
+	        prop.getProperty("Spanish_Header")
+	    });
+	    languageData.put("Thai", new String[] {
+	        locators.getProperty("select_thai"),
+	        locators.getProperty("txt_thai_header"),
+	        prop.getProperty("Thai_Header")
+	    });
+	    languageData.put("Korean", new String[] {
+	        locators.getProperty("select_korean"),
+	        locators.getProperty("txt_korean_header"),
+	        prop.getProperty("Korean_Header")
+	    });
+	    languageData.put("Khmer", new String[] {
+	        locators.getProperty("select_khmer"),
+	        locators.getProperty("txt_khmer_header"),
+	        prop.getProperty("Khmer_Header")
+	    });
+
+	    // Click on the language dropdown and wait for it to be clickable
+	    Thread.sleep(5000);
+	    String select_language_dropdown = locators.getProperty("select_language_dropdown");
+	    waitAndClick(select_language_dropdown,"Failed to tap on select langiage dropdown");
+
+	    // Loop through each language and verify the header text with WebDriver waits
+	    for (Map.Entry<String, String[]> entry : languageData.entrySet()) {
+	        String language = entry.getKey();
+	        String[] locatorsAndHeader = entry.getValue();
+
+	        String languageSelector = locatorsAndHeader[0];
+	        String headerLocator = locatorsAndHeader[1];
+	        String expectedHeader = locatorsAndHeader[2];
+
+	        // Wait for the language option to be clickable and select the language
+	        WebElement languageOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(languageSelector)));
+	        languageOption.click();
+
+	        // Wait for the header to be visible and get the actual header text
+	        WebElement headerElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(headerLocator)));
+	        String actualHeader = headerElement.getText();
+
+	        // Validate the header text
+	        Assert.assertEquals(actualHeader, expectedHeader, language + " header text is incorrect");
+
+	        // Click on the dropdown again to reset and wait for it to be clickable
+	        waitAndClick(select_language_dropdown,"Failed to tap on select langiage dropdown");
+	    }
 	}
 
 }
