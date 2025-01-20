@@ -69,5 +69,17 @@ public class LoginPage_Nimbly2_StepDefinition {
 	public void validate_activate_account_functionality() throws InterruptedException {
 		loginpage2.validateActivateAccountFunctionality();
 	}
+	@Given("^validate error message for forgot password functionality$")
+	public void validate_error_message_for_forgot_password_functionality() throws InterruptedException {
+		loginpage2.validateForgotPasswordErrorMessage();
+	}
+	@When("^validate error message for activate account functionality$")
+	public void validate_error_mesage_for_activate_account_functionality() throws InterruptedException {
+		loginpage2.validateActivateAccountErrorMessage();
+	}
+	@Then("^verify localization on login page$")
+	public void verify_localization_on_login_page() throws InterruptedException {
+		loginpage2.verifyLocalizationOnLoginPage();
+	}
 
 }
