@@ -186,17 +186,18 @@ public class IssuesPage2 {
 		// change priority
 		Thread.sleep(5000);
 		if (appdriver.findElement(AppiumBy.xpath(change_priority)).isDisplayed()) {
+			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(change_priority)).click();
 		} else {
 			Assert.fail("Failed to change issue priority");
 		}
 
 		// scroll down the page
-		appdriver.findElement(
-				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+		WebElement dateAndTimeOption = appdriver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Request for Approval\"))"));
 
 		// change severity
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 		if (appdriver.findElement(AppiumBy.xpath(tap_issue_severity)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(tap_issue_severity)).click();
 			Thread.sleep(2000);
@@ -232,7 +233,7 @@ public class IssuesPage2 {
 		}
 
 		// change issue status
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		if (appdriver.findElement(AppiumBy.xpath(tap_issue_status)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(tap_issue_status)).click();
 			Thread.sleep(2000);
@@ -241,12 +242,8 @@ public class IssuesPage2 {
 			Assert.fail("Failed to change issue status");
 		}
 
-		// scroll down the page
-		appdriver.findElement(
-				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
-
 		// resolve the issue
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		if (appdriver.findElement(AppiumBy.xpath(resolve_issue)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(resolve_issue)).click();
 		} else {
@@ -418,6 +415,10 @@ public class IssuesPage2 {
 		} else {
 			Assert.fail("Failed to select assignee");
 		}
+		
+		// scroll down the page
+		appdriver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
 
 		// tap on add issue button
 		Thread.sleep(2000);
