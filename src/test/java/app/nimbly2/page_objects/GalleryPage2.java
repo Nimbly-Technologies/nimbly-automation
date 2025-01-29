@@ -3,17 +3,25 @@ package app.nimbly2.page_objects;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 
 public class GalleryPage2 {
 	private AppiumDriver appdriver;
@@ -358,5 +366,297 @@ public class GalleryPage2 {
 
 		// tap on select attachments
 		waitAndClick(select_dates, "Failed to tap on select attachments");
+	}
+	
+	public void verifyAttachmentsVisibilityUnderAllTab() throws InterruptedException {
+		String attachments_list = locators.getProperty("attachments_list");
+		Thread.sleep(8000);
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30));
+		List<WebElement> imageElements = wait
+				.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(attachments_list)));
+
+		// Check if images are found
+		Assert.assertTrue(imageElements.size() > 0, "No images found in the gallery.");
+
+		// Validate each image element
+		for (WebElement imageElement : imageElements) {
+			// Assert that the image is displayed
+			try {
+				Assert.assertTrue(imageElement.isDisplayed(), "Image is not displayed: " + imageElement);
+
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	public void verifyAttachmnetsVisibilityUnderDaysTab() throws InterruptedException {
+		String days_tab = locators.getProperty("days_tab");
+
+		waitAndClick(days_tab, "failed to tap on days tap");
+
+		// validate list of attachments under days tab
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+
+	}
+
+	public void verifyAttachmnetsVisibilityUnderMonthTab() throws InterruptedException {
+		String months_tab = locators.getProperty("months_tab");
+		String tap_on_month = locators.getProperty("tap_on_month");
+
+		waitAndClick(months_tab, "Failed to tap on months tab");
+		Thread.sleep(5000);
+		waitAndClick(tap_on_month, "Failed to tap on any available months tabs");
+
+		// validate list of attachments under months tab
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+
+	}
+
+	public void verifyAttachmnetsVisibilityUnderYearsTab() throws InterruptedException {
+		String tap_on_gallery = locators.getProperty("tap_on_gallery");
+		String years_tab = locators.getProperty("years_tab");
+		String tap_on_year = locators.getProperty("tap_on_year");
+
+		waitAndClick(tap_on_gallery, "Failed to tap on gallery");
+		Thread.sleep(5000);
+		waitAndClick(years_tab, "Failed to tap on years tab");
+		Thread.sleep(5000);
+		waitAndClick(tap_on_year, "Failed to tap on any available years tabs");
+
+		// validate list of attachments under months tab
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+
+	}
+	
+	public void verifyTileViewPerRow() throws InterruptedException {
+		String tap_on_gallery = locators.getProperty("tap_on_gallery");
+		String all_tab = locators.getProperty("all_tab");
+		String tiles_per_row_icon = locators.getProperty("tiles_per_row_icon");
+		String tiles_per_row_three = locators.getProperty("tiles_per_row_three");
+		String close_tiles_per_row_pop_up = locators.getProperty("close_tiles_per_row_pop_up");
+
+		waitAndClick(tap_on_gallery, "Failed to tap on gallery");
+		Thread.sleep(5000);
+		waitAndClick(all_tab, "Failed to tap on all tab");
+		Thread.sleep(10000);
+		waitAndClick(tiles_per_row_icon, "Failed to tap on tile to select rows");
+		waitAndClick(tiles_per_row_three,"Failed to select tiles per row is five");
+		waitAndClick(close_tiles_per_row_pop_up,"Failed to close tiles per row pop up");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+	}
+	
+	public void validateAttachmentsUnderAlbum() throws InterruptedException {
+		String albums_tab = locators.getProperty("albums_tab");
+		String tap_on_month = locators.getProperty("tap_on_month");
+		String tap_on_gallery = locators.getProperty("tap_on_gallery");
+		String site_name = locators.getProperty("gallery_site_name");
+
+		// Expected value
+		String expSiteName = prop.getProperty("Gallery_Site_Name");
+		Thread.sleep(8000);
+		waitAndClick(albums_tab, "Failed to tap on albums");
+		// validate site name
+		Thread.sleep(10000);
+		String actSiteName = appdriver.findElement(AppiumBy.xpath(site_name)).getText();
+		if (actSiteName.equals(expSiteName)) {
+		} else {
+			Assert.fail("Failed to validate site name under album");
+		}
+		Thread.sleep(5000);
+		waitAndClick(tap_on_month, "Failed to tap on site attachments");
+		// validate list of attachments for particular site under album
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+
+		Thread.sleep(5000);
+		waitAndClick(tap_on_gallery, "Failed to tap on gallery");
+	}
+	
+	public void multiSelectAttachmentsUnderAlbum() throws InterruptedException {
+		String tap_three_dots_menu = locators.getProperty("tap_three_dots_menu");
+		String select_sites = locators.getProperty("select_sites");
+		String multi_select_sites = locators.getProperty("multi_select_sites");
+		String cancel_multi_select = locators.getProperty("cancel_multi_select");
+
+		Thread.sleep(8000);
+		waitAndClick(tap_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(select_sites, "Failed to tap on select sites");
+		waitAndClick(multi_select_sites, "Failed to select sites");
+		waitAndClick(cancel_multi_select,"Failed to tap on cancel");
+	}
+	
+	public void verifyFilterAndSortFunctionality() throws InterruptedException {
+		String library_tab = locators.getProperty("library_tab");
+		String gallery_filter = locators.getProperty("gallery_filter");
+		String gallery_filter_source = locators.getProperty("gallery_filter_source");
+		String gallery_filter_source_reports = locators.getProperty("gallery_filter_source_reports");
+		String gallery_filter_source_issue_tracker = locators.getProperty("gallery_filter_source_issue_tracker");
+		String gallery_save_button = locators.getProperty("gallery_save_button");
+		String gallery_apply_button = locators.getProperty("gallery_apply_button");
+		String gallery_reset_button = locators.getProperty("gallery_reset_button");
+		String gallery_filter_attachment_type = locators.getProperty("gallery_filter_attachment_type");
+		String gallery_filter_attachment_type_image = locators.getProperty("gallery_filter_attachment_type_image");
+		String gallery_filter_attachment_type_video = locators.getProperty("gallery_filter_attachment_type_video");
+		String gallery_filter_site = locators.getProperty("gallery_filter_site");
+		String gallery_filter_search_by_site_name = locators.getProperty("gallery_filter_search_by_site_name");
+		String gallery_filter_select_site_name = locators.getProperty("gallery_filter_select_site_name");
+		String gallery_filter_department = locators.getProperty("gallery_filter_department");
+		String gallery_filter_serach_by_department_name = locators.getProperty("gallery_filter_serach_by_department_name");
+		String gallery_filter_select_department = locators.getProperty("gallery_filter_select_department");
+		String gallery_filter_auditor = locators.getProperty("gallery_filter_auditor");
+		String gallery_filter_search_by_auditor = locators.getProperty("gallery_filter_search_by_auditor");
+		String gallery_filter_select_auditor = locators.getProperty("gallery_filter_select_auditor");
+		String gallery_filter_questionnaire = locators.getProperty("gallery_filter_questionnaire");
+		String gallery_filter_serach_by_questionnaire = locators.getProperty("gallery_filter_serach_by_questionnaire");
+		String gallery_filter_select_questionnaire = locators.getProperty("gallery_filter_select_questionnaire");
+		String gallery_filter_date_range = locators.getProperty("gallery_filter_date_range");
+		String gallery_filter_select_last_30_days = locators.getProperty("gallery_filter_select_last_30_days");
+		String gallery_sort_ascending_order = locators.getProperty("gallery_sort_ascending_order");
+		String gallery_sort_descending_oder = locators.getProperty("gallery_sort_descending_oder");
+		
+		// expected values
+		String expSiteName = prop.getProperty("Gallery_Site_Name");
+		String expDepartmentName = prop.getProperty("Gallery_Department_Name");
+		String expQuestionnaireName = prop.getProperty("Gallery_Questionnaire_Name");
+		String expAuditorName = prop.getProperty("Gallery_Auditor_Name");
+		
+		// navigate back to library
+		Thread.sleep(8000);
+		waitAndClick(library_tab,"Failed to tap on Library");
+		
+		//filter by source as reports
+		waitAndClick(gallery_filter,"Failed to tap on filter");
+		waitAndClick(gallery_filter_source,"Failed to tap on source");
+		waitAndClick(gallery_filter_source_reports,"Failed to tap on source by reports");
+		waitAndClick(gallery_save_button,"Failed to tap on save button");
+		waitAndClick(gallery_apply_button,"Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter,"Failed to tap on filter");
+		waitAndClick(gallery_reset_button,"Failed to tap on reset button");
+		
+		//filter by source as issue tracker
+		waitAndClick(gallery_filter,"Failed to tap on filder");
+		waitAndClick(gallery_filter_source,"Failed to tap on source");
+		waitAndClick(gallery_filter_source_issue_tracker,"Failed to tap on source by issue tracker");
+		waitAndClick(gallery_save_button,"Failed to tap on save button");
+		waitAndClick(gallery_apply_button,"Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter,"Failed to tap on filter");
+		waitAndClick(gallery_reset_button,"Failed to tap on reset button");
+		
+		// filter by attachment type as image
+		waitAndClick(gallery_filter,"Failed to tap on filder");
+		waitAndClick(gallery_filter_attachment_type,"Failed to tap on attachment type");
+		waitAndClick(gallery_filter_attachment_type_image,"Failed to tap on attachment type as image");
+		waitAndClick(gallery_save_button,"Failed to tap on save button");
+		waitAndClick(gallery_apply_button,"Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter,"Failed to tap on filter");
+		waitAndClick(gallery_reset_button,"Failed to tap on reset button");
+		
+		// filter by attachment type as video
+		waitAndClick(gallery_filter, "Failed to tap on filder");
+		waitAndClick(gallery_filter_attachment_type, "Failed to tap on attachment type");
+		waitAndClick(gallery_filter_attachment_type_video, "Failed to tap on attachment type as video");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//filter by site name
+		waitAndClick(gallery_filter, "Failed to tap on filder");
+		waitAndClick(gallery_filter_site, "Failed to tap on site name");
+		Thread.sleep(5000);
+		WebElement enterSiteName = appdriver.findElement(AppiumBy.xpath(gallery_filter_search_by_site_name));
+		enterSiteName.sendKeys(expSiteName);
+		waitAndClick(gallery_filter_select_site_name, "Failed to select site name");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//filter by department name
+		waitAndClick(gallery_filter, "Failed to tap on filder");
+		waitAndClick(gallery_filter_department, "Failed to tap on department name");
+		Thread.sleep(5000);
+		WebElement enterDepartmentName = appdriver.findElement(AppiumBy.xpath(gallery_filter_serach_by_department_name));
+		enterDepartmentName.sendKeys(expDepartmentName);
+		waitAndClick(gallery_filter_select_department, "Failed to select department name");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//filter by auditor name
+		waitAndClick(gallery_filter, "Failed to tap on filder");
+		waitAndClick(gallery_filter_auditor, "Failed to tap on auditor name");
+		Thread.sleep(5000);
+		WebElement enterAuditorName = appdriver.findElement(AppiumBy.xpath(gallery_filter_search_by_auditor));
+		enterAuditorName.sendKeys(expAuditorName);
+		waitAndClick(gallery_filter_select_auditor, "Failed to select auditor name");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//filter by questionnaire name
+		waitAndClick(gallery_filter, "Failed to tap on filder");
+		waitAndClick(gallery_filter_questionnaire, "Failed to tap on questionnaire name");
+		Thread.sleep(5000);
+		WebElement enterQuestionnaireName = appdriver.findElement(AppiumBy.xpath(gallery_filter_serach_by_questionnaire));
+		enterQuestionnaireName.sendKeys(expQuestionnaireName);
+		waitAndClick(gallery_filter_select_questionnaire, "Failed to select questionnaire name");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		// filter by date range
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_filter_date_range, "Failed to tap on date range");
+		waitAndClick(gallery_filter_select_last_30_days, "Failed to select last 30 days");
+		waitAndClick(gallery_save_button, "Failed to tap on save button");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//sort by ascending order
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_sort_ascending_order, "Failed to tap on ascending order");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+		
+		//sort by descending order
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_sort_descending_oder, "Failed to tap on descending order");
+		waitAndClick(gallery_apply_button, "Failed to tap on apply button");
+		Thread.sleep(5000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		waitAndClick(gallery_filter, "Failed to tap on filter");
+		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
+
 	}
 }
