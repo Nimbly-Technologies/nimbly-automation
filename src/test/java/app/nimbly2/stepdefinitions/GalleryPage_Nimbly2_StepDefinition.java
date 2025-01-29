@@ -37,4 +37,43 @@ public class GalleryPage_Nimbly2_StepDefinition {
 	public void download_attachments_under_all_days_months() throws InterruptedException {
 		gallerypage2.downloadAttachmentsUnderAllDaysAndMonths();
 	}
+
+	@And("^validate attachments visibility under all tab$")
+	public void validate_attachments_visibility_under_all_tab() throws InterruptedException {
+		gallerypage2.verifyAttachmentsVisibilityUnderAllTab();
+	}
+
+	@And("^validate attachments visibility under days tab$")
+	public void validate_attachments_visibility_under_days_tab() throws InterruptedException {
+		gallerypage2.verifyAttachmnetsVisibilityUnderDaysTab();
+	}
+
+	@And("^validate attachments visibility under months tab$")
+	public void validate_attachments_visibility_under_months_tab() throws InterruptedException {
+		gallerypage2.verifyAttachmnetsVisibilityUnderMonthTab();
+	}
+
+	@And("^validate attachments visibility under years tab$")
+	public void validate_attachments_visibility_under_years_tab() throws InterruptedException {
+		gallerypage2.verifyAttachmnetsVisibilityUnderYearsTab();
+	}
+	
+	@And("^verify tile view per row$")
+	public void verify_tile_view_per_row() throws InterruptedException {
+		gallerypage2.verifyTileViewPerRow();
+	}
+	@And("^validate attachments visibility and grouped by sites under album$")
+	public void validate_attachments_visibility_under_album() throws InterruptedException {
+		gallerypage2.validateAttachmentsUnderAlbum();
+	}
+	
+	@And("^verify multi select attachments under album$")
+	public void verify_multi_select_attachments_under_album() throws InterruptedException {
+		gallerypage2.multiSelectAttachmentsUnderAlbum();
+	}
+	
+	@And("^verify filter and sort functionality for gallery$")
+	public void verify_filter_functionality_for_gallery() throws InterruptedException {
+		gallerypage2.verifyFilterAndSortFunctionality();
+	}
 }

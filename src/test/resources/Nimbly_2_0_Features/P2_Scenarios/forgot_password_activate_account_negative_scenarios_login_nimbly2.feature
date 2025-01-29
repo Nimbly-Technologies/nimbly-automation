@@ -1,6 +1,6 @@
 Feature: [Negative Scenario]Validate Forgot Password, Activate Account and Localization Functionality
 
-  @P20
+  @P2
   Scenario: [Negative Scenario]Validate Forgot Password, Activate Account and Localization Functionality
     Given validate error message for forgot password functionality
     When validate error message for activate account functionality
