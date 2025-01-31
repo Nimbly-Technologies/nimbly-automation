@@ -76,4 +76,29 @@ public class GalleryPage_Nimbly2_StepDefinition {
 	public void verify_filter_functionality_for_gallery() throws InterruptedException {
 		gallerypage2.verifyFilterAndSortFunctionality();
 	}
+
+	@And("^validate user can select and deselect and collapse attachments day wise under library$")
+	public void validate_user_can_select_and_deselect_and_collapse_attachments_day_wise_under_library() throws InterruptedException {
+		gallerypage2.validateSelectDeselectAndCollapseAttachmentsDayWise();
+	}
+
+	@And("^validate user can select and deselect and collapse  attachments month wise under library$")
+	public void validate_user_can_select_and_deselect_and_collpse_attachments_monyh_wise_under_library() throws InterruptedException {
+		gallerypage2.validateSelectDeselectAndCollapseAttachmentsMonthWise();
+	}
+
+	@And("^validate user can select and deselect attachments year wise under library$")
+	public void validate_user_can_select_and_deselect_attachments_year_wise_under_library() throws InterruptedException {
+		gallerypage2.validateSelectDeselectAttachmentsYearWise();
+	}
+
+	@And("^validate search and suggestion as per question$")
+	public void validate_search_and_suggestion_as_per_question() throws InterruptedException {
+		gallerypage2.validateSearchAndSuggestionAsPerQuestion();
+	}
+
+	@And("^validate search and suggestion as per category$")
+	public void validate_search_and_suggestion_as_per_category() throws InterruptedException {
+		gallerypage2.validateSearchAndSuggestionAsPerCategory();
+	}
 }

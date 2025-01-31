@@ -659,4 +659,154 @@ public class GalleryPage2 {
 		waitAndClick(gallery_reset_button, "Failed to tap on reset button");
 
 	}
+	
+	public void validateSelectDeselectAndCollapseAttachmentsDayWise() throws InterruptedException {
+		String days_tab = locators.getProperty("days_tab");
+		String tap_three_dots_menu_days = locators.getProperty("tap_three_dots_menu_days");
+		String select_attachments_txt = locators.getProperty("select_attachments_txt");
+		String select_first_attachment = locators.getProperty("select_first_attachment");
+		String deselect_checkbox_days = locators.getProperty("deselect_checkbox_days");
+		String collapse_days = locators.getProperty("collapse_days");
+		String cancel_multi_select = locators.getProperty("cancel_multi_select");
+		
+		//tap on days tab
+		waitAndClick(days_tab,"Failed to tap on Days tab");
+		Thread.sleep(10000);
+		//tap on three dots menu
+		waitAndClick(tap_three_dots_menu_days,"Failed to tap on three dots menu on days tab");
+		//tap on select attachments
+		waitAndClick(select_attachments_txt,"Failed select attachments");
+		// do bulk select attachments
+		waitAndClick(select_first_attachment,"Failed to select bulk attachmnets under days tab");
+		//deselect attachments
+		waitAndClick(deselect_checkbox_days,"Failed to de select bulk attachments under days tab");
+		// collapse days
+		waitAndClick(collapse_days,"failed to tap on collapse attachments under days tab");
+		
+		// after collapse validate attachment
+		Thread.sleep(10000);
+		verifyAttachmentsVisibilityUnderAllTab();
+		
+		//tap on cancel button
+		waitAndClick(cancel_multi_select,"failed to tap on cancel button on Days tab");			
+	}
+	
+	public void validateSelectDeselectAndCollapseAttachmentsMonthWise() throws InterruptedException {
+		String months_tab = locators.getProperty("months_tab");
+		String tap_three_dots_menu = locators.getProperty("tap_three_dots_menu");
+		String select_dates = locators.getProperty("select_dates");
+		String select_first_attachment = locators.getProperty("select_first_attachment");
+		String deselect_checkbox_days = locators.getProperty("deselect_checkbox_days");
+		String collapse_months = locators.getProperty("collapse_months");
+		String cancel_multi_select = locators.getProperty("cancel_multi_select");
+		
+		//tap on months
+		waitAndClick(months_tab,"Failed to tap on month tab");
+		Thread.sleep(10000);
+		//tap on three dots menu
+		waitAndClick(tap_three_dots_menu,"Failed to tap on three dots menu under months tab");
+		//tap on select dates
+		waitAndClick(select_dates,"Failed to select dates under months tab");
+		//tap on multi select attachments
+		waitAndClick(select_first_attachment,"Failed to select multiple attachmnets under months tab");
+		//deselect attachmnets
+		waitAndClick(deselect_checkbox_days,"Failed to de select attachments");
+		// tap on collapse attachments
+		waitAndClick(collapse_months,"Failed to collapse attachments under month tab");
+		// tap on cancel button
+		waitAndClick(cancel_multi_select,"Failed to tap on cancel button");
+		
+	}
+	
+	public void validateSelectDeselectAttachmentsYearWise() throws InterruptedException {
+		String years_tab = locators.getProperty("years_tab");
+		String tap_three_dots_menu = locators.getProperty("tap_three_dots_menu");
+		String select_attachments_txt = locators.getProperty("select_attachments_txt");
+		String select_first_attachment = locators.getProperty("select_first_attachment");
+		String deselect_checkbox_days = locators.getProperty("deselect_checkbox_days");
+		String cancel_multi_select = locators.getProperty("cancel_multi_select");
+		
+		//tap on years tab
+		waitAndClick(years_tab,"Failed to tap on years tab");
+		Thread.sleep(10000);
+		//tap on three dots
+		waitAndClick(tap_three_dots_menu,"Failed to tap on three dots menu");
+		//tap on select attachments
+		waitAndClick(select_attachments_txt,"Failed to tap on select attachments");
+		//tap select multiple attachments
+		waitAndClick(select_first_attachment,"Failed to select attachments under years tab");
+		//tap on de select attachments
+		waitAndClick(deselect_checkbox_days,"Failed to de select attachments");
+		//tap on cancel button
+		waitAndClick(cancel_multi_select,"Failed to tap cancel button");	
+	}
+	
+	public void validateSearchAndSuggestionAsPerQuestion() throws InterruptedException {
+		String all_tab = locators.getProperty("all_tab");
+		String search_question_and_category = locators.getProperty("search_question_and_category");
+		String question_serach_results = locators.getProperty("question_serach_results");
+
+		// expected values
+		String Gallery_QuestionaName = prop.getProperty("Gallery_QuestionaName");
+		String expSuggestion = prop.getProperty("Gallery_QuestionResults");
+
+		// tap on all tab
+		waitAndClick(all_tab, "Failed to tap on all tab");
+
+		// search with question name
+		Thread.sleep(10000);
+		waitAndClick(search_question_and_category, "Failed to tap on serach bar");
+		WebElement question = appdriver.findElement(AppiumBy.xpath(search_question_and_category));
+		question.sendKeys(Gallery_QuestionaName);
+
+		// validate suggestion for question
+		Thread.sleep(10000);
+		String actSuggestion = appdriver.findElement(AppiumBy.xpath(question_serach_results)).getText();
+		if (actSuggestion.equals(expSuggestion)) {
+		} else {
+			Assert.fail("Failed to validate suggestion for question after serach");
+		}
+
+		// tap on question results
+		waitAndClick(question_serach_results, "Failed to tap on question search results");
+
+		// validate question results attachments
+		Thread.sleep(10000);
+		verifyAttachmentsVisibilityUnderAllTab();
+	}
+
+	public void validateSearchAndSuggestionAsPerCategory() throws InterruptedException {
+		String tap_on_gallery = locators.getProperty("tap_on_gallery");
+		String search_question_and_category = locators.getProperty("search_question_and_category");
+		String category_search_results = locators.getProperty("category_search_results");
+
+		// expected values
+		String Gallery_CategoryName = prop.getProperty("Gallery_CategoryName");
+		String expSuggestion = prop.getProperty("Gallery_CategoryResults");
+
+		// tap on gallery
+		waitAndClick(tap_on_gallery, "Failed to tap on gallery");
+
+		// search with question name
+		Thread.sleep(10000);
+		waitAndClick(search_question_and_category, "Failed to tap on serach bar");
+		WebElement question = appdriver.findElement(AppiumBy.xpath(search_question_and_category));
+		question.sendKeys(Gallery_CategoryName);
+
+		// validate suggestion for question
+		Thread.sleep(10000);
+		String actSuggestion = appdriver.findElement(AppiumBy.xpath(category_search_results)).getText();
+		if (actSuggestion.equals(expSuggestion)) {
+		} else {
+			Assert.fail("Failed to validate suggestion for question after serach");
+		}
+
+		// tap on question results
+		waitAndClick(category_search_results, "Failed to tap on question search results");
+
+		// validate question results attachments
+		Thread.sleep(10000);
+		verifyAttachmentsVisibilityUnderAllTab();
+
+	}
 }
