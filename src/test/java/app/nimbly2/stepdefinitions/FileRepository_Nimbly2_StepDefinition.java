@@ -46,5 +46,17 @@ public class FileRepository_Nimbly2_StepDefinition {
 	public void share_and_download_recently_uploaded_file() throws InterruptedException {
 		filerepositorypage2.shareAndDownloadRecentlyUploadedFile();
 	}
+	@And("^rename file and folder names$")
+	public void rename_file_and_folder_names() throws InterruptedException {
+		filerepositorypage2.renameFileAndFolder();
+	}
+	@And("^move files and folders to trash$")
+	public void move_files_and_folders_to_trash() throws InterruptedException {
+		filerepositorypage2.moveFilesAndFoldersToTrash();
+	}
+	@And("^create new file and folder$")
+	public void create_new_file_and_folder() throws InterruptedException {
+		filerepositorypage2.createNewFolderAndFile();
+	}
 
 }
