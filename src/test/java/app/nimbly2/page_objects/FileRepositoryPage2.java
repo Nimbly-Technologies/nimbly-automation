@@ -268,6 +268,11 @@ public class FileRepositoryPage2 {
 		return "Lambda" + folderName;
 	}
 	
+	public String generateRandomFileName() {
+		String folderName = RandomStringUtils.randomAlphanumeric(5);
+		return "File" + folderName;
+	}
+	
 	public void switchToSharedWithMe() throws InterruptedException {
 		String shared_with_me = locators.getProperty("shared_with_me");
 		Thread.sleep(3000);
@@ -317,5 +322,105 @@ public class FileRepositoryPage2 {
 		Thread.sleep(4000);
 		waitAndClick(tap_folder_overflow_menu, "Failed to tap on file overflow menu");
 		shareFilesAndFolders();
+	}
+	
+	public void renameFileAndFolder() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
+		String clear_folder_file_txt = locators.getProperty("clear_folder_file_txt");
+		String enter_new_name = locators.getProperty("enter_new_name");
+		String save_name = locators.getProperty("save_name");
+		String rename_file_folder_name = locators.getProperty("rename_file_folder_name");
+
+		// change the folder name
+		Thread.sleep(6000);
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on folder overflow menu");
+		waitAndClick(rename_file_folder_name, "Failed to tap on rename folder");
+		WebElement clearText = appdriver.findElement(AppiumBy.xpath(clear_folder_file_txt));
+		clearText.clear();
+		Thread.sleep(2000);
+		WebElement folderName = appdriver.findElement(AppiumBy.xpath(enter_new_name));
+		folderName.sendKeys(generateRandomFolderName());
+
+		// save new folder name
+		waitAndClick(save_name, "Failed to save folder name");
+
+		// change the file name
+		Thread.sleep(10000);
+		waitAndClick(tap_file_overflow_menu, "Failed to tap on folder overflow menu");
+		waitAndClick(rename_file_folder_name, "Failed to tap on rename folder");
+		WebElement clearFileText = appdriver.findElement(AppiumBy.xpath(clear_folder_file_txt));
+		clearFileText.clear();
+		Thread.sleep(2000);
+		WebElement fileNameName = appdriver.findElement(AppiumBy.xpath(enter_new_name));
+		fileNameName.sendKeys(generateRandomFileName());
+
+		// save new folder name
+		waitAndClick(save_name, "Failed to save folder name");
+
+	}
+
+	public void moveFilesAndFoldersToTrash() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
+		String move_to_trash = locators.getProperty("move_to_trash");
+		String move_to_trash_pop_up = locators.getProperty("move_to_trash_pop_up");
+		
+		//move file to trash
+		Thread.sleep(10000);
+		waitAndClick(tap_file_overflow_menu,"Failed to tap on file overflow menu");
+		waitAndClick(move_to_trash,"Failed to tap on move to transh option");
+		waitAndClick(move_to_trash_pop_up,"Failed to click on Ok button");
+		
+		//move folder to trash
+		Thread.sleep(10000);
+		waitAndClick(tap_folder_overflow_menu,"Failed to tap on folder overflow menu");
+		waitAndClick(move_to_trash,"Failed to tap on move to transh option");
+		waitAndClick(move_to_trash_pop_up,"Failed to click on Ok button");
+		Thread.sleep(5000);
+	}
+	public void createNewFolderAndFile() throws InterruptedException {
+		// Locators
+		String adhoc_tap_add_issue = locators.getProperty("adhoc_tap_add_issue");
+		String tap_on_new_folder = locators.getProperty("tap_on_new_folder");
+		String add_new_folder = locators.getProperty("add_new_folder");
+		String create_button = locators.getProperty("create_button");
+		String file_upload = locators.getProperty("file_upload");
+		String upload_from_gallery = locators.getProperty("upload_from_gallery");
+		String select_file_from_gallery = locators.getProperty("select_file_from_gallery");
+		String add_file_from_gallery = locators.getProperty("add_file_from_gallery");
+
+		// tap on add button
+		waitAndClick(adhoc_tap_add_issue, "Failed to tap on add button");
+
+		// tap on new folder
+		waitAndClick(tap_on_new_folder, "Failed to tap on new folder");
+
+		// enter folder name
+		Thread.sleep(2000);
+		WebElement folderName = appdriver.findElement(AppiumBy.xpath(add_new_folder));
+		folderName.sendKeys(generateRandomFolderName());
+
+		// tap on create button
+		waitAndClick(create_button, "Failed to tap on creat button");
+
+		// upload file
+		// tap on add button
+		Thread.sleep(5000);
+		waitAndClick(adhoc_tap_add_issue, "Failed to tap on add button");
+
+		// tap on file upload
+		waitAndClick(file_upload, "Failed to tap on file upload");
+
+		// tap on file upload from gallery
+		Thread.sleep(3000);
+		waitAndClick(upload_from_gallery, "Failed to tap on gallery");
+
+		// tap on select file
+		waitAndClick(select_file_from_gallery, "Failed to select file");
+
+		// tap on add button
+		waitAndClick(add_file_from_gallery, "Failed to tap on add button");
+		Thread.sleep(20000);
 	}
 }
