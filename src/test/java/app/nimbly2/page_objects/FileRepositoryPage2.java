@@ -3,6 +3,8 @@ package app.nimbly2.page_objects;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -422,5 +424,124 @@ public class FileRepositoryPage2 {
 		// tap on add button
 		waitAndClick(add_file_from_gallery, "Failed to tap on add button");
 		Thread.sleep(20000);
+	}
+	
+	public void validateFileTypeFilter() throws InterruptedException {
+	    Map<String, String> fileTypes = new HashMap<>();
+	    fileTypes.put("image", locators.getProperty("select_file_type_image"));
+	    fileTypes.put("video", locators.getProperty("select_file_type_video"));
+	    fileTypes.put("document", locators.getProperty("select_file_type_document"));
+
+	    Map<String, String> expectedFileNames = new HashMap<>();
+	    expectedFileNames.put("image", prop.getProperty("Image_Name"));
+	    expectedFileNames.put("video", prop.getProperty("Video_Name"));
+	    expectedFileNames.put("document", prop.getProperty("Doc_Name"));
+
+	    Map<String, String> fileLocators = new HashMap<>();
+	    fileLocators.put("image", locators.getProperty("image_file_type"));
+	    fileLocators.put("video", locators.getProperty("video_file_type"));
+	    fileLocators.put("document", locators.getProperty("doc_file_type"));
+
+	    for (String fileType : fileTypes.keySet()) {
+	        applyFilter(fileTypes.get(fileType));
+	        validateFileType(fileLocators.get(fileType), expectedFileNames.get(fileType));
+	        resetFilter();
+	    }
+	}
+
+	private void applyFilter(String fileTypeLocator) throws InterruptedException {
+	    waitAndClick(locators.getProperty("file_repo_filter"), "Failed to tap on filter icon");
+	    waitAndClick(locators.getProperty("filter_by_file_type"), "Failed to tap on file type");
+	    waitAndClick(fileTypeLocator, "Failed to select file type");
+	    waitAndClick(locators.getProperty("save_button"), "Failed to tap on save button");
+	    waitAndClick(locators.getProperty("apply_button"), "Failed to tap on apply button");
+	    Thread.sleep(5000);
+	}
+
+	private void validateFileType(String fileLocator, String expectedFileName) {
+	    String actualFileName = appdriver.findElement(AppiumBy.xpath(fileLocator)).getText();
+	    if (!actualFileName.equals(expectedFileName)) {
+	        Assert.fail("Failed to validate file type: " + expectedFileName);
+	    }
+	}
+
+	private void resetFilter() {
+	    waitAndClick(locators.getProperty("file_repo_filter"), "Failed to tap on filter icon");
+	    waitAndClick(locators.getProperty("reset_button"), "Failed to reset filter");
+	}
+	
+	public void validateFileTypeFilterForFolder() throws InterruptedException {
+		String folder_name = locators.getProperty("folder_name");
+		
+		//tap on folder
+		waitAndClick(folder_name,"Failed to tap on folder name");
+		validateFileTypeFilter();
+	}
+	
+	public void shareFolderUnderSharedWithMe() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String shared_with_me = locators.getProperty("shared_with_me");
+		
+		waitAndClick(shared_with_me,"Failed to tap on Share with me tab");
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on file overflow menu");
+		shareFilesAndFolders();
+		 Thread.sleep(8000);
+		
+	}
+	
+	public void searchFileOrFolder(String locator, String searchText) {
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+		WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(locator)));
+		searchBox.sendKeys(searchText);
+	}
+	
+	public void verifySortFunctionalityUnderSharedWithMe() throws InterruptedException{
+		String file_repo_filter = locators.getProperty("file_repo_filter");
+		String sort_by_name = locators.getProperty("sort_by_name");
+		String sort_by_last_modified = locators.getProperty("sort_by_last_modified");
+		String sort_by_last_modified_by_me = locators.getProperty("sort_by_last_modified_by_me");
+		String sort_by_last_opened_by_me = locators.getProperty("sort_by_last_opened_by_me");
+		String video_file_type = locators.getProperty("video_file_type");
+		String image_file_type = locators.getProperty("image_file_type");
+		String doc_file_type = locators.getProperty("doc_file_type");
+		String folder_name = locators.getProperty("folder_name");
+		String apply_button = locators.getProperty("apply_button");
+		
+		
+		//expected values
+		String expVideoName = prop.getProperty("Video_Name");
+		String expDocName = prop.getProperty("Doc_Name");
+		String expImageName = prop.getProperty("Image_Name");
+		String expFolderName = prop.getProperty("Shared_Folder_Name");
+		
+		//sort by name
+		waitAndClick(file_repo_filter,"Failed to tap on file repo filter");
+		waitAndClick(sort_by_name,"Failed to tap on sort by name");
+		waitAndClick(apply_button,"Failed to tap on apply button");
+		Thread.sleep(3000);
+		validateFileType(folder_name,expFolderName);
+		
+		//sort by last modified
+		waitAndClick(file_repo_filter,"Failed to tap on file repo filter");
+		waitAndClick(sort_by_last_modified,"Failed to tap on sort by last modified");
+		waitAndClick(apply_button,"Failed to tap on apply button");
+		Thread.sleep(3000);
+		validateFileType(video_file_type,expVideoName);
+		
+		//sort by last modified by me
+		waitAndClick(file_repo_filter,"Failed to tap on file repo filter");
+		waitAndClick(sort_by_last_modified_by_me,"Failed to tap on sort by last modified by me");
+		waitAndClick(apply_button,"Failed to tap on apply button");
+		Thread.sleep(3000);
+		validateFileType(video_file_type,expVideoName);
+		
+		// sort by last opened by me
+		waitAndClick(file_repo_filter,"Failed to tap on file repo filter");
+		waitAndClick(sort_by_name,"Failed to tap on sort by name");
+		waitAndClick(apply_button,"Failed to tap on apply button");
+		Thread.sleep(3000);
+		validateFileType(folder_name,expFolderName);
+		
+		
 	}
 }

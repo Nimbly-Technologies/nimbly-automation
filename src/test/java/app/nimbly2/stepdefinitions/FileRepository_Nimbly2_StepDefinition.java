@@ -58,5 +58,21 @@ public class FileRepository_Nimbly2_StepDefinition {
 	public void create_new_file_and_folder() throws InterruptedException {
 		filerepositorypage2.createNewFolderAndFile();
 	}
+	@And("^validate the file type filter functionality for files$")
+	public void validate_the_file_type_filter_functionality() throws InterruptedException {
+		filerepositorypage2.validateFileTypeFilter();
+	}
+	@And("^validate the file type filter functionality for folders$")
+	public void validate_the_file_type_filter_functionality_for_folders() throws InterruptedException {
+		filerepositorypage2.validateFileTypeFilterForFolder();
+	}
+	@And("^verify user can share folder$")
+	public void verify_user_can_share_folder() throws InterruptedException {
+		filerepositorypage2.shareFolderUnderSharedWithMe();
+	}
+	@And("^verify sort functionality under shared with me$")
+	public void verify_sort_functionality_under_shared_with_me() throws InterruptedException {
+		filerepositorypage2.verifySortFunctionalityUnderSharedWithMe();
+	}
 
 }
