@@ -58,13 +58,13 @@ public class FileRepository_Nimbly2_StepDefinition {
 	public void create_new_file_and_folder() throws InterruptedException {
 		filerepositorypage2.createNewFolderAndFile();
 	}
-	@And("^validate the file type filter functionality for files$")
-	public void validate_the_file_type_filter_functionality() throws InterruptedException {
-		filerepositorypage2.validateFileTypeFilter();
+	@And("^validate the file type filter functionality for files (.*) (.*) (.*)$")
+	public void validate_the_file_type_filter_functionality(String videoFile, String docFile, String imageFile) throws InterruptedException {
+		filerepositorypage2.validateFileTypeFilter(videoFile,docFile,imageFile);
 	}
-	@And("^validate the file type filter functionality for folders$")
-	public void validate_the_file_type_filter_functionality_for_folders() throws InterruptedException {
-		filerepositorypage2.validateFileTypeFilterForFolder();
+	@And("^validate the file type filter functionality for folders (.*) (.*) (.*)$")
+	public void validate_the_file_type_filter_functionality_for_folders(String videoFile, String docFile, String imageFile) throws InterruptedException {
+		filerepositorypage2.validateFileTypeFilterForFolder(videoFile,docFile,imageFile);
 	}
 	@And("^verify user can share folder$")
 	public void verify_user_can_share_folder() throws InterruptedException {
@@ -73,6 +73,26 @@ public class FileRepository_Nimbly2_StepDefinition {
 	@And("^verify sort functionality under shared with me$")
 	public void verify_sort_functionality_under_shared_with_me() throws InterruptedException {
 		filerepositorypage2.verifySortFunctionalityUnderSharedWithMe();
+	}
+	@And("^rename the file in recent tab$")
+	public void rename_the_file_in_recent_tab() throws InterruptedException {
+		filerepositorypage2.renameFileInRecentTab();
+	}
+	@And("^move file to trash in recent tab$")
+	public void move_file_to_trash_in_recent_tab() throws InterruptedException {
+		filerepositorypage2.moveFileToTrashInRecentTab();
+	}
+	@And("^navigates to starred tab$")
+	public void navigates_to_starred_tab() throws InterruptedException {
+		filerepositorypage2.navigateToStarredTab();
+	}
+	@And("^add file and folder to starred$")
+	public void add_file_and_folder_to_starred() throws InterruptedException {
+		filerepositorypage2.addFileAndFolderToStarred();
+	}
+	@And("^restore files and folders from trash$")
+	public void restore_files_and_folders_from_trash() throws InterruptedException {
+		filerepositorypage2.restoreFileAndFolderFromTrash();
 	}
 
 }

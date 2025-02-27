@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -82,6 +83,7 @@ public class FileRepositoryPage2 {
 		} else {
 			Assert.fail("Failed to find my files text on file repo");
 		}
+		
 	}
 	
 	public void validateFilesAndFoldersUnderListAndGridView() {
@@ -149,6 +151,7 @@ public class FileRepositoryPage2 {
 		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
 
 		// tap on folder overflow menu
+		Thread.sleep(10000);
 		waitAndClick(tap_folder_overflow_menu, "Failed to tap on folder overflow menu");
 
 		// tap on download folder
@@ -156,7 +159,7 @@ public class FileRepositoryPage2 {
 
 		// wait for some time and navigate back
 		Thread.sleep(10000);
-		appdriver.navigate().back();
+		navigateBackToFileRepo();
 
 		// tap on file overflow menu
 		waitAndClick(tap_file_overflow_menu, "Failed to tap on file overflow menu");
@@ -426,16 +429,16 @@ public class FileRepositoryPage2 {
 		Thread.sleep(20000);
 	}
 	
-	public void validateFileTypeFilter() throws InterruptedException {
+	public void validateFileTypeFilter(String videoFile, String docFile, String imageFile) throws InterruptedException {
 	    Map<String, String> fileTypes = new HashMap<>();
 	    fileTypes.put("image", locators.getProperty("select_file_type_image"));
 	    fileTypes.put("video", locators.getProperty("select_file_type_video"));
 	    fileTypes.put("document", locators.getProperty("select_file_type_document"));
 
 	    Map<String, String> expectedFileNames = new HashMap<>();
-	    expectedFileNames.put("image", prop.getProperty("Image_Name"));
-	    expectedFileNames.put("video", prop.getProperty("Video_Name"));
-	    expectedFileNames.put("document", prop.getProperty("Doc_Name"));
+	    expectedFileNames.put("image", prop.getProperty(imageFile));
+	    expectedFileNames.put("video", prop.getProperty(videoFile));
+	    expectedFileNames.put("document", prop.getProperty(docFile));
 
 	    Map<String, String> fileLocators = new HashMap<>();
 	    fileLocators.put("image", locators.getProperty("image_file_type"));
@@ -470,12 +473,12 @@ public class FileRepositoryPage2 {
 	    waitAndClick(locators.getProperty("reset_button"), "Failed to reset filter");
 	}
 	
-	public void validateFileTypeFilterForFolder() throws InterruptedException {
+	public void validateFileTypeFilterForFolder(String videoFile, String docFile, String imageFile) throws InterruptedException {
 		String folder_name = locators.getProperty("folder_name");
 		
 		//tap on folder
 		waitAndClick(folder_name,"Failed to tap on folder name");
-		validateFileTypeFilter();
+		validateFileTypeFilter(videoFile,docFile,imageFile);
 	}
 	
 	public void shareFolderUnderSharedWithMe() throws InterruptedException {
@@ -525,7 +528,7 @@ public class FileRepositoryPage2 {
 		waitAndClick(file_repo_filter,"Failed to tap on file repo filter");
 		waitAndClick(sort_by_last_modified,"Failed to tap on sort by last modified");
 		waitAndClick(apply_button,"Failed to tap on apply button");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		validateFileType(video_file_type,expVideoName);
 		
 		//sort by last modified by me
@@ -544,4 +547,182 @@ public class FileRepositoryPage2 {
 		
 		
 	}
+	
+	public void renameFileInRecentTab() throws InterruptedException {
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
+		String recent_option = locators.getProperty("recent_option");
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String clear_folder_file_txt = locators.getProperty("clear_folder_file_txt");
+		String enter_new_name = locators.getProperty("enter_new_name");
+		String save_name = locators.getProperty("save_name");
+		String rename_file_folder_name = locators.getProperty("rename_file_folder_name");
+		String adhoc_tap_add_issue = locators.getProperty("adhoc_tap_add_issue");
+		String file_upload = locators.getProperty("file_upload");
+		String upload_from_gallery = locators.getProperty("upload_from_gallery");
+		String select_file_from_gallery = locators.getProperty("select_file_from_gallery");
+		String add_file_from_gallery = locators.getProperty("add_file_from_gallery");
+
+		// tap on add button
+		Thread.sleep(5000);
+		waitAndClick(adhoc_tap_add_issue, "Failed to tap on add button");
+
+		// tap on file upload
+		waitAndClick(file_upload, "Failed to tap on file upload");
+
+		// tap on file upload from gallery
+		Thread.sleep(3000);
+		waitAndClick(upload_from_gallery, "Failed to tap on gallery");
+
+		// tap on select file
+		waitAndClick(select_file_from_gallery, "Failed to select file");
+
+		// tap on add button
+		waitAndClick(add_file_from_gallery, "Failed to tap on add button");
+		Thread.sleep(20000);
+
+		// navigate to recent tab
+		Thread.sleep(6000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(recent_option, "Failed to tap on Recent Option from pop up");
+
+		// rename file name under recent tab
+		Thread.sleep(6000);
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on file overflow menu");
+		waitAndClick(rename_file_folder_name, "Failed to tap on rename folder");
+		WebElement clearText = appdriver.findElement(AppiumBy.xpath(clear_folder_file_txt));
+		clearText.clear();
+		Thread.sleep(2000);
+		WebElement folderName = appdriver.findElement(AppiumBy.xpath(enter_new_name));
+		folderName.sendKeys(generateRandomFolderName());
+
+		// save new file name
+		waitAndClick(save_name, "Failed to save folder name");
+	}
+	
+	public void moveFileToTrashInRecentTab() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String move_to_trash = locators.getProperty("move_to_trash");
+		String move_to_trash_pop_up = locators.getProperty("move_to_trash_pop_up");
+		
+		// move file to trash in recent tab
+		Thread.sleep(10000);
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on folder overflow menu");
+		waitAndClick(move_to_trash, "Failed to tap on move to transh option");
+		waitAndClick(move_to_trash_pop_up, "Failed to click on Ok button");
+		Thread.sleep(5000);
+	}
+	
+	public void navigateToStarredTab() throws InterruptedException {
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
+		String starred_option = locators.getProperty("starred_option");
+		
+		Thread.sleep(5000);
+		waitAndClick(file_repo_three_dots_menu,"Failed to tap on three dots menu");
+		waitAndClick(starred_option,"Failed to select Starred Option from pop up");
+	}
+	
+	public void addFileAndFolderToStarred() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
+		String add_to_starred = locators.getProperty("add_to_starred");
+		String star_ok_button = locators.getProperty("star_ok_button");
+		
+		//add folder to starred
+		Thread.sleep(10000);
+		waitAndClick(tap_folder_overflow_menu,"Failed to tap on folder overflow menu");
+		waitAndClick(add_to_starred,"Failed to add folder to starred");
+		waitAndClick(star_ok_button,"Failed to tap on Okay button");
+		
+		//add folder to starred
+		Thread.sleep(10000);
+		waitAndClick(tap_file_overflow_menu,"Failed to tap on file overflow menu");
+		waitAndClick(add_to_starred,"Failed to add file to starred");
+		waitAndClick(star_ok_button,"Failed to tap on Okay button");
+	}
+	
+	public void restoreFileAndFolderFromTrash() throws InterruptedException {
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
+		String trash_option = locators.getProperty("trash_option");
+		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
+		String restore_files_folders = locators.getProperty("restore_files_folders");
+		String restore_ok_button = locators.getProperty("restore_ok_button");
+		String doc_file_type = locators.getProperty("doc_file_type");
+		String trash_folder_name = locators.getProperty("trash_folder_name");
+		String recent_option = locators.getProperty("recent_option");
+
+		// expected values
+		String expDocName = prop.getProperty("Trash_Doc_Name");
+		String expFolderName = prop.getProperty("Trash_Folder_Name");
+
+		Thread.sleep(5000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(trash_option, "Failed to select Trash Option from pop up");
+
+		// validate file name
+		String actDocName = appdriver.findElement(AppiumBy.xpath(doc_file_type)).getText();
+		if (!actDocName.equals(expDocName)) {
+			Assert.fail("Failed to validate doc names in Trash folder");
+		}
+
+		// validate folder name
+		String actFolderName = appdriver.findElement(AppiumBy.xpath(trash_folder_name)).getText();
+		if (!actFolderName.equals(expFolderName)) {
+			Assert.fail("Failed to validate Folder name in Trash folder");
+		}
+
+		// restore file
+		waitAndClick(tap_file_overflow_menu, "Failed to tap on overflow menu");
+		waitAndClick(restore_files_folders, "Failed to restore file");
+		waitAndClick(restore_ok_button, "Failed to click on Ok button ");
+
+		// refresh the page
+		Thread.sleep(5000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(recent_option,"Failed to tap on recent option");
+		Thread.sleep(5000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(trash_option, "Failed to select Trash Option from pop up");
+
+		// restore folder
+		Thread.sleep(9000);
+		waitAndClick(tap_file_overflow_menu, "Failed to tap on overflow menu");
+		waitAndClick(restore_files_folders, "Failed to restore folder");
+		waitAndClick(restore_ok_button, "Failed to click on Ok button ");
+
+	}
+	
+	private void navigateBackToFileRepo() {
+	    int maxAttempts = 4; // Max attempts to press back
+	    int attempts = 0;
+	    
+	    while (attempts < maxAttempts) {
+	        try {
+	            // Press back button
+	            appdriver.navigate().back();
+
+	            // Wait for File Repository tab to be visible
+	            if (isFileRepoTabDisplayed()) {
+	                return; // Exit once we reach the File Repo tab
+	            }
+
+	            // Increment attempt count
+	            attempts++;
+
+	        } catch (NoSuchElementException | TimeoutException e) {
+	            
+	        }
+	    }
+	}
+
+	private boolean isFileRepoTabDisplayed() {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5));
+	        WebElement fileRepoTab = wait.until(ExpectedConditions
+	                .visibilityOfElementLocated(AppiumBy.xpath("//*[@text='File Repository']")));
+	        return fileRepoTab.isDisplayed();
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
+	}
+
 }
