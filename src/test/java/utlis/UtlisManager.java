@@ -14,9 +14,14 @@ public class UtlisManager {
 	public Web_PageObjectManager webPageobjectManager;
 
 	public UtlisManager() throws Exception {
-		genericTestBase = new GenericTestBase();
-		appPageobjectManager = new App_PageObjectManager(genericTestBase.ConfigureAppDriver(),genericTestBase.ConfigProperties());
-		webPageobjectManager = new Web_PageObjectManager(genericTestBase.ConfigureWebDriver(),genericTestBase.ConfigProperties());
+	    System.out.println("Initializing UtlisManager");
+	    genericTestBase = new GenericTestBase();
+	    // Initialize only app driver for mobile tests and store it in genericTestBase
+	    genericTestBase.appdriver = genericTestBase.ConfigureAppDriver();
+	    appPageobjectManager = new App_PageObjectManager(
+	        genericTestBase.appdriver,
+	        genericTestBase.ConfigProperties()
+	    );
 
 	}
 }

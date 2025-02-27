@@ -89,51 +89,55 @@ public class LoginPage2 {
 	}
 	
 	public void validatePopups() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30)); // Explicit wait
-		boolean isPopupsHandled = false; // Flag to track if both pop-ups are handled
-
-		// Retry loop for handling popups
-		int maxRetries = 1; // You can tweak this based on how frequently popups appear
-		int retryCount = 0;
-
-		while (!isPopupsHandled && retryCount < maxRetries) {
-			try {
-				retryCount++;
-
-				// Check for Multiple Login Pop-up
-				if (handleMultipleLoginPopup(wait)) {
-					// After handling the Multiple Login Pop-up, check for In-App Update
-					if (isInAppUpdatePresent(wait)) {
-						handleInAppUpdatePopup(wait);
-						continue; // After handling the In-App Update, retry the whole logic
-					}
-					isPopupsHandled = true; // Mark as handled if no further popups
-					System.out.println("Handled Multiple Login Pop-up.");
-				}
-
-				// Check for In-App Update Pop-up if no login pop-up is present
-				if (!isPopupsHandled && isInAppUpdatePresent(wait)) {
-					handleInAppUpdatePopup(wait);
-					continue; // After handling the In-App Update pop-up, retry the whole logic
-				}
-
-			} catch (Exception e) {
-				System.out.println("Attempt " + retryCount + " failed: " + e.getMessage());
-				e.printStackTrace();
-			}
-
-			// If popups are not handled, retry after a short delay
-			if (!isPopupsHandled) {
-				System.out.println("Retrying... Attempt " + retryCount + " of " + maxRetries);
-				Thread.sleep(3000); // Optional: Add a small delay before retrying
-			}
-		}
-
-		if (isPopupsHandled) {
-			System.out.println("Both pop-ups handled successfully.");
-		} else {
-			System.out.println("Failed to handle pop-ups after " + maxRetries + " attempts.");
-		}
+	    long startTime = System.currentTimeMillis();
+	    long timeout = 60000; // 60 second timeout
+	    WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+	    
+	    while (System.currentTimeMillis() - startTime < timeout) {
+	        try {
+	            // First check for Multiple Login popup
+	            if (handleMultipleLoginPopup(wait)) {
+	                System.out.println("Multiple Login popup handled");
+	                // Give time for any animations to complete
+	                Thread.sleep(1000);
+	            }
+	            
+	            // Then check for Update popup
+	            if (isInAppUpdatePresent(wait)) {
+	                handleInAppUpdatePopup(wait);
+	                System.out.println("Update popup handled");
+	                // Give time for any animations to complete
+	                Thread.sleep(1000);
+	            }
+	            
+	            // If no popups are visible, we're done
+	            if (!isAnyPopupVisible()) {
+	                System.out.println("No more popups detected");
+	                return;
+	            }
+	            
+	        } catch (Exception e) {
+	            System.err.println("Error handling popups: " + e.getMessage());
+	            // Short wait before retry
+	            Thread.sleep(1000);
+	        }
+	    }
+	    
+	    System.err.println("Popup handling timed out after 60 seconds");
+	}
+	
+	private boolean isAnyPopupVisible() {
+	    try {
+	        String multipleLoginXpath = locators.getProperty("multiple_login");
+	        String versionPopUpXpath = locators.getProperty("version_pop_up_text");
+	        
+	        boolean loginPopup = !appdriver.findElements(AppiumBy.xpath(multipleLoginXpath)).isEmpty();
+	        boolean updatePopup = !appdriver.findElements(AppiumBy.xpath(versionPopUpXpath)).isEmpty();
+	        
+	        return loginPopup || updatePopup;
+	    } catch (Exception e) {
+	        return false;
+	    }
 	}
 
 	private boolean handleMultipleLoginPopup(WebDriverWait wait) throws InterruptedException {
@@ -247,22 +251,37 @@ public class LoginPage2 {
 	}
 
 	public void login(String username, String password) throws InterruptedException {
-		Thread.sleep(5000);
-		if (!username.isEmpty() && !password.isEmpty()) {
-			String emil_or_userid = locators.getProperty("enetr_email_userid");
-			String useremail = prop.getProperty(username);
-			String password_box = locators.getProperty("enter_password");
-			String user_password = prop.getProperty(password);
-			appdriver.findElement(AppiumBy.xpath(emil_or_userid)).sendKeys(useremail);
-			Thread.sleep(2000);
-			appdriver.findElement(AppiumBy.xpath(password_box)).sendKeys(user_password);
-			Thread.sleep(2000);
-			String login_button = locators.getProperty("login_button");
-			appdriver.findElement(AppiumBy.xpath(login_button)).click();
-		} else {
-			Assert.fail("Failed to login to application !!");
+	    WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(20));
+	    try {
+	        if (!username.isEmpty() && !password.isEmpty()) {
+	            String emailField = locators.getProperty("enetr_email_userid");
+	            String passwordField = locators.getProperty("enter_password");
+	            String loginButton = locators.getProperty("login_button");
+	            String useremail = prop.getProperty(username);
+	            String userPassword = prop.getProperty(password);
 
-		}
+	            // Wait for and enter email
+	            WebElement emailElement = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(emailField)));
+	            emailElement.clear();
+	            emailElement.sendKeys(useremail);
+
+	            // Wait for and enter password
+	            WebElement passwordElement = wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(passwordField)));
+	            passwordElement.clear();
+	            passwordElement.sendKeys(userPassword);
+
+	            // Wait for and click login button
+	            wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath(loginButton))).click();
+	            
+	            // Wait for login to complete (adjust XPath based on your app's success indicator)
+	            wait.until(ExpectedConditions.invisibilityOfElementLocated(AppiumBy.xpath(loginButton)));
+	        } else {
+	            throw new IllegalArgumentException("Username or password is empty");
+	        }
+	    } catch (Exception e) {
+	        System.err.println("Login failed: " + e.getMessage());
+	        throw e;
+	    }
 	}
 	
 	public void validateInvalidCredentialsErrorMessage() throws InterruptedException {
