@@ -801,12 +801,21 @@ public class SchedulesPage2 {
 		String use_photo = locators.getProperty("use_photo");
 		String pdf_attachment = locators.getProperty("add_pdf_attachment");
 		String select_pdf_attachment = locators.getProperty("select_pdf_attachmnet");
+		String tap_menu_to_select_document = locators.getProperty("tap_menu_to_select_document");
+		String tap_document_option = locators.getProperty("tap_document_option");
+		String tap_document_folder = locators.getProperty("tap_document_folder");
 
 		// add document attachment
 		Thread.sleep(3000);
 		if (appdriver.findElement(AppiumBy.xpath(pdf_attachment)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(pdf_attachment)).click();
 			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(tap_menu_to_select_document)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_option)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_folder)).click();
+			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
 		} else {
 			Assert.fail("Failed to add document attachment");
@@ -1435,6 +1444,9 @@ public class SchedulesPage2 {
 		String select_green_and_yellow = locators.getProperty("green_yellow_red_answer");
 		String tap_save_button = locators.getProperty("tap_save_button");
 		String saved_button = locators.getProperty("saved_button");
+		String tap_menu_to_select_document = locators.getProperty("tap_menu_to_select_document");
+		String tap_document_option = locators.getProperty("tap_document_option");
+		String tap_document_folder = locators.getProperty("tap_document_folder");
 
 		// Expected value
 		String expSavedButton = prop.getProperty("Saved_Button");
@@ -1494,6 +1506,12 @@ public class SchedulesPage2 {
 		if (appdriver.findElement(AppiumBy.xpath(add_document)).isDisplayed()) {
 			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(add_document)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(tap_menu_to_select_document)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_option)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_folder)).click();
 			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_pdf)).click();
 		} else {
@@ -1643,7 +1661,7 @@ public class SchedulesPage2 {
 
 		// tap on delete progress yes
 		if (appdriver.findElement(AppiumBy.xpath(delete_progress)).isDisplayed()) {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			appdriver.findElement(AppiumBy.xpath(delete_progress)).click();
 			Thread.sleep(6000);
 		} else {
@@ -1741,7 +1759,7 @@ public class SchedulesPage2 {
 		}
 
 		// verify check-in pop-up
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		String actCheckinRadiusMessage = appdriver.findElement(AppiumBy.xpath(checkin_radius)).getText();
 		if (actCheckinRadiusMessage.equals(actCheckinRadiusMessage)) {
 			Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage,

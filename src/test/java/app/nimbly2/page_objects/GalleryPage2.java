@@ -104,7 +104,7 @@ public class GalleryPage2 {
 		}
 
 		// verify by default all tab is selected
-		Thread.sleep(3000);
+		Thread.sleep(13000);
 		WebElement all = appdriver.findElement(AppiumBy.xpath(all_tab));
 		if (all.isDisplayed()) {
 		} else {
