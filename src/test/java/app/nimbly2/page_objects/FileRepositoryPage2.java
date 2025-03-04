@@ -301,14 +301,14 @@ public class FileRepositoryPage2 {
 	}
 
 	public void shareAndDownloadRecentlyUploadedFile() throws InterruptedException {
-		String overflow_menu = locators.getProperty("overflow_menu");
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
 		String tap_recent = locators.getProperty("tap_recent");
 		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
 		String download_file = locators.getProperty("download_file");
 
 		// tap on overflow menu
 		Thread.sleep(14000);
-		waitAndClick(overflow_menu, "Failed to tap on overflow menu");
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on overflow menu");
 
 		// tap on recent option
 		waitAndClick(tap_recent, "Failed to tap on recent option");
@@ -321,7 +321,7 @@ public class FileRepositoryPage2 {
 
 		// wait for some time and navigate back
 		Thread.sleep(4000);
-		appdriver.navigate().back();
+		navigateBackToFileRepo();
 
 		// share file
 		Thread.sleep(4000);
@@ -724,5 +724,175 @@ public class FileRepositoryPage2 {
 	        return false;
 	    }
 	}
+	
+	public void createNewFolder() throws InterruptedException {
+		// Locators
+		String adhoc_tap_add_issue = locators.getProperty("adhoc_tap_add_issue");
+		String tap_on_new_folder = locators.getProperty("tap_on_new_folder");
+		String add_new_folder = locators.getProperty("add_new_folder");
+		String create_button = locators.getProperty("create_button");
 
+		// tap on add button
+		waitAndClick(adhoc_tap_add_issue, "Failed to tap on add button");
+
+		// tap on new folder
+		waitAndClick(tap_on_new_folder, "Failed to tap on new folder");
+
+		// enter folder name
+		Thread.sleep(2000);
+		WebElement folderName = appdriver.findElement(AppiumBy.xpath(add_new_folder));
+		folderName.sendKeys(generateRandomFolderName());
+
+		// tap on create button
+		waitAndClick(create_button, "Failed to tap on creat button");
+	}
+	
+	public void moveFolderToTrash() throws InterruptedException {
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+		String move_to_trash = locators.getProperty("move_to_trash");
+		String move_to_trash_pop_up = locators.getProperty("move_to_trash_pop_up");
+		
+		// move file to trash in recent tab
+		Thread.sleep(10000);
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on folder overflow menu");
+		waitAndClick(move_to_trash, "Failed to tap on move to transh option");
+		waitAndClick(move_to_trash_pop_up, "Failed to click on Ok button");
+		Thread.sleep(5000);
+	}
+	
+	public void deleteFolderPermanentlyFromTrash() throws InterruptedException {
+		String trash_option = locators.getProperty("trash_option");
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
+		String tap_file_overflow_menu = locators.getProperty("tap_file_overflow_menu");
+		String okay_button_delete_forever = locators.getProperty("okay_button_delete_forever");
+		String delete_folder_permanently = locators.getProperty("delete_folder_permanently");
+		
+		// delete folder permanently from trash
+		Thread.sleep(10000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(trash_option, "Failed to select Trash Option from pop up");
+		waitAndClick(tap_file_overflow_menu,"Failed to tap on file repo overflow menu");
+		waitAndClick(delete_folder_permanently,"Failed to click on delete folder option");
+		waitAndClick(okay_button_delete_forever,"Failed to tap on ok button from delete forever pop up");
+	}
+	
+	public void navigatesToTrash() throws InterruptedException {
+		String trash_option = locators.getProperty("trash_option");
+		String file_repo_three_dots_menu = locators.getProperty("file_repo_three_dots_menu");
+		
+		// delete folder permanently from trash
+		Thread.sleep(10000);
+		waitAndClick(file_repo_three_dots_menu, "Failed to tap on three dots menu");
+		waitAndClick(trash_option, "Failed to select Trash Option from pop up");
+	}
+	
+	public void verifySearchFunctionality() throws InterruptedException {
+		String search_folder_file_name = locators.getProperty("search_folder_file_name");
+		String folder_name = locators.getProperty("folder_name");
+		
+		//expected values
+		String expFolderName = prop.getProperty("Search_Folder_Name");
+		
+		//search for folder
+		Thread.sleep(3000);
+		WebElement folder = appdriver.findElement(AppiumBy.xpath(search_folder_file_name));
+		folder.sendKeys(expFolderName);
+		
+		// validate folder name
+		Thread.sleep(3000);
+		String actFolderName = appdriver.findElement(AppiumBy.xpath(folder_name)).getText();
+		if(actFolderName.contains(expFolderName)) {
+			Assert.assertEquals(actFolderName, expFolderName, "Folder name successfully found in search results");
+		}else {
+			Assert.fail("Failed to validate folder name");
+		}
+		
+	}
+	
+	public void shareFilesAndFoldersToMultipleUsers() throws InterruptedException {
+		String shareOption = locators.getProperty("tap_on_share_option");
+		String userDropdown = locators.getProperty("select_user_drop_down");
+		String userSearchField = locators.getProperty("search_user_name");
+		String userCheckbox = locators.getProperty("select_user");
+		String saveButton = locators.getProperty("save_button");
+		String shareButton = locators.getProperty("share_file");
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+
+		// Expected values (Assuming multiple usernames are comma-separated)
+		String[] usernames = prop.getProperty("UserNames").split(",");
+		
+		// tap on folder overflow menu
+		waitAndClick(tap_folder_overflow_menu,"Failed to tap on folder overflow menu");
+
+		// Open the share options
+		waitAndClick(shareOption, "Failed to tap on share option");
+
+		// Loop through the list of usernames and select each user
+		for (String username : usernames) {
+			Thread.sleep(4000); // Add a short delay to avoid issues in UI interaction
+			
+			// Open user selection dropdown
+			Thread.sleep(3000);
+			waitAndClick(userDropdown, "Failed to tap on select users drop down");
+
+			// Search for the user
+			Thread.sleep(3000);
+			WebElement userSearch = appdriver.findElement(AppiumBy.xpath(userSearchField));
+			userSearch.sendKeys(username); // Enter the username
+
+			Thread.sleep(2000); // Wait for search results to load
+
+			// Select the user checkbox
+			waitAndClick(userCheckbox, "Failed to select user: " + username);
+
+			// Save selection
+			waitAndClick(saveButton, "Failed to tap on save button");
+		}
+		// Confirm sharing
+		waitAndClick(shareButton, "Failed to tap on share button");
+	}
+
+	public void verifyFilesAndFoldersCannotBeSharedOutsideOrganization() throws InterruptedException {
+		String tap_on_share_option = locators.getProperty("tap_on_share_option");
+		String select_user_drop_down = locators.getProperty("select_user_drop_down");
+		String search_user_name = locators.getProperty("search_user_name");
+		String no_results_found = locators.getProperty("no_results_found");
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
+
+		// expected values
+		String username = prop.getProperty("User_From_Another_Org");
+		String expErrorMessage = prop.getProperty("Search_Error_Message");
+
+		// tap on folder overflow menu
+		Thread.sleep(4000);
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on folder overflow menu");
+
+		// tap on share option
+		waitAndClick(tap_on_share_option, "Failed to tap on share option");
+
+		// tap on select users drop down
+		waitAndClick(select_user_drop_down, "Failed to tap on select users drop down");
+
+		// search for user
+		Thread.sleep(2000);
+		WebElement user = appdriver.findElement(AppiumBy.xpath(search_user_name));
+		user.sendKeys(username);
+
+		// validate no results found text
+		Thread.sleep(2000);
+		String actErrorMessage = appdriver.findElement(AppiumBy.xpath(no_results_found)).getText();
+		if (actErrorMessage.equals(expErrorMessage)) {
+			Assert.assertEquals(actErrorMessage, expErrorMessage, "Successfully validated error message");
+		} else {
+			Assert.fail("Failed to validate error message");
+		}
+	}
+	
+	public void openFolderToUploadMoreFiles() throws InterruptedException {
+		String tap_on_folder = locators.getProperty("tap_on_folder");
+		
+		// tap on folder name
+		Thread.sleep(3000);
+		waitAndClick(tap_on_folder,"Failed to tap on folder name");
+	}
 }

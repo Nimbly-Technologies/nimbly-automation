@@ -17,6 +17,6 @@ Feature: Validate User can Download,Upload and Share Folder & File
     When navigates to file repo
     And switch to shared with me tab
     And share file and folder in list and grid view under shared with me
-    #And share and download recently uploaded file
+    And share and download recently uploaded file
     
     

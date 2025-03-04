@@ -2,6 +2,7 @@ package app.nimbly2.stepdefinitions;
 
 import app.nimbly2.page_objects.FileRepositoryPage2;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utlis.UtlisManager;
 
@@ -93,6 +94,38 @@ public class FileRepository_Nimbly2_StepDefinition {
 	@And("^restore files and folders from trash$")
 	public void restore_files_and_folders_from_trash() throws InterruptedException {
 		filerepositorypage2.restoreFileAndFolderFromTrash();
+	}
+	@And("^create new folder$")
+	public void create_new_folder() throws InterruptedException {
+		filerepositorypage2.createNewFolder();
+	}
+	@And("^move folder to trash$")
+	public void move_folder_to_trash() throws InterruptedException {
+		filerepositorypage2.moveFolderToTrash();
+	}
+	@Then("^delete a folder permanently from trash$")
+	public void delete_a_folder_permanently_from_trash() throws InterruptedException {
+		filerepositorypage2.deleteFolderPermanentlyFromTrash();
+	}
+	@And("^navigates to trash$")
+	public void navigates_to_trash() throws InterruptedException {
+		filerepositorypage2.navigatesToTrash();
+	}
+	@And("^verify the search functionality$")
+	public void verify_the_serach_functionality() throws InterruptedException {
+		filerepositorypage2.verifySearchFunctionality();
+	}
+	@And("^verify that files and folders can be shared with multiple users simultaneously$")
+	public void verify_that_files_and_folders_shared_with_multiple_users() throws InterruptedException {
+		filerepositorypage2.shareFilesAndFoldersToMultipleUsers();
+	}
+	@And("^Verify that files and folders cannot be shared outside the organization$")
+	public void verify_that_files_and_folders_cannot_be_shared_outside_the_organization() throws InterruptedException {
+		filerepositorypage2.verifyFilesAndFoldersCannotBeSharedOutsideOrganization();
+	}
+	@And("^open a folder to upload files with the same name and add subfolders$")
+	public void open_a_folder_to_upload_files_with_the_same_name_and_add_subfolders() throws InterruptedException {
+		filerepositorypage2.openFolderToUploadMoreFiles();
 	}
 
 }
