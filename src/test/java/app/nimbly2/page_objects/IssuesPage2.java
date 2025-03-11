@@ -417,8 +417,8 @@ public class IssuesPage2 {
 		}
 		
 		// scroll down the page
-		appdriver.findElement(
-				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
+		WebElement addIssueButton = appdriver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Issue\"))"));
 
 		// tap on add issue button
 		Thread.sleep(2000);
