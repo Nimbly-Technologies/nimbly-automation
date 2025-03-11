@@ -169,7 +169,7 @@ public class FileRepositoryPage2 {
 
 		// wait for some time and navigate back
 		Thread.sleep(10000);
-		appdriver.navigate().back();
+		navigateBackToFileRepo();
 	}
 	
 	public void shareFileAndFolder() throws InterruptedException {
@@ -691,13 +691,14 @@ public class FileRepositoryPage2 {
 
 	}
 	
-	private void navigateBackToFileRepo() {
+	private void navigateBackToFileRepo() throws InterruptedException {
 	    int maxAttempts = 4; // Max attempts to press back
 	    int attempts = 0;
 	    
 	    while (attempts < maxAttempts) {
 	        try {
 	            // Press back button
+	        	Thread.sleep(3000);
 	            appdriver.navigate().back();
 
 	            // Wait for File Repository tab to be visible
@@ -716,7 +717,7 @@ public class FileRepositoryPage2 {
 
 	private boolean isFileRepoTabDisplayed() {
 	    try {
-	        WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5));
+	        WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
 	        WebElement fileRepoTab = wait.until(ExpectedConditions
 	                .visibilityOfElementLocated(AppiumBy.xpath("//*[@text='File Repository']")));
 	        return fileRepoTab.isDisplayed();

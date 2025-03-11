@@ -30,7 +30,7 @@ public class GalleryPage_Nimbly2_StepDefinition {
 		gallerypage2.validateSelectAllPopup();
 	}
 	@And("^verify user can navigate to issues by clicking go to issue on attachment$")
-	public void verify_user_can_navigate_to_issues_by_clicking_go_to_issue_on_attachments() {
+	public void verify_user_can_navigate_to_issues_by_clicking_go_to_issue_on_attachments() throws InterruptedException {
 		gallerypage2.navigateBackToIssues();
 	}
 	@And("^download attachments under all, days and months$")

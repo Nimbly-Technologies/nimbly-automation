@@ -2131,11 +2131,20 @@ public class SchedulesPage2 {
 		String use_photo = locators.getProperty("use_photo");
 		String pdf_attachment = locators.getProperty("child_question_add_pdf_attachment");
 		String select_pdf_attachment = locators.getProperty("select_pdf_attachmnet");
+		String tap_menu_to_select_document = locators.getProperty("tap_menu_to_select_document");
+		String tap_document_option = locators.getProperty("tap_document_option");
+		String tap_document_folder = locators.getProperty("tap_document_folder");
 
 		// add document attachment
 		Thread.sleep(3000);
 		if (appdriver.findElement(AppiumBy.xpath(pdf_attachment)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(pdf_attachment)).click();
+			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(tap_menu_to_select_document)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_option)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_folder)).click();
 			Thread.sleep(3000);
 			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
 		} else {
@@ -2551,12 +2560,21 @@ public class SchedulesPage2 {
 		String use_photo = locators.getProperty("use_photo");
 		String pdf_attachment = locators.getProperty("add_pdf_attachment_when_video");
 		String select_pdf_attachment = locators.getProperty("select_pdf_attachmnet");
+		String tap_menu_to_select_document = locators.getProperty("tap_menu_to_select_document");
+		String tap_document_option = locators.getProperty("tap_document_option");
+		String tap_document_folder = locators.getProperty("tap_document_folder");
 
 		// add document attachment
 		Thread.sleep(3000);
 		if (appdriver.findElement(AppiumBy.xpath(pdf_attachment)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(pdf_attachment)).click();
 			Thread.sleep(3000);
+			appdriver.findElement(AppiumBy.xpath(tap_menu_to_select_document)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_option)).click();
+			Thread.sleep(2000);
+			appdriver.findElement(AppiumBy.xpath(tap_document_folder)).click();
+			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
 		} else {
 			Assert.fail("Failed to add document attachment");
