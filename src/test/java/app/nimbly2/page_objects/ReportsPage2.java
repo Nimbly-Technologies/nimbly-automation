@@ -381,6 +381,7 @@ public class ReportsPage2 {
 		while (attempts < maxAttempts && !isAtReportsTab) {
 			try {
 				// Press back button
+				Thread.sleep(2000);
 				appdriver.navigate().back();
 				attempts++;
 
@@ -397,7 +398,7 @@ public class ReportsPage2 {
 
 	private boolean isReportsTabDisplayed() {
 		try {
-			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(5));
+			WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
 			WebElement reportsTab = wait.until(ExpectedConditions
 					.visibilityOfElementLocated(AppiumBy.xpath("//android.widget.TextView[@text='Reports']")));
 			return reportsTab.isDisplayed();

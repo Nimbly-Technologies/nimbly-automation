@@ -208,7 +208,7 @@ public class GalleryPage2 {
 		waitAndClick(select_attachments_txt, "Failed to tap on select attachments");
 	}
 	
-	public void navigateBackToIssues() {
+	public void navigateBackToIssues() throws InterruptedException {
 		String all_tab = locators.getProperty("all_tab");
 		String tap_attachment = locators.getProperty("tap_attachment");
 		String tap_show = locators.getProperty("tap_show");
@@ -248,6 +248,7 @@ public class GalleryPage2 {
 		}
 
 		// validate site name on issue details page
+		Thread.sleep(10000);
 		String actSiteName = appdriver.findElement(AppiumBy.xpath(site_name)).getText();
 		if (actSiteName.equals(expSiteName)) {
 			Assert.assertEquals(actSiteName, expSiteName, "Sucessfully validated site name");

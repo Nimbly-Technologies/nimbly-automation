@@ -527,6 +527,9 @@ public class IssuesPage2 {
 		locatorsMap.put("issue_activity_use_video", locators.getProperty("issue_activity_use_video"));
 		locatorsMap.put("issue_activity_select_document", locators.getProperty("issue_activity_select_document"));
 		locatorsMap.put("issue_activity_submit_button", locators.getProperty("issue_activity_submit_button"));
+		locatorsMap.put("tap_menu_to_select_document", locators.getProperty("tap_menu_to_select_document"));
+		locatorsMap.put("tap_document_option", locators.getProperty("tap_document_option"));
+		locatorsMap.put("tap_document_folder", locators.getProperty("tap_document_folder"));
 
 		// Perform actions in sequence: Clicking elements and performing necessary steps
 		// for comment and attachment
@@ -572,6 +575,9 @@ public class IssuesPage2 {
 
 		// Tap on the document icon to add a document attachment
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_document"));
+		clickElementIfDisplayed(locatorsMap.get("tap_menu_to_select_document"));
+		clickElementIfDisplayed(locatorsMap.get("tap_document_option"));
+		clickElementIfDisplayed(locatorsMap.get("tap_document_folder"));
 
 		// Select the document to attach
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
@@ -1189,6 +1195,9 @@ public class IssuesPage2 {
 		locatorsMap.put("add_ten_attachments_tap_document_second", locators.getProperty("add_ten_attachments_tap_document_second"));
 		locatorsMap.put("add_ten_attachments_select_second_photo", locators.getProperty("add_ten_attachments_select_second_photo"));
 		locatorsMap.put("issue_activity_submit_button", locators.getProperty("issue_activity_submit_button"));
+		locatorsMap.put("tap_menu_to_select_document", locators.getProperty("tap_menu_to_select_document"));
+		locatorsMap.put("tap_document_option", locators.getProperty("tap_document_option"));
+		locatorsMap.put("tap_document_folder", locators.getProperty("tap_document_folder"));
 		
 		
 		// Tap on issue card
@@ -1236,6 +1245,9 @@ public class IssuesPage2 {
 
 		// Tap on the document icon to add a document attachment
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_document"));
+		clickElementIfDisplayed(locatorsMap.get("tap_menu_to_select_document"));
+		clickElementIfDisplayed(locatorsMap.get("tap_document_option"));
+		clickElementIfDisplayed(locatorsMap.get("tap_document_folder"));
 
 		// Select the document to attach
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
