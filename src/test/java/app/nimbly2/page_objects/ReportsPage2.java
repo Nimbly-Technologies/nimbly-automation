@@ -375,7 +375,7 @@ public class ReportsPage2 {
 	}
 
 	private void navigateBackToReport() {
-		int maxAttempts = 3; // Max attempts to press back
+		int maxAttempts = 7; // Max attempts to press back
 		int attempts = 0;
 		boolean isAtReportsTab = false;
 		while (attempts < maxAttempts && !isAtReportsTab) {
