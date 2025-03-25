@@ -84,7 +84,7 @@ public class SchedulesPage2 {
 	}
 
 	public void validateScheduleCardDetails(String scheduleType, String attachmentType) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		// locators
 		String schedule_name = locators.getProperty(scheduleType + "_" + "schedule_name" + "_" + attachmentType);
 		String site_name = locators.getProperty("site_name");
@@ -141,7 +141,7 @@ public class SchedulesPage2 {
 	}
 
 	public void validateCheckinPopupDetails(String scheduleType, String attachmentType) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		// locators
 		String schedule_name = locators
 				.getProperty(scheduleType + "_" + "checkin_popup_schedule_name" + "_" + attachmentType);
@@ -189,7 +189,7 @@ public class SchedulesPage2 {
 		}
 
 		// Validate check-in button text
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		String actCheckinButton = appdriver.findElement(AppiumBy.xpath(checkin_button)).getText();
 		if (actCheckinButton.equals(checkinButton)) {
 			Assert.assertEquals(actCheckinButton, checkinButton, "Successfully validated check-in button!");
@@ -234,7 +234,7 @@ public class SchedulesPage2 {
 		Thread.sleep(3000);
 
 		// Validate Category Name
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		String actCategoryName = appdriver.findElement(AppiumBy.xpath(category_name)).getText();
 		if (actCategoryName.equals(expCategoryName1)) {
 			Assert.assertEquals(actCategoryName, expCategoryName1, "Successfully validated Category Name!");
@@ -815,7 +815,7 @@ public class SchedulesPage2 {
 			appdriver.findElement(AppiumBy.xpath(tap_document_option)).click();
 			Thread.sleep(2000);
 			appdriver.findElement(AppiumBy.xpath(tap_document_folder)).click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			appdriver.findElement(AppiumBy.xpath(select_pdf_attachment)).click();
 		} else {
 			Assert.fail("Failed to add document attachment");
@@ -1661,7 +1661,7 @@ public class SchedulesPage2 {
 
 		// tap on delete progress yes
 		if (appdriver.findElement(AppiumBy.xpath(delete_progress)).isDisplayed()) {
-			Thread.sleep(4000);
+			Thread.sleep(7000);
 			appdriver.findElement(AppiumBy.xpath(delete_progress)).click();
 			Thread.sleep(6000);
 		} else {
