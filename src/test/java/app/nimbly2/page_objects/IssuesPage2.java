@@ -299,7 +299,22 @@ public class IssuesPage2 {
 		String select_user = locators.getProperty("adhoc_select_user");
 		String add_issue_button = locators.getProperty("adhoc_add_issue");
 		String close_nps = locators.getProperty("adhoc_close_nps");
-
+        String adhoc_add_image = locators.getProperty("adhoc_add_image");
+        String adhoc_add_image_from_camera = locators.getProperty("adhoc_add_image_from_camera");
+        String adhoc_capture_photo = locators.getProperty("adhoc_capture_photo");
+        String adhoc_use_photo = locators.getProperty("adhoc_use_photo");
+        String adhoc_add_image_from_gallery = locators.getProperty("adhoc_add_image_from_gallery");
+        String adhoc_select_image_from_gallery = locators.getProperty("adhoc_select_image_from_gallery");
+        String adhoc_add_selected_image = locators.getProperty("adhoc_add_selected_image");
+        String adhoc_add_video = locators.getProperty("adhoc_add_video");
+        String adhoc_capture_video = locators.getProperty("adhoc_capture_video");
+        String adhoc_use_video = locators.getProperty("adhoc_use_video");
+        String adhoc_add_document = locators.getProperty("adhoc_add_document");
+        String adhoc_tap_menu_to_select_document = locators.getProperty("adhoc_tap_menu_to_select_document");
+        String adhoc_tap_document_option = locators.getProperty("adhoc_tap_document_option");
+        String adhoc_tap_document_folder = locators.getProperty("adhoc_tap_document_folder");
+        String adhoc_select_pdf_attachment = locators.getProperty("adhoc_select_pdf_attachment");
+        
 		// Expected Values
 		String siteName = prop.getProperty("Adhoc_Issue_Site_Name");
 		String categoryName = prop.getProperty("Ahoc_Issue_Category_Name");
@@ -419,9 +434,49 @@ public class IssuesPage2 {
 		// scroll down the page
 		WebElement addIssueButton = appdriver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Issue\"))"));
+		
+		// add all types of attachments for issue creation
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_image);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_image_from_camera);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_capture_photo);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_use_photo);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_image);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_image_from_gallery);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_select_image_from_gallery);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_selected_image);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_add_video);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_capture_video);
+		Thread.sleep(4000);
+		clickElementIfDisplayed(adhoc_capture_video);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_use_video);
+		Thread.sleep(10000);
+		clickElementIfDisplayed(adhoc_add_document);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_tap_menu_to_select_document);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_tap_document_option);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_tap_document_folder);
+		Thread.sleep(2000);
+		clickElementIfDisplayed(adhoc_select_pdf_attachment);
+		
+		// scroll down the page
+				WebElement addIssueButton1 = appdriver.findElement(AppiumBy
+						.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Issue\"))"));
 
 		// tap on add issue button
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		if (appdriver.findElement(AppiumBy.xpath(add_issue_button)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(add_issue_button)).click();
 		} else {
@@ -429,7 +484,7 @@ public class IssuesPage2 {
 		}
 
 		// close nps pop up
-		Thread.sleep(15000);
+		Thread.sleep(20000);
 		if (appdriver.findElement(AppiumBy.xpath(close_nps)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(close_nps)).click();
 		} else {
@@ -670,6 +725,7 @@ public class IssuesPage2 {
 	// Helper method to reset, apply, and validate filters involving a search action
 	private void resetAndApplyFilter(String tapLocator, String searchLocator, String searchValue, String selectLocator,
 			String[] validResults) throws InterruptedException {
+		Thread.sleep(3000);
 		appdriver.findElement(AppiumBy.xpath(locators.getProperty("issue_tap_filter"))).click();
 		Thread.sleep(1000);
 		resetFilter();

@@ -1,6 +1,6 @@
 Feature: Validate Filter Functionality,Issue Details,Add Comment with Attachments
 
-  @P1
+  @sanity
   Scenario: Validate Filter Functionality,Issue Details,Add Comment with Attachments and Default Saved Filter
     Given I login to application with IssueFilterUserEmail,IssueFilterUserPassword
     And validate multiple login and version update popups
