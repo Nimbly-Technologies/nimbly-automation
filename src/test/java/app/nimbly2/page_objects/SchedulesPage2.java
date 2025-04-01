@@ -1661,7 +1661,7 @@ public class SchedulesPage2 {
 
 		// tap on delete progress yes
 		if (appdriver.findElement(AppiumBy.xpath(delete_progress)).isDisplayed()) {
-			Thread.sleep(7000);
+			Thread.sleep(11000);
 			appdriver.findElement(AppiumBy.xpath(delete_progress)).click();
 			Thread.sleep(6000);
 		} else {
