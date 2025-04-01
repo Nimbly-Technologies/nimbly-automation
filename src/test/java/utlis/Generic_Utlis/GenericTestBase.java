@@ -80,7 +80,7 @@ public class GenericTestBase {
 			ltOptions.put("mitmProxy", false);
 			ltOptions.put("appProfiling", false);
 			ltOptions.put("video", true);
-			ltOptions.put("build", "Prod Sanity");
+			ltOptions.put("build", "Prod - P1 and P2 Scenarios");
 			ltOptions.put("name", "POC Tests");
 			ltOptions.put("app", "lt://APP1016016421744803518093382");
 			ltOptions.put("isRealMobile", true);
