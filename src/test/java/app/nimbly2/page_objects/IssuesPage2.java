@@ -629,6 +629,7 @@ public class IssuesPage2 {
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_use_video"));
 
 		// Tap on the document icon to add a document attachment
+		Thread.sleep(7000);
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_document"));
 		clickElementIfDisplayed(locatorsMap.get("tap_menu_to_select_document"));
 		clickElementIfDisplayed(locatorsMap.get("tap_document_option"));
