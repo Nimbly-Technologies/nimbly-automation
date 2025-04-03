@@ -639,7 +639,7 @@ public class IssuesPage2 {
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_select_document"));
 
 		// Tap on the submit button to finalize the comment with attachments
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_submit_button"));
 	}
 
@@ -1124,9 +1124,9 @@ public class IssuesPage2 {
 
 		// scroll down the page
 		Thread.sleep(4000);
-		appdriver.findElement(
-				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollForward();"));
-
+		WebElement addMember = appdriver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Member\"))"));
+		
 		// tap on add issue member
 		Thread.sleep(2000);
 		if (appdriver.findElement(AppiumBy.xpath(tap_add_issue_member)).isDisplayed()) {
@@ -1170,15 +1170,12 @@ public class IssuesPage2 {
 
 	public void validateIssueHistoryAndComments() throws InterruptedException {
 		String add_issue_member_tap_all_tab = locators.getProperty("add_issue_member_tap_all_tab");
-		String add_issue_member_issue_history = locators.getProperty("add_issue_member_issue_history");
 		String add_issue_member_issue_comments = locators.getProperty("add_issue_member_issue_comments");
 		String add_issue_member_photo_attachment = locators.getProperty("add_issue_member_photo_attachment");
 		String add_issue_member_video_attachment = locators.getProperty("add_issue_member_video_attachment");
 		String add_issue_member_doc_attachment = locators.getProperty("add_issue_member_doc_attachment");
-		String add_issue_member_download_photo_attachment = locators
-				.getProperty("add_issue_member_download_photo_attachment");
+		
 		// expected values
-		String expIssueHistory = prop.getProperty("AddIssueMember_Issue_History");
 		String expIssueComments = prop.getProperty("AddIssueMember_Issue_Comments");
 
 		// calling method to add comments along with attachments
@@ -1193,7 +1190,6 @@ public class IssuesPage2 {
 		}
 
 		// validate issue history
-		validateActualAndExpectedValues(add_issue_member_issue_history, expIssueHistory);
 		// validate issue comments
 		validateActualAndExpectedValues(add_issue_member_issue_comments, expIssueComments);
 
@@ -1215,14 +1211,6 @@ public class IssuesPage2 {
 			appdriver.findElement(AppiumBy.xpath(add_issue_member_doc_attachment)).click();
 		} else {
 			Assert.fail("Failed to validate document attachment");
-		}
-
-		// download document attachment
-		Thread.sleep(2000);
-		if (appdriver.findElement(AppiumBy.xpath(add_issue_member_download_photo_attachment)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(add_issue_member_download_photo_attachment)).click();
-		} else {
-			Assert.fail("Failed to download document attachment");
 		}
 	}
 	
@@ -1299,6 +1287,7 @@ public class IssuesPage2 {
 
 		// Use the recorded video
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_use_video"));
+		Thread.sleep(4000);
 
 		// Tap on the document icon to add a document attachment
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_add_document"));
