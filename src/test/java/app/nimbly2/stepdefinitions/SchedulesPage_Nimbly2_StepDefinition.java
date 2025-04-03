@@ -164,7 +164,7 @@ public class SchedulesPage_Nimbly2_StepDefinition {
 		schedulespage2.verifyScheduleProgressAndSelectPriority();
 	}
 	@And("^validate image annotation$")
-	public void validate_image_annotation() {
+	public void validate_image_annotation() throws InterruptedException {
 		schedulespage2.validateImageAnnotation();
 	}
 	@And("^navigates back to schedule page$")

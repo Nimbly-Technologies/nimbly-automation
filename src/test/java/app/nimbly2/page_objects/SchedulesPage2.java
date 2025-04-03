@@ -1795,7 +1795,7 @@ public class SchedulesPage2 {
 		}
 
 		// select yes and no question answer
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		if (appdriver.findElement(AppiumBy.xpath(yes_no_question)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(yes_no_question)).click();
 		} else {
@@ -1908,7 +1908,8 @@ public class SchedulesPage2 {
 	    addSelfieAndSignature(locatorsMap);
 	}
 
-	private void validateElementText(String locator, String expectedValue, String elementName) {
+	private void validateElementText(String locator, String expectedValue, String elementName) throws InterruptedException {
+		Thread.sleep(1000);
 	    String actualValue = appdriver.findElement(AppiumBy.xpath(locator)).getText();
 	    Assert.assertEquals(actualValue, expectedValue, "Successfully validated " + elementName);
 	}
@@ -2008,7 +2009,7 @@ public class SchedulesPage2 {
 			scrollToNextElement();
 			// Attach files to the child question
 			addAttachmentsForChildQuestion();
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			WebElement childQuestionElement = appdriver.findElement(AppiumBy.xpath(childQuestionXPath));
 			if (childQuestionElement.isDisplayed()) {
 				childQuestionElement.click();

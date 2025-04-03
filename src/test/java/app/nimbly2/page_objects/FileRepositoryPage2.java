@@ -448,7 +448,6 @@ public class FileRepositoryPage2 {
 	    for (String fileType : fileTypes.keySet()) {
 	        applyFilter(fileTypes.get(fileType));
 	        validateFileType(fileLocators.get(fileType), expectedFileNames.get(fileType));
-	        resetFilter();
 	    }
 	}
 
@@ -466,11 +465,6 @@ public class FileRepositoryPage2 {
 	    if (!actualFileName.equals(expectedFileName)) {
 	        Assert.fail("Failed to validate file type: " + expectedFileName);
 	    }
-	}
-
-	private void resetFilter() {
-	    waitAndClick(locators.getProperty("file_repo_filter"), "Failed to tap on filter icon");
-	    waitAndClick(locators.getProperty("reset_button"), "Failed to reset filter");
 	}
 	
 	public void validateFileTypeFilterForFolder(String videoFile, String docFile, String imageFile) throws InterruptedException {
