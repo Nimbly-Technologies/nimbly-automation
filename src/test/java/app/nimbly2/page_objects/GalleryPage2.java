@@ -222,6 +222,7 @@ public class GalleryPage2 {
 		String expDepartmentName = prop.getProperty("DepartmentName");
 		
 		waitAndClick(all_tab,"Failed to tap on all tab");
+		Thread.sleep(20000);
 
 		// tap on first attachment
 		waitAndClick(tap_attachment, "Failed to tap on attachment");
@@ -755,13 +756,13 @@ public class GalleryPage2 {
 		waitAndClick(all_tab, "Failed to tap on all tab");
 
 		// search with question name
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 		waitAndClick(search_question_and_category, "Failed to tap on serach bar");
 		WebElement question = appdriver.findElement(AppiumBy.xpath(search_question_and_category));
 		question.sendKeys(Gallery_QuestionaName);
 
 		// validate suggestion for question
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		String actSuggestion = appdriver.findElement(AppiumBy.xpath(question_serach_results)).getText();
 		if (actSuggestion.equals(expSuggestion)) {
 		} else {
@@ -772,7 +773,7 @@ public class GalleryPage2 {
 		waitAndClick(question_serach_results, "Failed to tap on question search results");
 
 		// validate question results attachments
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		verifyAttachmentsVisibilityUnderAllTab();
 	}
 
@@ -795,7 +796,7 @@ public class GalleryPage2 {
 		question.sendKeys(Gallery_CategoryName);
 
 		// validate suggestion for question
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 		String actSuggestion = appdriver.findElement(AppiumBy.xpath(category_search_results)).getText();
 		if (actSuggestion.equals(expSuggestion)) {
 		} else {
