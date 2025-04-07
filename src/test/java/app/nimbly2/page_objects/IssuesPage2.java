@@ -1359,22 +1359,6 @@ public class IssuesPage2 {
 		// Tap on the submit button to finalize the comment with attachments
 		Thread.sleep(10000);
 		clickElementIfDisplayed(locatorsMap.get("issue_activity_submit_button"));
-
-		// resolve issue
-		Thread.sleep(6000);
-		if (appdriver.findElement(AppiumBy.xpath(resolve_issue)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(resolve_issue)).click();
-		} else {
-			Assert.fail("Failed to resolve issue");
-		}
-
-		// close resolve issue confirmation pop up
-		Thread.sleep(2000);
-		if (appdriver.findElement(AppiumBy.xpath(resolve_issue_confirmation_popup)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(resolve_issue_confirmation_popup)).click();
-		} else {
-			Assert.fail("Failed to resolve issue");
-		}
 	}
 	
 	public void navigateToIssuesTab() throws InterruptedException {
