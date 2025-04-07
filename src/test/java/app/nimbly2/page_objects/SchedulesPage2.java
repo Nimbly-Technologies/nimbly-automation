@@ -75,12 +75,24 @@ public class SchedulesPage2 {
 		} else {
 			Assert.fail("Schedule tab is not displayed on home page");
 		}
-		Thread.sleep(5000);
-		if (appdriver.findElement(AppiumBy.xpath(search_bar)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(search_bar)).sendKeys(schedule_name);
-		} else {
-			Assert.fail("Failed to serach schedule name");
-		}
+		int maxRetries = 3;
+	    int retryCount = 0;
+	    boolean isSuccessful = false;
+
+	    while (retryCount < maxRetries && !isSuccessful) {
+	        try {
+	            WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(10));
+	            WebElement searchBarElement = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(search_bar)));
+	            searchBarElement.sendKeys(schedule_name);
+	            isSuccessful = true;
+	        } catch (Exception e) {
+	            retryCount++;
+	            System.out.println("Retry " + retryCount + " failed. Retrying...");
+	            if (retryCount == maxRetries) {
+	                Assert.fail("Failed to find and enter schedule name after " + maxRetries + " retries.");
+	            }
+	        }
+	    }
 
 	}
 
