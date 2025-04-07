@@ -9,7 +9,7 @@ Feature: Trash Management
     And move folder to trash
     Then delete a folder permanently from trash
 
-  @P2
+  @P21
   Scenario: [Trash]Validate Filter & Sort Functionality in Trash
     Given I login to application with TrashFilterSortUsername,TrashFilterSortPassword
     And validate multiple login and version update popups

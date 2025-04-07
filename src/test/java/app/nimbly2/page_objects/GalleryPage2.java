@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -371,26 +372,44 @@ public class GalleryPage2 {
 	}
 	
 	public void verifyAttachmentsVisibilityUnderAllTab() throws InterruptedException {
-		String attachments_list = locators.getProperty("attachments_list");
-		Thread.sleep(8000);
-		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30));
-		List<WebElement> imageElements = wait
-				.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(attachments_list)));
+	    String attachmentsListXpath = locators.getProperty("attachments_list");
+	    WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30));
 
-		// Check if images are found
-		Assert.assertTrue(imageElements.size() > 0, "No images found in the gallery.");
+	    wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(attachmentsListXpath)));
+	    List<WebElement> initialList = appdriver.findElements(By.xpath(attachmentsListXpath));
+	    Assert.assertTrue(initialList.size() > 0, "No images found in the gallery.");
 
-		// Validate each image element
-		for (WebElement imageElement : imageElements) {
-			// Assert that the image is displayed
-			try {
-				Assert.assertTrue(imageElement.isDisplayed(), "Image is not displayed: " + imageElement);
+	    int imageCount = initialList.size();
 
-			} catch (Exception e) {
+	    for (int i = 0; i < imageCount; i++) {
+	        boolean isDisplayed = false;
+	        int retryCount = 0;
 
-			}
-		}
+	        while (!isDisplayed && retryCount < 3) {
+	            try {
+	                List<WebElement> currentElements = appdriver.findElements(By.xpath(attachmentsListXpath));
+	                WebElement currentImage = currentElements.get(i);
+
+	                wait.until(ExpectedConditions.visibilityOf(currentImage));
+	                isDisplayed = currentImage.isDisplayed();
+
+	                if (!isDisplayed) {
+	                    Thread.sleep(1000); // Give it a moment and retry
+	                }
+
+	            } catch (StaleElementReferenceException e) {
+	                Thread.sleep(2000); // wait before retry
+	            } catch (Exception e) {
+	                Thread.sleep(2000); // wait before retry
+	            }
+
+	            retryCount++;
+	        }
+
+	        Assert.assertTrue(isDisplayed, "Failed to verify image visibility at index: " + i);
+	    }
 	}
+
 
 	public void verifyAttachmnetsVisibilityUnderDaysTab() throws InterruptedException {
 		String days_tab = locators.getProperty("days_tab");
@@ -462,12 +481,20 @@ public class GalleryPage2 {
 		String expSiteName = prop.getProperty("Gallery_Site_Name");
 		Thread.sleep(8000);
 		waitAndClick(albums_tab, "Failed to tap on albums");
-		// validate site name
-		Thread.sleep(10000);
-		String actSiteName = appdriver.findElement(AppiumBy.xpath(site_name)).getText();
-		if (actSiteName.equals(expSiteName)) {
-		} else {
-			Assert.fail("Failed to validate site name under album");
+		// Wait and validate site name
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(30));
+
+		try {
+		    String actSiteName = wait.until(
+		        ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(site_name))
+		    ).getText();
+
+		    if (!actSiteName.equals(expSiteName)) {
+		        Assert.fail("Failed to validate site name under album. Expected: " + expSiteName + ", but found: " + actSiteName);
+		    }
+
+		} catch (Exception e) {
+		    Assert.fail("Exception occurred while validating site name: " + e.getMessage());
 		}
 		Thread.sleep(5000);
 		waitAndClick(tap_on_month, "Failed to tap on site attachments");

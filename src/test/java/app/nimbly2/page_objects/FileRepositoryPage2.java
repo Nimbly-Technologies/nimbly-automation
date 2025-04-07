@@ -434,6 +434,8 @@ public class FileRepositoryPage2 {
 	    fileTypes.put("image", locators.getProperty("select_file_type_image"));
 	    fileTypes.put("video", locators.getProperty("select_file_type_video"));
 	    fileTypes.put("document", locators.getProperty("select_file_type_document"));
+	    String file_repo_filter = locators.getProperty("file_repo_filter");
+	    String reset_button = locators.getProperty("reset_button");
 
 	    Map<String, String> expectedFileNames = new HashMap<>();
 	    expectedFileNames.put("image", prop.getProperty(imageFile));
@@ -449,6 +451,8 @@ public class FileRepositoryPage2 {
 	        applyFilter(fileTypes.get(fileType));
 	        validateFileType(fileLocators.get(fileType), expectedFileNames.get(fileType));
 	    }
+	    waitAndClick(file_repo_filter,"Failed to tap on filter icon");
+	    waitAndClick(reset_button,"Failed to tap on reset button");
 	}
 
 	private void applyFilter(String fileTypeLocator) throws InterruptedException {
@@ -643,6 +647,7 @@ public class FileRepositoryPage2 {
 		String doc_file_type = locators.getProperty("doc_file_type");
 		String trash_folder_name = locators.getProperty("trash_folder_name");
 		String recent_option = locators.getProperty("recent_option");
+		String tap_folder_overflow_menu = locators.getProperty("tap_folder_overflow_menu");
 
 		// expected values
 		String expDocName = prop.getProperty("Trash_Doc_Name");
@@ -679,7 +684,7 @@ public class FileRepositoryPage2 {
 
 		// restore folder
 		Thread.sleep(9000);
-		waitAndClick(tap_file_overflow_menu, "Failed to tap on overflow menu");
+		waitAndClick(tap_folder_overflow_menu, "Failed to tap on overflow menu");
 		waitAndClick(restore_files_folders, "Failed to restore folder");
 		waitAndClick(restore_ok_button, "Failed to click on Ok button ");
 

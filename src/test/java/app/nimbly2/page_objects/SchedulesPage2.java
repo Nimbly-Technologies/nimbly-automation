@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -1758,14 +1759,20 @@ public class SchedulesPage2 {
 			Assert.fail("Failed to tap on checkin button");
 		}
 
-		// verify check-in pop-up
-		Thread.sleep(4000);
-		String actCheckinRadiusMessage = appdriver.findElement(AppiumBy.xpath(checkin_radius)).getText();
-		if (actCheckinRadiusMessage.equals(actCheckinRadiusMessage)) {
-			Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage,
-					"Successfully validated unable to checkin toast message");
-		} else {
-			Assert.fail("Failed to validate checkin toast message");
+		// Wait and verify check-in pop-up
+		WebDriverWait wait = new WebDriverWait(appdriver, Duration.ofSeconds(20));
+
+		try {
+		    // Wait for the toast message element to be visible
+		    String actCheckinRadiusMessage = wait.until(
+		        ExpectedConditions.visibilityOfElementLocated(AppiumBy.xpath(checkin_radius))
+		    ).getText();
+
+		    Assert.assertEquals(actCheckinRadiusMessage, expCheckinRadiusMessage,
+		            "Successfully validated unable to checkin toast message");
+
+		} catch (Exception e) {
+		    Assert.fail("Failed to validate checkin toast message: " + e.getMessage());
 		}
 	}
 
@@ -2007,6 +2014,7 @@ public class SchedulesPage2 {
 
 			// Scroll and answer the child question if displayed
 			scrollToNextElement();
+			scrollToNextElement();
 			// Attach files to the child question
 			addAttachmentsForChildQuestion();
 			Thread.sleep(4000);
@@ -2095,13 +2103,36 @@ public class SchedulesPage2 {
 
 	// Helper method for validation
 	private void validate(String name, String locator, String expectedValue) {
-		String actualValue = appdriver.findElement(AppiumBy.xpath(locator)).getText();
+	    int maxRetries = 3;
+	    int attempts = 0;
+	    boolean validated = false;
 
-		if (actualValue.equals(expectedValue)) {
-			Assert.assertEquals(actualValue, expectedValue, "Successfully validated: " + name);
-		} else {
-			Assert.fail("Failed to validated: " + name);
-		}
+	    while (attempts < maxRetries && !validated) {
+	        try {
+	            String actualValue = appdriver.findElement(AppiumBy.xpath(locator)).getText();
+
+	            if (actualValue.equals(expectedValue)) {
+	                Assert.assertEquals(actualValue, expectedValue, "Successfully validated: " + name);
+	                validated = true;
+	            } else {
+	                Assert.fail("Failed to validate: " + name + ". Expected: " + expectedValue + ", but got: " + actualValue);
+	            }
+
+	        } catch (org.openqa.selenium.StaleElementReferenceException e) {
+	            System.out.println("StaleElementReferenceException occurred while validating '" + name + "', retrying... Attempt " + (attempts + 1));
+	            try {
+	                Thread.sleep(500); // Give it a bit of time before retry
+	            } catch (InterruptedException ie) {
+	                Thread.currentThread().interrupt();
+	            }
+	        }
+
+	        attempts++;
+	    }
+
+	    if (!validated) {
+	        Assert.fail("Failed to validate '" + name + "' after " + maxRetries + " attempts due to stale element.");
+	    }
 	}
 
 	public void validateReportSubmittedPageForConditionalQuestions() throws InterruptedException {
@@ -2187,12 +2218,7 @@ public class SchedulesPage2 {
 		}
 
 		// tap on preview page back button
-		Thread.sleep(3000);
-		if (appdriver.findElement(AppiumBy.xpath(schedule_card_preview_back_button)).isDisplayed()) {
-			appdriver.findElement(AppiumBy.xpath(schedule_card_preview_back_button)).click();
-		} else {
-			Assert.fail("Failed to tap on preview page back button");
-		}
+		safeClick(AppiumBy.xpath(schedule_card_preview_back_button));
 
 		// tap on back button
 		Thread.sleep(3000);
@@ -2221,6 +2247,31 @@ public class SchedulesPage2 {
 		}
 
 	}
+	
+	public void safeClick(By locator) throws InterruptedException {
+	    boolean clicked = false;
+	    int attempts = 0;
+
+	    while (attempts < 3) {
+	        try {
+	            WebElement element = appdriver.findElement(locator);
+	            if (element.isDisplayed() && element.isEnabled()) {
+	                element.click();
+	                clicked = true;
+	                break;
+	            }
+	        } catch (StaleElementReferenceException | NoSuchElementException e) {
+	            // retry
+	        }
+	        attempts++;
+	        Thread.sleep(1000);
+	    }
+
+	    if (!clicked) {
+	        Assert.fail("Failed to click on element after retries: " + locator.toString());
+	    }
+	}
+
 
 	public void verifyFlagsCountOfQuestionnairePreview() throws InterruptedException {
 		// locators to validate flags count of questionnaire preview
@@ -2792,13 +2843,12 @@ public class SchedulesPage2 {
 		// verify search functionality
 		if (appdriver.findElement(AppiumBy.xpath(search_question_at_questionnaire_preview)).isDisplayed()) {
 			appdriver.findElement(AppiumBy.xpath(search_question_at_questionnaire_preview)).sendKeys(expQuestion1);
-			;
 		} else {
 			Assert.fail("Failed to search question at questionnaire preview");
 		}
 
-		// tap on preview back button
-		waitAndClick(schedule_card_preview_back_button, "Failed to click on preview back button");
+		// tap on preview page back button
+		safeClick(AppiumBy.xpath(schedule_card_preview_back_button));
 
 		// tap on schedule back button
 		waitAndClick(schedule_card_back_button, "Failed to click on schedule back button");
