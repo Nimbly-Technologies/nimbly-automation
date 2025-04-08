@@ -820,6 +820,7 @@ public class IssuesPage2 {
 		}
 
 		// verify default filters are applied or not
+		Thread.sleep(3000);
 		boolean isEnabled = isFilterToggleEnabled(toggle);
 		if (isEnabled) {
 			Assert.assertTrue(true, "toggle enabled");

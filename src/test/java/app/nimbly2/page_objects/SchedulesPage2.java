@@ -1600,7 +1600,7 @@ public class SchedulesPage2 {
 		}
 
 		// validate photo attachment for first question
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		if (appdriver.findElement(AppiumBy.xpath(validate_image)).isDisplayed()) {
 			Assert.assertTrue(true, "Successfully validated image attachmnet");
 
@@ -1674,9 +1674,9 @@ public class SchedulesPage2 {
 
 		// tap on delete progress yes
 		if (appdriver.findElement(AppiumBy.xpath(delete_progress)).isDisplayed()) {
-			Thread.sleep(11000);
+			Thread.sleep(20000);
 			appdriver.findElement(AppiumBy.xpath(delete_progress)).click();
-			Thread.sleep(6000);
+			Thread.sleep(15000);
 		} else {
 			Assert.fail("Failed to delete schedule progress");
 		}
