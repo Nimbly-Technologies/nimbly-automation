@@ -82,7 +82,7 @@ public class GenericTestBase {
 			ltOptions.put("video", true);
 			ltOptions.put("build", "Prod Sanity");
 			ltOptions.put("name", "POC Tests");
-			ltOptions.put("app", "lt://APP1016037841744011977755638");
+			ltOptions.put("app", "lt://APP1016016421744803518093382");
 			ltOptions.put("isRealMobile", true);
 			ltOptions.put("autoGrantPermissions", true);
 			ltOptions.put("autoAcceptAlerts", true);
