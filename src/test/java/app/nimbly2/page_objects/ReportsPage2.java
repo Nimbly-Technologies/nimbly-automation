@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 
@@ -421,7 +422,9 @@ public class ReportsPage2 {
 
 	public String getTodayDate() {
 		SimpleDateFormat sdf = new SimpleDateFormat("d"); // Change format as needed
-		return sdf.format(new Date());
+		Calendar calendar = Calendar.getInstance();
+	    calendar.add(Calendar.DATE, -1); // Subtract 1 day
+		return sdf.format(calendar.getTime());
 	}
 
 	public void validateUserCanDownloadReportsFromGroupByLocation() throws InterruptedException {
